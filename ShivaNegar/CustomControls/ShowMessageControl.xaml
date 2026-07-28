@@ -1,0 +1,66 @@
+﻿<UserControl
+    x:Class="ShivaNegar.CustomControls.ShowMessageControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ShivaNegar.CustomControls"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="ucMain"
+    FlowDirection="RightToLeft"
+    FontFamily="Vazirmatn"
+    IsEnabled="True"
+    Tag="tested"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ShivaNegar;component/Forms/Styles/MainDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <!--  IsEnabled="True" And Tag="tested"  -->
+
+    <materialDesign:Card
+        x:Name="cardMessage"
+        Padding="4"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        RenderTransformOrigin=".5,.5"
+        UniformCornerRadius="15">
+        <StackPanel Orientation="Vertical">
+            <TextBlock
+                x:Name="lblMessage"
+                FontSize="15"
+                FontWeight="Bold"
+                Text="{Binding Tag, ElementName=ucMain}" />
+        </StackPanel>
+
+        <materialDesign:Card.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleX="0" ScaleY="0" />
+            </TransformGroup>
+        </materialDesign:Card.RenderTransform>
+
+        <materialDesign:Card.Style>
+            <Style BasedOn="{StaticResource {x:Type materialDesign:Card}}" TargetType="materialDesign:Card">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsEnabled, ElementName=ucMain}" Value="True">
+                        <DataTrigger.EnterActions>
+                            <RemoveStoryboard BeginStoryboardName="FadeOut" />
+                            <BeginStoryboard Name="FadeIn" Storyboard="{StaticResource FadeIn}" />
+                        </DataTrigger.EnterActions>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding IsEnabled, ElementName=ucMain}" Value="False">
+                        <DataTrigger.EnterActions>
+                            <RemoveStoryboard BeginStoryboardName="FadeIn" />
+                            <BeginStoryboard Name="FadeOut" Storyboard="{StaticResource FadeOut}" />
+                        </DataTrigger.EnterActions>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </materialDesign:Card.Style>
+    </materialDesign:Card>
+
+</UserControl>

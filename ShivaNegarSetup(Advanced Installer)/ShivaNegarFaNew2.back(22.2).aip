@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="20.2" version="23.2" Modules="enterprise" RootPath="." Language="fa" Id="{2B0E6471-CE15-44A5-96D9-269219FEC295}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_APP_FILE" Value="[#start.vbs]"/>
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_CF_FRAME_STYLE" Value="FlatCaption;FlatBorder;NoInactive" MultiBuildValue="DefaultBuild:true;true;true" MsiKey="AI_CF_FRAME_STYLE"/>
+    <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="بسته نصب را برای [|ProductName] انتخاب کنید" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="AI_PRODUCTNAME_ARP" Value="ShivaNegar"/>
+    <ROW Property="AI_UNINSTALLER" Value="msiexec.exe"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPNOREPAIR" Value="1" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPPRODUCTICON" Value="Shivanegar.exe" Type="8"/>
+    <ROW Property="ARPSYSTEMCOMPONENT" Value="1"/>
+    <ROW Property="AiEmbeddedUI" Value="1" MultiBuildValue="DefaultBuild:"/>
+    <ROW Property="AiLicenseAgreementLink" Value="https://shivanegar.ir"/>
+    <ROW Property="AiSkipExitDlg" Value="1" Type="4" MsiKey="AiSkipExitDlg"/>
+    <ROW Property="AiWinUI" Value="1"/>
+    <ROW Property="AnotherRegistery" Value="ShivaNegar"/>
+    <ROW Property="AppLogoIcon" Value="applogo.png" MultiBuildValue="DefaultBuild:Shivanegar_OverlayFlipHorizontal.png" Type="1" MsiKey="AppLogoIcon"/>
+    <ROW Property="AppLogoIconDark" Value="applogodark.png" MultiBuildValue="DefaultBuild:Shivanegar_OverlayFlipHorizontal.png" Type="1" MsiKey="AppLogoIconDark"/>
+    <ROW Property="ButtonText_Continue" Value="&amp;ادامه دادن" ValueLocId="Property.ButtonText_Continue" MsiKey="ButtonText_Continue"/>
+    <ROW Property="ButtonText_TryAgain" Value="&amp;تلاش مجدد" ValueLocId="Property.ButtonText_TryAgain" MsiKey="ButtonText_TryAgain"/>
+    <ROW Property="CTRLS" Value="2"/>
+    <ROW Property="HyperlinkFont_1" Value="MetroLink" Type="2"/>
+    <ROW Property="Manufacturer" Value="Vira Pajoohan Behin Fartak"/>
+    <ROW Property="ProductCode" Value="1065:{4A9AC990-6C3B-411F-906C-EF555B4841AD} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1065"/>
+    <ROW Property="ProductName" Value="ShivaNegar"/>
+    <ROW Property="ProductVersion" Value="4.2.3" Options="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="TaskBarIcon" Value="Shivanegar_Overlay.ico" Type="1" MsiKey="TaskBarIcon"/>
+    <ROW Property="TaskBarIconDark" Value="Shivanegar_Overlay.ico" Type="1" MsiKey="TaskBarIconDark"/>
+    <ROW Property="UpgradeCode" Value="{98D7261E-1F07-41C5-970E-C02129C94AE4}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT" MultiBuildValue="DefaultBuild:Windows 7 RTM x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT60" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT60Display" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT64" MultiBuildValue="DefaultBuild:Windows 7 RTM x64" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT64Display" MultiBuildValue="DefaultBuild:Windows 7 RTM x64" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNTDisplay" MultiBuildValue="DefaultBuild:Windows 7 RTM x86" ValueLocId="-"/>
+    <ROW Property="Wizard" Value="نصب‌کننده" ValueLocId="Property.Wizard" MsiKey="Wizard"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="FontsFolder" Directory_Parent="TARGETDIR" DefaultDir="FONTSF~1|FontsFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_CustomARPName" ComponentId="{7F89770A-9CEF-4E03-AB88-AB8F145E2681}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_DisableModify" ComponentId="{8ED105BB-21A8-495F-951D-C365FFA61930}" Directory_="APPDIR" Attributes="4" KeyPath="NoModify" Options="1"/>
+    <ROW Component="AI_ExePath" ComponentId="{E3F18C1D-BEE6-48FD-8094-3F90B84A7270}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
+    <ROW Component="APPDIR" ComponentId="{647DEE1C-D9B5-4BB9-90A9-EB173C1FC855}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="BBadrBold.ttf" ComponentId="{A676355C-4EA3-41D1-863B-8A1036154879}" Directory_="FontsFolder" Attributes="16" Type="0"/>
+    <ROW Component="CsvHelper.dll" ComponentId="{09B0792F-A3B3-48DB-A473-53CEC9809FD9}" Directory_="APPDIR" Attributes="0" KeyPath="CsvHelper.dll"/>
+    <ROW Component="CsvHelper.xml" ComponentId="{4236D320-F127-4BA4-9827-42889C0F4B33}" Directory_="APPDIR" Attributes="0" KeyPath="CsvHelper.xml" Type="0"/>
+    <ROW Component="Description" ComponentId="{FD17C032-EE72-4DA7-99CF-2BD0C4C0E36F}" Directory_="APPDIR" Attributes="4" KeyPath="Description"/>
+    <ROW Component="Description_3" ComponentId="{CEE738AC-C9A1-4A40-B1F9-B1FCF7C2732D}" Directory_="APPDIR" Attributes="260" KeyPath="Description_3"/>
+    <ROW Component="DocumentFormat.OpenXml.Framework.dll" ComponentId="{168E1906-B391-4AE8-9E38-B2C34B067943}" Directory_="APPDIR" Attributes="0" KeyPath="DocumentFormat.OpenXml.Framework.dll"/>
+    <ROW Component="DocumentFormat.OpenXml.dll" ComponentId="{156F37BA-9BC5-460B-B643-6DC9D7B19321}" Directory_="APPDIR" Attributes="0" KeyPath="DocumentFormat.OpenXml.dll"/>
+    <ROW Component="FriendlyName" ComponentId="{8F22496D-C223-479A-97E5-AA79AD8F809C}" Directory_="APPDIR" Attributes="4" KeyPath="FriendlyName"/>
+    <ROW Component="FriendlyName_3" ComponentId="{AC43A69A-5D7B-428B-ACDB-C563B9B4C7C7}" Directory_="APPDIR" Attributes="260" KeyPath="FriendlyName_3"/>
+    <ROW Component="LoadBehavior" ComponentId="{FB6AD889-4C93-41EB-9D72-366B7F16F6F6}" Directory_="APPDIR" Attributes="4" KeyPath="LoadBehavior"/>
+    <ROW Component="LoadBehavior_3" ComponentId="{A5673DD0-4A93-4881-9958-73F1284D78F2}" Directory_="APPDIR" Attributes="260" KeyPath="LoadBehavior_3"/>
+    <ROW Component="Manifest" ComponentId="{8F28B741-945A-4E97-B185-F62B885A8F50}" Directory_="APPDIR" Attributes="4" KeyPath="Manifest"/>
+    <ROW Component="Manifest_3" ComponentId="{69386A86-954D-4FD1-A6A3-00D5D47DFC95}" Directory_="APPDIR" Attributes="260" KeyPath="Manifest_3"/>
+    <ROW Component="MaterialDesignColors.dll" ComponentId="{899BEE99-49FB-4819-8B57-4A1BAF05FE03}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignColors.dll"/>
+    <ROW Component="MaterialDesignThemes.Wpf.dll" ComponentId="{49653058-8847-4611-A27A-82069BB5FD9F}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignThemes.Wpf.dll"/>
+    <ROW Component="Microsoft.Bcl.AsyncInterfaces.dll" ComponentId="{E2F06CA6-3A98-48FD-970C-CD77C60ECE15}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW Component="Microsoft.Bcl.HashCode.dll" ComponentId="{01DDF352-E4F2-4CC1-A139-FC0A150FD731}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Bcl.HashCode.dll"/>
+    <ROW Component="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" ComponentId="{C88328FC-CAF2-4640-9236-9D706BF83F61}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Office.Tools.Common.v4.0.Utilities.dll"/>
+    <ROW Component="Microsoft.Xaml.Behaviors.dll" ComponentId="{A7AF55C6-250F-4134-96E2-D050A2F44720}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{109F0B7B-3A0F-4638-B8D4-E2AA63D4444A}" Directory_="APPDIR" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="Office" ComponentId="{9078D2EE-231C-47C7-B6B7-7AF0E4747740}" Directory_="APPDIR" Attributes="4" KeyPath="Office"/>
+    <ROW Component="ProductInformation" ComponentId="{DDB594EA-1636-4EDF-B7C5-59DA9921835F}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{AE06088A-68C2-4D24-9B5D-406D147BF428}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="ShivaNegar.dll" ComponentId="{A854AD5C-1451-4E81-99C2-4FC246B89A2D}" Directory_="APPDIR" Attributes="0" KeyPath="ShivaNegar.dll"/>
+    <ROW Component="Software_1" ComponentId="{05830B8A-8DBE-46EE-ACB7-7232C236191B}" Directory_="APPDIR" Attributes="4" KeyPath="Software_3"/>
+    <ROW Component="System.Buffers.dll" ComponentId="{64FD9EF1-F722-414D-850F-21865D7ED42C}" Directory_="APPDIR" Attributes="0" KeyPath="System.Buffers.dll"/>
+    <ROW Component="System.IO.Pipelines.dll" ComponentId="{B486CF62-A5B0-4FC5-936C-58B1198B8EB4}" Directory_="APPDIR" Attributes="0" KeyPath="System.IO.Pipelines.dll"/>
+    <ROW Component="System.Memory.dll" ComponentId="{3E8E3A90-3064-43CB-A113-2C0F114CFE12}" Directory_="APPDIR" Attributes="0" KeyPath="System.Memory.dll"/>
+    <ROW Component="System.Numerics.Vectors.dll" ComponentId="{16382ED5-7127-4196-874B-9D762F879182}" Directory_="APPDIR" Attributes="0" KeyPath="System.Numerics.Vectors.dll"/>
+    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll" ComponentId="{A69FF06A-BE0D-4417-9C01-5FE15995FAE9}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Component="System.Text.Encodings.Web.dll" ComponentId="{6977F77B-78D4-4820-AF7C-3DCD4ED8280A}" Directory_="APPDIR" Attributes="0" KeyPath="System.Text.Encodings.Web.dll"/>
+    <ROW Component="System.Text.Json.dll" ComponentId="{1ADA1B54-68F4-4220-BAF5-ED61C1F7B839}" Directory_="APPDIR" Attributes="0" KeyPath="System.Text.Json.dll"/>
+    <ROW Component="System.Threading.Tasks.Extensions.dll" ComponentId="{F4DA62DF-29BD-4C89-AA3E-9197E2FD2955}" Directory_="APPDIR" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Component="System.ValueTuple.dll" ComponentId="{331D85F8-EC6A-480C-8049-27C221DA74CC}" Directory_="APPDIR" Attributes="0" KeyPath="System.ValueTuple.dll"/>
+    <ROW Component="Word" ComponentId="{4815CCE8-E564-405F-AAF8-3DADF4756142}" Directory_="APPDIR" Attributes="4" KeyPath="Word"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="BBadrBold.ttf" Component_="BBadrBold.ttf" FileName="BBADRB~1.TTF|B Badr Bold.ttf" Attributes="0" SourcePath="Fonts\B Badr Bold.ttf" SelfReg="false"/>
+    <ROW File="BBadr.ttf" Component_="BBadrBold.ttf" FileName="BBADR~1.TTF|B Badr.ttf" Attributes="0" SourcePath="Fonts\B Badr.ttf" SelfReg="false"/>
+    <ROW File="BLotusBold.ttf" Component_="BBadrBold.ttf" FileName="BLOTUS~1.TTF|B Lotus Bold.ttf" Attributes="0" SourcePath="Fonts\B Lotus Bold.ttf" SelfReg="false"/>
+    <ROW File="BLotus.ttf" Component_="BBadrBold.ttf" FileName="BLOTUS~2.TTF|B Lotus.ttf" Attributes="0" SourcePath="Fonts\B Lotus.ttf" SelfReg="false"/>
+    <ROW File="BNazaninBold.ttf" Component_="BBadrBold.ttf" FileName="BNAZAN~1.TTF|B Nazanin Bold.ttf" Attributes="0" SourcePath="Fonts\B Nazanin Bold.ttf" SelfReg="false"/>
+    <ROW File="BNazanin.ttf" Component_="BBadrBold.ttf" FileName="BNAZAN~2.TTF|B Nazanin.ttf" Attributes="0" SourcePath="Fonts\B Nazanin.ttf" SelfReg="false"/>
+    <ROW File="BTitrBold.ttf" Component_="BBadrBold.ttf" FileName="BTITRB~1.TTF|B Titr Bold.ttf" Attributes="0" SourcePath="Fonts\B Titr Bold.ttf" SelfReg="false"/>
+    <ROW File="BZarBold.ttf" Component_="BBadrBold.ttf" FileName="BZARBO~1.TTF|B Zar Bold.ttf" Attributes="0" SourcePath="Fonts\B Zar Bold.ttf" SelfReg="false"/>
+    <ROW File="BZar.ttf" Component_="BBadrBold.ttf" FileName="BZAR~1.TTF|B Zar.ttf" Attributes="0" SourcePath="Fonts\B Zar.ttf" SelfReg="false"/>
+    <ROW File="Besmellah_1.ttf" Component_="BBadrBold.ttf" FileName="BESMEL~1.TTF|Besmellah_1.ttf" Attributes="0" SourcePath="Fonts\Besmellah_1.ttf" SelfReg="false"/>
+    <ROW File="Besmellah_2.ttf" Component_="BBadrBold.ttf" FileName="BESMEL~2.TTF|Besmellah_2.ttf" Attributes="0" SourcePath="Fonts\Besmellah_2.ttf" SelfReg="false"/>
+    <ROW File="Besmellah_3.ttf" Component_="BBadrBold.ttf" FileName="BESMEL~3.TTF|Besmellah_3.ttf" Attributes="0" SourcePath="Fonts\Besmellah_3.ttf" SelfReg="false"/>
+    <ROW File="Besmellah_4.ttf" Component_="BBadrBold.ttf" FileName="BESMEL~4.TTF|Besmellah_4.ttf" Attributes="0" SourcePath="Fonts\Besmellah_4.ttf" SelfReg="false"/>
+    <ROW File="IranNastaliq.ttf" Component_="BBadrBold.ttf" FileName="IRANNA~1.TTF|IranNastaliq.ttf" Attributes="0" SourcePath="Fonts\IranNastaliq.ttf" SelfReg="false"/>
+    <ROW File="VazirmatnBold.ttf" Component_="BBadrBold.ttf" FileName="VAZIRM~1.TTF|Vazirmatn-Bold.ttf" Attributes="0" SourcePath="Fonts\Vazirmatn-Bold.ttf" SelfReg="false"/>
+    <ROW File="VazirmatnRegular.ttf" Component_="BBadrBold.ttf" FileName="VAZIRM~2.TTF|Vazirmatn-Regular.ttf" Attributes="0" SourcePath="Fonts\Vazirmatn-Regular.ttf" SelfReg="false"/>
+    <ROW File="BYagutBold.ttf" Component_="BBadrBold.ttf" FileName="BYAGUT~1.TTF|B Yagut Bold.ttf" Attributes="0" SourcePath="Fonts\B Yagut Bold.ttf" SelfReg="false"/>
+    <ROW File="BYagut.ttf" Component_="BBadrBold.ttf" FileName="BYAGUT~2.TTF|B Yagut.ttf" Attributes="0" SourcePath="Fonts\B Yagut.ttf" SelfReg="false"/>
+    <ROW File="CsvHelper.dll" Component_="CsvHelper.dll" FileName="CSVHEL~1.DLL|CsvHelper.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\CsvHelper.dll" SelfReg="false"/>
+    <ROW File="CsvHelper.xml" Component_="CsvHelper.xml" FileName="CSVHEL~1.XML|CsvHelper.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\CsvHelper.xml" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.dll" Component_="DocumentFormat.OpenXml.dll" FileName="DOCUME~1.DLL|DocumentFormat.OpenXml.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\DocumentFormat.OpenXml.dll" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.Framework.dll" Component_="DocumentFormat.OpenXml.Framework.dll" FileName="DOCUME~2.DLL|DocumentFormat.OpenXml.Framework.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\DocumentFormat.OpenXml.Framework.dll" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.Framework.xml" Component_="CsvHelper.xml" FileName="DOCUME~1.XML|DocumentFormat.OpenXml.Framework.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\DocumentFormat.OpenXml.Framework.xml" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.xml" Component_="CsvHelper.xml" FileName="DOCUME~2.XML|DocumentFormat.OpenXml.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\DocumentFormat.OpenXml.xml" SelfReg="false"/>
+    <ROW File="MaterialDesignColors.dll" Component_="MaterialDesignColors.dll" FileName="MATERI~1.DLL|MaterialDesignColors.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\MaterialDesignColors.dll" SelfReg="false"/>
+    <ROW File="MaterialDesignThemes.Wpf.dll" Component_="MaterialDesignThemes.Wpf.dll" FileName="MATERI~2.DLL|MaterialDesignThemes.Wpf.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\MaterialDesignThemes.Wpf.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.xml" Component_="CsvHelper.xml" FileName="MICROS~1.XML|Microsoft.Bcl.AsyncInterfaces.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.HashCode.dll" Component_="Microsoft.Bcl.HashCode.dll" FileName="MICROS~2.DLL|Microsoft.Bcl.HashCode.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\Microsoft.Bcl.HashCode.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.HashCode.xml" Component_="CsvHelper.xml" FileName="MICROS~2.XML|Microsoft.Bcl.HashCode.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\Microsoft.Bcl.HashCode.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" Component_="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" FileName="MICROS~3.DLL|Microsoft.Office.Tools.Common.v4.0.Utilities.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.dll" Component_="Microsoft.Xaml.Behaviors.dll" FileName="MICROS~4.DLL|Microsoft.Xaml.Behaviors.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\Microsoft.Xaml.Behaviors.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.pdb" Component_="Microsoft.Xaml.Behaviors.dll" FileName="MICROS~1.PDB|Microsoft.Xaml.Behaviors.pdb" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\Microsoft.Xaml.Behaviors.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.xml" Component_="CsvHelper.xml" FileName="MICROS~3.XML|Microsoft.Xaml.Behaviors.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\Microsoft.Xaml.Behaviors.xml" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.xml" Component_="CsvHelper.xml" FileName="NEWTON~1.XML|Newtonsoft.Json.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\Newtonsoft.Json.xml" SelfReg="false"/>
+    <ROW File="ShivaNegar.dll" Component_="ShivaNegar.dll" FileName="SHIVAN~1.DLL|ShivaNegar.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\ShivaNegar.dll" SelfReg="false"/>
+    <ROW File="ShivaNegar.dll.config" Component_="CsvHelper.xml" FileName="SHIVAN~1.CON|ShivaNegar.dll.config" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\ShivaNegar.dll.config" SelfReg="false"/>
+    <ROW File="ShivaNegar.dll.manifest" Component_="CsvHelper.xml" FileName="SHIVAN~1.MAN|ShivaNegar.dll.manifest" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\ShivaNegar.dll.manifest" SelfReg="false"/>
+    <ROW File="ShivaNegar.pdb" Component_="ShivaNegar.dll" FileName="SHIVAN~1.PDB|ShivaNegar.pdb" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\ShivaNegar.pdb" SelfReg="false"/>
+    <ROW File="ShivaNegar.vsto" Component_="CsvHelper.xml" FileName="SHIVAN~1.VST|ShivaNegar.vsto" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\ShivaNegar.vsto" SelfReg="false"/>
+    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Buffers.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.xml" Component_="CsvHelper.xml" FileName="SYSTEM~1.XML|System.Buffers.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Buffers.xml" SelfReg="false"/>
+    <ROW File="System.IO.Pipelines.dll" Component_="System.IO.Pipelines.dll" FileName="SYSTEM~2.DLL|System.IO.Pipelines.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.IO.Pipelines.dll" SelfReg="false"/>
+    <ROW File="System.IO.Pipelines.xml" Component_="CsvHelper.xml" FileName="SYSTEM~2.XML|System.IO.Pipelines.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.IO.Pipelines.xml" SelfReg="false"/>
+    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~3.DLL|System.Memory.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Memory.dll" SelfReg="false"/>
+    <ROW File="System.Memory.xml" Component_="CsvHelper.xml" FileName="SYSTEM~3.XML|System.Memory.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Memory.xml" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~4.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Numerics.Vectors.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.xml" Component_="CsvHelper.xml" FileName="SYSTEM~4.XML|System.Numerics.Vectors.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Numerics.Vectors.xml" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.xml" Component_="CsvHelper.xml" FileName="SYSTEM~5.XML|System.Runtime.CompilerServices.Unsafe.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.dll" Component_="System.Text.Encodings.Web.dll" FileName="SYSTEM~6.DLL|System.Text.Encodings.Web.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Text.Encodings.Web.dll" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.xml" Component_="CsvHelper.xml" FileName="SYSTEM~6.XML|System.Text.Encodings.Web.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Text.Encodings.Web.xml" SelfReg="false"/>
+    <ROW File="System.Text.Json.dll" Component_="System.Text.Json.dll" FileName="SYSTEM~7.DLL|System.Text.Json.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Text.Json.dll" SelfReg="false"/>
+    <ROW File="System.Text.Json.xml" Component_="CsvHelper.xml" FileName="SYSTEM~7.XML|System.Text.Json.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Text.Json.xml" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~8.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.xml" Component_="CsvHelper.xml" FileName="SYSTEM~8.XML|System.Threading.Tasks.Extensions.xml" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.Threading.Tasks.Extensions.xml" SelfReg="false"/>
+    <ROW File="System.ValueTuple.dll" Component_="System.ValueTuple.dll" FileName="SYSTEM~9.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="..\ShivaNegar\bin\Release\System.ValueTuple.dll" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.custcomp.AiActionTextAliasComponent">
+    <ROW AliasRowId="SetODBCFolders" AliasRowOperation="2" Description="بارگیری پوشه های ODBC"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.custcomp.AiControlAliasComponent">
+    <ROW AliasRowId="OutOfRbDiskDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="ProgressPrereqDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="ProgressPrereqDlg#Text" AliasRowOperation="2" Text="[ManufacturerFont]لطفا تا زمان نصب پیش نیازهای شیوانگار منتظر بمانید. ممکن است این فرآیند چند دقیقه ای زمان ببرد."/>
+    <ROW AliasRowId="MaintenanceWelcomeDlg#Description" AliasRowOperation="2" Text="[DescriptionFont]دوباره نصب یا اجرا کنید شیوانگار"/>
+    <ROW AliasRowId="MaintenanceWelcomeDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="PreparePrereqDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="PrerequisitesDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="WelcomePrereqDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="WelcomePrereqDlg#Description" AliasRowOperation="2" Text="[ManufacturerFont]برخی پیشنیاز ها برای سیستم شما مورد نیاز است. [Wizard] شیوانگار به شما در نصب این پیشنیاز ها کمک میکند. برای اینکار روی گزینه &quot;[Text_Next]&quot; کلیک کنید"/>
+    <ROW AliasRowId="AboutDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFontSmall]شیوانگار [ProductVersion]"/>
+    <ROW AliasRowId="AdminWelcomeDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="AdminWelcomeDlg#Description" AliasRowOperation="2" Text="[ManufacturerFont][Wizard] ایمیج سرور شیوانگار، در مکان مشخص شده شبکه ایجاد خواهد کرد.  روی [Text_Next] برای ادامه یا برای خروج از [Wizard] روی لغو کلیک کنید."/>
+    <ROW AliasRowId="BrowseDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="CancelDlg#Text" AliasRowOperation="2" Text="[ManufacturerFont]آیا میخواهید نصب شیوانگار را لغو کنید؟"/>
+    <ROW AliasRowId="ExitDialog#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]شیوانگار نصب شده است"/>
+    <ROW AliasRowId="FatalError#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="FatalError#Description1" AliasRowOperation="2" Text="[DescriptionFont]نصب شیوانگار به طور ناگهانی به دلیل خطا متوقف شد. برای نصب این برنامه در زمان دیگر، دوباره تلاش کنید."/>
+    <ROW AliasRowId="FilesInUse#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="MsiRMFilesInUse#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="OutOfDiskDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="PatchWelcomeDlg#Description" AliasRowOperation="2" Text="[DescriptionFont][Wizard] وصله را برای شیوانگار در رایانه نصب خواهد کرد. روی [Text_Next] برای ادامه یا برای خروج از [Wizard] وصله پنجره را ببندید."/>
+    <ROW AliasRowId="PatchWelcomeDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="PrepareDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="ProgressDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont][Progress1] شیوانگار"/>
+    <ROW AliasRowId="ResumeDlg#Description" AliasRowOperation="2" Text="[DescriptionFont][Wizard] نصب شیوانگار را در رایانه شما کامل خواهد کرد. برای ادامه روی &quot;نصب&quot; کلیک کنید."/>
+    <ROW AliasRowId="ResumeDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="UserExit#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار لغو شده است"/>
+    <ROW AliasRowId="UserExit#Description1" AliasRowOperation="2" Text="[DescriptionFont]نصب شیوانگار متوقف شده است. برای نصب مجدد این برنامه، دوباره تلاش کنید."/>
+    <ROW AliasRowId="WelcomeDlg#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]نصب شیوانگار ؟"/>
+    <ROW AliasRowId="OutOfRbDiskDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="ProgressPrereqDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="MaintenanceWelcomeDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="PreparePrereqDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="PrerequisitesDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="WelcomePrereqDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="AboutDlg#ProducVersionText" AliasRowOperation="2" Text="[ManufacturerFontSmall]ویرا پژوهان بهین فرتاک © [AI_CURRENT_YEAR]"/>
+    <ROW AliasRowId="AboutDlg#LicenseAgreementLink" AliasRowOperation="2" Text="[HyperlinkFont]&lt;a href=&quot;[AiLicenseAgreementLink]&quot;&gt;وبسایت شیوانگار&lt;/a&gt;"/>
+    <ROW AliasRowId="AdminWelcomeDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="BrowseDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="ExitDialog#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="FatalError#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="FilesInUse#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="MsiRMFilesInUse#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="OutOfDiskDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="PatchWelcomeDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="PrepareDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="ProgressDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="ResumeDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="UserExit#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="WelcomeDlg#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+    <ROW AliasRowId="LicenseAgreementDialog#ProductNameTitle" AliasRowOperation="2" Text="[ProductNameTitleFont]شرایط و ضوابط شیوانگار"/>
+    <ROW AliasRowId="LicenseAgreementDialog#CompanyText" AliasRowOperation="2" Text="[ManufacturerFont]ناشر: ویرا پژوهان بهین فرتاک"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.custcomp.AiDialogAliasComponent">
+    <ROW AliasRowId="PatchWelcomeDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="ProgressPrereqDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="MaintenanceWelcomeDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="PreparePrereqDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="ProgressDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="AdminWelcomeDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="PrerequisitesDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="WelcomePrereqDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="BrowseDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="CancelDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="ExitDialog" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="FatalError" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="FilesInUse" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="MsiRMFilesInUse" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="OutOfDiskDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="OutOfRbDiskDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="PrepareDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="ResumeDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="UserExit" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="WelcomeDlg" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+    <ROW AliasRowId="LicenseAgreementDialog" AliasRowOperation="2" Title="شیوانگار [Setup]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.custcomp.AiErrorAliasComponent">
+    <ROW AliasRowId="9" AliasRowOperation="2" Message="شیوانگار"/>
+    <ROW AliasRowId="20" AliasRowOperation="2" Message="لطفا تا زمانیکه شیوانگار پیکربندی میشود منتظر بمانید"/>
+    <ROW AliasRowId="32" AliasRowOperation="2" Message="نصب {شیوانگار} با موفقیت کامل شد."/>
+    <ROW AliasRowId="33" AliasRowOperation="2" Message="نصب {شیوانگار} موفقیت‌آمیز نبود."/>
+    <ROW AliasRowId="4010" AliasRowOperation="2" Message="جدیدترین نسخه شیوانگار از قبل روی رایانه نصب شده است."/>
+    <ROW AliasRowId="4152" AliasRowOperation="2" Message="آیا میخواهید تنظیمات و فایل های موقتی شیوانگار را حذف کنید؟"/>
+    <ROW AliasRowId="4154" AliasRowOperation="2" Message="پیش نیاز [2] به درستی نصب نشده است. نصب شیوانگار ادامه یابد؟"/>
+    <ROW AliasRowId="4156" AliasRowOperation="2" Message="موفق به دریافت صحیح فایل [2]نشد: خطای سی آر سی.. ادامه نصب شیوانگار؟"/>
+    <ROW AliasRowId="5" AliasRowOperation="2" Message="نصب کننده با یک خطای غیرمنتظره در نصب این بسته مواجه شده است. این یک مشکل با این برنامه را نشان میدهد. کد خطا [1]هست. {{نشانوند هست: [2], [3], [4]}}"/>
+    <ROW AliasRowId="18" AliasRowOperation="2" Message="نصب کننده بیش از این پاسخ نمیدهد."/>
+    <ROW AliasRowId="19" AliasRowOperation="2" Message="نصب کننده نابهنگام متوقف شده است."/>
+    <ROW AliasRowId="1719" AliasRowOperation="2" Message="نمیتوان به ویندوز نصب کننده دسترسی داشت.اگر در سیف مد ویندوز باشید این رخ میدهد، یا ویندوز نصب کننده بدرستی نصب نشده است.برای راهنمایی با پشتیبانی شخصی خود تماس بگیرید."/>
+    <ROW AliasRowId="1932" AliasRowOperation="2" Message="سرویس ویندوز نصب کننده فایل ویندوزی حفاظت شده [2] را نمیتواند بروزرسانی کند. {{نسخه بسته: [3], نسخه حفاظت شده سیستم عامل: [4], SFP خطای: [5]}}"/>
+    <ROW AliasRowId="1321" AliasRowOperation="2" Message="نصب کننده اجازه کافی برای تغییر این فایل ندارد: [2]."/>
+    <ROW AliasRowId="1501" AliasRowOperation="2" Message="خطای دسترسی به داده ایمن شده. لطفا مطمئن شوید ویندوز نصب کننده بدرسی پیکربندی شده و دوباره سعی کنید."/>
+    <ROW AliasRowId="1702" AliasRowOperation="2" Message="نصب کننده قبل از پیکربندی [2] برای ادامه،باید ریستارت شود.  روی &quot;بله&quot; برای ریستارت یا &quot;خیر&quot; برای ریستارت در زمانی دیگر کلیک کنید."/>
+    <ROW AliasRowId="1720" AliasRowOperation="2" Message="این یک مشکل با بسته ویندوز نصب کننده هست. یک اسکریپت موردنیاز برای کامل شدن این نصب را نمیتوان اجرا کرد. با فروشنده بسته یا پشتیبانی شخصی تماس بگیرید..  {{اقدام دستی [2] خطای اسکریپت [3], [4]: [5] خط [6], ستون [7], [8] }}"/>
+    <ROW AliasRowId="1721" AliasRowOperation="2" Message="این یک مشکل با بسته ویندوز نصب کننده هست. یک برنامه موردنیاز برای کامل شدن این نصب را نمیتوان اجرا کرد. با فروشنده بسته یا پشتیبانی شخصی تماس بگیرید.. {{اقدام: [2], مکان: [3], فرمان: [4] }}"/>
+    <ROW AliasRowId="1722" AliasRowOperation="2" Message="این مشکل با بسته ویندوز نصب کننده هست. برنامه اجرا شده بعنوان بخشی از نصب همانطور که انتظار میرفت به پایان نرسیده است. با پشتیبانی شخصی یا فروشنده محصول تماس بگیرید.  {{اقدام [2], مکان: [3], فرمان: [4] }}"/>
+    <ROW AliasRowId="1723" AliasRowOperation="2" Message="این یک مشکل با بسته ویندوز نصب کننده هست. یک دی اِل اِل موردنیاز برای کامل شدن این نصب را نمیتوان اجرا کرد. با فروشنده بسته یا پشتیبانی شخصی تماس بگیرید..  {{اقدام [2], ورودی: [3], کتابخانه: [4] }}"/>
+    <ROW AliasRowId="1931" AliasRowOperation="2" Message="سرویس ویندوز نصب کننده نمیتواند فایل سیستمی [2] را بروزرسانی کند زیرا توسط ویندوز حفاظت میشود.  ممکن است شما نیاز به بروزرسانی سیستم برای صحیح کارکردن این برامه دارید. {{نسخه بسته: [3], نسخه حفاظت شده سیستم عامل: [4]}}"/>
+    <ROW AliasRowId="1933" AliasRowOperation="2" Message="سرویس ویندوز نصب کننده نمیتواند یک یا تعداد بیشتری از فایل های حافظت شده را بروزرسانی کند. {{SFP خطای: [2].  لیست فایل های حافظت شده:\r\n[3]}}"/>
+    <ROW AliasRowId="2939" AliasRowOperation="2" Message="ویندوز نصب کننده نمیتواند کاتالوگ فایل سیستمی حفاظت را از کش حذف کند. کاتالوگ: [2], خطا: [3]."/>
+    <ROW AliasRowId="2219" AliasRowOperation="2" Message="پایگاه داده: [2]. فرمت پایگاه داده نصب کننده نامعتبر."/>
+    <ROW AliasRowId="2246" AliasRowOperation="2" Message="پایگاه داده: [2]. فرمت تغيير شكل نصب کننده نامعتبر است"/>
+    <ROW AliasRowId="2937" AliasRowOperation="2" Message="ویندوز نصب کننده نمیتواند کاتالوگ فایل سیستمی حفاظت را نصب کند. کاتالوگ: [2], خطا: [3]."/>
+    <ROW AliasRowId="2938" AliasRowOperation="2" Message="ویندوز نصب کننده نمیتواند کاتالوگ فایل سیستمی حفاظت را از کش بازیابی کند. کاتالوگ: [2], خطا: [3]."/>
+    <ROW AliasRowId="22" AliasRowOperation="2" Message="حذف نسخه قدیمی این برنامه..."/>
+    <ROW AliasRowId="23" AliasRowOperation="2" Message="آماده سازی برای حذف نسخه قدیمی این برنامه..."/>
+    <ROW AliasRowId="1301" AliasRowOperation="2" Message="فایل &apos;[2]&apos; را نمیتوان ایجاد کرد.  یک پوشه با این نام موجود است.  لطفاً نصب را لغو کرده و در پوشه‌ای متفاوت تلاش کنید."/>
+    <ROW AliasRowId="1303" AliasRowOperation="2" Message="نصب‌کننده دسترسی کافی به این پوشه: [2] ندارد. ادامه نصب ممکن نیست. لطفاً به عنوان مدیر سیستم وارد شوید یا با مدیر سیستم در ارتباط باشید."/>
+    <ROW AliasRowId="1304" AliasRowOperation="2" Message="خطای نوشتن در فایل: [2].  بررسی کنید اجازه نوشتن در این پوشه را دارید یا خیر."/>
+    <ROW AliasRowId="1318" AliasRowOperation="2" Message="یک خطای شبکه حین ایجاد پوشه رخ داده است: [2]"/>
+    <ROW AliasRowId="1312" AliasRowOperation="2" Message="پوشه &apos;[2]&apos; را نمیتوان ایجاد کرد.  یک فایل با این نام از قبل موجود است.  لطفا فایل را حذف یا تغییرنام دهید و روی &quot;دوباره&quot;، یا &quot;لغو&quot; برای خروج کلیک کنید."/>
+    <ROW AliasRowId="1317" AliasRowOperation="2" Message="یک خطا حین سعی در ایجاد پوشه رخ داد: [2]"/>
+    <ROW AliasRowId="2756" AliasRowOperation="2" Message="مشخصه &apos;[2]&apos; بعنوان مشخصه پوشه در یک یا تعداد بیشتری جدول بکاررفته است،اما هیچگونه مقداری اختصاص داده نشده است"/>
+    <ROW AliasRowId="2327" AliasRowOperation="2" Message="این پوشه را نمیتوان حذف کرد: [3] گرفتن آخرین خطا: [2]."/>
+    <ROW AliasRowId="2706" AliasRowOperation="2" Message="مسیرهای منبع ایجاد نشده است. مسیری برای ورودی در پوشه جدول [2] وجود ندارد."/>
+    <ROW AliasRowId="2381" AliasRowOperation="2" Message="پوشه وجود ندارد: [2]."/>
+    <ROW AliasRowId="2704" AliasRowOperation="2" Message="مشخصه ریشه پوشه تعریف نشده است: [2]"/>
+    <ROW AliasRowId="2707" AliasRowOperation="2" Message="مسیرهای هدف ایجاد نشده است. مسیری برای ورودی [2] در جدول پوشه وجود ندارد."/>
+    <ROW AliasRowId="2864" AliasRowOperation="2" Message="کنترل [3] در دیالوگ [2] یک رویداد جستجو دریافت کرده است. اما آنجا یک پوشه قابل پیکربندی برای انتخاب حاضر ندارد. علت محتمل: دکمه جستجو بطور صحیح باعث نشده است"/>
+    <ROW AliasRowId="2727" AliasRowOperation="2" Message="ورودی پوشه &apos;[2]&apos; در جدول پوشه وجود ندارد."/>
+    <ROW AliasRowId="2732" AliasRowOperation="2" Message="مدیریت پوشه مقداردهی نشده است"/>
+    <ROW AliasRowId="2857" AliasRowOperation="2" Message="پوشه [2]در جدول انتخابی نگهداری شده است ولی یافت نشد."/>
+    <ROW AliasRowId="2920" AliasRowOperation="2" Message="پوشه منبع برای فایل [2] مشخص نشده است."/>
+    <ROW AliasRowId="2940" AliasRowOperation="2" Message="مدیریت پوشه برای تحلیل منبع تهیه نشده است."/>
+    <ROW AliasRowId="4022" AliasRowOperation="2" Message="پوشه مجازی &quot;[2]&quot; در وب سایت &quot;[3]&quot; از قبل در این سرور موجود است.  آیا میخواهید این پوشه مجازی را رد کرده و نصب را ادامه دهید؟"/>
+    <ROW AliasRowId="4027" AliasRowOperation="2" Message="پوشه مجازی &quot;[2]&quot; در وب سایت &quot;[3]&quot; از قبل در این سرور موجود است.  آیا میخواهید این پوشه مجازی را جایگزی و نصب را ادامه دهید؟ (این عملکرد غیرقابل بازگشت است.)"/>
+    <ROW AliasRowId="1305" AliasRowOperation="2" Message="خطای خواندن از فایل [2]. {{ خطای سیستم [3].}} بررسی کنید فایل موجود است و اجازه دسترسی به آن را دارید یا خیر"/>
+    <ROW AliasRowId="1306" AliasRowOperation="2" Message="برنامه دیگری دسترسی انحصاری به فایل &apos;[2]&apos; دارد. لطفاً سایر برنامه‌ها را ببندید و دوباره تلاش کنید."/>
+    <ROW AliasRowId="1307" AliasRowOperation="2" Message="فضای کافی بر روی دیسک برای نصب فایل &apos;[2]&apos; موجود نیست. لطفاً مقداری از فضای دیسک را خالی کرده و روی &apos;دوباره&apos; کلیک کنید، یا برای خروج روی &apos;لغو&apos; کلیک کنید."/>
+    <ROW AliasRowId="1308" AliasRowOperation="2" Message="فایل منبع یافت نشد: [2].  بازبینی کنید فایل موجود است و شما دسترسی لازم به آن را دارید."/>
+    <ROW AliasRowId="1309" AliasRowOperation="2" Message="خطای خواندن از فایل: [3]. {{ خطای سیستم [2].}}  بررسی کنید فایل موجود است و دسترسی لازم به آن را دارید."/>
+    <ROW AliasRowId="1310" AliasRowOperation="2" Message="خطای نوشتن در فایل: [3]. {{ خطای سیستم [2].}} بررسی کنید شما دسترسی لازم به آن را دارید."/>
+    <ROW AliasRowId="1311" AliasRowOperation="2" Message="فایل منبع یافت نشد{{(cabinet)}}: [2].  بررسی کنید فایل وجود دارد و به آن دسترسی دارید."/>
+    <ROW AliasRowId="1313" AliasRowOperation="2" Message="درایو &apos;[2]&apos; اکنون غیرقابل دسترسی است. لطفاً درایو دیگری را انتخاب کنید."/>
+    <ROW AliasRowId="1315" AliasRowOperation="2" Message="قادر به نوشتن در پوشه مشخص شده نیست: [2]."/>
+    <ROW AliasRowId="1707" AliasRowOperation="2" Message="نصب با موفقیت به پایان رسید."/>
+    <ROW AliasRowId="1708" AliasRowOperation="2" Message="نصب با موفقیت انجام نشد."/>
+    <ROW AliasRowId="1725" AliasRowOperation="2" Message="حذف با موفقیت انجام نشد."/>
+    <ROW AliasRowId="1724" AliasRowOperation="2" Message="حذف با موفقیت انجام شد."/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.custcomp.AiLaunchConditionAliasComponent">
+    <ROW AliasRowId="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" AliasRowOperation="2" Description="شیوانگار نمیتواند در [WindowsTypeNT5XDisplay] نصب شود."/>
+    <ROW AliasRowId="(VersionNT &lt;&gt; 400)" AliasRowOperation="2" Description="شیوانگار نمیتواند در [WindowsTypeNT40Display] نصب شود."/>
+    <ROW AliasRowId="(VersionNT &lt;&gt; 500)" AliasRowOperation="2" Description="شیوانگار نمیتواند در [WindowsTypeNT50Display] نصب شود."/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.custcomp.AiUITextAliasComponent">
+    <ROW AliasRowId="SelAbsentAbsent" AliasRowOperation="2" Text="این ویژگی حذف شده باقی میماند"/>
+    <ROW AliasRowId="UninstallMsg" AliasRowOperation="2" Text="آیا واقعا میخواهید شیوانگار را حذف کنید؟"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrapperUISequenceComponent">
+    <ROW Action="AI_AppSearchEx" Condition="AI_BOOTSTRAPPER" Sequence="252"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="249"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="251"/>
+    <ROW Action="AI_DownloadPrereq" Condition="AI_BOOTSTRAPPER AND (NOT AI_PrereqsFulfilled)" Sequence="695"/>
+    <ROW Action="AI_ExtractPrereq" Condition="AI_BOOTSTRAPPER AND (NOT AI_PrereqsFulfilled)" Sequence="696"/>
+    <ROW Action="AI_InstallPrePrerequisite" Condition="AI_BOOTSTRAPPER AND (NOT AI_PrereqsFulfilled)" Sequence="697"/>
+    <ROW Action="AI_VerifyPrePrereq" Condition="AI_BOOTSTRAPPER AND (NOT AI_PrereqsFulfilled)" Sequence="698"/>
+    <ROW Action="AI_CleanPrePrereq" Condition="AI_BOOTSTRAPPER AND (NOT AI_PrereqsFulfilled)" Sequence="699"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" Languages="fa" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\..\Icon\Shivanegar.ico" ExtractionFolder="[AppDataFolder][|ProductName] [|ProductVersion]\install" ExtUI="true" Options="8" UseLargeSchema="true" ExeName="ShivaNegar [|ProductVersion]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_fa.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;appinstaller\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="PreparePrereqDlg.aip" Path="&lt;AI_THEMES&gt;appinstaller\fragments\PreparePrereqDlg.aip"/>
+    <ROW Fragment="PrerequisitesDlg.aip" Path="&lt;AI_THEMES&gt;appinstaller\fragments\PrerequisitesDlg.aip"/>
+    <ROW Fragment="ProgressPrereqDlg.aip" Path="&lt;AI_THEMES&gt;appinstaller\fragments\ProgressPrereqDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;appinstaller\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="Themes.aip" Path="&lt;AI_FRAGS&gt;Themes.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;appinstaller\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;appinstaller\fragments\WelcomeDlg.aip"/>
+    <ROW Fragment="WelcomePrereqDlg.aip" Path="&lt;AI_THEMES&gt;appinstaller\fragments\WelcomePrereqDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_DeleteLzma" Description="حذف فایل های استخراج شده از آرشیو" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="حذف فایل های استخراج شده از آرشیو" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DownloadPrereq" Description="دانلود نرم افزار پیش نیاز" DescriptionLocId="ActionText.Description.AI_DownloadPrereq" Template="[1]" TemplateLocId="ActionText.Template.AI_DownloadPrereq"/>
+    <ROW Action="AI_ExtractFiles" Description="استخراج فایل ها از آرشیو" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="استخراج فایل ها از آرشیو" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractPrereq" Description="استخراج نرم افزار پیش نیاز" DescriptionLocId="ActionText.Description.AI_ExtractPrereq" Template="[1]" TemplateLocId="ActionText.Template.AI_ExtractPrereq"/>
+    <ROW Action="AI_InstallPostPrerequisite" Description="نصب نرم افزار پیش نیاز" DescriptionLocId="ActionText.Description.AI_InstallPrerequisite" Template="[1]" TemplateLocId="ActionText.Template.AI_InstallPrerequisite"/>
+    <ROW Action="AI_InstallPrePrerequisite" Description="نصب نرم افزار پیش نیاز" DescriptionLocId="ActionText.Description.AI_InstallPrerequisite" Template="[1]" TemplateLocId="ActionText.Template.AI_InstallPrerequisite"/>
+    <ROW Action="AI_InstallPrerequisite" Description="نصب نرم افزار پیش نیاز" DescriptionLocId="ActionText.Description.AI_InstallPrerequisite" Template="[1]" TemplateLocId="ActionText.Template.AI_InstallPrerequisite"/>
+    <ROW Action="AI_VerifyPrePrereq" Description="بازبینی پیش نیازها" DescriptionLocId="ActionText.Description.AI_VerifyPrereq" Template="[1] بدرستی نصب نشده است." TemplateLocId="ActionText.Template.AI_VerifyPrereq"/>
+    <ROW Action="AI_VerifyPrereq" Description="بازبینی پیش نیازها" DescriptionLocId="ActionText.Description.AI_VerifyPrereq" Template="[1] بدرستی نصب نشده است." TemplateLocId="ActionText.Template.AI_VerifyPrereq"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="ExternalUICleaner.dll" SourcePath="&lt;AI_CUSTACTS&gt;ExternalUICleaner.dll"/>
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="Shivanegar_Overlay.ico" SourcePath="..\..\Icon\Shivanegar_Overlay.ico"/>
+    <ROW Name="Shivanegar_OverlayFlipHorizontal.png" SourcePath="..\..\Icon\Shivanegar_Overlay - FlipHorizontal.png"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+    <ATTRIBUTE name="DeletedRows" value="applogoicon.ico@applogoicondark.ico"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="LicenseAgreementDialog" Control="LicenseAgreementDialogDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control="Cancel" Type="ImageButton" X="0" Y="0" Width="0" Height="0" Attributes="2" Text="[ButtonImage]" TextStyle="[ImageBtnFont]" Order="100" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control="Bitmap" Type="Bitmap" X="0" Y="0" Width="490" Height="290" Attributes="1" Text="[Background]" Order="200"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control="Next" Type="ImageButton" X="379" Y="210" Width="95" Height="28" Attributes="3" Text="[ButtonImage]" TextStyle="[ImageBtnFont]" Order="300" Options="1" ExtType="ImageButton" ExtData="پذیرفتن و نصب"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control="Back" Type="ImageButton" X="280" Y="210" Width="95" Height="28" Attributes="3" Text="[ButtonImage]" TextStyle="[ImageBtnFont]" Order="400" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Back]" ExtDataLocId="-"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control="SubTitle" Type="Text" X="16" Y="85" Width="457" Height="18" Attributes="196611" Text="دیالوگ جدید" TextStyle="[ManufacturerFont]" Order="500"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control="ProductNameTitle" Type="Text" X="15" Y="17" Width="364" Height="32" Attributes="196611" Text="نصب [ProductName]؟" TextStyle="[ProductNameTitleFont]" Order="600"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control="CompanyText" Type="Text" X="16" Y="46" Width="362" Height="15" Attributes="196611" Text="ناشر: [Manufacturer]" TextStyle="[ManufacturerFont]" Order="700"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control="ProductLogo" Type="Bitmap" X="404" Y="15" Width="70" Height="70" Attributes="1" Text="[AppLogoIcon]" Order="800"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control="ProducVersionText" Type="Text" X="16" Y="60" Width="362" Height="15" Attributes="196611" Text="نسخه: [ProductVersion]" TextStyle="[ManufacturerFont]" Order="900"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control="AboutBtn" Type="ImageButton" X="5" Y="269" Width="18" Height="18" Attributes="4718595" Text="[AboutBtnIcon]" TextStyle="[ManufacturerFont]" Order="1000" Options="1" ExtType="ImageButton" ExtData="[InfoIconMsi]"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control="ScrollableText_1" Type="ScrollableText" X="16" Y="85" Width="458" Height="115" Attributes="3" Property="SCROLLABLETEXT_1_PROP" Text="Agreement.rtf" TextStyle="DlgFontBold8" Order="1100"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control="MaintenanceWelcomeDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control="Description" Type="Text" X="16" Y="94" Width="458" Height="57" Attributes="196611" Text="وی دو رم های برجسته فضای کافی برای ویژگی های انتخاب شده فعلی ندارند. می توانید برخی از فایل ها را از روی وی دی رم های برجسته حذف کنید یا درایو مقصد متفاوتی را انتخاب کنید. به طور جایگزین، می توانید قابلیت بازگشت به عقب نصب کننده را غیرفعال کنید. در صورت تمایل به پذیرش خطر برای غیرفعال کردن بازگشت به عقب، روی بله کلیک کنید." TextStyle="[DescriptionFont]" Order="400" TextLocId="AppInstaller.Control.Text.OutOfRbDiskDlg#Description" MsiKey="OutOfRbDiskDlg#Description"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control="VolumeList" Type="VolumeCostList" X="16" Y="151" Width="458" Height="54" Attributes="393223" Text="{120}{70}{70}{70}{70}" TextStyle="ListFontDark" Order="500" TextLocId="Control.Text.OutOfDiskDlg#VolumeList" MsiKey="OutOfRbDiskDlg#VolumeList"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control="ProductNameTitle" Type="Text" X="15" Y="17" Width="364" Height="32" Attributes="196611" Text="نصب [ProductName]؟" TextStyle="[ProductNameTitleFont]" Order="600" TextLocId="AppInstaller.Control.Text.ProductName" MsiKey="OutOfRbDiskDlg#ProductNameTitle"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control="CompanyText" Type="Text" X="16" Y="46" Width="362" Height="15" Attributes="196611" Text="ناشر: [Manufacturer]" TextStyle="[ManufacturerFont]" Order="700" TextLocId="AppInstaller.Control.Text.Manufacturer" MsiKey="OutOfRbDiskDlg#CompanyText"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control="ProductLogo" Type="Bitmap" X="404" Y="15" Width="70" Height="70" Attributes="1" Text="[AppLogoIcon]" Order="800" MsiKey="OutOfRbDiskDlg#ProductLogo"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control="ProducVersionText" Type="Text" X="16" Y="60" Width="362" Height="15" Attributes="196611" Text="نسخه: [ProductVersion]" TextStyle="[ManufacturerFont]" Order="900" TextLocId="AppInstaller.Control.Text.ProductVersion" MsiKey="OutOfRbDiskDlg#ProducVersionText"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control="AboutBtn" Type="ImageButton" X="5" Y="269" Width="18" Height="18" Attributes="4718595" Text="[AboutBtnIcon]" TextStyle="[ManufacturerFont]" Order="1000" MsiKey="OutOfRbDiskDlg#AboutBtn" Options="1" ExtType="ImageButton" ExtData="[InfoIconMsi]"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control="PatchWelcomeDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="ProducVersionText" Type="Text" X="16" Y="60" Width="362" Height="15" Attributes="196611" Text="نسخه: [ProductVersion]" TextStyle="[ManufacturerFont]" Order="800" TextLocId="AppInstaller.Control.Text.ProductVersion" MsiKey="PreparePrereqDlg#ProducVersionText"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="AboutBtn" Type="ImageButton" X="5" Y="269" Width="18" Height="18" Attributes="4718595" Text="[AboutBtnIcon]" TextStyle="[ManufacturerFont]" Order="900" MsiKey="PreparePrereqDlg#AboutBtn" Options="1" ExtType="ImageButton" ExtData="[InfoIconMsi]"/>
+    <ROW Dialog_="PrerequisitesDlg" Control="Cancel" Type="ImageButton" X="0" Y="0" Width="0" Height="0" Attributes="2" Text="[ButtonImage]" TextStyle="[ImageBtnFont]" Order="100" MsiKey="PrerequisitesDlg#Cancel" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="ProgressDlg" Control="ActionText" Type="Text" X="65" Y="158" Width="409" Height="15" Attributes="196611" TextStyle="[ManufacturerFont]" Order="500" MsiKey="ProgressDlg#ActionText"/>
+    <ROW Dialog_="ProgressDlg" Control="StatusLabel" Type="Text" X="16" Y="158" Width="49" Height="15" Attributes="196611" Text="وضعيت:" TextStyle="[ManufacturerFont]" Order="1000" TextLocId="Control.Text.ProgressDlg#StatusLabel" MsiKey="ProgressDlg#StatusLabel"/>
+    <ROW Dialog_="ProgressDlg" Control="ProducVersionText" Type="Text" X="16" Y="60" Width="362" Height="15" Attributes="196611" Text="نسخه: [ProductVersion]" TextStyle="[ManufacturerFont]" Order="1100" TextLocId="AppInstaller.Control.Text.ProductVersion" MsiKey="ProgressDlg#ProducVersionText"/>
+    <ROW Dialog_="ProgressDlg" Control="LaunchCheckBox" Type="ImageCheckBox" X="16" Y="218" Width="220" Height="15" Attributes="3" Property="AiSkipExitDlg" Text="[CheckboxImage]" TextStyle="[ManufacturerFont]" Order="1200" MsiKey="ProgressDlg#LaunchCheckBox" ExtType="ImageCheckBox" ExtData="راه‌اندازی وقتی آماده شد" ExtDataLocId="AppInstaller.Control.Text.LaunchWhenReadyCheckbox"/>
+    <ROW Dialog_="ProgressDlg" Control="AboutBtn" Type="ImageButton" X="5" Y="269" Width="18" Height="18" Attributes="4718595" Text="[AboutBtnIcon]" TextStyle="[ManufacturerFont]" Order="1300" MsiKey="ProgressDlg#AboutBtn" Options="1" ExtType="ImageButton" ExtData="[InfoIconMsi]"/>
+    <ROW Dialog_="ProgressPrereqDlg" Control="ActionData" Type="Text" X="65" Y="158" Width="409" Height="15" Attributes="196611" TextStyle="[ManufacturerFont]" Order="800" MsiKey="ProgressPrereqDlg#ActionData"/>
+    <ROW Dialog_="ProgressPrereqDlg" Control="StatusLabel" Type="Text" X="16" Y="158" Width="49" Height="15" Attributes="196611" Text="وضعيت:" TextStyle="[ManufacturerFont]" Order="1000" TextLocId="Control.Text.ProgressDlg#StatusLabel" MsiKey="ProgressPrereqDlg#StatusLabel"/>
+    <ROW Dialog_="WelcomeDlg" Control="WelcomeDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
+    <ROW Dialog_="WelcomeDlg" Control="CustomInstallBtn" Type="ImageButton" X="459" Y="210" Width="15" Height="28" Attributes="2" Text="[CustomInstallBtn]" TextStyle="[ImageBtnFont]" Order="400" MsiKey="WelcomeDlg#CustomInstallBtn" Options="1" ExtType="ImageButton"/>
+    <ROW Dialog_="WelcomeDlg" Control="YouMustAgreeCtrl" Type="Hyperlink" X="28" Y="269" Width="362" Height="18" Attributes="196611" Text="با نصب این برنامه، تمامی &lt;a href=&quot;&quot;&gt;شرایط و ضوابط&lt;/a&gt; آن را می‌پذیرم." TextStyle="[HyperlinkFont]" Order="1200"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="101"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="101"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL AND CustomInstallation" Ordering="2"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="99"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_INSTALL AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="3" Options="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_INSTALL AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="4" Options="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_INSTALL AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="5" Options="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="WelcomeDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_INSTALL" Ordering="2" Options="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="WelcomeDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_INSTALL" Ordering="3" Options="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="WelcomeDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_INSTALL" Ordering="4" Options="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="WelcomeDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_INSTALL" Ordering="5" Options="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL" Ordering="6" Options="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL" Ordering="7" Options="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL" Ordering="0" Options="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL" Ordering="1" Options="2"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_MAINT AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="2" Options="2"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_MAINT AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="3" Options="2"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_MAINT AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="4" Options="2"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="MaintenanceWelcomeDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_MAINT" Ordering="0" Options="2"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="MaintenanceWelcomeDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_MAINT" Ordering="1" Options="2"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="MaintenanceWelcomeDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_MAINT" Ordering="2" Options="2"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="MaintenanceWelcomeDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_MAINT" Ordering="3" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_PATCH AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="202" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_PATCH AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="203" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_PATCH AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="204" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_PATCH" Ordering="0" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_PATCH" Ordering="1" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_PATCH" Ordering="2" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_PATCH" Ordering="3" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_PATCH" Ordering="0" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_PATCH" Ordering="1" Options="2"/>
+    <ROW Dialog_="FatalError" Control_="Finish" Event="DoAction" Argument="AI_RollbackPrePrereq" Condition="1" Ordering="201"/>
+    <ROW Dialog_="ExitDialog" Control_="Finish" Event="DoAction" Argument="AI_CleanPrePrereq" Condition="1" Ordering="201"/>
+    <ROW Dialog_="FatalError" Control_="Finish" Event="DoAction" Argument="AI_CleanPrePrereq" Condition="1" Ordering="202"/>
+    <ROW Dialog_="UserExit" Control_="Finish" Event="DoAction" Argument="AI_CleanPrePrereq" Condition="1" Ordering="101"/>
+    <ROW Dialog_="WelcomeDlg" Control_="YouMustAgreeCtrl" Event="[AiLicenseAgreement]" Argument="1" Condition="AI_INSTALL AND NOT AiLicenseAgreementLink" Ordering="0"/>
+    <ROW Dialog_="WelcomeDlg" Control_="YouMustAgreeCtrl" Event="[InstallDlg]" Argument="{}" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="WelcomeDlg" Control_="YouMustAgreeCtrl" Event="SetTargetPath" Argument="APPDIR" Condition="AI_INSTALL" Ordering="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="YouMustAgreeCtrl" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL" Ordering="3"/>
+    <ROW Dialog_="WelcomeDlg" Control_="YouMustAgreeCtrl" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL" Ordering="4"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="1" Ordering="100"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control_="AboutBtn" Event="SpawnDialog" Argument="AboutDlg" Condition="1" Ordering="1"/>
+    <ROW Dialog_="WelcomeDlg" Control_="YouMustAgreeCtrl" Event="NewDialog" Argument="LicenseAgreementDialog" Condition="AI_INSTALL" Ordering="5"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control_="LicenseAgreementDialogDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="1"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control_="LicenseAgreementDialogDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="2"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control_="LicenseAgreementDialogDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="3"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control_="LicenseAgreementDialogDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="4"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="2"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="3"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="1" Ordering="1"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_INSTALL AND CustomInstallation AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="8" Options="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_INSTALL AND CustomInstallation AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="9" Options="2"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_INSTALL AND CustomInstallation AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="10" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDialog" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FatalError" Control_="Finish" Event="DoAction" Argument="AI_RollbackPrereq" Condition="1" Ordering="203"/>
+    <ROW Dialog_="ExitDialog" Control_="Finish" Event="DoAction" Argument="AI_CleanPrereq" Condition="1" Ordering="202"/>
+    <ROW Dialog_="FatalError" Control_="Finish" Event="DoAction" Argument="AI_CleanPrereq" Condition="1" Ordering="204"/>
+    <ROW Dialog_="UserExit" Control_="Finish" Event="DoAction" Argument="AI_CleanPrereq" Condition="1" Ordering="102"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ChooseTextStyles" Type="1" Source="aicustact.dll" Target="ChooseTextStyles"/>
+    <ROW Action="AI_CleanPrePrereq" Type="65" Source="Prereq.dll" Target="CleanPrereq" WithoutSeq="true"/>
+    <ROW Action="AI_CleanPrereq" Type="65" Source="Prereq.dll" Target="CleanPrereq" WithoutSeq="true"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DoRemoveExternalUIStub" Type="3585" Source="ExternalUICleaner.dll" Target="DoRemoveExternalUIStub" WithoutSeq="true"/>
+    <ROW Action="AI_DownloadPrereq" Type="1" Source="Prereq.dll" Target="DownloadPrereq"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_ExtractPrereq" Type="65" Source="Prereq.dll" Target="ExtractPrereq"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_FinishActions" Type="1" Source="aicustact.dll" Target="RunAllExitActions"/>
+    <ROW Action="AI_GetArpIconPath" Type="1" Source="aicustact.dll" Target="GetArpIconPath"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_InstallPostPrerequisite" Type="1" Source="Prereq.dll" Target="InstallPostPrereq"/>
+    <ROW Action="AI_InstallPrePrerequisite" Type="65" Source="Prereq.dll" Target="InstallPrePrereq"/>
+    <ROW Action="AI_InstallPrerequisite" Type="1" Source="Prereq.dll" Target="InstallPrereq"/>
+    <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="LaunchApp"/>
+    <ROW Action="AI_MigrateInstallerProps" Type="1" Source="aicustact.dll" Target="MigrateInstallerProps"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RemoveExternalUIStub" Type="1" Source="ExternalUICleaner.dll" Target="RemoveExternalUIStub"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_ResolvePropertyBaseFolder" Type="1" Source="aicustact.dll" Target="ResolvePropertyBaseFolder" WithoutSeq="true"/>
+    <ROW Action="AI_RestoreInstallerProps" Type="1" Source="aicustact.dll" Target="RestoreInstallerProps" WithoutSeq="true"/>
+    <ROW Action="AI_RollbackPrePrereq" Type="65" Source="Prereq.dll" Target="RollbackPrePrereq" WithoutSeq="true"/>
+    <ROW Action="AI_RollbackPrereq" Type="65" Source="Prereq.dll" Target="RollbackPrereq" WithoutSeq="true"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="AI_VerifyPrePrereq" Type="1" Source="Prereq.dll" Target="VerifyPrePrereq"/>
+    <ROW Action="AI_VerifyPrereq" Type="1" Source="Prereq.dll" Target="VerifyPrereq"/>
+    <ROW Action="AI_ViewReadme" Type="1" Source="aicustact.dll" Target="ViewReadMe"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFilesFolder][ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDialogComponent">
+    <ROW Dialog="LicenseAgreementDialog" HCentering="50" VCentering="50" Width="490" Height="290" Attributes="7" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel" TitleLocId="Dialog.TemplateDlg"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="BBadrBold.ttf"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="AI_CustomARPName"/>
+    <ROW Feature_="MainFeature" Component_="AI_DisableModify"/>
+    <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+    <ROW Feature_="MainFeature" Component_="LoadBehavior_3"/>
+    <ROW Feature_="MainFeature" Component_="Description_3"/>
+    <ROW Feature_="MainFeature" Component_="FriendlyName_3"/>
+    <ROW Feature_="MainFeature" Component_="Manifest_3"/>
+    <ROW Feature_="MainFeature" Component_="Software_1"/>
+    <ROW Feature_="MainFeature" Component_="Office"/>
+    <ROW Feature_="MainFeature" Component_="Word"/>
+    <ROW Feature_="MainFeature" Component_="LoadBehavior"/>
+    <ROW Feature_="MainFeature" Component_="Description"/>
+    <ROW Feature_="MainFeature" Component_="FriendlyName"/>
+    <ROW Feature_="MainFeature" Component_="Manifest"/>
+    <ROW Feature_="MainFeature" Component_="CsvHelper.dll"/>
+    <ROW Feature_="MainFeature" Component_="CsvHelper.xml"/>
+    <ROW Feature_="MainFeature" Component_="DocumentFormat.OpenXml.dll"/>
+    <ROW Feature_="MainFeature" Component_="DocumentFormat.OpenXml.Framework.dll"/>
+    <ROW Feature_="MainFeature" Component_="MaterialDesignColors.dll"/>
+    <ROW Feature_="MainFeature" Component_="MaterialDesignThemes.Wpf.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Bcl.HashCode.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Office.Tools.Common.v4.0.Utilities.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Xaml.Behaviors.dll"/>
+    <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="ShivaNegar.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Buffers.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.Pipelines.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Memory.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Numerics.Vectors.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Text.Encodings.Web.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Text.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ValueTuple.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFontsComponent">
+    <ROW File_="BBadrBold.ttf"/>
+    <ROW File_="BBadr.ttf"/>
+    <ROW File_="BLotusBold.ttf"/>
+    <ROW File_="BLotus.ttf"/>
+    <ROW File_="BNazaninBold.ttf"/>
+    <ROW File_="BNazanin.ttf"/>
+    <ROW File_="BTitrBold.ttf"/>
+    <ROW File_="BZarBold.ttf"/>
+    <ROW File_="BZar.ttf"/>
+    <ROW File_="Besmellah_1.ttf"/>
+    <ROW File_="Besmellah_2.ttf"/>
+    <ROW File_="Besmellah_3.ttf"/>
+    <ROW File_="Besmellah_4.ttf"/>
+    <ROW File_="IranNastaliq.ttf"/>
+    <ROW File_="VazirmatnBold.ttf"/>
+    <ROW File_="VazirmatnRegular.ttf"/>
+    <ROW File_="BYagutBold.ttf"/>
+    <ROW File_="BYagut.ttf"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="Shivanegar.exe" SourcePath="..\..\Icon\Shivanegar.ico" Index="0"/>
+    <ROW Name="SystemFoldermsiexec.exe" SourcePath="&lt;AI_RES&gt;uninstall.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1502"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1397"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_AppSearchEx" Sequence="102"/>
+    <ROW Action="AI_GetArpIconPath" Sequence="1401"/>
+    <ROW Action="AI_RemoveExternalUIStub" Condition="(REMOVE=&quot;ALL&quot;) AND ((VersionNT &gt; 500) OR((VersionNT = 500) AND (ServicePackLevel &gt;= 4)))" Sequence="1501"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6598" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="1399" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="1398"/>
+    <ROW Action="AI_MigrateInstallerProps" Condition="SETUPEXEDIR AND ((UILevel = 2) OR (UILevel = 3))" Sequence="6599"/>
+    <ROW Action="AI_VerifyPrereq" Sequence="1101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="102"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="AI_ChooseTextStyles" Sequence="74"/>
+    <ROW Action="AI_InstallPrePrerequisite" Condition="Installed" Sequence="1296"/>
+    <ROW Action="AI_FinishActions" Condition="AI_INSTALL AND AiSkipExitDlg" Sequence="1303"/>
+    <ROW Action="AI_DownloadPrereq" Sequence="1297"/>
+    <ROW Action="AI_ExtractPrereq" Sequence="1298"/>
+    <ROW Action="AI_InstallPrerequisite" Sequence="1299"/>
+    <ROW Action="AI_InstallPostPrerequisite" Sequence="1301"/>
+    <ROW Action="AI_CleanPrereq" Sequence="1302"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="( Version9X OR ( NOT VersionNT64 ) OR ( VersionNT64 AND ((VersionNT64 &lt;&gt; 601) OR (ServicePackLevel &lt;&gt; 0) OR (MsiNTProductType &lt;&gt; 1)) ) )" Description="[ProductName] نمیتواند در نسخه های ویندوز زیر نصب شود: [WindowsTypeNT64Display]." DescriptionLocId="AI.LaunchCondition.NoSpecificNT64" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="( Version9X OR VersionNT64 OR ( VersionNT AND ((VersionNT &lt;&gt; 601) OR (ServicePackLevel &lt;&gt; 0)) ) )" Description="[ProductName] نمیتواند در نسخه های ویندوز زیر نصب شود: [WindowsTypeNTDisplay]." DescriptionLocId="AI.LaunchCondition.NoSpecificNT" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] نمیتواند در [WindowsTypeNT5XDisplay] نصب شود." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] نمیتواند در [WindowsTypeNT40Display] نصب شود." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] نمیتواند در [WindowsTypeNT50Display] نصب شود." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 600)" Description="[ProductName] نمیتواند در [WindowsTypeNT60Display] نصب شود." DescriptionLocId="AI.LaunchCondition.NoNT60" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="این بسته فقط میتواند از یک بوت استرپر اِجرا شود." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] نمیتواند در [WindowsType9XDisplay] نصب شود." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="Addins" Root="2" Key="Software\Microsoft\Office\Word\Addins" Name="\"/>
+    <ROW Registry="AdvancedInstaller" Root="-1" Key="Software\Caphyon\Advanced Installer" Name="\"/>
+    <ROW Registry="Caphyon" Root="-1" Key="Software\Caphyon" Name="\"/>
+    <ROW Registry="Comments" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Comments" Value="[ARPCOMMENTS]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Contact" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Contact" Value="[ARPCONTACT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="CurrentVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion" Name="\"/>
+    <ROW Registry="Description" Root="2" Key="Software\Microsoft\Office\Word\Addins\ShivaNegar" Name="Description" Value="افزونه تسهیل گر نگارش پایان نامه و رساله برای دانشجویان" Component_="Description"/>
+    <ROW Registry="Description_3" Root="2" Key="Software\Microsoft\Office\Word\Addins\[AnotherRegistery]" Name="Description" Value="افزونه تسهیل گر نگارش پایان نامه و رساله برای دانشجویان" Component_="Description_3"/>
+    <ROW Registry="DisplayIcon" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayIcon" Value="[ARP_ICON_PATH]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayName" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayName" Value="[AI_PRODUCTNAME_ARP]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayVersion" Value="[ProductVersion]" Component_="AI_CustomARPName"/>
+    <ROW Registry="EstimatedSize" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="EstimatedSize" Value="#[AI_ARP_SIZE]" Component_="AI_CustomARPName" VirtualValue="#"/>
+    <ROW Registry="FriendlyName" Root="2" Key="Software\Microsoft\Office\Word\Addins\ShivaNegar" Name="FriendlyName" Value="ShivaNegar" Component_="FriendlyName"/>
+    <ROW Registry="FriendlyName_3" Root="2" Key="Software\Microsoft\Office\Word\Addins\[AnotherRegistery]" Name="FriendlyName" Value="ShivaNegar" Component_="FriendlyName_3"/>
+    <ROW Registry="HelpLink" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="HelpLink" Value="[ARPHELPLINK]" Component_="AI_CustomARPName"/>
+    <ROW Registry="HelpTelephone" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="HelpTelephone" Value="[ARPHELPTELEPHONE]" Component_="AI_CustomARPName"/>
+    <ROW Registry="InstallLocation" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="InstallLocation" Value="[APPDIR]" Component_="AI_CustomARPName"/>
+    <ROW Registry="LZMA" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA" Name="\"/>
+    <ROW Registry="LoadBehavior" Root="2" Key="Software\Microsoft\Office\Word\Addins\ShivaNegar" Name="LoadBehavior" Value="#3" Component_="LoadBehavior" VirtualValue="#"/>
+    <ROW Registry="LoadBehavior_3" Root="2" Key="Software\Microsoft\Office\Word\Addins\[AnotherRegistery]" Name="LoadBehavior" Value="#3" Component_="LoadBehavior_3" VirtualValue="#"/>
+    <ROW Registry="Manifest" Root="2" Key="Software\Microsoft\Office\Word\Addins\ShivaNegar" Name="Manifest" Value="file:///[TARGETDIR]ShivaNegar.vsto|vstolocal" Component_="Manifest"/>
+    <ROW Registry="Manifest_3" Root="2" Key="Software\Microsoft\Office\Word\Addins\[AnotherRegistery]" Name="Manifest" Value="file:///[TARGETDIR]ShivaNegar.vsto|vstolocal" Component_="Manifest_3"/>
+    <ROW Registry="Microsoft1" Root="-1" Key="Software\Microsoft" Name="\"/>
+    <ROW Registry="Microsoft_3" Root="2" Key="Software\Microsoft" Name="\"/>
+    <ROW Registry="ModifyPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="ModifyPath" Value="[AI_UNINSTALLER] /i [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="NoModify" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoModify" Value="#1" Component_="AI_DisableModify" VirtualValue="#"/>
+    <ROW Registry="NoRepair" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoRepair" Value="#1" Component_="AI_CustomARPName" VirtualValue="#"/>
+    <ROW Registry="Office" Root="2" Key="Software\Microsoft\Office" Name="+" Component_="Office"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="ProductCode" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]" Name="\"/>
+    <ROW Registry="ProductName" Root="-1" Key="Software\[ProductName]" Name="\"/>
+    <ROW Registry="ProductNameProductVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="\"/>
+    <ROW Registry="ProductVersion" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="\"/>
+    <ROW Registry="Publisher" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Publisher" Value="[Manufacturer]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Readme" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Readme" Value="[ARPREADME]" Component_="AI_CustomARPName"/>
+    <ROW Registry="ShivaNegar" Root="2" Key="Software\Microsoft\Office\Word\Addins\ShivaNegar" Name="\"/>
+    <ROW Registry="ShivaNegar1" Root="2" Key="Software\Microsoft\Office\Word\Addins\[AnotherRegistery]" Name="\"/>
+    <ROW Registry="Software" Root="-1" Key="Software" Name="\"/>
+    <ROW Registry="Software_3" Root="2" Key="Software" Name="+" Component_="Software_1"/>
+    <ROW Registry="URLInfoAbout" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLInfoAbout" Value="[ARPURLINFOABOUT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="URLUpdateInfo" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLUpdateInfo" Value="[ARPURLUPDATEINFO]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Uninstall" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall" Name="\"/>
+    <ROW Registry="UninstallPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallPath" Value="[AI_UNINSTALLER] /x [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="UninstallString" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallString" Value="[AI_UNINSTALLER] /x [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+    <ROW Registry="VersionMajor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMajor" Value="#1" Component_="AI_CustomARPName" VirtualValue="#"/>
+    <ROW Registry="VersionMinor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMinor" Value="#0" Component_="AI_CustomARPName" VirtualValue="#"/>
+    <ROW Registry="Windows" Root="-1" Key="Software\Microsoft\Windows" Name="\"/>
+    <ROW Registry="Word" Root="2" Key="Software\Microsoft\Office\Word" Name="+" Component_="Word"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="ProductVersionProductName" Directory_="SHORTCUTDIR" Name="UNINST~1.0|Uninstall [|ProductName] [|ProductVersion]" Component_="Manifest_3" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFoldermsiexec.exe" IconIndex="0" ShowCmd="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
+    <ROW TextStyle="MetroLink" FaceName="Segoe UI" Size="11" Color="16176031" StyleBits="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="appinstaller"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="ABA121137E454F6C815A1647D0B2CF14" DisplayName="Visual Studio Tools for Office Runtime 2010" VersionMin="10.0.60828.0" SetupFileUrl="..\..\Prerequisites\VSTO 4.0 Runtime\vstor_redist~r60828.exe" Location="0" ExactSize="0" Operator="1" ComLine=" /q" NoUiComLine=" /q" Options="yq" TargetName="Visual Studio Tools for Office Runtime 2010\vstor_redist~r60828.exe"/>
+    <ROW PrereqKey="B96F93FA27E74B02866727AAE83982D0" DisplayName=".NET Framework 4.8" SetupFileUrl="Prerequisites\.NET Framework 4.8\ndp48-x86-x64-allos-enu.exe" Location="0" ExactSize="0" WinNTVersions="Windows 7 RTM x86, Windows 8 x86, Windows 10 version 1507 x86, Windows 10 version 1511 x86, Windows 10 version 1903 x86, Windows 10 version 1909 x86, Windows 10 version 2004 x86, Windows 10 version 20H2 x86, Windows 10 version 21H1 x86, Windows 10 version 21H2 x86" WinNT64Versions="Windows 7 RTM x64, Windows Server 2008 R2 RTM x64, Windows 8 x64, Windows 10 version 1507 x64, Windows 10 version 1511 x64, Windows 10 version 1903 x64, Windows 10 version 1909 x64, Windows 10 version 2004 x64, Windows 10 version 20H2 x64, Windows 10 version 21H1 x64, Windows 10 version 21H2 x64, Windows Server 2022 x64, Windows 11 x64" Operator="1" ComLine=" /q /norestart" NoUiComLine=" /q /norestart" Options="xkq" TargetName=".NET Framework 4.8\ndp48-x86-x64-allos-enu.exe"/>
+    <ATTRIBUTE name="PrereqsOrder" value="B96F93FA27E74B02866727AAE83982D0 ABA121137E454F6C815A1647D0B2CF14"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="ABA121137E454F6C815A1647D0B2CF14Ver" Prereq="ABA121137E454F6C815A1647D0B2CF14" SearchType="2" SearchString="HKLM\SOFTWARE\Microsoft\VSTO Runtime Setup\v4R\Version" VerMin="10.0.60828" Order="1" Property="PreReqSearch_ABA121137E454F6C815A16"/>
+    <ROW SearchKey="B96F93FA27E74B02866727AAE83982D0Rel" Prereq="B96F93FA27E74B02866727AAE83982D0" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Release" RefContent="G528048" Order="1" Property="PreReqSearch_B96F93FA27E74B02866727"/>
+  </COMPONENT>
+</DOCUMENT>

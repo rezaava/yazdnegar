@@ -1,0 +1,6 @@
+<project outputDir="D:\2_Projects\Github\ShivaNegar\ShivaNegar\bin\Release" baseDir="D:\2_Projects\Github\ShivaNegar\ShivaNegar\bin\Release" xmlns="http://confuser.codeplex.com">
+  <rule pattern="true" preset="maximum" inherit="false">
+    <protection id="rename" action="remove" />
+  </rule>
+  <module path="D:\2_Projects\Github\ShivaNegar\ShivaNegar\bin\Release\ShivaNegar.dll" />
+</project>

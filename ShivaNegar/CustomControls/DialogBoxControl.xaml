@@ -1,0 +1,98 @@
+﻿<UserControl
+    x:Class="ShivaNegar.CustomControls.DialogBoxControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ShivaNegar.CustomControls"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="ucMain"
+    d:Height="500"
+    d:Width="500"
+    FlowDirection="RightToLeft"
+    FontFamily="Vazirmatn"
+    IsEnabled="True"
+    Opacity="0"
+    Tag="tested"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ShivaNegar;component/Forms/Styles/MainDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
+    <UserControl.Style>
+        <Style TargetType="UserControl">
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Name="FadeIn2" Storyboard="{StaticResource FadeIn2}" />
+                        <RemoveStoryboard BeginStoryboardName="FadeOut2" />
+                    </Trigger.EnterActions>
+                </Trigger>
+
+                <Trigger Property="IsEnabled" Value="False">
+                    <Trigger.EnterActions>
+                        <RemoveStoryboard BeginStoryboardName="FadeIn2" />
+                        <BeginStoryboard Name="FadeOut2" Storyboard="{StaticResource FadeOut2}" />
+                    </Trigger.EnterActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
+
+    <!--  IsEnabled="True" And Tag="tested"  -->
+    <Grid>
+        <Border Background="#BBFFFFFF" CornerRadius="10" />
+
+        <materialDesign:Card
+            x:Name="cardDialog"
+            Margin="30"
+            Padding="10"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            materialDesign:ElevationAssist.Elevation="Dp6"
+            UniformCornerRadius="15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <ScrollViewer
+                    Grid.Row="0"
+                    Margin="0,0,0,5"
+                    CanContentScroll="True"
+                    VerticalScrollBarVisibility="Auto">
+                    <TextBlock
+                        x:Name="lblDialog"
+                        Grid.Row="0"
+                        FontSize="15"
+                        FontWeight="Bold"
+                        ScrollViewer.CanContentScroll="True"
+                        ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                        ScrollViewer.VerticalScrollBarVisibility="Visible"
+                        Text="{Binding Tag, ElementName=ucMain}"
+                        TextWrapping="Wrap" />
+                </ScrollViewer>
+
+                <Button
+                    x:Name="btnConfirm"
+                    Grid.Row="1"
+                    Height="45"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    materialDesign:ButtonAssist.CornerRadius="5"
+                    Content="متوجه شدم"
+                    Foreground="{StaticResource LightButtonTextColor}" />
+            </Grid>
+
+        </materialDesign:Card>
+    </Grid>
+</UserControl>

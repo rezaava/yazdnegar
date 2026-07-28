@@ -1,0 +1,221 @@
+﻿<UserControl
+    x:Class="ShivaNegar.Forms.ShivaNegarManager.CreateDocument.CreateDocumentControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:ShivaNegar.Forms.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ShivaNegar.Forms.ShivaNegarManager.CreateDocument"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    d:DesignHeight="600"
+    d:DesignWidth="800"
+    FlowDirection="RightToLeft"
+    FontFamily="Vazirmatn"
+    UseLayoutRounding="True"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ShivaNegar;component/Forms/Styles/MainDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border Background="White" CornerRadius="10">
+        <Grid Name="panelMain">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <materialDesign:Transitioner
+                x:Name="transitionCreateDocument"
+                Grid.Row="2"
+                AutoApplyTransitionOrigins="True"
+                SelectedIndex="0">
+
+                <materialDesign:TransitionerSlide>
+                    <materialDesign:TransitionerSlide.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="FadeIn" />
+                    </materialDesign:TransitionerSlide.OpeningEffects>
+
+                    <local:CreateDocumentSlide1 x:Name="createDocumentSlide1" />
+                </materialDesign:TransitionerSlide>
+
+                <materialDesign:TransitionerSlide>
+                    <materialDesign:TransitionerSlide.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="FadeIn" />
+                    </materialDesign:TransitionerSlide.OpeningEffects>
+                    <materialDesign:TransitionerSlide.BackwardWipe>
+                        <materialDesign:CircleWipe />
+                    </materialDesign:TransitionerSlide.BackwardWipe>
+
+                    <local:CreateDocumentSlide2 x:Name="createDocumentSlide2" />
+                </materialDesign:TransitionerSlide>
+
+                <materialDesign:TransitionerSlide>
+                    <materialDesign:TransitionerSlide.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="FadeIn" />
+                    </materialDesign:TransitionerSlide.OpeningEffects>
+                    <materialDesign:TransitionerSlide.BackwardWipe>
+                        <materialDesign:CircleWipe />
+                    </materialDesign:TransitionerSlide.BackwardWipe>
+
+                    <local:CreateDocumentSlide3 x:Name="createDocumentSlide3" />
+                </materialDesign:TransitionerSlide>
+
+                <materialDesign:TransitionerSlide>
+                    <!--<materialDesign:TransitionerSlide.BackwardWipe> <materialDesign:SlideWipe Direction="Right" /></materialDesign:TransitionerSlide.BackwardWipe>-->
+                    <!--<materialDesign:TransitionerSlide.ForwardWipe> <materialDesign:SlideWipe Direction="Left" /> </materialDesign:TransitionerSlide.ForwardWipe>-->
+                    <materialDesign:TransitionerSlide.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="FadeIn" />
+                    </materialDesign:TransitionerSlide.OpeningEffects>
+                    <materialDesign:TransitionerSlide.BackwardWipe>
+                        <materialDesign:CircleWipe />
+                    </materialDesign:TransitionerSlide.BackwardWipe>
+
+                    <local:CreateDocumentSlide4 x:Name="createDocumentSlide4" />
+                </materialDesign:TransitionerSlide>
+
+                <materialDesign:TransitionerSlide>
+                    <!--<materialDesign:TransitionerSlide.BackwardWipe> <materialDesign:SlideWipe Direction="Right" /></materialDesign:TransitionerSlide.BackwardWipe>-->
+                    <!--<materialDesign:TransitionerSlide.ForwardWipe> <materialDesign:SlideWipe Direction="Left" /> </materialDesign:TransitionerSlide.ForwardWipe>-->
+                    <materialDesign:TransitionerSlide.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="FadeIn" />
+                    </materialDesign:TransitionerSlide.OpeningEffects>
+                    <materialDesign:TransitionerSlide.BackwardWipe>
+                        <materialDesign:CircleWipe />
+                    </materialDesign:TransitionerSlide.BackwardWipe>
+
+                    <materialDesign:TransitionerSlide.ForwardWipe>
+                        <materialDesign:SlideOutWipe />
+                    </materialDesign:TransitionerSlide.ForwardWipe>
+
+                    <local:CreateDocumentSlide5 x:Name="createDocumentSlide5" />
+                </materialDesign:TransitionerSlide>
+
+                <materialDesign:TransitionerSlide>
+                    <!--<materialDesign:TransitionerSlide.BackwardWipe> <materialDesign:SlideWipe Direction="Right" /></materialDesign:TransitionerSlide.BackwardWipe>-->
+                    <!--<materialDesign:TransitionerSlide.ForwardWipe> <materialDesign:SlideWipe Direction="Left" /> </materialDesign:TransitionerSlide.ForwardWipe>-->
+                    <materialDesign:TransitionerSlide.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="FadeIn" />
+                    </materialDesign:TransitionerSlide.OpeningEffects>
+
+                    <local:CreateDocumentSlide6 x:Name="createDocumentSlide6" />
+                </materialDesign:TransitionerSlide>
+
+            </materialDesign:Transitioner>
+
+            <Grid
+                x:Name="gridHeader"
+                Grid.Row="0"
+                materialDesign:ElevationAssist.Elevation="Dp12"
+                Background="{StaticResource PrimaryBackgroundColor}">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+
+                    <Button
+                        x:Name="btnExitCreateDocument"
+                        Width="30"
+                        Height="30"
+                        Margin="5"
+                        Foreground="White"
+                        Style="{DynamicResource MaterialDesignIconButton}"
+                        ToolTip="بستن پنجره">
+                        <materialDesign:PackIcon Kind="WindowClose" />
+                    </Button>
+
+                    <Button
+                        x:Name="btnMaximize"
+                        Width="30"
+                        Height="30"
+                        Margin="0,5,5,5"
+                        Foreground="White"
+                        Style="{DynamicResource MaterialDesignIconButton}"
+                        ToolTip="بزرگنمایی پنجره">
+                        <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Kind="WindowMaximize" />
+                    </Button>
+
+                    <Button
+                        x:Name="btnMinimize"
+                        Width="30"
+                        Height="30"
+                        Margin="0,5,5,5"
+                        Foreground="White"
+                        Style="{DynamicResource MaterialDesignIconButton}"
+                        ToolTip="کوچکنمایی پنجره">
+                        <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Kind="WindowMinimize" />
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+
+                    <TextBlock
+                        x:Name="lblVersion"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        d:Text="نسخه: ۱.۰.۳۰"
+                        FontWeight="Bold"
+                        Foreground="#BBFFFFFF"
+                        TextAlignment="Center" />
+
+                    <ToggleButton
+                        Name="toggleButtonAlwaysOnTop"
+                        Margin="10,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        FlowDirection="LeftToRight"
+                        Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                        ToolTip="پنجره Always on Top تنظیم"
+                        UseLayoutRounding="False">
+
+                        <materialDesign:PackIcon Kind="Pin" RenderTransformOrigin=".5,.5">
+                            <materialDesign:PackIcon.RenderTransform>
+                                <RotateTransform Angle="45" />
+                            </materialDesign:PackIcon.RenderTransform>
+                        </materialDesign:PackIcon>
+
+                        <materialDesign:ToggleButtonAssist.OnContent>
+                            <materialDesign:PackIcon Foreground="{StaticResource LightBackgroundColor}" Kind="Pin" />
+                        </materialDesign:ToggleButtonAssist.OnContent>
+                    </ToggleButton>
+
+                </StackPanel>
+
+
+            </Grid>
+
+            <Grid
+                Grid.Row="1"
+                Height="65"
+                Background="{StaticResource PrimaryBackgroundColor}">
+                <controls:WizardProgressBar
+                    Grid.Column="1"
+                    Margin="10,0"
+                    VerticalAlignment="Center"
+                    Foreground="{StaticResource LightButtonTextColor}"
+                    ItemsSource="{Binding Steps}"
+                    Progress="{Binding Progress}"
+                    SnapsToDevicePixels="True" />
+
+            </Grid>
+
+        </Grid>
+    </Border>
+
+</UserControl>

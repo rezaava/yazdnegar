@@ -1,0 +1,36 @@
+﻿<UserControl
+    x:Class="ShivaNegar.Forms.ShivaNegarManager.DocumentManager.View.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:customControls="clr-namespace:ShivaNegar.CustomControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="500"
+    d:DesignWidth="500"
+    FlowDirection="RightToLeft"
+    FontFamily="Vazirmatn"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ShivaNegar;component/Forms/Styles/MainDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border Background="{StaticResource LightBackgroundColor}" CornerRadius="10">
+
+        <Grid>
+            <Viewbox
+                Margin="100"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                StretchDirection="DownOnly">
+                <Image Width="400" Source="/ShivaNegar;component/Resources/Shivanegar.png" />
+            </Viewbox>
+        </Grid>
+
+    </Border>
+</UserControl>

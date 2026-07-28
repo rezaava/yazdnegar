@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--<customUI onLoad="Ribbon_Load" xmlns="http://schemas.microsoft.com/office/2006/01/customui">-->
+<customUI onLoad="Ribbon_Load" xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+
+	<commands>
+
+		<!--Backstage-->
+		<!--<command idMso="TabPrint" getEnabled="getEnabledCommands"/>-->
+		<command idMso="TabSave" getEnabled="getEnabledCommands"/>
+		<command idMso="TabPublish" getEnabled="getEnabledCommands"/>
+		<command idMso="TabShare" getEnabled="getEnabledCommands"/>
+		<command idMso="TabHelp" getEnabled="getEnabledCommands"/>
+
+		<!--Backstage_TabInfo-->
+		<command idMso="GroupPermissions" getEnabled="getEnabledCommands"/>
+		<command idMso="GroupPrepareForSharing" getEnabled="getEnabledCommands"/>
+		<command idMso="GroupVersions" getEnabled="getEnabledCommands"/>
+
+		<!--All Disable Protect and Password Controls and Groups-->
+		<command idMso="GroupProtectedView" getEnabled="getEnabledCommands"/>
+		<command idMso="FilePermissionRestrictAs" getEnabled="getEnabledCommands"/>
+		<command idMso="FilePermission" getEnabled="getEnabledCommands"/>
+		<command idMso="FilePermissionView" getEnabled="getEnabledCommands"/>
+		<command idMso="FilePermissionRestrictMenu" getEnabled="getEnabledCommands"/>
+		<command idMso="FilePermissionUnrestricted" getEnabled="getEnabledCommands"/>
+		<command idMso="FilePermissionDoNotDistribute" getEnabled="getEnabledCommands"/>
+
+		<command idMso="ProtectOrUnprotectDocument" getEnabled="getEnabledCommands"/>
+		<command idMso="ProtectDocument" getEnabled="getEnabledCommands"/>
+		<command idMso="ReviewProtectDocumentMenu" getEnabled="getEnabledCommands"/>
+
+		<command idMso="GroupProtect" getEnabled="getEnabledCommands"/>
+		<command idMso="ReviewRestrictFormatting" getEnabled="getEnabledCommands"/>
+
+
+		<!-- Temporary Disable for prevent add Section Breaks-->
+		<!--<command idMso="TableColumnsGallery" getEnabled="getEnabledCommands"/>
+		<command idMso="ColumnsDialog" getEnabled="getEnabledCommands"/>-->
+		<!--<command idMso="BreaksGallery" getEnabled="getEnabled"/>-->
+
+		<!--Developer Tab-->
+		<command idMso="GroupCode" getEnabled="getEnabledCommands"/>
+		<command idMso="VisualBasic" getEnabled="getEnabledCommands"/>
+		<command idMso="MacroPlay" getEnabled="getEnabledCommands"/>
+		<command idMso="MacroRecordOrStop" getEnabled="getEnabledCommands"/>
+		<command idMso="MacroRecorderPause" getEnabled="getEnabledCommands"/>
+		<command idMso="MacroSecurity" getEnabled="getEnabledCommands"/>
+		<command idMso="ControlProperties" getEnabled="getEnabledCommands"/>
+		<command idMso="DesignMode" getEnabled="getEnabledCommands"/>
+		<!--<command idMso="ComAddInsDialog" onAction="onAction"/>-->
+
+		<!--Override-->
+		<!--<command idMso="Undo" onAction="Undo_Click"/>-->
+		<!--<command idMso="Redo" onAction="Redo_Click"/>-->
+
+		<!--<command idMso="ApplicationOptionsDialog" getEnabled="getEnabledCommands"/>-->
+
+	</commands>
+
+	<ribbon>
+		<tabs>
+			<tab id="tabJameNeger" insertAfterMso="TabHome" getVisible="getVisible" getLabel="getLabel" getKeytip="getKeytip" >
+				<group id="grpDocumentManager" getImage="getImage"   getLabel="getLabel" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip">
+
+					<button id="btnLogin" onAction="btnLogin_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large"/>
+
+					<gallery id="galleryDocumentsManager" onAction="galleryDocumentManager_Click" getItemCount="getItemCount" getItemLabel="getItemLabel" getItemScreentip="getItemScreentip" getItemSupertip="getItemSupertip" getItemImage="getItemImage" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" columns="1">
+						<item id="__id60" />
+						<item id="__id61" />
+						<item id="__id62" />
+					</gallery>
+					<button id="btnChatBoxNetworking" onAction="btnChatBoxNetworking_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large"/>
+
+					<button id="btnChangeContents" onAction="btnChangeContents_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" />
+					<button id="btnAddRemovePages" onAction="btnAddRemovePages_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" />
+				</group>
+				<group id="grpFormat" getImage="getImage" getVisible="getVisible" getLabel="getLabel"  getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip">
+					<button id="btnTextFormating" onAction="btnTextFormating_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" />
+					<menu id="menu1" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large">
+						<button id="btnHeading2" onAction="btnHeading2_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip"/>
+						<button id="btnHeading3" onAction="btnHeading3_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" />
+						<button id="btnHeading4" onAction="btnHeading4_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" />
+						<button id="btnHeading5" onAction="btnHeading5_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" />
+					</menu>
+					<dialogBoxLauncher>
+						<button id="grpFormat__btn" onAction="grpFormat_DialogLauncherClick" getEnabled="getEnabled" getVisible="getVisible" />
+					</dialogBoxLauncher>
+				</group>
+				<group id="grpCaptionsAndRefer" getImage="getImage" getVisible="getVisible" getLabel="getLabel" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip">
+
+					<button id="btnRefer" onAction="btnRefer_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" />
+
+					<button id="btnInsertWriteCaptionForShape" onAction="btnInsertCaptionForShape_Click"    getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" />
+					<button id="btnInsertWriteCaptionForTable" onAction="btnInsertCaptionForTable_Click"    getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" />
+					<button id="btnInsertCaptionForFormula" onAction="btnInsertCaptionForFormula_Click"    getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" />
+					<dialogBoxLauncher>
+						<button id="grpCaptionsAndRefer__btn" onAction="grpCaptionsAndRefer_DialogLauncherClick" getEnabled="getEnabled" getVisible="getVisible" />
+					</dialogBoxLauncher>
+				</group>
+
+
+				<group id="grpFootnotes" getImage="getImage" getVisible="getVisible" getLabel="getLabel"  getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip">
+					<gallery id="galleryInsertFootnote" onAction="galleryInsertFootnote_Click" getItemCount="getItemCount" getItemLabel="getItemLabel" getItemScreentip="getItemScreentip" getItemSupertip="getItemSupertip" getItemImage="getItemImage" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" columns="1">
+						<item id="__id27" />
+						<item id="__id28" />
+					</gallery>
+					<dialogBoxLauncher>
+						<button id="grpFootnotes__btn" onAction="grpFootnotes_DialogLauncherClick" getEnabled="getEnabled" getVisible="getVisible"/>
+					</dialogBoxLauncher>
+				</group>
+				<group id="grpVirastar" getImage="getImage" getVisible="getVisible" getLabel="getLabel"  getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip">
+
+					<gallery id="gallerySimpleVirastar" onAction="gallerySimpleVirastar_Click" getItemCount="getItemCount" getItemLabel="getItemLabel" getItemScreentip="getItemScreentip" getItemSupertip="getItemSupertip" getItemImage="getItemImage" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" columns="1">
+						<item id="__id38" />
+						<item id="__id39" />
+						<item id="__id40" />
+						<item id="__id41" />
+					</gallery>
+
+					<button id="btnStandardCorrection" onAction="btnStandardCorrection_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" />
+
+					<gallery id="galleryConvertNumber" onAction="galleryConvertNumber_Click" getItemCount="getItemCount" getItemLabel="getItemLabel" getItemScreentip="getItemScreentip" getItemSupertip="getItemSupertip" getItemImage="getItemImage"  getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" columns="1" itemHeight="32" itemWidth="32">
+						<item id="__id29" />
+						<item id="__id30" />
+					</gallery>
+					<gallery id="galleryPoemMode" onAction="galleryPoemMode_Click" getItemCount="getItemCount" getItemLabel="getItemLabel" getItemScreentip="getItemScreentip" getItemSupertip="getItemSupertip" getItemImage="getItemImage"  getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" columns="1" itemHeight="32" itemWidth="32">
+						<item id="PoemMode1" />
+						<item id="PoemMode2" />
+					</gallery>
+					<dialogBoxLauncher>
+						<button id="grpVirastar__btn" onAction="grpVirastar_DialogLauncherClick" getEnabled="getEnabled" getVisible="getVisible" />
+					</dialogBoxLauncher>
+				</group>
+				<group id="grpCitationManager" getImage="getImage" getVisible="getVisible" getLabel="getLabel" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip">
+					<button id="btnInsertCitation" onAction="btnInsertCitation_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" />
+					<gallery id="galleryInsertImportSources" onAction="galleryInsertImportSources_Click" getItemCount="getItemCount" getItemLabel="getItemLabel" getItemScreentip="getItemScreentip" getItemSupertip="getItemSupertip" getItemImage="getItemImage" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" columns="1" itemHeight="32" itemWidth="32">
+						<item id="__id31" />
+						<item id="__id32" />
+					</gallery>
+					<button id="btnManageResources" onAction="btnManageResources_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" />
+					<button id="btnGoToBibliography" onAction="btnGoToBibliography_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" />
+					<gallery id="galleryCitationType" onAction="galleryCitationType_Click" getItemCount="getItemCount" getItemLabel="getItemLabel" getItemScreentip="getItemScreentip" getItemSupertip="getItemSupertip" getItemImage="getItemImage" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" columns="1" itemHeight="32" itemWidth="32">
+						<item id="__id48" />
+						<item id="__id49" />
+					</gallery>
+					<!-- <dialogBoxLauncher> 
+						<button id="grpCitationManager__btn" onAction="grpCitationManager_DialogLauncherClick" getEnabled="getEnabled" getVisible="getVisible" />
+					</dialogBoxLauncher> -->
+				</group>
+				<group id="grpOtherOptions" getImage="getImage" getVisible="getVisible" getLabel="getLabel" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip">
+					<button id="btnUpdateDocument" onAction="btnUpdateDocument_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" />
+					<button id="btnUploadDocument" onAction="btnUploadDocument_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" />
+					<gallery id="galleryExport" onAction="galleryExport_Click" getItemCount="getItemCount" getItemLabel="getItemLabel" getItemScreentip="getItemScreentip" getItemSupertip="getItemSupertip" getItemImage="getItemImage" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" columns="1">
+						<item id="__id34" />
+						<item id="__id36" />
+						<item id="__id33" />
+					</gallery>
+					<dialogBoxLauncher>
+						<button id="grpOtherOptions__btn" onAction="grpOtherOptions_DialogLauncherClick" getEnabled="getEnabled" getVisible="getVisible" />
+					</dialogBoxLauncher>
+				</group>
+				<group id="grpTools" getImage="getImage" getVisible="getVisible" getLabel="getLabel"  getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip">
+					<gallery id="galleryTools" onAction="galleryTools_Click" getItemCount="getItemCount" getItemLabel="getItemLabel" getItemScreentip="getItemScreentip" getItemSupertip="getItemSupertip" getItemImage="getItemImage" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" columns="1">
+						<item id="__id43" />
+						<item id="__id50" />
+						<item id="__id44" />
+						<item id="__id45" />
+						<!--<item id="__id46" />-->
+					</gallery>
+					<gallery id="galleryBooks" onAction="galleryBooks_Click" getItemCount="getItemCount" getItemLabel="getItemLabel" getItemScreentip="getItemScreentip" getItemSupertip="getItemSupertip" getItemImage="getItemImage" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" columns="1">
+						<item id="__id46" />
+						<item id="__id47" />
+					</gallery>
+
+
+					<gallery id="galleryAbout" onAction="galleryAbout_Click" getItemCount="getItemCount" getItemLabel="getItemLabel" getItemScreentip="getItemScreentip" getItemSupertip="getItemSupertip" getItemImage="getItemImage" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" size="large" columns="1">
+						<item id="__id51" />
+						<item id="__id52" />
+						<item id="__id53" />
+					</gallery>
+
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+
+	<backstage>
+		<button id="btnDocumentsManagerBackstage" onAction="btnJamenegar_Click" insertBeforeMso="TabInfo" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel" getKeytip="getKeytip" isDefinitive="true" />
+	</backstage>
+
+	<!--<contextMenus>-->
+	<!--<contextMenu idMso="ContextMenuText">-->
+	<!--<button id="BoldButton" label="Bold" onAction="ButtonClick" visible="true"/>-->
+	<!--<button id="ItalicButton" label="Italic" onAction="ButtonClick" visible="true"/>-->
+	<!--</contextMenu>-->
+	<!--</contextMenus>-->
+
+</customUI>

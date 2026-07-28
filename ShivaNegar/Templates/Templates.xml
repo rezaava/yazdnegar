@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<templates>
+	<!--
+	<template id="1" name="قالب پارسا">
+	<template id="2" name="قالب شیوانگار">
+	-->
+	<template id="0" universityId ="0" name="دانشگاه یزد" fileName="YazdUniversity.dotm" universityIcon="YazdUniversity.png" path="ShivaNegar.Templates.YazdUniversity." source="https://yazd.ac.ir/Upload/modules/files/documents/pages/offices/educational/deputy/graduate/thesis/thesis-master-manual1400.pdf">
+		<subTemplates>
+			<subTemplate order="1" id="PersianIdentity" fileName="1_PersianIdentity.docx" />
+			<subTemplate order="2" id="InTheNameOfAllah" fileName="2_InTheNameOfAllah.docx" />
+			<subTemplate order="3" id="DefenseMeeting" fileName="3_DefenseMeeting.docx" />
+			<subTemplate order="4" id="LegalRights" fileName="4_LegalRights.docx" />
+			<subTemplate order="5" id="ResearchEthics" fileName="5_ResearchEthics.docx" />
+			<subTemplate order="6" id="Dedication" fileName="6_Dedication.docx" />
+			<subTemplate order="7" id="Acknowledgment" fileName="7_Acknowledgment.docx" />
+			<subTemplate order="8" id="PersianAbstract" fileName="8_PersianAbstract.docx" />
+			<subTemplate order="9" id="Preface" fileName="9_Preface.docx" />
+			<subTemplate order="10" id="TableOfContents" fileName="10_TableOfContents.docx" />
+			<subTemplate order="11" id="TableOfFigures" fileName="11_TableOfFigures.docx" />
+			<subTemplate order="12" id="TableOfTables" fileName="12_TableOfTables.docx" />
+			<subTemplate order="13" id="Abbreviations" fileName="13_Abbreviations.docx" />
+
+			<subTemplate order="14" id="Chapter1" fileName="14_Chapter1.docx" />
+			<subTemplate order="15" id="Chapter2" fileName="14_Chapter2.docx" />
+			<subTemplate order="16" id="Chapter3" fileName="14_Chapter3.docx" />
+			<subTemplate order="17" id="Chapter4" fileName="14_Chapter4.docx" />
+			<subTemplate order="18" id="Chapter5" fileName="14_Chapter5.docx" />
+			<subTemplate order="19" id="Chapter6" fileName="14_Chapter6.docx" />
+			<subTemplate order="20" id="Chapter7" fileName="14_Chapter7.docx" />
+			<subTemplate order="21" id="Chapter8" fileName="14_Chapter8.docx" />
+			<subTemplate order="22" id="Chapter9" fileName="14_Chapter9.docx" />
+			<subTemplate order="23" id="Chapter10" fileName="14_Chapter10.docx" />
+
+			<subTemplate order="24" id="Appendices" fileName="15_Appendices.docx" />
+			<subTemplate order="25" id="Endnotes" fileName="16_Endnotes.docx" />
+			<subTemplate order="26" id="Glossary" fileName="17_Glossary.docx" isDisable="true" />
+			<subTemplate order="27" id="Sources" fileName="18_Sources.docx" />
+			<subTemplate order="28" id="EnglishAbstract" fileName="19_EnglishAbstract.docx" />
+			<subTemplate order="29" id="EnglishIdentity" fileName="20_EnglishIdentity.docx" />
+		</subTemplates>
+
+		<titles>
+			<title id="_field_Advisor_Title_Fa" text="استاد(ان) مشاور:"/>
+			<title id="_field_Advisor_Title_En" text="Advisor:"/>
+		</titles>
+
+		<notIncludeSubTemplates>
+			<!--پروژه-->
+			<notIncludeSubTemplate documentType="0">
+				<notInclude id="DefenseMeeting"/>
+				<notInclude id="LegalRights"/>
+				<notInclude id="ResearchEthics"/>
+			</notIncludeSubTemplate>
+
+			<!--تحقیق درسی-->
+			<notIncludeSubTemplate documentType="3">
+				<notInclude id="DefenseMeeting"/>
+				<notInclude id="LegalRights"/>
+				<notInclude id="ResearchEthics"/>
+				<notInclude id="EnglishAbstract"/>
+				<notInclude id="EnglishIdentity"/>
+			</notIncludeSubTemplate>
+		</notIncludeSubTemplates>
+		
+		<requiredSubTemplates>
+			<defaultRequiredSubTemplates>
+				<required id="PersianIdentity"/>
+				<required id="InTheNameOfAllah"/>
+				<required id="PersianAbstract"/>
+				<required id="TableOfContents"/>
+				<required id="Chapter1"/>
+				<required id="Chapter2"/>
+				<required id="Chapter3"/>
+				<required id="Chapter4"/>
+				<required id="Chapter5"/>
+				<required id="Sources"/>
+			</defaultRequiredSubTemplates>
+			
+			<!--پایان نامه-->
+			<customRequiredSubTemplate documentType="1">
+				<required id="PersianIdentity"/>
+				<required id="InTheNameOfAllah"/>
+				<required id="DefenseMeeting"/>
+				<required id="LegalRights"/>
+				<required id="ResearchEthics"/>
+				<required id="PersianAbstract"/>
+				<required id="TableOfContents"/>
+				<required id="Chapter1"/>
+				<required id="Chapter2"/>
+				<required id="Chapter3"/>
+				<required id="Chapter4"/>
+				<required id="Chapter5"/>
+				<required id="Sources"/>
+				<required id="EnglishAbstract"/>
+				<required id="EnglishIdentity"/>
+			</customRequiredSubTemplate>
+			
+			<!--رساله-->
+			<customRequiredSubTemplate documentType="2">
+				<required id="PersianIdentity"/>
+				<required id="InTheNameOfAllah"/>
+				<required id="DefenseMeeting"/>
+				<required id="LegalRights"/>
+				<required id="ResearchEthics"/>
+				<required id="PersianAbstract"/>
+				<required id="TableOfContents"/>
+				<required id="Chapter1"/>
+				<required id="Chapter2"/>
+				<required id="Chapter3"/>
+				<required id="Chapter4"/>
+				<required id="Chapter5"/>
+				<required id="Sources"/>
+				<required id="EnglishAbstract"/>
+				<required id="EnglishIdentity"/>
+			</customRequiredSubTemplate>
+		</requiredSubTemplates>
+	</template>
+
+	
+	<template id="1" universityId ="1" name="دانشگاه آزاد اسلامی واحد یزد" fileName="IslamicAzadUniversityYazd.dotm" universityIcon="IslamicAzadUniversityYazd.png" path="ShivaNegar.Templates.IslamicAzadUniversityYazd." source="https://yazd.iau.ir/file/download/regulation/1640159427-rahnameye-negaresh-payannameh-26-08-96-jadid-1.pdf">
+
+		<proposals subPath="Proposal.">
+			<proposal academicDegree="1" fileName="Proposal_PhD.docx" />
+			<proposal academicDegree="2" fileName="Proposal_MSc.docx" />
+		</proposals>
+
+		<subTemplates>
+			<subTemplate order="1" id="InTheNameOfAllah" fileName="1_InTheNameOfAllah.docx" />
+			<subTemplate order="2" id="PersianIdentity" fileName="2_PersianIdentity.docx" />
+			
+			<subTemplate order="3" id="DefenseMeeting" fileName="3_DefenseMeeting.docx" />
+			<subTemplate order="4" id="OriginalityCommitment" fileName="4_OriginalityCommitment.docx" />
+			<subTemplate order="5" id="ResearchEthics" fileName="5_ResearchEthics.docx" />
+			<!--<subTemplate order="6" id="EvaluationForm" fileName="6_EvaluationForm.docx" />-->
+			
+			<subTemplate order="7" id="Acknowledgment" fileName="7_Acknowledgment.docx" />
+			<subTemplate order="8" id="Dedication" fileName="8_Dedication.docx" />
+			<subTemplate order="9" id="TableOfContents" fileName="9_TableOfContents.docx" />
+			<subTemplate order="10" id="TableOfTables" fileName="10_TableOfTables.docx" />
+			<subTemplate order="11" id="TableOfFigures" fileName="11_TableOfFigures.docx" />
+			<subTemplate order="12" id="TableOfMaps" fileName="12_TableOfMaps.docx" />
+			<subTemplate order="13" id="Abbreviations" fileName="13_Abbreviations.docx" />
+			<subTemplate order="14" id="PersianAbstract" fileName="14_PersianAbstract.docx" />
+
+			<subTemplate order="15" id="Chapter1" fileName="15_Chapter1.docx" />
+			<subTemplate order="16" id="Chapter2" fileName="15_Chapter2.docx" />
+			<subTemplate order="17" id="Chapter3" fileName="15_Chapter3.docx" />
+			<subTemplate order="18" id="Chapter4" fileName="15_Chapter4.docx" />
+			<subTemplate order="19" id="Chapter5" fileName="15_Chapter5.docx" />
+			<subTemplate order="20" id="Chapter6" fileName="15_Chapter6.docx" />
+			<subTemplate order="21" id="Chapter7" fileName="15_Chapter7.docx" />
+			<subTemplate order="22" id="Chapter8" fileName="15_Chapter8.docx" />
+			<subTemplate order="23" id="Chapter9" fileName="15_Chapter9.docx" />
+			<subTemplate order="24" id="Chapter10" fileName="15_Chapter10.docx" />
+
+			<subTemplate order="25" id="Sources" fileName="16_Sources.docx" />
+			<subTemplate order="26" id="Appendices" fileName="17_Appendices.docx" />
+			<subTemplate order="27" id="EnglishAbstract" fileName="18_EnglishAbstract.docx" />
+			<subTemplate order="28" id="EnglishIdentity" fileName="19_EnglishIdentity.docx" />
+		</subTemplates>
+
+		<titles>
+			<title id="_field_Advisor_Title_Fa" text="استاد مشاور:"/>
+			<title id="_field_Advisor_Title_En" text="Advisor:"/>
+			
+			<title id="_field_AreaOfStudy_Title_Fa" text="گرایش:"/>
+		</titles>
+
+		<requiredSubTemplates>
+			<defaultRequiredSubTemplates>
+				<required id="InTheNameOfAllah"/>
+				<required id="PersianIdentity"/>
+				<!--<required id="DefenseMeeting"/>-->
+				<!--<required id="OriginalityCommitment"/>-->
+				<required id="TableOfContents"/>
+				<required id="PersianAbstract"/>
+				<required id="Chapter1"/>
+				<required id="Chapter2"/>
+				<required id="Chapter3"/>
+				<required id="Chapter4"/>
+				<required id="Chapter5"/>
+				<required id="Sources"/>
+			</defaultRequiredSubTemplates>
+			
+			<!--پایان نامه-->
+			<customRequiredSubTemplate documentType="1">
+				<required id="InTheNameOfAllah"/>
+				<required id="PersianIdentity"/>
+				<!--<required id="DefenseMeeting"/>-->
+				<!--<required id="OriginalityCommitment"/>-->
+				<required id="TableOfContents"/>
+				<required id="PersianAbstract"/>
+				<required id="Chapter1"/>
+				<required id="Chapter2"/>
+				<required id="Chapter3"/>
+				<required id="Chapter4"/>
+				<required id="Chapter5"/>
+				<required id="Sources"/>
+				<required id="EnglishAbstract"/>
+				<required id="EnglishIdentity"/>
+			</customRequiredSubTemplate>
+
+			<!--رساله-->
+			<customRequiredSubTemplate documentType="2">
+				<required id="InTheNameOfAllah"/>
+				<required id="PersianIdentity"/>
+				<!--<required id="DefenseMeeting"/>-->
+				<!--<required id="OriginalityCommitment"/>-->
+				<required id="TableOfContents"/>
+				<required id="PersianAbstract"/>
+				<required id="Chapter1"/>
+				<required id="Chapter2"/>
+				<required id="Chapter3"/>
+				<required id="Chapter4"/>
+				<required id="Chapter5"/>
+				<required id="Sources"/>
+				<required id="EnglishAbstract"/>
+				<required id="EnglishIdentity"/>
+			</customRequiredSubTemplate>
+
+		</requiredSubTemplates>
+
+
+		<!--
+		برگ اصالت = مالکیت اثر
+		برگ تایید هیئت داوران = صورت جلسه دفاع = تصویب نامه
+		-->
+		<!--<sub_template type="required" name="4_EvaluationForm.docx" order="4" title="فرم نمره" />-->
+		<!--<sub_template name="5_ResearchEthics.docx" order="5" title="منشور اخلاقی پژوهش" />-->
+
+	</template>
+	
+	
+	<template id="2" universityId ="2" name="دانشگاه آزاد اسلامی تهران مرکزی " fileName="IslamicAzadUniversityCentral.dotm" universityIcon="IslamicAzadUniversityCentral.png" path="ShivaNegar.Templates.IslamicAzadUniversityCentral." source="https://ctb.iau.ir/file/download/page/1678610359-.docx">
+
+		<proposals subPath="Proposal.">
+			<proposal academicDegree="1" fileName="Proposal_PhD.docx" />
+			<proposal academicDegree="2" fileName="Proposal_MSc.docx" />
+		</proposals>
+
+		<subTemplates>
+			<subTemplate order="1" id="PersianIdentity" fileName="1_PersianIdentity.docx" />
+			<subTemplate order="2" id="InTheNameOfAllah" fileName="2_InTheNameOfAllah.docx" />
+			
+			<subTemplate order="3" id="ResearchEthics" fileName="3_ResearchEthics.docx" />
+			<subTemplate order="4" id="OriginalityCommitment" fileName="4_OriginalityCommitment.docx" />
+			
+			<subTemplate order="5" id="Acknowledgment" fileName="5_Acknowledgment.docx" />
+			<subTemplate order="6" id="Dedication" fileName="6_Dedication.docx" />
+			
+			<!--<subTemplate order="7" id="EvaluationForm" fileName="7_EvaluationForm.docx" />-->
+			<subTemplate order="8" id="FormB" fileName="8_FormB.docx" />
+			
+			<subTemplate order="9" id="TableOfContents" fileName="9_TableOfContents.docx" />
+			<subTemplate order="10" id="TableOfFigures" fileName="10_TableOfFigures.docx" />
+			<subTemplate order="11" id="TableOfTables" fileName="11_TableOfTables.docx" />
+			<subTemplate order="12" id="TableOfMaps" fileName="12_TableOfMaps.docx" />
+			<subTemplate order="13" id="PersianAbstract" fileName="13_PersianAbstract.docx" />
+
+			<subTemplate order="14" id="Chapter1" fileName="14_Chapter1.docx" />
+			<subTemplate order="15" id="Chapter2" fileName="14_Chapter2.docx" />
+			<subTemplate order="16" id="Chapter3" fileName="14_Chapter3.docx" />
+			<subTemplate order="17" id="Chapter4" fileName="14_Chapter4.docx" />
+			<subTemplate order="18" id="Chapter5" fileName="14_Chapter5.docx" />
+			<subTemplate order="19" id="Chapter6" fileName="14_Chapter6.docx" />
+			<subTemplate order="20" id="Chapter7" fileName="14_Chapter7.docx" />
+			<subTemplate order="21" id="Chapter8" fileName="14_Chapter8.docx" />
+			<subTemplate order="22" id="Chapter9" fileName="14_Chapter9.docx" />
+			<subTemplate order="23" id="Chapter10" fileName="14_Chapter10.docx" />
+
+			<subTemplate order="24" id="Sources" fileName="15_Sources.docx" />
+			<subTemplate order="25" id="Appendices" fileName="16_Appendices.docx" />
+			<subTemplate order="26" id="EnglishAbstract" fileName="17_EnglishAbstract.docx" />
+			<subTemplate order="27" id="EnglishIdentity" fileName="18_EnglishIdentity.docx" />
+		</subTemplates>
+
+		<titles>
+			<title id="_field_Advisor_Title_Fa" text="استاد مشاور:"/>
+			<title id="_field_Advisor_Title_En" text="Advisor:"/>
+		</titles>
+
+		<requiredSubTemplates>
+			<defaultRequiredSubTemplates>
+				<required id="InTheNameOfAllah"/>
+				<required id="PersianIdentity"/>
+				<!--<required id="DefenseMeeting"/>-->
+				<!--<required id="OriginalityCommitment"/>-->
+				<required id="TableOfContents"/>
+				<required id="PersianAbstract"/>
+				<required id="Chapter1"/>
+				<required id="Chapter2"/>
+				<required id="Chapter3"/>
+				<required id="Chapter4"/>
+				<required id="Chapter5"/>
+				<required id="Sources"/>
+			</defaultRequiredSubTemplates>
+			
+			<!--پایان نامه-->
+			<customRequiredSubTemplate documentType="1">
+				<required id="InTheNameOfAllah"/>
+				<required id="PersianIdentity"/>
+				<!--<required id="DefenseMeeting"/>-->
+				<!--<required id="OriginalityCommitment"/>-->
+				<required id="TableOfContents"/>
+				<required id="PersianAbstract"/>
+				<required id="Chapter1"/>
+				<required id="Chapter2"/>
+				<required id="Chapter3"/>
+				<required id="Chapter4"/>
+				<required id="Chapter5"/>
+				<required id="Sources"/>
+				<required id="EnglishAbstract"/>
+				<required id="EnglishIdentity"/>
+			</customRequiredSubTemplate>
+
+			<!--رساله-->
+			<customRequiredSubTemplate documentType="2">
+				<required id="InTheNameOfAllah"/>
+				<required id="PersianIdentity"/>
+				<!--<required id="DefenseMeeting"/>-->
+				<!--<required id="OriginalityCommitment"/>-->
+				<required id="TableOfContents"/>
+				<required id="PersianAbstract"/>
+				<required id="Chapter1"/>
+				<required id="Chapter2"/>
+				<required id="Chapter3"/>
+				<required id="Chapter4"/>
+				<required id="Chapter5"/>
+				<required id="Sources"/>
+				<required id="EnglishAbstract"/>
+				<required id="EnglishIdentity"/>
+			</customRequiredSubTemplate>
+
+		</requiredSubTemplates>
+
+	</template>
+
+
+	<template id="3" universityId ="3" name="دانشگاه جامع علمی کاربدی (واحد یزد)" fileName="ScienceAndTechnologyUni.dotm" universityIcon="ScienceAndTechnologyUni.png" path="ShivaNegar.Templates.ScienceAndTechnologyUni." source="https://yazd.ac.ir/Upload/modules/files/documents/pages/offices/educational/deputy/graduate/thesis/thesis-master-manual1400.pdf">
+		<subTemplates>
+			<subTemplate order="1" id="PersianIdentity" fileName="1_PersianIdentity.docx" />
+			<subTemplate order="2" id="InTheNameOfAllah" fileName="2_InTheNameOfAllah.docx" />
+			<subTemplate order="3" id="DefenseMeeting" fileName="3_DefenseMeeting.docx" />
+			<subTemplate order="4" id="LegalRights" fileName="4_LegalRights.docx" />
+			<subTemplate order="5" id="ResearchEthics" fileName="5_ResearchEthics.docx" />
+			<subTemplate order="6" id="Dedication" fileName="6_Dedication.docx" />
+			<subTemplate order="7" id="Acknowledgment" fileName="7_Acknowledgment.docx" />
+			<subTemplate order="8" id="PersianAbstract" fileName="8_PersianAbstract.docx" />
+			<subTemplate order="9" id="Preface" fileName="9_Preface.docx" />
+			<subTemplate order="10" id="TableOfContents" fileName="10_TableOfContents.docx" />
+			<subTemplate order="11" id="TableOfFigures" fileName="11_TableOfFigures.docx" />
+			<subTemplate order="12" id="TableOfTables" fileName="12_TableOfTables.docx" />
+			<subTemplate order="13" id="Abbreviations" fileName="13_Abbreviations.docx" />
+
+			<subTemplate order="14" id="Chapter1" fileName="14_Chapter1.docx" />
+			<subTemplate order="15" id="Chapter2" fileName="14_Chapter2.docx" />
+			<subTemplate order="16" id="Chapter3" fileName="14_Chapter3.docx" />
+			<subTemplate order="17" id="Chapter4" fileName="14_Chapter4.docx" />
+			<subTemplate order="18" id="Chapter5" fileName="14_Chapter5.docx" />
+			<subTemplate order="19" id="Chapter6" fileName="14_Chapter6.docx" />
+			<subTemplate order="20" id="Chapter7" fileName="14_Chapter7.docx" />
+			<subTemplate order="21" id="Chapter8" fileName="14_Chapter8.docx" />
+			<subTemplate order="22" id="Chapter9" fileName="14_Chapter9.docx" />
+			<subTemplate order="23" id="Chapter10" fileName="14_Chapter10.docx" />
+
+			<subTemplate order="24" id="Appendices" fileName="15_Appendices.docx" />
+			<subTemplate order="25" id="Endnotes" fileName="16_Endnotes.docx" />
+			<subTemplate order="26" id="Glossary" fileName="17_Glossary.docx" isDisable="true" />
+			<subTemplate order="27" id="Sources" fileName="18_Sources.docx" />
+			<subTemplate order="28" id="EnglishAbstract" fileName="19_EnglishAbstract.docx" />
+			<subTemplate order="29" id="EnglishIdentity" fileName="20_EnglishIdentity.docx" />
+		</subTemplates>
+
+		<titles>
+			<title id="_field_Advisor_Title_Fa" text="استاد(ان) مشاور:"/>
+			<title id="_field_Advisor_Title_En" text="Advisor:"/>
+		</titles>
+
+		<notIncludeSubTemplates>
+			<!--پروژه-->
+			<notIncludeSubTemplate documentType="0">
+				<notInclude id="DefenseMeeting"/>
+				<notInclude id="LegalRights"/>
+				<notInclude id="ResearchEthics"/>
+			</notIncludeSubTemplate>
+
+			<!--تحقیق درسی-->
+			<notIncludeSubTemplate documentType="3">
+				<notInclude id="DefenseMeeting"/>
+				<notInclude id="LegalRights"/>
+				<notInclude id="ResearchEthics"/>
+				<notInclude id="EnglishAbstract"/>
+				<notInclude id="EnglishIdentity"/>
+			</notIncludeSubTemplate>
+		</notIncludeSubTemplates>
+
+		<requiredSubTemplates>
+			<defaultRequiredSubTemplates>
+				<required id="PersianIdentity"/>
+				<required id="InTheNameOfAllah"/>
+				<required id="PersianAbstract"/>
+				<required id="TableOfContents"/>
+				<required id="Chapter1"/>
+				<required id="Chapter2"/>
+				<required id="Chapter3"/>
+				<required id="Chapter4"/>
+				<required id="Chapter5"/>
+				<required id="Sources"/>
+			</defaultRequiredSubTemplates>
+
+			<!--پایان نامه-->
+			<customRequiredSubTemplate documentType="1">
+				<required id="PersianIdentity"/>
+				<required id="InTheNameOfAllah"/>
+				<required id="DefenseMeeting"/>
+				<required id="LegalRights"/>
+				<required id="ResearchEthics"/>
+				<required id="PersianAbstract"/>
+				<required id="TableOfContents"/>
+				<required id="Chapter1"/>
+				<required id="Chapter2"/>
+				<required id="Chapter3"/>
+				<required id="Chapter4"/>
+				<required id="Chapter5"/>
+				<required id="Sources"/>
+				<required id="EnglishAbstract"/>
+				<required id="EnglishIdentity"/>
+			</customRequiredSubTemplate>
+
+			<!--رساله-->
+			<customRequiredSubTemplate documentType="2">
+				<required id="PersianIdentity"/>
+				<required id="InTheNameOfAllah"/>
+				<required id="DefenseMeeting"/>
+				<required id="LegalRights"/>
+				<required id="ResearchEthics"/>
+				<required id="PersianAbstract"/>
+				<required id="TableOfContents"/>
+				<required id="Chapter1"/>
+				<required id="Chapter2"/>
+				<required id="Chapter3"/>
+				<required id="Chapter4"/>
+				<required id="Chapter5"/>
+				<required id="Sources"/>
+				<required id="EnglishAbstract"/>
+				<required id="EnglishIdentity"/>
+			</customRequiredSubTemplate>
+		</requiredSubTemplates>
+	</template>
+
+
+	
+
+</templates>

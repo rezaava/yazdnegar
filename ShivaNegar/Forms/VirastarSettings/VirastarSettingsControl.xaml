@@ -1,0 +1,238 @@
+﻿<UserControl
+    x:Class="ShivaNegar.Forms.VirastarSettings.VirastarSettingsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="600"
+    d:DesignWidth="370"
+    FlowDirection="RightToLeft"
+    UseLayoutRounding="True"
+    FontFamily="Vazirmatn"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ShivaNegar;component/Forms/Styles/MainDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Style for section headers with legend effect -->
+            <Style x:Key="SectionHeaderStyle" TargetType="Grid">
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Margin" Value="0,5,0,15"/>
+            </Style>
+
+            <Style x:Key="HeaderLineStyle" TargetType="Border">
+                <Setter Property="Height" Value="1"/>
+                <Setter Property="Background" Value="{StaticResource PrimaryBackgroundColor}"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+            <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="15,0"/>
+                <Setter Property="Padding" Value="5,0"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="{StaticResource PrimaryBackgroundColor}"/>
+                <Setter Property="Background" Value="{StaticResource LightBackgroundColor}"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Name="panelMain">
+        <Border
+            Grid.RowSpan="2"
+            Background="{StaticResource PrimaryBackgroundColor}"
+            CornerRadius="10" />
+
+        <Grid Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid
+                Grid.Row="0"
+                VerticalAlignment="Top"
+                Background="{StaticResource PrimaryBackgroundColor}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Viewbox HorizontalAlignment="Left" StretchDirection="DownOnly">
+                    <StackPanel Orientation="Horizontal">
+                        <Button
+                            x:Name="btnCloseApp"
+                            Width="30"
+                            Height="30"
+                            Margin="5"
+                            Foreground="White"
+                            Style="{DynamicResource MaterialDesignIconButton}"
+                            ToolTip="بستن پنجره">
+                            <materialDesign:PackIcon Kind="WindowClose" />
+                        </Button>
+
+                        
+                    </StackPanel>
+                </Viewbox>
+
+                <Viewbox Grid.Column="1" StretchDirection="DownOnly">
+                    <TextBlock
+                        x:Name="lblWindowName"
+                        VerticalAlignment="Center"
+                        FontSize="20"
+                        Foreground="{StaticResource LightButtonTextColor}"
+                        Text="تنظیمات ویراستاری"
+                        TextAlignment="Center" />
+                </Viewbox>
+            </Grid>
+
+            <Border
+                Grid.Row="1"
+                Background="{StaticResource LightBackgroundColor}"
+                CornerRadius="10">
+                <ScrollViewer Margin="5" VerticalScrollBarVisibility="Auto">
+                    <Viewbox
+                        Grid.Column="1"
+                        Margin="5,0"
+                        VerticalAlignment="Top"
+                        StretchDirection="DownOnly">
+                        <StackPanel Width="340">
+                            <!-- ویراستار Section -->
+                            <StackPanel Margin="0,5">
+                                <!-- Header with legend effect -->
+                                <Grid Style="{StaticResource SectionHeaderStyle}">
+                                    <Border Style="{StaticResource HeaderLineStyle}" Margin="48,0,0,0"/>
+                                    <TextBlock
+                                        Text="ویراستار"
+                                        Style="{StaticResource HeaderTextStyle}" Margin="-1,0,0,0"/>
+                                </Grid>
+
+                                <StackPanel Margin="15,10">
+                                    <StackPanel
+                                        Margin="0,0,0,15"
+                                        HorizontalAlignment="Left"
+                                        Orientation="Horizontal">
+                                        <ToggleButton
+                                            x:Name="tbtnIncludeHalfSpaceCorrectionFootnote"
+                                            Margin="0,0,15,0"
+                                            UseLayoutRounding="False"
+                                            FlowDirection="LeftToRight" />
+                                        <TextBlock VerticalAlignment="Center" Text="اصلاح نیم فاصله در پانویس ها" />
+                                    </StackPanel>
+
+                                    <StackPanel
+                                        Margin="0,0,0,15"
+                                        HorizontalAlignment="Left"
+                                        Orientation="Horizontal">
+                                        <ToggleButton
+                                            x:Name="tbtnIncludeHalfSpaceCorrectionHeadersFooters"
+                                            Margin="0,0,15,0"
+                                            UseLayoutRounding="False"
+                                            VerticalAlignment="Top"
+                                            FlowDirection="LeftToRight" />
+                                        <TextBlock Text="اصلاح نیم فاصله در سرصفحه و پاصفحه" />
+                                    </StackPanel>
+
+                                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                        <StackPanel.ToolTip>
+                                            <StackPanel>
+                                                <TextBlock Text="؟؟؟؟؟" />
+                                                <TextBlock Text="(مانند TextBoxها)" />
+                                            </StackPanel>
+                                        </StackPanel.ToolTip>
+
+                                        <ToggleButton
+                                            x:Name="tbtnIncludeHalfSpaceCorrectionSpecialFields"
+                                            Margin="0,0,15,0"
+                                            VerticalAlignment="Top"
+                                            UseLayoutRounding="False"
+                                            FlowDirection="LeftToRight" />
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Margin="0,0,2,0" Text="اصلاح نیم فاصله در فیلد های خاص" />
+                                            <materialDesign:PackIcon
+                                                VerticalAlignment="Center"
+                                                Foreground="{StaticResource PrimaryBackgroundColor}"
+                                                Kind="QuestionMarkBox"
+                                                UseLayoutRounding="False" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <!-- تبدیل عدد Section -->
+                            <StackPanel Margin="0,15">
+                                <!-- Header with legend effect -->
+                                <Grid Style="{StaticResource SectionHeaderStyle}">
+                                    <Border Style="{StaticResource HeaderLineStyle}" Margin="60,0,0,0"/>
+                                    <TextBlock
+                                        Text="تبدیل عدد"
+                                        Style="{StaticResource HeaderTextStyle}" Margin="1,0,0,0"/>
+                                </Grid>
+
+                                <StackPanel Margin="15,10">
+                                    <StackPanel
+                                        HorizontalAlignment="Left"
+                                        Orientation="Horizontal">
+                                        <StackPanel.ToolTip>
+                                            <StackPanel>
+                                                <TextBlock Text="کد Unicode این کاراکتر ها متفاوت است" />
+                                                <TextBlock Text="(عدد 1 انگلیسی به عدد ۱ فارسی و بالعکس)" />
+                                            </StackPanel>
+                                        </StackPanel.ToolTip>
+
+                                        <ToggleButton
+                                            x:Name="tbIncludeChangeDigitCharacters"
+                                            Margin="0,0,15,0"
+                                            HorizontalAlignment="Left"
+                                            UseLayoutRounding="False"
+                                            VerticalAlignment="Top"
+                                            FlowDirection="LeftToRight" />
+
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Margin="0,0,2,0" Text="جایگزین کردن کاراکتر عدد" />
+                                            <materialDesign:PackIcon
+                                                VerticalAlignment="Center"
+                                                Foreground="{StaticResource PrimaryBackgroundColor}"
+                                                Kind="QuestionMarkBox"
+                                                UseLayoutRounding="False" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <!-- شعر Section -->
+                            <StackPanel Margin="0,15">
+                                <!-- Header with legend effect -->
+                                <Grid Style="{StaticResource SectionHeaderStyle}">
+                                    <Border Style="{StaticResource HeaderLineStyle}" Margin="28,0,0,0"/>
+                                    <TextBlock
+                                        Text="شعر"
+                                        Style="{StaticResource HeaderTextStyle}" Margin="1,0,0,0"/>
+                                </Grid>
+
+                                <StackPanel Margin="15,10">
+                                    <ComboBox
+                                        Name="comboCreatePoemType"
+                                        materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
+                                        materialDesign:HintAssist.FloatingScale="1"
+                                        materialDesign:HintAssist.Hint="شیوه نوشتن شعر"
+                                        Style="{StaticResource MaterialDesignOutlinedComboBox}">
+                                        <ComboBoxItem>به صورت ستونی</ComboBoxItem>
+                                        <ComboBoxItem>به صورت جدولی</ComboBoxItem>
+                                    </ComboBox>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Viewbox>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

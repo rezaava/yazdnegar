@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<universities>
+	<university id="0" persian="دانشگاه یزد" english="Yazd University">
+		<departments>
+			<department persian="دانشکده اقتصاد، مدیریت و حسابداری" english="Department of Economics, Management And Accounting">
+				<group persian="علوم اقتصادی" english="Economics"/>
+				<group persian="حسابداری و مالی" english="Accounting and Finance"/>
+				<group persian="مدیریت جهانگردی" english="Tourism Management"/>
+				<group persian="مدیریت بازرگانی" english="Business Management"/>
+				<group persian="مدیریت صنعتی" english="Industrial Management"/>
+			</department>
+			<department persian="دانشکده الهیات" english="Department of Theology">
+				<group persian="علوم قرآن و حدیث" english="Quranic and Hadith Sciences"/>
+				<group persian="فقه و حقوق اسلامی" english="Jurisprudence and Islamic Law"/>
+			</department>
+			<department persian="دانشکده حقوق، علوم سیاسی و تاریخ" english="Department of Law, Political Science and History">
+				<group persian="حقوق" english="Law"/>
+				<group persian="علوم سیاسی" english="Political Science"/>
+				<group persian="تاریخ" english="History"/>
+			</department>
+			<department persian="دانشکده روانشناسی و علوم تربیتی" english="Department of Psychology And Educational Sciences">
+				<group persian="علوم تربیتی" english="Educational Sciences"/>
+				<group persian="روانشناسی و مشاوره" english="Psychology and Counseling"/>
+				<group persian="تربیت بدنی و علوم ورزشی" english="Physical Education and Sports Sciences"/>
+				<group persian="علم اطلاعات و دانش شناسی" english="Library and Information Science"/>
+			</department>
+			<department persian="دانشکده زبان و ادبیات" english="Department of Foreign Languages">
+				<group persian="زبان و ادبیات فارسی" english="Persian Language and Literature"/>
+				<group persian="زبان و ادبیات عرب" english="Arabic Language and Literature"/>
+				<group persian="زبان و ادبیات انگلیسی" english="English Language and Literature"/>
+			</department>
+			<department persian="دانشکده شیمی" english="Department of Chemistry">
+				<group persian="شیمی فیزیک" english="Physical Chemistry"/>
+				<group persian="شیمی آلی" english="Organic Chemistry"/>
+				<group persian="شیمی تجزیه" english="Analytical Chemistry"/>
+				<group persian="شیمی معدنی" english="Inorganic Chemistry"/>
+			</department>
+			<department persian="دانشکده علوم اجتماعی" english="Department of Social Sciences">
+				<group persian="تعاون و رفاه اجتماعی" english="Cooperation and Social Welfare"/>
+				<group persian="جامعه‌شناسی" english="Sociology"/>
+				<group persian="مردم‌شناسی" english="Anthropology"/>
+			</department>
+			<department persian="دانشکده علوم ریاضی" english="Department of Mathematical Sciences">
+				<group persian="ریاضی محض" english="Pure Mathematics"/>
+				<group persian="ریاضی کاربردی" english="Applied Mathematics"/>
+				<group persian="علوم کامپیوتر" english="Computer Science"/>
+				<group persian="آمار" english="Statistics"/>
+			</department>
+			<department persian="دانشکده فیزیک" english="Department of Physics">
+				<group persian="اتمی مولکولی" english="Atomic and Molecular"/>
+				<group persian="حالت جامد" english="Condensed Matter"/>
+				<group persian="ذرات بنیادی" english="Particle Physics"/>
+				<group persian="هسته‌ای" english="Nuclear"/>
+				<group persian="فیزیک فضا" english="Space Physics"/>
+			</department>
+			<department persian="دانشکده منابع طبیعی و کویرشناسی" english="School of Natural Resources And Desert Studies">
+				<!--اینجا گروه بودش، بخش نبود-->
+				<group persian="گروه محیط زیست" english="Environmental Group"/>
+				<group persian="گروه مرتع و آبخیزداری" english="Rangeland and Watershed Management Group"/>
+				<group persian="گروه احیا و مدیریت مناطق خشک و بیابانی" english="Rehabilitation and Management of Arid and Desert Regions Group"/>
+			</department>
+			<department persian="دانشکده مهندسی برق" english="Department of Electrical engineering">
+				<group persian="قدرت" english="Power"/>
+				<group persian="مخابرات" english="Telecommunications"/>
+				<group persian="الکترونیک و کنترل" english="Electronics and Control"/>
+			</department>
+			<department persian="دانشکده مهندسی عمران" english="Department of Civil engineering">
+				<group persian="ژئوتکنیک و راه" english="Geotechnical and Transportation"/>
+				<group persian="سازه" english="Structures"/>
+				<group persian="آب" english="Water"/>
+			</department>
+			<department persian="دانشکده مهندسی کامپیوتر" english="Department of Computer engineering">
+				<!--بخش و گروهی ندارد-->
+			</department>
+			<department persian="دانشکده مهندسی معدن و متالورژی" english="Department of mining And metallurgy engineering">
+				<group persian="استخراج" english="Extraction"/>
+				<group persian="اکتشاف" english="Exploration"/>
+				<group persian="مواد و متالورژی صنعتی" english="Materials and Industrial Metallurgy"/>
+			</department>
+			<department persian="دانشکده مهندسی مکانیک" english="Department of Mechanical engineering">
+				<group persian="دینامیک و کنترل" english="Dynamics and Control"/>
+				<group persian="جامدات و ساخت" english="Solids and Manufacturing"/>
+				<group persian="تبدیل انرژی" english="Energy Conversion"/>
+			</department>
+			<department persian="دانشکده مهندسی نساجی" english="Department of Textile engineering">
+				<group persian="فناوری نساجی" english="Textile Technology"/>
+				<group persian="شیمی نساجی" english="Textile Chemistry"/>
+				<group persian="پوشاک" english="Clothing"/>
+			</department>
+			<department persian="دانشکده هنر و معماری" english="School of Arts And Architecture">
+				<!--اینجا گروه هستش نه بخش-->
+				<group persian="گروه شهرسازی" english="Urban Planning Group"/>
+				<group persian="گروه معماری" english="Architecture Group"/>
+				<group persian="گروه هنرهای تجسمی" english="Visual Arts Group"/>
+			</department>
+	
+	
+			<!--اینجا جزو دانشکده بود، ولی به جای دانشکده، نوشته بود گروه-->
+			<department persian="گروه جغرافیا" english="">
+				<group persian="آمایش سرزمین" english="Land Use Planning"/>
+				<group persian="برنامه‌ریزی محیطی" english="Environmental Planning"/>
+			</department>
+			<department persian="گروه زمین‌شناسی" english="">
+				<!--بخش و گروهی ندارد-->
+			</department>
+			<department persian="گروه زیست‌شناسی" english="">
+				<!--بخش و گروهی ندارد-->
+			</department>
+			<department persian="گروه مهندسی شیمی و پلیمر" english="">
+				<!--بخش و گروهی ندارد-->
+			</department>
+			<department persian="گروه مهندسی صنایع" english="">
+				<!--بخش و گروهی ندارد-->
+			</department>
+		</departments>
+	</university>
+	
+	<university id="1" persian="دانشگاه آزاد اسلامی" english="Islamic Azad University" branchFa="یزد" branchEn="Yazd">
+		<departments>
+			<department persian="دانشکده فنی مهندسی" english="Department of Engineering">
+				<group persian="مهندسی برق" english="Electrical Engineering"/>
+				<group persian="مهندسی پزشکی" english="Biomedical Engineering"/>
+				<group persian="مهندسی صنایع" english="Industrial Engineering"/>
+				<group persian="مهندسی عمران" english="Civil Engineering"/>
+				<group persian="مهندسی کامپیوتر" english="Computer Engineering"/>
+				<group persian="مهندسی کشاورزی" english="Agricultural Engineering"/>
+				<group persian="مهندسی مکانیک" english="Mechanical Engineering"/>
+				<group persian="مهندسی مواد و متالورژی" english="Materials and Metallurgical Engineering"/>
+				<group persian="مهندسی نساجی و پلیمر" english="Textile and Polymer Engineering"/>
+			</department>
+			<department persian="دانشکده هنر و معماری" english="Department of Arts and Architecture">
+				<group persian="مرمت و شهرسازی" english="Restoration and Urban Planning"/>
+				<group persian="معماری" english="Architecture"/>
+				<group persian="طراحی پارچه" english="Textile Design"/>
+				<group persian="گرافیک و نقاشی" english="Graphic Design and Painting"/>
+			</department>
+			<department persian="دانشکده علوم انسانی" english="Department of Humanities">
+				<group persian="مشاوره" english="Counseling"/>
+				<group persian="آموزش معلمان" english="Teacher Education"/>
+				<group persian="مدیریت" english="Management"/>
+				<group persian="حسابداری" english="Accounting"/>
+				<group persian="جغرافیا" english="Geography"/>
+				<group persian="ارتباطات اجتماعی" english="Social Communications"/>
+				<group persian="تربیت بدنی" english="Physical Education"/>
+				<group persian="روانشناسی" english="Psychology"/>
+				<group persian="ادبیات" english="Literature"/>
+				<group persian="زبان انگلیسی" english="English Language"/>
+				<group persian="حقوق" english="Law"/>
+				<group persian="معارف" english="Religious Studies"/>
+			</department>
+			<department persian="دانشکده علوم پایه" english="Department of Basic Sciences">
+				<group persian="فیزیک" english="Physics"/>
+				<group persian="شیمی و مهندسی شیمی" english="Chemistry and Chemical Engineering"/>
+				<group persian="ریاضی" english="Mathematics"/>
+			</department>
+			<department persian="دانشکده مهارت و کارآفرینی" english="Department of Skills and Entrepreneurship">
+				<!--نداشت-->
+			</department>
+			<department persian="دانشکده پزشکی" english="Department of Medicine">
+				<!--نداشت-->
+			</department>
+			<department persian="دانشکده پیراپزشکی" english="Department of Paramedical Sciences">
+				<group persian="هوشبری" english="Anesthesia"/>
+				<group persian="تکنولوژی اتاق عمل" english="Surgical Operating Room Technology"/>
+			</department>
+			<department persian="دانشکده پرستاری" english="Department of Nursing">
+				<!--نداشت-->
+			</department>
+			<department persian="دانشکده تعلیم و تربیت اسلامی" english="Department of Islamic Education and Training">
+				<!--نداشت-->
+			</department>
+		</departments>
+	</university>
+
+	<university id="2" persian="دانشگاه آزاد اسلامی" english="Islamic Azad University" branchFa="تهران مرکزی" branchEn="Central Tehran">
+		<departments>
+			<department persian="دانشکده فنی مهندسی" english="Department of Engineering">
+				<group persian="مهندسی برق" english="Electrical Engineering"/>
+				<group persian="مهندسی پزشکی" english="Biomedical Engineering"/>
+				<group persian="مهندسی صنایع" english="Industrial Engineering"/>
+				<group persian="مهندسی عمران" english="Civil Engineering"/>
+				<group persian="مهندسی کامپیوتر" english="Computer Engineering"/>
+				<group persian="مهندسی کشاورزی" english="Agricultural Engineering"/>
+				<group persian="مهندسی مکانیک" english="Mechanical Engineering"/>
+				<group persian="مهندسی مواد و متالورژی" english="Materials and Metallurgical Engineering"/>
+				<group persian="مهندسی نساجی و پلیمر" english="Textile and Polymer Engineering"/>
+			</department>
+			<department persian="دانشکده هنر و معماری" english="Department of Arts and Architecture">
+				<group persian="مرمت و شهرسازی" english="Restoration and Urban Planning"/>
+				<group persian="معماری" english="Architecture"/>
+				<group persian="طراحی پارچه" english="Textile Design"/>
+				<group persian="گرافیک و نقاشی" english="Graphic Design and Painting"/>
+			</department>
+			<department persian="دانشکده علوم انسانی" english="Department of Humanities">
+				<group persian="مشاوره" english="Counseling"/>
+				<group persian="آموزش معلمان" english="Teacher Education"/>
+				<group persian="مدیریت" english="Management"/>
+				<group persian="حسابداری" english="Accounting"/>
+				<group persian="جغرافیا" english="Geography"/>
+				<group persian="ارتباطات اجتماعی" english="Social Communications"/>
+				<group persian="تربیت بدنی" english="Physical Education"/>
+				<group persian="روانشناسی" english="Psychology"/>
+				<group persian="ادبیات" english="Literature"/>
+				<group persian="زبان انگلیسی" english="English Language"/>
+				<group persian="حقوق" english="Law"/>
+				<group persian="معارف" english="Religious Studies"/>
+			</department>
+			<department persian="دانشکده علوم پایه" english="Department of Basic Sciences">
+				<group persian="فیزیک" english="Physics"/>
+				<group persian="شیمی و مهندسی شیمی" english="Chemistry and Chemical Engineering"/>
+				<group persian="ریاضی" english="Mathematics"/>
+			</department>
+			<department persian="دانشکده مهارت و کارآفرینی" english="Department of Skills and Entrepreneurship">
+				<!--نداشت-->
+			</department>
+			<department persian="دانشکده پزشکی" english="Department of Medicine">
+				<!--نداشت-->
+			</department>
+			<department persian="دانشکده پیراپزشکی" english="Department of Paramedical Sciences">
+				<group persian="هوشبری" english="Anesthesia"/>
+				<group persian="تکنولوژی اتاق عمل" english="Surgical Operating Room Technology"/>
+			</department>
+			<department persian="دانشکده پرستاری" english="Department of Nursing">
+				<!--نداشت-->
+			</department>
+			<department persian="دانشکده تعلیم و تربیت اسلامی" english="Department of Islamic Education and Training">
+				<!--نداشت-->
+			</department>
+		</departments>
+	</university>
+
+	<!--
+	<university persian="دانشگاه علم و هنر یزد" english="Elm Va Honar University"/>
+	<university persian="دانشگاه فنی شماره دو یزد (امام علی (ع))" english="Imam Ali Yazd University"/>
+	<university persian="دانشگاه فردوسی مشهد" english="Ferdosi Mashhad University"/>
+	<university persian="دانشگاه تهران" english="Tehran University"/>
+	<university persian="دانشگاه اردکان" english="Ardakan University"/>
+	<university persian="دانشگاه صنعتی اصفهان" english="Isfahan University of Technology"/>
+	<university persian="دانشگاه اصفهان" english="Esfahan University"/>
+	-->
+
+
+	<university id="3" persian="دانشگاه جامع علمی کاربردی (واحد یزد)" english="Science and Technology University">
+		<departments>
+			<department persian="واحد استان یزد" english="Yazd Province Branch">
+				<group persian="مرکز آموزشی علمی کاربردی خدمات بهزیستی صدوق یزد" english="Economics"/>
+				<group persian="مرکز علمی کاربردی فرهنگ و هنر صدوقی" english="Economics"/>
+				<group persian="مرکز آموزش علمی کاربردی فرماندهی انتظامی استان یزد" english="Economics"/>
+				<group persian="مرکز علمی کاربردی  شرکت صنایع غذایی شیر رضا" english="Economics"/>
+				<group persian="مرکز آموزش علمی کاربردی جوادالائمه (ع)" english="Economics"/>
+				<group persian="مرکز آموزش علمی کاربردی شرکت فولاد آلیاژی ایران" english="Economics"/>
+				<group persian="مرکز آموزش علمی کاربردی شرکت شهرک های صنعتی اردکان" english="Economics"/>
+				<group persian="مرکز آموزش علمی-کاربردی هلال احمر یزد" english="Economics"/>
+			</department>
+		</departments>
+	</university>
+
+	
+</universities>

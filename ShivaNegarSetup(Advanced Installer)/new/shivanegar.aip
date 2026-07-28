@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="22.1" version="22.1" Modules="professional" RootPath="." Language="en" Id="{05CB423A-D868-4508-BD60-910BDD54DD4E}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="Manufacturer" Value="ShivaNegar"/>
+    <ROW Property="ProductCode" Value="1033:{F9A45BD9-B86D-41E4-A18D-3AA72444B376} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="ShivaNegar"/>
+    <ROW Property="ProductVersion" Value="4.2.3" Options="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="UpgradeCode" Value="{C2643792-FA0B-4B23-AECA-A74354371677}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT60" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT60Display" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SideBySideGuidComponent">
+    <ROW Component="APPDIR" Value="{C9C0CC6E-6455-490C-A396-34CAC00F2A7C}"/>
+    <ROW Component="ProductInformation" Value="{20860ADB-5349-4202-818F-936CF5D4EE82}"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_ExePath" ComponentId="{56DDD754-6646-47C9-8362-2111857688AF}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
+    <ROW Component="APPDIR" ComponentId="{C9C0CC6E-6455-490C-A396-34CAC00F2A7C}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="CsvHelper.dll" ComponentId="{ECBB9724-3E16-44FD-92EE-0CB1EDA0F799}" Directory_="APPDIR" Attributes="0" KeyPath="CsvHelper.dll"/>
+    <ROW Component="CsvHelper.xml" ComponentId="{903FB76C-EF35-47DA-BBEE-FD3B0F93647B}" Directory_="APPDIR" Attributes="0" KeyPath="CsvHelper.xml" Type="0"/>
+    <ROW Component="Description" ComponentId="{2406AA39-6A0B-46BD-8CB3-FFC3188404A5}" Directory_="APPDIR" Attributes="4" KeyPath="Description"/>
+    <ROW Component="DocumentFormat.OpenXml.Framework.dll" ComponentId="{21F94D37-2BF4-43CA-BD3D-C390ECBEB746}" Directory_="APPDIR" Attributes="0" KeyPath="DocumentFormat.OpenXml.Framework.dll"/>
+    <ROW Component="DocumentFormat.OpenXml.dll" ComponentId="{272952CA-12BB-4048-B5EF-395CD62EDA0E}" Directory_="APPDIR" Attributes="0" KeyPath="DocumentFormat.OpenXml.dll"/>
+    <ROW Component="FriendlyName" ComponentId="{20766E3E-21C7-4612-ABC0-D034994ED077}" Directory_="APPDIR" Attributes="4" KeyPath="FriendlyName"/>
+    <ROW Component="LoadBehavior" ComponentId="{ABDA697B-241A-4389-8586-E243B54C3C54}" Directory_="APPDIR" Attributes="4" KeyPath="LoadBehavior"/>
+    <ROW Component="Manifest" ComponentId="{2E50B7FF-F1AA-467E-AD34-D4E1A52FF8BC}" Directory_="APPDIR" Attributes="4" KeyPath="Manifest"/>
+    <ROW Component="MaterialDesignColors.dll" ComponentId="{ABA99F0C-B657-478F-AB90-6B2CE85934D0}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignColors.dll"/>
+    <ROW Component="MaterialDesignThemes.Wpf.dll" ComponentId="{93AF651C-E708-4E28-A420-5CFD714217AE}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignThemes.Wpf.dll"/>
+    <ROW Component="Microsoft.Bcl.AsyncInterfaces.dll" ComponentId="{A6D105BC-123D-4064-87B5-0DC7A57F7A9F}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW Component="Microsoft.Bcl.HashCode.dll" ComponentId="{F95AD25F-805F-4A7C-82E8-9F1CB196AF10}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Bcl.HashCode.dll"/>
+    <ROW Component="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" ComponentId="{3DC0F6BE-74DE-43E5-9C43-2EA4F37B3129}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Office.Tools.Common.v4.0.Utilities.dll"/>
+    <ROW Component="Microsoft.Xaml.Behaviors.dll" ComponentId="{61616410-42AA-4FEF-BB65-8900DFCD8058}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{401C3B83-79E5-4585-B353-B197DAFAD879}" Directory_="APPDIR" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{20860ADB-5349-4202-818F-936CF5D4EE82}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="ShivaNegar.dll" ComponentId="{D02AD247-878E-477B-B6E8-D2917E439006}" Directory_="APPDIR" Attributes="0" KeyPath="ShivaNegar.dll"/>
+    <ROW Component="System.Buffers.dll" ComponentId="{C8D740C3-1983-476B-8771-A98A5EAD4507}" Directory_="APPDIR" Attributes="0" KeyPath="System.Buffers.dll"/>
+    <ROW Component="System.IO.Pipelines.dll" ComponentId="{95B7E6DE-C240-49B6-A069-80A4E1661800}" Directory_="APPDIR" Attributes="0" KeyPath="System.IO.Pipelines.dll"/>
+    <ROW Component="System.Memory.dll" ComponentId="{D7E4F4F2-222C-4D24-94D1-31579179F34C}" Directory_="APPDIR" Attributes="0" KeyPath="System.Memory.dll"/>
+    <ROW Component="System.Numerics.Vectors.dll" ComponentId="{00E8743A-E945-4CE9-A993-4CD5886FE954}" Directory_="APPDIR" Attributes="0" KeyPath="System.Numerics.Vectors.dll"/>
+    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll" ComponentId="{E66E2989-55D3-438D-AD58-44F51E77F0BA}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Component="System.Text.Encodings.Web.dll" ComponentId="{9570FE7E-9538-4DC3-BA6E-382B52B15D42}" Directory_="APPDIR" Attributes="0" KeyPath="System.Text.Encodings.Web.dll"/>
+    <ROW Component="System.Text.Json.dll" ComponentId="{F8949AA5-3691-4B0C-AE03-B2520BC326B8}" Directory_="APPDIR" Attributes="0" KeyPath="System.Text.Json.dll"/>
+    <ROW Component="System.Threading.Tasks.Extensions.dll" ComponentId="{AAC3683C-1417-4E59-90CA-A297B1451A1C}" Directory_="APPDIR" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Component="System.ValueTuple.dll" ComponentId="{ADEF9689-1996-47B1-9760-4B0F63F17802}" Directory_="APPDIR" Attributes="0" KeyPath="System.ValueTuple.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="CsvHelper.dll" Component_="CsvHelper.dll" FileName="CSVHEL~1.DLL|CsvHelper.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\CsvHelper.dll" SelfReg="false"/>
+    <ROW File="CsvHelper.xml" Component_="CsvHelper.xml" FileName="CSVHEL~1.XML|CsvHelper.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\CsvHelper.xml" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.dll" Component_="DocumentFormat.OpenXml.dll" FileName="DOCUME~1.DLL|DocumentFormat.OpenXml.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\DocumentFormat.OpenXml.dll" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.Framework.dll" Component_="DocumentFormat.OpenXml.Framework.dll" FileName="DOCUME~2.DLL|DocumentFormat.OpenXml.Framework.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\DocumentFormat.OpenXml.Framework.dll" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.Framework.xml" Component_="CsvHelper.xml" FileName="DOCUME~1.XML|DocumentFormat.OpenXml.Framework.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\DocumentFormat.OpenXml.Framework.xml" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.xml" Component_="CsvHelper.xml" FileName="DOCUME~2.XML|DocumentFormat.OpenXml.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\DocumentFormat.OpenXml.xml" SelfReg="false"/>
+    <ROW File="MaterialDesignColors.dll" Component_="MaterialDesignColors.dll" FileName="MATERI~1.DLL|MaterialDesignColors.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\MaterialDesignColors.dll" SelfReg="false"/>
+    <ROW File="MaterialDesignThemes.Wpf.dll" Component_="MaterialDesignThemes.Wpf.dll" FileName="MATERI~2.DLL|MaterialDesignThemes.Wpf.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\MaterialDesignThemes.Wpf.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.xml" Component_="CsvHelper.xml" FileName="MICROS~1.XML|Microsoft.Bcl.AsyncInterfaces.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.HashCode.dll" Component_="Microsoft.Bcl.HashCode.dll" FileName="MICROS~2.DLL|Microsoft.Bcl.HashCode.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\Microsoft.Bcl.HashCode.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.HashCode.xml" Component_="CsvHelper.xml" FileName="MICROS~2.XML|Microsoft.Bcl.HashCode.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\Microsoft.Bcl.HashCode.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" Component_="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" FileName="MICROS~3.DLL|Microsoft.Office.Tools.Common.v4.0.Utilities.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.dll" Component_="Microsoft.Xaml.Behaviors.dll" FileName="MICROS~4.DLL|Microsoft.Xaml.Behaviors.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\Microsoft.Xaml.Behaviors.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.pdb" Component_="Microsoft.Xaml.Behaviors.dll" FileName="MICROS~1.PDB|Microsoft.Xaml.Behaviors.pdb" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\Microsoft.Xaml.Behaviors.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.xml" Component_="CsvHelper.xml" FileName="MICROS~3.XML|Microsoft.Xaml.Behaviors.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\Microsoft.Xaml.Behaviors.xml" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.xml" Component_="CsvHelper.xml" FileName="NEWTON~1.XML|Newtonsoft.Json.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\Newtonsoft.Json.xml" SelfReg="false"/>
+    <ROW File="ShivaNegar.dll" Component_="ShivaNegar.dll" FileName="SHIVAN~1.DLL|ShivaNegar.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\ShivaNegar.dll" SelfReg="false"/>
+    <ROW File="ShivaNegar.dll.config" Component_="CsvHelper.xml" FileName="SHIVAN~1.CON|ShivaNegar.dll.config" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\ShivaNegar.dll.config" SelfReg="false"/>
+    <ROW File="ShivaNegar.dll.manifest" Component_="CsvHelper.xml" FileName="SHIVAN~1.MAN|ShivaNegar.dll.manifest" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\ShivaNegar.dll.manifest" SelfReg="false"/>
+    <ROW File="ShivaNegar.pdb" Component_="ShivaNegar.dll" FileName="SHIVAN~1.PDB|ShivaNegar.pdb" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\ShivaNegar.pdb" SelfReg="false"/>
+    <ROW File="ShivaNegar.vsto" Component_="CsvHelper.xml" FileName="SHIVAN~1.VST|ShivaNegar.vsto" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\ShivaNegar.vsto" SelfReg="false"/>
+    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Buffers.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.xml" Component_="CsvHelper.xml" FileName="SYSTEM~1.XML|System.Buffers.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Buffers.xml" SelfReg="false"/>
+    <ROW File="System.IO.Pipelines.dll" Component_="System.IO.Pipelines.dll" FileName="SYSTEM~2.DLL|System.IO.Pipelines.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.IO.Pipelines.dll" SelfReg="false"/>
+    <ROW File="System.IO.Pipelines.xml" Component_="CsvHelper.xml" FileName="SYSTEM~2.XML|System.IO.Pipelines.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.IO.Pipelines.xml" SelfReg="false"/>
+    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~3.DLL|System.Memory.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Memory.dll" SelfReg="false"/>
+    <ROW File="System.Memory.xml" Component_="CsvHelper.xml" FileName="SYSTEM~3.XML|System.Memory.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Memory.xml" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~4.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Numerics.Vectors.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.xml" Component_="CsvHelper.xml" FileName="SYSTEM~4.XML|System.Numerics.Vectors.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Numerics.Vectors.xml" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.xml" Component_="CsvHelper.xml" FileName="SYSTEM~5.XML|System.Runtime.CompilerServices.Unsafe.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.dll" Component_="System.Text.Encodings.Web.dll" FileName="SYSTEM~6.DLL|System.Text.Encodings.Web.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Text.Encodings.Web.dll" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.xml" Component_="CsvHelper.xml" FileName="SYSTEM~6.XML|System.Text.Encodings.Web.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Text.Encodings.Web.xml" SelfReg="false"/>
+    <ROW File="System.Text.Json.dll" Component_="System.Text.Json.dll" FileName="SYSTEM~7.DLL|System.Text.Json.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Text.Json.dll" SelfReg="false"/>
+    <ROW File="System.Text.Json.xml" Component_="CsvHelper.xml" FileName="SYSTEM~7.XML|System.Text.Json.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Text.Json.xml" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~8.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.xml" Component_="CsvHelper.xml" FileName="SYSTEM~8.XML|System.Threading.Tasks.Extensions.xml" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.Threading.Tasks.Extensions.xml" SelfReg="false"/>
+    <ROW File="System.ValueTuple.dll" Component_="System.ValueTuple.dll" FileName="SYSTEM~9.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="..\..\ShivaNegar\bin\Release\System.ValueTuple.dll" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrapperUISequenceComponent">
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="249"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="251"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" UseLargeSchema="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="Themes.aip" Path="&lt;AI_FRAGS&gt;Themes.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[AppDataFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+    <ROW Feature_="MainFeature" Component_="Description"/>
+    <ROW Feature_="MainFeature" Component_="FriendlyName"/>
+    <ROW Feature_="MainFeature" Component_="LoadBehavior"/>
+    <ROW Feature_="MainFeature" Component_="Manifest"/>
+    <ROW Feature_="MainFeature" Component_="CsvHelper.dll"/>
+    <ROW Feature_="MainFeature" Component_="CsvHelper.xml"/>
+    <ROW Feature_="MainFeature" Component_="DocumentFormat.OpenXml.dll"/>
+    <ROW Feature_="MainFeature" Component_="DocumentFormat.OpenXml.Framework.dll"/>
+    <ROW Feature_="MainFeature" Component_="MaterialDesignColors.dll"/>
+    <ROW Feature_="MainFeature" Component_="MaterialDesignThemes.Wpf.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Bcl.HashCode.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Office.Tools.Common.v4.0.Utilities.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Xaml.Behaviors.dll"/>
+    <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="ShivaNegar.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Buffers.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.Pipelines.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Memory.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Numerics.Vectors.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Text.Encodings.Web.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Text.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ValueTuple.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1397"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="1399" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="1398"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 600)" Description="[ProductName] cannot be installed on [WindowsTypeNT60Display]." DescriptionLocId="AI.LaunchCondition.NoNT60" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="Addins" Root="-1" Key="Software\Microsoft\Office\Word\Addins" Name="\"/>
+    <ROW Registry="AdvancedInstaller" Root="-1" Key="Software\Caphyon\Advanced Installer" Name="\"/>
+    <ROW Registry="Caphyon" Root="-1" Key="Software\Caphyon" Name="\"/>
+    <ROW Registry="Description" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="Description" Value="shivanegar" Component_="Description"/>
+    <ROW Registry="FriendlyName" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="FriendlyName" Value="shivanegar" Component_="FriendlyName"/>
+    <ROW Registry="LZMA" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA" Name="\"/>
+    <ROW Registry="LoadBehavior" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="LoadBehavior" Value="#3" Component_="LoadBehavior" VirtualValue="#"/>
+    <ROW Registry="Manifest" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="Manifest" Value="file:///[APPDIR]ShivaNegar.vsto|vstolocal" Component_="Manifest"/>
+    <ROW Registry="Manufacturer" Root="-1" Key="Software\[Manufacturer]" Name="\"/>
+    <ROW Registry="Manufacturer.ProductName" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="\"/>
+    <ROW Registry="Microsoft" Root="-1" Key="Software\Microsoft" Name="\"/>
+    <ROW Registry="Office" Root="-1" Key="Software\Microsoft\Office" Name="\"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="ProductCode" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]" Name="\"/>
+    <ROW Registry="ProductName" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="\"/>
+    <ROW Registry="ProductVersion" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="\"/>
+    <ROW Registry="Software" Root="-1" Key="Software" Name="\"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+    <ROW Registry="Word" Root="-1" Key="Software\Microsoft\Office\Word" Name="\"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" Attributes="1" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>

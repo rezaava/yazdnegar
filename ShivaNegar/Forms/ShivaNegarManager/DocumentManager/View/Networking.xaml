@@ -1,0 +1,204 @@
+﻿<UserControl
+    x:Class="ShivaNegar.Forms.ShivaNegarManager.DocumentManager.View.Networking"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="500"
+    d:DesignWidth="500"
+    FlowDirection="RightToLeft"
+    FontFamily="Vazirmatn"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ShivaNegar;component/Forms/Styles/MainDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border Background="{StaticResource LightBackgroundColor}" CornerRadius="10">
+        <materialDesign:Card Margin="25">
+            <ScrollViewer
+                CanContentScroll="True"
+                ScrollViewer.IsDeferredScrollingEnabled="True"
+                VerticalScrollBarVisibility="Auto"
+                VirtualizingPanel.ScrollUnit="Pixel"
+                VirtualizingStackPanel.IsVirtualizing="True"
+                VirtualizingStackPanel.VirtualizationMode="Standard">
+
+                <StackPanel Margin="10">
+
+
+                    <StackPanel Margin="10,5" Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            Text="لیست درخواست ها" />
+
+                        <Button
+                            x:Name="btnRefreshList"
+                            Margin="5,0,0,0"
+                            materialDesign:ButtonAssist.CornerRadius="5"
+                            Foreground="{StaticResource PrimaryBackgroundColor}"
+                            Style="{StaticResource MaterialDesignIconButton}"
+                            ToolTip="بروزرسانی لیست درخواست ها">
+                            <Button.Content>
+                                <materialDesign:PackIcon
+                                    Width="30"
+                                    Height="30"
+                                    VerticalAlignment="Center"
+                                    Kind="Refresh" />
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+
+                    <Border
+                        x:Name="borderNetworkingRequests"
+                        Margin="10"
+                        BorderBrush="Gray"
+                        BorderThickness="2"
+                        CornerRadius="5">
+
+                        <StackPanel>
+                            <ListBox
+                                x:Name="lstNetworkingRequests"
+                                HorizontalContentAlignment="Stretch"
+                                ItemsSource="{Binding NetworkingRequestModels}"
+                                ScrollViewer.CanContentScroll="False">
+
+                                <ListBox.Resources>
+                                    <Style TargetType="ListBoxItem">
+                                        <Setter Property="Background" Value="Transparent" />
+                                        <Setter Property="BorderBrush" Value="Transparent" />
+                                        <Setter Property="Margin" Value="5" />
+                                        <Setter Property="Padding" Value="0" />
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListBoxItem">
+                                                    <Border
+                                                        Background="{TemplateBinding Background}"
+                                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                                        <ContentPresenter />
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background" Value="Transparent" />
+                                                <!--  رنگ پس‌زمینه انتخاب شده  -->
+                                                <Setter Property="BorderBrush" Value="Transparent" />
+                                                <!--  رنگ حاشیه انتخاب شده  -->
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ListBox.Resources>
+
+                                <ListBox.Template>
+                                    <ControlTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <DockPanel Grid.Row="0" LastChildFill="True">
+                                                <Grid MinHeight="30" DockPanel.Dock="Top">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label
+                                                        Grid.Column="0"
+                                                        Grid.ColumnSpan="3"
+                                                        Margin="15,0,0,0"
+                                                        HorizontalAlignment="Left">
+                                                        پیغام
+                                                    </Label>
+                                                    <Label Grid.Column="3" HorizontalAlignment="Center">عملیات ها</Label>
+                                                </Grid>
+                                                <ItemsPresenter />
+                                            </DockPanel>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </ListBox.Template>
+
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid MinHeight="30">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="3"
+                                                HorizontalAlignment="Left"
+                                                VerticalAlignment="Center"
+                                                Text="{Binding Content}"
+                                                TextWrapping="Wrap" />
+
+                                            <StackPanel
+                                                Grid.Column="3"
+                                                HorizontalAlignment="Center"
+                                                Orientation="Horizontal">
+                                                <Button
+                                                    x:Name="btnRequestAccept"
+                                                    Grid.Column="3"
+                                                    Width="30"
+                                                    Height="30"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center"
+                                                    Click="btnRequestAccept_Click"
+                                                    Foreground="Green"
+                                                    Style="{DynamicResource MaterialDesignIconButton}"
+                                                    ToolTip="پذیرفتن">
+                                                    <materialDesign:PackIcon
+                                                        Width="20"
+                                                        Height="20"
+                                                        Kind="CheckAll" />
+                                                </Button>
+                                                <Button
+                                                    x:Name="btnRequestReject"
+                                                    Width="30"
+                                                    Height="30"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center"
+                                                    Click="btnRequestReject_Click"
+                                                    Foreground="Red"
+                                                    Style="{DynamicResource MaterialDesignIconButton}"
+                                                    ToolTip="رد کردن">
+                                                    <materialDesign:PackIcon
+                                                        Width="20"
+                                                        Height="20"
+                                                        Kind="CloseCircle" />
+                                                </Button>
+
+                                            </StackPanel>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+                            <TextBlock
+                                x:Name="lblNoRequest"
+                                Margin="10"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="15"
+                                Text="درخواستی ثبت نشده است"
+                                Visibility="{Binding Path=ShowEmptyList, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+        </materialDesign:Card>
+    </Border>
+</UserControl>

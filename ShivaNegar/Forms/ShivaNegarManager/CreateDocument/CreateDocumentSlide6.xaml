@@ -1,0 +1,243 @@
+﻿<UserControl
+    x:Class="ShivaNegar.Forms.ShivaNegarManager.CreateDocument.CreateDocumentSlide6"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:custom="clr-namespace:ShivaNegar.CustomControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="600"
+    d:DesignWidth="800"
+    FlowDirection="RightToLeft"
+    FontFamily="Vazirmatn"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ShivaNegar;component/Forms/Styles/MainDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border
+        Grid.Row="0"
+        Grid.RowSpan="2"
+        Background="White"
+        CornerRadius="0,0,10,10">
+        <Grid>
+            <materialDesign:DialogHost
+                x:Name="dialogServerError"
+                DialogContentUniformCornerRadius="15"
+                DialogTheme="Inherit">
+                <materialDesign:DialogHost.DialogContent>
+                    <Grid Margin="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <materialDesign:PackIcon
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Width="40"
+                            Height="40"
+                            Padding="15"
+                            VerticalAlignment="Center"
+                            Foreground="Red"
+                            Kind="Error" />
+
+                        <TextBlock
+                            x:Name="lblServerDialogMessage"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            FontWeight="Bold"
+                            Text="خطا" />
+
+                        <StackPanel
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                            <Button
+                                x:Name="btnServerTryAgainDialog"
+                                Margin="0,8,8,0"
+                                Content="تلاش مجدد"
+                                IsDefault="True"
+                                Style="{StaticResource MaterialDesignFlatButton}" />
+                            <Button
+                                x:Name="btnServerCancelDialog"
+                                Margin="0,8,8,0"
+                                Content="لغو"
+                                Style="{StaticResource MaterialDesignFlatButton}" />
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:DialogHost.DialogContent>
+
+                <materialDesign:Card Margin="15" UniformCornerRadius="15">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <materialDesign:Transitioner
+                                x:Name="transitionSildes"
+                                AutoApplyTransitionOrigins="True"
+                                SelectedIndex="0">
+                                <materialDesign:TransitionerSlide>
+                                    <materialDesign:TransitionerSlide.OpeningEffects>
+                                        <materialDesign:TransitionEffect Kind="FadeIn" />
+                                    </materialDesign:TransitionerSlide.OpeningEffects>
+                                    <materialDesign:TransitionerSlide.BackwardWipe>
+                                        <materialDesign:SlideWipe Direction="Right" />
+                                    </materialDesign:TransitionerSlide.BackwardWipe>
+                                    <materialDesign:TransitionerSlide.ForwardWipe>
+                                        <materialDesign:SlideWipe Direction="Left" />
+                                    </materialDesign:TransitionerSlide.ForwardWipe>
+
+                                    <Grid Background="{StaticResource LightBackgroundColor}">
+                                        <Image
+                                            Margin="100"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="/ShivaNegar;component/Resources/Shivanegar.png" />
+                                    </Grid>
+
+                                </materialDesign:TransitionerSlide>
+
+                                <materialDesign:TransitionerSlide>
+                                    <materialDesign:TransitionerSlide.OpeningEffects>
+                                        <materialDesign:TransitionEffect Kind="FadeIn" />
+                                    </materialDesign:TransitionerSlide.OpeningEffects>
+                                    <materialDesign:TransitionerSlide.BackwardWipe>
+                                        <materialDesign:SlideWipe Direction="Right" />
+                                    </materialDesign:TransitionerSlide.BackwardWipe>
+                                    <materialDesign:TransitionerSlide.ForwardWipe>
+                                        <materialDesign:SlideWipe Direction="Left" />
+                                    </materialDesign:TransitionerSlide.ForwardWipe>
+
+                                    <Grid Background="{StaticResource LightBackgroundColor}">
+                                        <Image
+                                            Margin="100"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="/ShivaNegar;component/Resources/SplashBackground.jpg" />
+                                    </Grid>
+
+                                </materialDesign:TransitionerSlide>
+                                <materialDesign:TransitionerSlide>
+                                    <materialDesign:TransitionerSlide.OpeningEffects>
+                                        <materialDesign:TransitionEffect Kind="FadeIn" />
+                                    </materialDesign:TransitionerSlide.OpeningEffects>
+                                    <materialDesign:TransitionerSlide.BackwardWipe>
+                                        <materialDesign:SlideWipe Direction="Right" />
+                                    </materialDesign:TransitionerSlide.BackwardWipe>
+                                    <materialDesign:TransitionerSlide.ForwardWipe>
+                                        <materialDesign:SlideWipe Direction="Left" />
+                                    </materialDesign:TransitionerSlide.ForwardWipe>
+
+                                    <Grid Background="{StaticResource LightBackgroundColor}">
+                                        <Image
+                                            Margin="100"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="/ShivaNegar;component/Resources/catalog.jpg" />
+                                    </Grid>
+
+                                </materialDesign:TransitionerSlide>
+                                <materialDesign:TransitionerSlide>
+                                    <materialDesign:TransitionerSlide.OpeningEffects>
+                                        <materialDesign:TransitionEffect Kind="FadeIn" />
+                                    </materialDesign:TransitionerSlide.OpeningEffects>
+                                    <materialDesign:TransitionerSlide.BackwardWipe>
+                                        <materialDesign:SlideWipe Direction="Right" />
+                                    </materialDesign:TransitionerSlide.BackwardWipe>
+                                    <materialDesign:TransitionerSlide.ForwardWipe>
+                                        <materialDesign:SlideWipe Direction="Left" />
+                                    </materialDesign:TransitionerSlide.ForwardWipe>
+
+                                    <Grid Background="{StaticResource LightBackgroundColor}">
+                                        <Image
+                                            Margin="100"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="/ShivaNegar;component/Resources/catalog2.jpg" />
+                                    </Grid>
+
+                                </materialDesign:TransitionerSlide>
+
+
+                            </materialDesign:Transitioner>
+
+                            <Grid x:Name="gridTansitionButtons">
+                                <Button
+                                    x:Name="btnBackward"
+                                    Height="100"
+                                    Padding="5"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    materialDesign:ButtonAssist.CornerRadius="0,5,5,0"
+                                    IsEnabled="True">
+                                    <Button.Content>
+                                        <materialDesign:PackIcon
+                                            Width="30"
+                                            Height="30"
+                                            Foreground="{StaticResource LightBackgroundColor}"
+                                            Kind="ArrowRightBold" />
+                                    </Button.Content>
+                                </Button>
+
+                                <Button
+                                    x:Name="btnForward"
+                                    Height="100"
+                                    Padding="5"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    materialDesign:ButtonAssist.CornerRadius="5,0,0,5"
+                                    IsEnabled="True">
+                                    <Button.Content>
+                                        <materialDesign:PackIcon
+                                            Width="30"
+                                            Height="30"
+                                            Foreground="{StaticResource LightBackgroundColor}"
+                                            Kind="ArrowLeftBold" />
+                                    </Button.Content>
+                                </Button>
+                            </Grid>
+
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Button
+                                x:Name="btnProgress"
+                                Grid.Column="1"
+                                Height="50"
+                                VerticalAlignment="Bottom"
+                                materialDesign:ButtonAssist.CornerRadius="0"
+                                materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                                materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                                materialDesign:ButtonProgressAssist.Value="-1"
+                                materialDesign:ElevationAssist.Elevation="Dp12"
+                                BorderThickness="0"
+                                Content="در حال آماده سازی اولیه"
+                                FontSize="15"
+                                FontWeight="Bold"
+                                Foreground="{StaticResource LightButtonTextColor}"
+                                IsEnabled="True"
+                                IsHitTestVisible="False" />
+                        </Grid>
+
+                    </Grid>
+                </materialDesign:Card>
+            </materialDesign:DialogHost>
+        </Grid>
+    </Border>
+</UserControl>

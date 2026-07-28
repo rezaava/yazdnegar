@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<defenseAnnouncements>
+	<defenseAnnouncement 
+		id="0" 
+		fileName="DefenseAnnouncements1.docx" 
+		image="Images.DefenseAnnouncements1.png" 
+		path="ShivaNegar.Templates.DefenseAnnouncements." 
+		name="اطلاعیه دفاع حالت 1" 
+		sourceFrom="دانشگاه یزد"/>
+</defenseAnnouncements>
