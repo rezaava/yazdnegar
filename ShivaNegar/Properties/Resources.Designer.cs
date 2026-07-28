@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShivaNegar.Properties {
+namespace YazdNegar.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ShivaNegar.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ShivaNegar.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("YazdNegar.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -253,9 +253,9 @@ namespace ShivaNegar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Shivanegar {
+        internal static System.Drawing.Bitmap YazdNegar {
             get {
-                object obj = ResourceManager.GetObject("Shivanegar", resourceCulture);
+                object obj = ResourceManager.GetObject("YazdNegar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +263,9 @@ namespace ShivaNegar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Shivanegar_Overlay {
+        internal static System.Drawing.Bitmap YazdNegar_Overlay {
             get {
-                object obj = ResourceManager.GetObject("Shivanegar_Overlay", resourceCulture);
+                object obj = ResourceManager.GetObject("YazdNegar_Overlay", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -8,9 +8,9 @@ using System.Windows.Media;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Office.Interop.Word;
-using static ShivaNegar.DedicatedFunctions;
+using static YazdNegar.DedicatedFunctions;
 
-namespace ShivaNegar.TaskPanes.CrossReference
+namespace YazdNegar.TaskPanes.CrossReference
 {
     /// <summary>
     /// Interaction logic for CrossReferenceControl.xaml

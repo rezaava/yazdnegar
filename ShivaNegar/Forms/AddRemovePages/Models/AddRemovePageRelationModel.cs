@@ -1,8 +1,8 @@
 ﻿using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
-using ShivaNegar.Models;
+using YazdNegar.Constants;
+using YazdNegar.Models;
 
-namespace ShivaNegar.Forms.AddRemovePages.Models
+namespace YazdNegar.Forms.AddRemovePages.Models
 {
     public class AddRemovePageRelationModel : TemplateRelationshipModel
     {

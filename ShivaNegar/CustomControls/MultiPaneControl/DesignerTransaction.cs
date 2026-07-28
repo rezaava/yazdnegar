@@ -33,7 +33,7 @@
 
 using System.ComponentModel.Design;
 
-namespace ShivaNegar.CustomControls.Design
+namespace YazdNegar.CustomControls.Design
 {
     public delegate object TransactionAwareParammedMethod(IDesignerHost theHost, object theParam);
 

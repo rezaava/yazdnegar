@@ -1,5 +1,5 @@
 ﻿
-namespace ShivaNegar.Private
+namespace YazdNegar.Private
 {
     partial class FormMessageBox
     {
@@ -168,7 +168,7 @@ namespace ShivaNegar.Private
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBoxIcon.Image = global::ShivaNegar.Properties.Resources.chat;
+            this.pictureBoxIcon.Image = global::YazdNegar.Properties.Resources.chat;
             this.pictureBoxIcon.Location = new System.Drawing.Point(296, 10);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
             this.pictureBoxIcon.Size = new System.Drawing.Size(40, 41);

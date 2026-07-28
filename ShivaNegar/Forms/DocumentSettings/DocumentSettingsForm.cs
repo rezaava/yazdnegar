@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 
-namespace ShivaNegar.Forms.DocumentSettings
+namespace YazdNegar.Forms.DocumentSettings
 {
     public partial class DocumentSettingsForm : Form
     {

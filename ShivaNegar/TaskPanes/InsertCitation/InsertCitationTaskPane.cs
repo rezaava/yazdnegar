@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools;
 
-namespace ShivaNegar.TaskPanes.InsertCitation
+namespace YazdNegar.TaskPanes.InsertCitation
 {
 
     partial class InsertCitationTaskPane : UserControl

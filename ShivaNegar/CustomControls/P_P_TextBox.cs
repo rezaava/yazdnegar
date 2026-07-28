@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShivaNegar.CustomControls
+namespace YazdNegar.CustomControls
 {
     public partial class P_P_TextBox : UserControl
     {

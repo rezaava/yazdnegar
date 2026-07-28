@@ -7,9 +7,9 @@ using System.Xml;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 
-namespace ShivaNegar.TaskPanes.InsertCitation
+namespace YazdNegar.TaskPanes.InsertCitation
 {
     /// <summary>
     /// Interaction logic for CrossReferenceControl.xaml

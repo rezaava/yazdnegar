@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace ShivaNegar.Models
+namespace   YazdNegar.Models
 {
     internal class UpdateResultModel
     {

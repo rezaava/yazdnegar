@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("پارسانگار")]
+[assembly: AssemblyTitle("یزدنگار")]
 [assembly: AssemblyDescription("تمامی حقوق مادی و معنوی این نرم افزار (افزونه)،\r\nمتعلق به شرکت ویرا پژوهان بهین فرتاک است; \r\nلذا هرگونه نسخه برداری از برنامه یا بخش هایی از آن پیگرد قانونی دارد.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ویرا پژوهان بهین فرتاک")]
-[assembly: AssemblyProduct("پارسانگار")]
+[assembly: AssemblyProduct("یزدنگار")]
 //[assembly: AssemblyCopyright("کپی رایت 2022-2024")]
 [assembly: AssemblyCopyright("۲۰۲۰-۲۰۲۵ ©")]
 [assembly: AssemblyTrademark("")]

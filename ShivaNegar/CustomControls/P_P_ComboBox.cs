@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Drawing.Design;
 using System.Windows.Forms;
 
-namespace ShivaNegar.CustomControls
+namespace YazdNegar.CustomControls
 {
     public partial class P_P_ComboBox : UserControl
     {

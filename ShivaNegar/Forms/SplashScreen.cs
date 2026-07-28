@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using ShivaNegar.Forms.ShivaNegarManager.DocumentManager.View;
+using YazdNegar.Forms.YazdNegarManager.DocumentManager.View;
 
-namespace ShivaNegar.Forms
+namespace YazdNegar.Forms
 {
 
     public partial class SplashScreen : Form

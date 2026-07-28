@@ -1,8 +1,8 @@
 ﻿using Microsoft.Office.Interop.Word;
-using ShivaNegar.Forms.CaptionSettings;
+using YazdNegar.Forms.CaptionSettings;
 using System.Windows.Controls;
 
-namespace ShivaNegar.TaskPanes.CrossReference
+namespace YazdNegar.TaskPanes.CrossReference
 {
     [System.ComponentModel.ToolboxItemAttribute(false)]
     partial class CrossReferenceTaskPane
@@ -33,7 +33,7 @@ namespace ShivaNegar.TaskPanes.CrossReference
         private void InitializeComponent()
         {
 			this.elementHost = new System.Windows.Forms.Integration.ElementHost();
-			this.crossReferenceControl = new ShivaNegar.TaskPanes.CrossReference.CrossReferenceControl();
+			this.crossReferenceControl = new YazdNegar.TaskPanes.CrossReference.CrossReferenceControl();
 			this.SuspendLayout();
 			// 
 			// elementHost

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShivaNegar.Properties {
+namespace YazdNegar.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ShivaNegar.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ShivaNegar.Properties.ResourceRibbonIcons", typeof(ResourceRibbonIcons).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("YazdNegar.Properties.ResourceRibbonIcons", typeof(ResourceRibbonIcons).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -443,9 +443,9 @@ namespace ShivaNegar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ShivaNegarDocuments {
+        internal static System.Drawing.Bitmap YazdNegarDocuments {
             get {
-                object obj = ResourceManager.GetObject("ShivaNegarDocuments", resourceCulture);
+                object obj = ResourceManager.GetObject("YazdNegarDocuments", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,9 +453,9 @@ namespace ShivaNegar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ShivanegarDocuments2 {
+        internal static System.Drawing.Bitmap YazdNegarDocuments2 {
             get {
-                object obj = ResourceManager.GetObject("ShivanegarDocuments2", resourceCulture);
+                object obj = ResourceManager.GetObject("YazdNegarDocuments2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

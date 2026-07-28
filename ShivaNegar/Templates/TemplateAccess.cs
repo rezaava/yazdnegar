@@ -5,12 +5,12 @@ using System.Linq;
 using System.Reflection;
 using System.Xml;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
-using ShivaNegar.Forms.AddRemovePages.Models;
-using ShivaNegar.Models;
-using static ShivaNegar.Models.TemplateRelationshipModel;
+using YazdNegar.Constants;
+using YazdNegar.Forms.AddRemovePages.Models;
+using YazdNegar.Models;
+using static YazdNegar.Models.TemplateRelationshipModel;
 
-namespace ShivaNegar.Templates
+namespace YazdNegar.Templates
 {
     /*
 	 <templates>

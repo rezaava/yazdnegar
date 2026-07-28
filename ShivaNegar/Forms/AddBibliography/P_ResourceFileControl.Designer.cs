@@ -1,6 +1,7 @@
-﻿using ShivaNegar.CustomControls;
+﻿using YazdNegar.CustomControls;
 
-namespace ShivaNegar.Forms.AddBibliography
+
+namespace YazdNegar.Forms.AddBibliography
 {
     partial class P_ResourceFileControl
     {
@@ -32,14 +33,14 @@ namespace ShivaNegar.Forms.AddBibliography
         {
             this.components = new System.ComponentModel.Container();
             this.tooltipStatus = new System.Windows.Forms.ToolTip(this.components);
-            this.panelMain = new ShivaNegar.CustomControls.P_Panel();
+            this.panelMain = new YazdNegar.CustomControls.P_Panel();
             this.lblFileName = new System.Windows.Forms.Label();
             this.lblPath = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.panelPicture = new System.Windows.Forms.Panel();
             this.picFileExtension = new System.Windows.Forms.PictureBox();
             this.panelRemoveButton = new System.Windows.Forms.Panel();
-            this.panelRemoveButtonContainer = new ShivaNegar.CustomControls.P_Panel();
+            this.panelRemoveButtonContainer = new YazdNegar.CustomControls.P_Panel();
             this.picRemoveControl = new System.Windows.Forms.PictureBox();
             this.panelMain.SuspendLayout();
             this.panelPicture.SuspendLayout();
@@ -65,7 +66,7 @@ namespace ShivaNegar.Forms.AddBibliography
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(7);
-            this.panelMain.PaletteDrawBorder = ShivaNegar.CustomControls.PaletteDrawBorders.All;
+            this.panelMain.PaletteDrawBorder = YazdNegar.CustomControls.PaletteDrawBorders.All;
             this.panelMain.Size = new System.Drawing.Size(494, 80);
             this.panelMain.TabIndex = 0;
             // 
@@ -118,7 +119,7 @@ namespace ShivaNegar.Forms.AddBibliography
             // picFileExtension
             // 
             this.picFileExtension.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picFileExtension.Image = global::ShivaNegar.Properties.Resources.fileIconUnknown;
+            this.picFileExtension.Image = global::YazdNegar.Properties.Resources.fileIconUnknown;
             this.picFileExtension.Location = new System.Drawing.Point(5, 5);
             this.picFileExtension.Name = "picFileExtension";
             this.picFileExtension.Size = new System.Drawing.Size(56, 56);
@@ -147,14 +148,14 @@ namespace ShivaNegar.Forms.AddBibliography
             this.panelRemoveButtonContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRemoveButtonContainer.Location = new System.Drawing.Point(10, 10);
             this.panelRemoveButtonContainer.Name = "panelRemoveButtonContainer";
-            this.panelRemoveButtonContainer.PaletteDrawBorder = ShivaNegar.CustomControls.PaletteDrawBorders.All;
+            this.panelRemoveButtonContainer.PaletteDrawBorder = YazdNegar.CustomControls.PaletteDrawBorders.All;
             this.panelRemoveButtonContainer.Size = new System.Drawing.Size(46, 46);
             this.panelRemoveButtonContainer.TabIndex = 1;
             // 
             // picRemoveControl
             // 
             this.picRemoveControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picRemoveControl.Image = global::ShivaNegar.Properties.Resources.recycleBinNormal;
+            this.picRemoveControl.Image = global::YazdNegar.Properties.Resources.recycleBinNormal;
             this.picRemoveControl.Location = new System.Drawing.Point(0, 0);
             this.picRemoveControl.Name = "picRemoveControl";
             this.picRemoveControl.Size = new System.Drawing.Size(46, 46);

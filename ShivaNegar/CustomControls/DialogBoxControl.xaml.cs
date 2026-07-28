@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace ShivaNegar.CustomControls
+namespace YazdNegar.CustomControls
 {
     /// <summary>
     /// Interaction logic for LoadingModel.xaml

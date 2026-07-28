@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
-using ShivaNegar.Private;
+using YazdNegar.Private;
 
-namespace ShivaNegar.CustomControls
+namespace YazdNegar.CustomControls
 {
     public abstract class CMessageBox
     {

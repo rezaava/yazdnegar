@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShivaNegar.CustomControls
+namespace YazdNegar.CustomControls
 {
     public class P_ListBox : System.Windows.Forms.ListBox
     {

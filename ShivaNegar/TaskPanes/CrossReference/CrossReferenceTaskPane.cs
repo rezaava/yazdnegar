@@ -3,7 +3,8 @@ using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools;
 
-namespace ShivaNegar.TaskPanes.CrossReference
+
+namespace YazdNegar.TaskPanes.CrossReference
 {
 
     partial class CrossReferenceTaskPane : UserControl

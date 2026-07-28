@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 
-namespace ShivaNegar.Forms.VirastarSettings
+namespace YazdNegar.Forms.VirastarSettings
 {
     public partial class VirastarSettingsForm : Form
     {

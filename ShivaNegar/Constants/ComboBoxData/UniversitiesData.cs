@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Xml;
 
-namespace ShivaNegar.Constants.ComboBoxData
+namespace YazdNegar.Constants.ComboBoxData
 {
     class UniversitiesData
     {

@@ -1,4 +1,4 @@
-﻿namespace ShivaNegar.Constants.ComboBoxData
+﻿namespace YazdNegar.Constants.ComboBoxData
 {
     struct ComboBoxData
     {

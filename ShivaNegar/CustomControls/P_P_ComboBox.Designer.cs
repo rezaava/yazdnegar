@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace ShivaNegar.CustomControls
+namespace YazdNegar.CustomControls
 {
     partial class P_P_ComboBox
     {
@@ -31,9 +31,9 @@ namespace ShivaNegar.CustomControls
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
-            this.p_Panel1 = new ShivaNegar.CustomControls.P_Panel();
-            this.comboBox = new ShivaNegar.CustomControls.P_ComboBox();
-            this.panelCaption = new ShivaNegar.CustomControls.P_Panel();
+            this.p_Panel1 = new YazdNegar.CustomControls.P_Panel();
+            this.comboBox = new YazdNegar.CustomControls.P_ComboBox();
+            this.panelCaption = new YazdNegar.CustomControls.P_Panel();
             this.lblCaption = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.p_Panel1.SuspendLayout();
@@ -65,7 +65,7 @@ namespace ShivaNegar.CustomControls
             this.p_Panel1.Location = new System.Drawing.Point(0, 0);
             this.p_Panel1.Name = "p_Panel1";
             this.p_Panel1.Padding = new System.Windows.Forms.Padding(8);
-            this.p_Panel1.PaletteDrawBorder = ShivaNegar.CustomControls.PaletteDrawBorders.TopBottomLeft;
+            this.p_Panel1.PaletteDrawBorder = YazdNegar.CustomControls.PaletteDrawBorders.TopBottomLeft;
             this.p_Panel1.Size = new System.Drawing.Size(394, 53);
             this.p_Panel1.TabIndex = 70;
             this.p_Panel1.TabStop = true;
@@ -89,7 +89,7 @@ namespace ShivaNegar.CustomControls
             this.comboBox.MinimumSize = new System.Drawing.Size(200, 20);
             this.comboBox.Name = "comboBox";
             this.comboBox.Padding = new System.Windows.Forms.Padding(1);
-            this.comboBox.PaletteDrawBorder = ShivaNegar.CustomControls.P_ComboBox.PaletteDrawBorders.All;
+            this.comboBox.PaletteDrawBorder = YazdNegar.CustomControls.P_ComboBox.PaletteDrawBorders.All;
             this.comboBox.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.comboBox.PlaceholderText = "";
             this.comboBox.Size = new System.Drawing.Size(378, 37);
@@ -112,7 +112,7 @@ namespace ShivaNegar.CustomControls
             this.panelCaption.Location = new System.Drawing.Point(394, 0);
             this.panelCaption.Name = "panelCaption";
             this.panelCaption.Padding = new System.Windows.Forms.Padding(6);
-            this.panelCaption.PaletteDrawBorder = ShivaNegar.CustomControls.PaletteDrawBorders.TopBottomRight;
+            this.panelCaption.PaletteDrawBorder = YazdNegar.CustomControls.PaletteDrawBorders.TopBottomRight;
             this.panelCaption.Size = new System.Drawing.Size(150, 53);
             this.panelCaption.TabIndex = 71;
             // 

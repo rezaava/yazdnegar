@@ -1,6 +1,7 @@
 ﻿using Microsoft.Office.Interop.Word;
 
-namespace ShivaNegar.Forms.ChangeContents
+
+namespace YazdNegar.Forms.ChangeContents
 {
     partial class ChangeContentsForm
     {
@@ -33,7 +34,7 @@ namespace ShivaNegar.Forms.ChangeContents
             this.components = new System.ComponentModel.Container();
             this.timerOpenAnimation = new System.Windows.Forms.Timer(this.components);
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.changeContentsControl = new ShivaNegar.Forms.ChangeContents.ChangeContentsControl(doc);
+            this.changeContentsControl = new YazdNegar.Forms.ChangeContents.ChangeContentsControl(doc);
             this.SuspendLayout();
             // 
             // timerOpenAnimation

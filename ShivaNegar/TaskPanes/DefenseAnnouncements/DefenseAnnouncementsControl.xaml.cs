@@ -10,10 +10,10 @@ using System.Windows.Threading;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
-using ShivaNegar.Templates;
+using YazdNegar.Constants;
+using YazdNegar.Templates;
 
-namespace ShivaNegar.TaskPanes.DefenseAnnouncements
+namespace YazdNegar.TaskPanes.DefenseAnnouncements
 {
     /// <summary>
     /// Interaction logic for CrossReferenceControl.xaml

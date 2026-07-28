@@ -21,19 +21,19 @@ using DocumentFormat.OpenXml.Packaging;
 using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools;
 using Microsoft.Win32;
-using ShivaNegar.Constants;
-using ShivaNegar.Forms;
-using ShivaNegar.Forms.ShivaNegarManager.DocumentManager.View;
-using ShivaNegar.Models;
-using ShivaNegar.TaskPanes.CrossReference;
-using ShivaNegar.Templates;
+using YazdNegar.Constants;
+using YazdNegar.Forms;
+using YazdNegar.Forms.YazdNegarManager.DocumentManager.View;
+using YazdNegar.Models;
+using YazdNegar.TaskPanes.CrossReference;
+using YazdNegar.Templates;
 
 
 // new using 
 
 using Task = System.Threading.Tasks.Task;
 
-namespace ShivaNegar
+namespace YazdNegar
 {
     internal class DedicatedFunctions
     {
@@ -6603,6 +6603,9 @@ namespace ShivaNegar
         }
     }
     #endregion
+
+
+
 
 
     #region CSVCode

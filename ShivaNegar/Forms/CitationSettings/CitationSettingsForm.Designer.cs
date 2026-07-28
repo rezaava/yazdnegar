@@ -1,6 +1,6 @@
 ﻿using Microsoft.Office.Interop.Word;
 
-namespace ShivaNegar.Forms.CitationSettings
+namespace YazdNegar.Forms.CitationSettings
 {
     partial class CitationSettingsForm
     {
@@ -33,7 +33,7 @@ namespace ShivaNegar.Forms.CitationSettings
             this.components = new System.ComponentModel.Container();
             this.timerOpenAnimation = new System.Windows.Forms.Timer(this.components);
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.citationSettingsControl = new ShivaNegar.Forms.CitationSettings.CitationSettingsControl(doc, accessType);
+            this.citationSettingsControl = new YazdNegar.Forms.CitationSettings.CitationSettingsControl(doc, accessType);
             this.SuspendLayout();
             // 
             // timerOpenAnimation

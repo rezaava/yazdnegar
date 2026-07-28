@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace ShivaNegar.CustomControls
+namespace YazdNegar.CustomControls
 {
     partial class P_P_ToggleButton
     {
@@ -31,7 +31,7 @@ namespace ShivaNegar.CustomControls
         private void InitializeComponent()
         {
             this.p_Label1 = new Label();
-            this.p_ToggleButton1 = new ShivaNegar.CustomControls.P_ToggleButton();
+            this.p_ToggleButton1 = new YazdNegar.CustomControls.P_ToggleButton();
             this.SuspendLayout();
             // 
             // p_Label1

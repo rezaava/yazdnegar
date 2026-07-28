@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using Microsoft.Office.Interop.Word;
 
-namespace ShivaNegar.Constants
+namespace YazdNegar.Constants
 {
     public enum DocumentTypes : int
     {
@@ -37,7 +37,7 @@ namespace ShivaNegar.Constants
 
     public enum TemplateTypes : int
     {
-        ShivaNegarTemplate = -3,
+        YazdNegarTemplate = -3,
         ParsaTemplate = -2,
         Nothing = -1,
         UniversityTemplate = 1,
@@ -67,53 +67,53 @@ namespace ShivaNegar.Constants
 
     public struct EmbeddedResourceNames
     {
-        internal const string ShivaNegarShortcut = "ShivaNegar.Constants.ShivaNegarShortcut.dotm";
+        internal const string YazdNegarShortcut = "YazdNegar.Constants.YazdNegarShortcut.dotm";
 
-        internal const string HalfSpace = "ShivaNegar.Constants.VirastarFiles.HalfSpace.csv";
-        internal const string Standard = "ShivaNegar.Constants.VirastarFiles.Standard.csv";
-        internal const string Tanvin = "ShivaNegar.Constants.VirastarFiles.Tanvin.csv";
-        internal const string Signs = "ShivaNegar.Constants.VirastarFiles.Signs.csv";
-        internal const string Tashdid = "ShivaNegar.Constants.VirastarFiles.Tashdid.csv";
-        internal const string SpellingCorrection = "ShivaNegar.Constants.VirastarFiles.SpellingCorrection.csv";
+        internal const string HalfSpace = "YazdNegar.Constants.VirastarFiles.HalfSpace.csv";
+        internal const string Standard = "YazdNegar.Constants.VirastarFiles.Standard.csv";
+        internal const string Tanvin = "YazdNegar.Constants.VirastarFiles.Tanvin.csv";
+        internal const string Signs = "YazdNegar.Constants.VirastarFiles.Signs.csv";
+        internal const string Tashdid = "YazdNegar.Constants.VirastarFiles.Tashdid.csv";
+        internal const string SpellingCorrection = "YazdNegar.Constants.VirastarFiles.SpellingCorrection.csv";
 
-        internal const string Khotbeh = "ShivaNegar.Constants.NahjBalagheFiles.Khotbeh.csv";
-        internal const string Nameh = "ShivaNegar.Constants.NahjBalagheFiles.Nameh.csv";
-        internal const string Hekmat = "ShivaNegar.Constants.NahjBalagheFiles.Hekmat.csv";
+        internal const string Khotbeh = "YazdNegar.Constants.NahjBalagheFiles.Khotbeh.csv";
+        internal const string Nameh = "YazdNegar.Constants.NahjBalagheFiles.Nameh.csv";
+        internal const string Hekmat = "YazdNegar.Constants.NahjBalagheFiles.Hekmat.csv";
 
-        internal const string Ayeh = "ShivaNegar.Constants.QuranFiles.Ayeh.csv";
-        internal const string Surah = "ShivaNegar.Constants.QuranFiles.Surah.csv";
+        internal const string Ayeh = "YazdNegar.Constants.QuranFiles.Ayeh.csv";
+        internal const string Surah = "YazdNegar.Constants.QuranFiles.Surah.csv";
 
-        internal const string Dedicate = "ShivaNegar.Constants.OtherFiles.Dedicate.csv";
+        internal const string Dedicate = "YazdNegar.Constants.OtherFiles.Dedicate.csv";
 
-        internal const string DefenseAnnouncements = "ShivaNegar.Templates.DefenseAnnouncements.xml";
-        internal const string Templates = "ShivaNegar.Templates.Templates.xml";
+        internal const string DefenseAnnouncements = "YazdNegar.Templates.DefenseAnnouncements.xml";
+        internal const string Templates = "YazdNegar.Templates.Templates.xml";
 
-        internal const string Universities = "ShivaNegar.Constants.Universities.xml";
+        internal const string Universities = "YazdNegar.Constants.Universities.xml";
 
-        internal const string B_Yagut = "ShivaNegar.Resources.B Yagut.ttf";
-        internal const string B_Yagut_Bold = "ShivaNegar.Resources.B Yagut Bold.ttf";
+        internal const string B_Yagut = "YazdNegar.Resources.B Yagut.ttf";
+        internal const string B_Yagut_Bold = "YazdNegar.Resources.B Yagut Bold.ttf";
 
-        internal const string B_Badr_Bold = "ShivaNegar.Resources.B Badr Bold.ttf";
-        internal const string B_Badr = "ShivaNegar.Resources.B Badr.ttf";
-        internal const string B_Lotus_Bold = "ShivaNegar.Resources.B Lotus Bold.ttf";
-        internal const string B_Lotus = "ShivaNegar.Resources.B Lotus.ttf";
-        internal const string B_Nazanin_Bold = "ShivaNegar.Resources.B Nazanin Bold.ttf";
-        internal const string B_Nazanin = "ShivaNegar.Resources.B Nazanin.ttf";
-        internal const string B_Titr_Bold = "ShivaNegar.Resources.B Titr Bold.ttf";
-        internal const string B_Zar_Bold = "ShivaNegar.Resources.B Zar Bold.ttf";
-        internal const string B_Zar = "ShivaNegar.Resources.B Zar.ttf";
-        internal const string Besmellah_1 = "ShivaNegar.Resources.Besmellah_1.ttf";
-        internal const string Besmellah_2 = "ShivaNegar.Resources.Besmellah_2.ttf";
-        internal const string Besmellah_3 = "ShivaNegar.Resources.Besmellah_3.ttf";
-        internal const string Besmellah_4 = "ShivaNegar.Resources.Besmellah_4.ttf";
-        internal const string IranNastaliq = "ShivaNegar.Resources.IranNastaliq.ttf";
-        internal const string times = "ShivaNegar.Resources.TIMES.ttf";
-        internal const string times_BD = "ShivaNegar.Resources.TIMESBD.ttf";
-        internal const string times_BI = "ShivaNegar.Resources.TIMESBI.ttf";
-        internal const string times_I = "ShivaNegar.Resources.TIMESI.ttf";
-        internal const string Vazir = "ShivaNegar.Resources.Vazir.ttf";
-        internal const string Vazirmatn_Bold = "ShivaNegar.Resources.Vazirmatn-Bold.ttf";
-        internal const string Vazirmatn_Regular = "ShivaNegar.Resources.Vazirmatn-Regular.ttf";
+        internal const string B_Badr_Bold = "YazdNegar.Resources.B Badr Bold.ttf";
+        internal const string B_Badr = "YazdNegar.Resources.B Badr.ttf";
+        internal const string B_Lotus_Bold = "YazdNegar.Resources.B Lotus Bold.ttf";
+        internal const string B_Lotus = "YazdNegar.Resources.B Lotus.ttf";
+        internal const string B_Nazanin_Bold = "YazdNegar.Resources.B Nazanin Bold.ttf";
+        internal const string B_Nazanin = "YazdNegar.Resources.B Nazanin.ttf";
+        internal const string B_Titr_Bold = "YazdNegar.Resources.B Titr Bold.ttf";
+        internal const string B_Zar_Bold = "YazdNegar.Resources.B Zar Bold.ttf";
+        internal const string B_Zar = "YazdNegar.Resources.B Zar.ttf";
+        internal const string Besmellah_1 = "YazdNegar.Resources.Besmellah_1.ttf";
+        internal const string Besmellah_2 = "YazdNegar.Resources.Besmellah_2.ttf";
+        internal const string Besmellah_3 = "YazdNegar.Resources.Besmellah_3.ttf";
+        internal const string Besmellah_4 = "YazdNegar.Resources.Besmellah_4.ttf";
+        internal const string IranNastaliq = "YazdNegar.Resources.IranNastaliq.ttf";
+        internal const string times = "YazdNegar.Resources.TIMES.ttf";
+        internal const string times_BD = "YazdNegar.Resources.TIMESBD.ttf";
+        internal const string times_BI = "YazdNegar.Resources.TIMESBI.ttf";
+        internal const string times_I = "YazdNegar.Resources.TIMESI.ttf";
+        internal const string Vazir = "YazdNegar.Resources.Vazir.ttf";
+        internal const string Vazirmatn_Bold = "YazdNegar.Resources.Vazirmatn-Bold.ttf";
+        internal const string Vazirmatn_Regular = "YazdNegar.Resources.Vazirmatn-Regular.ttf";
     }
 
     struct ParagraphAndTextWrapMarks
@@ -131,9 +131,9 @@ namespace ShivaNegar.Constants
         internal static string[] AdministratorAccounts = { "09355374226", "09132233916" , "09912071445" };
 
         internal const string PrimaryServerApiBaseAddress = PrimaryServerBaseAddress + "api/";
-        internal const string PrimaryServerBaseAddress = "http://shivanegar.ir/";
+        internal const string PrimaryServerBaseAddress = "http://YazdNegar.ir/";
 
-        internal const string NameOfProject = "پارسانگار";
+        internal const string NameOfProject = "یزدنگار";
         internal const string SupportEmail = "nazariansani@gmail.com";
         internal const string SupportMobile = "09039402316";
 
@@ -144,19 +144,11 @@ namespace ShivaNegar.Constants
         //internal const string DocumentPassword2 = "J9t1yiZVo494xuk";
         internal const string DocumentProtectionPassword = "DE1xkD62VPp8eaVW";
 
-        internal const string DefaultWorkspaceName = "ShivaNegarWorkspace";
+        internal const string DefaultWorkspaceName = "YazdNegarWorkspace";
 
         internal const string ArchiveFolder = "بایگانی\\";
         internal const string VirastarFolder = "ویراستار\\";
         internal const string DocumentsTemplateFolder = "اسناد الگو\\";
-        
-        internal const string TashdidFile = "Tashdid.csv";
-        internal const string TanvinFile = "Tanvin.csv";
-        internal const string SignFile = "Signs.csv";
-        internal const string HalfSpaceFile = "HalfSpace.csv";
-        internal const string StandardCorrectionFile = "Standard.csv";
-        internal const string spellingCorrectionFile = "SpellingCorrection.csv";
-
 
         // CSV Code
 
@@ -290,13 +282,13 @@ namespace ShivaNegar.Constants
     {
         internal const string TemplateType_Parsa = "قالب پارسا (وزارت علوم و تحقیقات و فناوری)";
         internal const string TemplateType_University = "قالب دانشگاهی";
-        internal const string TemplateType_ShivaNegar = "قالب پارسانگار";
+        internal const string TemplateType_YazdNegar = "قالب پارسانگار";
         internal const string TemplateType_Student = "قالب دانش آموزی (به زودی)";
         internal const string TemplateType_Office = "قالب گزارش اداری (به زودی)";
         internal const string TemplateType_Nothing = "صفحه خالی";
         internal const string TemplateType_ParsaEn = "Parsa Template";
         internal const string TemplateType_UniversityEn = "University Template";
-        internal const string TemplateType_ShivaNegarEn = "Shivanegar Template";
+        internal const string TemplateType_YazdNegarEn = "YazdNegar Template";
         internal const string TemplateType_NothingEn = "Nothing";
     }
 

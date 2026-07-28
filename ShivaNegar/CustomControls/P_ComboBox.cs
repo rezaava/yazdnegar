@@ -5,7 +5,7 @@ using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace ShivaNegar.CustomControls
+namespace YazdNegar.CustomControls
 {
     [DefaultEvent("OnSelectedIndexChanged")]
     public partial class P_ComboBox : UserControl

@@ -13,32 +13,32 @@ using DocumentFormat.OpenXml.ExtendedProperties;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools;
-using ShivaNegar.Constants;
-using ShivaNegar.Forms;
-using ShivaNegar.Forms.AddBibliography;
-using ShivaNegar.Forms.AddRemovePages;
-using ShivaNegar.Forms.BesmellahPage;
-using ShivaNegar.Forms.CaptionSettings;
-using ShivaNegar.Forms.ChangeContents;
-using ShivaNegar.Forms.CitationSettings;
-using ShivaNegar.Forms.DocumentSettings;
-using ShivaNegar.Forms.FootnoteSettings;
-using ShivaNegar.Forms.FormatSettings;
-using ShivaNegar.Forms.ShivaNegarManager;
-using ShivaNegar.Forms.VirastarSettings;
-using ShivaNegar.Models;
-using ShivaNegar.TaskPanes.ChatBoxNetworking;
-using ShivaNegar.TaskPanes.CrossReference;
-using ShivaNegar.TaskPanes.DefenseAnnouncements;
-using ShivaNegar.TaskPanes.DesigningCD;
-using ShivaNegar.TaskPanes.InsertCitation;
-using ShivaNegar.TaskPanes.InsertDedicate;
-using ShivaNegar.TaskPanes.InsertNahjBalaghe;
-using ShivaNegar.TaskPanes.InsertQuran;
-using ShivaNegar.Templates;
-using static ShivaNegar.DedicatedFunctions;
+using YazdNegar.Constants;
+using YazdNegar.Forms;
+using YazdNegar.Forms.AddBibliography;
+using YazdNegar.Forms.AddRemovePages;
+using YazdNegar.Forms.BesmellahPage;
+using YazdNegar.Forms.CaptionSettings;
+using YazdNegar.Forms.ChangeContents;
+using YazdNegar.Forms.CitationSettings;
+using YazdNegar.Forms.DocumentSettings;
+using YazdNegar.Forms.FootnoteSettings;
+using YazdNegar.Forms.FormatSettings;
+using YazdNegar.Forms.YazdNegarManager;
+using YazdNegar.Forms.VirastarSettings;
+using YazdNegar.Models;
+using YazdNegar.TaskPanes.ChatBoxNetworking;
+using YazdNegar.TaskPanes.CrossReference;
+using YazdNegar.TaskPanes.DefenseAnnouncements;
+using YazdNegar.TaskPanes.DesigningCD;
+using YazdNegar.TaskPanes.InsertCitation;
+using YazdNegar.TaskPanes.InsertDedicate;
+using YazdNegar.TaskPanes.InsertNahjBalaghe;
+using YazdNegar.TaskPanes.InsertQuran;
+using YazdNegar.Templates;
+using static YazdNegar.DedicatedFunctions;
 
-namespace ShivaNegar
+namespace YazdNegar
 {
     [ComVisible(true)]
     [ClassInterface(ClassInterfaceType.None)]
@@ -171,7 +171,7 @@ namespace ShivaNegar
         #region Variable and Properties
 
         //Form
-        private ShivaNegarForm documentManagerForm;
+        private YazdNegarForm documentManagerForm;
         private ChangeContentsForm changeContentsForm;
 
         public bool DocumentManagerFormVisible { get; set; } = false;
@@ -242,20 +242,20 @@ namespace ShivaNegar
 
                 //var t = new System.Threading.Thread(o =>
                 //{
-                //ShivaNegarForm frm = new ShivaNegarForm(false);
+                //YazdNegarForm frm = new YazdNegarForm(false);
                 //frm.Close();
 
                 //Initialize Forms And OpenXML
                 //System.Windows.Forms.Integration.ElementHost elementHost1 = new System.Windows.Forms.Integration.ElementHost();
                 //elementHost1.Dispose();
-                ShivaNegarControl shivaNegarControl = new ShivaNegarControl(false);
+                YazdNegarControl YazdNegarControl = new YazdNegarControl(false);
                 //DocumentManagerControl documentManagerControl = new DocumentManagerControl();
                 //CreateDocumentControl createDocumentControl = new CreateDocumentControl();
 
                 //MessageBox.Show(sw.ElapsedMilliseconds.ToString());
                 //sw.Stop();
 
-                //ShivaNegarForm acs = new ShivaNegarForm(false);
+                //YazdNegarForm acs = new YazdNegarForm(false);
 
                 //System.Windows.Threading.Dispatcher.Run();
 
@@ -818,14 +818,14 @@ namespace ShivaNegar
                         documentManagerForm.Focus();
                     else
                     {
-                        documentManagerForm = new ShivaNegarForm(true);
+                        documentManagerForm = new YazdNegarForm(true);
                         documentManagerForm.Show();
                         DocumentManagerFormVisible = true;
                     }
                 }
                 else
                 {
-                    documentManagerForm = new ShivaNegarForm(true);
+                    documentManagerForm = new YazdNegarForm(true);
                     documentManagerForm.Show();
                     DocumentManagerFormVisible = true;
                 }
@@ -848,7 +848,7 @@ namespace ShivaNegar
                 }
                 else
                 {
-                    documentManagerForm = new ShivaNegarForm(true);
+                    documentManagerForm = new YazdNegarForm(true);
                     documentManagerForm.Show();
                     DocumentManagerFormVisible = true;
                     documentManagerForm.ShowArchiveDocuments();
@@ -874,7 +874,7 @@ namespace ShivaNegar
                 }
                 else
                 {
-                    documentManagerForm = new ShivaNegarForm(true);
+                    documentManagerForm = new YazdNegarForm(true);
                     documentManagerForm.Show();
                     DocumentManagerFormVisible = true;
 
@@ -894,7 +894,7 @@ namespace ShivaNegar
             try
             {
                 
-                var aboutControl = new ShivaNegar.Forms.ShivaNegarManager.DocumentManager.View.AboutUs(false);
+                var aboutControl = new YazdNegar.Forms.YazdNegarManager.DocumentManager.View.AboutUs(false);
 
                 
                 System.Windows.Forms.Integration.ElementHost elementHost =

@@ -1,4 +1,4 @@
-﻿namespace ShivaNegar.Forms.AddBibliography.Models
+﻿namespace YazdNegar.Forms.AddBibliography.Models
 {
     public class BibliographyResourcesFileModel
     {

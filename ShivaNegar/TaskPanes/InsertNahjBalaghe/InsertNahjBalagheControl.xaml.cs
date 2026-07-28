@@ -10,9 +10,9 @@ using CsvHelper;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 
-namespace ShivaNegar.TaskPanes.InsertNahjBalaghe
+namespace YazdNegar.TaskPanes.InsertNahjBalaghe
 {
     /// <summary>
     /// Interaction logic for CrossReferenceControl.xaml

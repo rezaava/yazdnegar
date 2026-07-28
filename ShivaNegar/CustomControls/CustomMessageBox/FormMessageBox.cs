@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace ShivaNegar.Private
+namespace YazdNegar.Private
 {
     public partial class FormMessageBox : Form
     {

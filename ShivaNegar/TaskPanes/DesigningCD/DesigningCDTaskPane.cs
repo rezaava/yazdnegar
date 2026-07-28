@@ -3,9 +3,9 @@ using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 
-namespace ShivaNegar.TaskPanes.DesigningCD
+namespace YazdNegar.TaskPanes.DesigningCD
 {
     interface ITaskPaneRequests
     {

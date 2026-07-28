@@ -1,8 +1,8 @@
 ﻿using Microsoft.Office.Interop.Word;
-using ShivaNegar.Forms.CaptionSettings;
+using YazdNegar.Forms.CaptionSettings;
 using System.Windows.Controls;
 
-namespace ShivaNegar.TaskPanes.InsertDedicate
+namespace YazdNegar.TaskPanes.InsertDedicate
 {
 	[System.ComponentModel.ToolboxItemAttribute(false)]
 	partial class InsertDedicateTaskPane
@@ -33,7 +33,7 @@ namespace ShivaNegar.TaskPanes.InsertDedicate
 		private void InitializeComponent()
 		{
 			this.elementHost = new System.Windows.Forms.Integration.ElementHost();
-			this.insertDedicateControl = new ShivaNegar.TaskPanes.InsertDedicate.InsertDedicateControl();
+			this.insertDedicateControl = new YazdNegar.TaskPanes.InsertDedicate.InsertDedicateControl();
 			this.SuspendLayout();
 			// 
 			// elementHost

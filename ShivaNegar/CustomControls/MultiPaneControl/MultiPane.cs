@@ -37,10 +37,10 @@ using System.Drawing;
 using System.Windows.Forms;
 
 
-namespace ShivaNegar.CustomControls
+namespace YazdNegar.CustomControls
 {
-    [Designer(typeof(ShivaNegar.CustomControls.Design.MultiPaneControlDesigner))]
-    [ToolboxItem(typeof(ShivaNegar.CustomControls.Design.MultiPaneControlToolboxItem))]
+    [Designer(typeof(YazdNegar.CustomControls.Design.MultiPaneControlDesigner))]
+    [ToolboxItem(typeof(YazdNegar.CustomControls.Design.MultiPaneControlToolboxItem))]
     public class MultiPaneControl : Control
     {
         protected static readonly System.Drawing.Size ourDefaultSize = new System.Drawing.Size(200, 100);
@@ -64,7 +64,7 @@ namespace ShivaNegar.CustomControls
         #region Properties - own
         [
         Editor(
-                typeof(ShivaNegar.CustomControls.Design.MultiPaneControlSelectedPageEditor),
+                typeof(YazdNegar.CustomControls.Design.MultiPaneControlSelectedPageEditor),
                 typeof(System.Drawing.Design.UITypeEditor))
         ]
         public MultiPanePage SelectedPage
@@ -131,7 +131,7 @@ namespace ShivaNegar.CustomControls
     /////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////
 
-    [Designer(typeof(ShivaNegar.CustomControls.Design.MultiPanePageDesigner))]
+    [Designer(typeof(YazdNegar.CustomControls.Design.MultiPanePageDesigner))]
     [DesignTimeVisible(false)]
     [ToolboxItem(false)]
     public class MultiPanePage : Panel

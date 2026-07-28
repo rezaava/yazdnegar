@@ -10,7 +10,7 @@ using System.Security.Permissions;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace ShivaNegar.CustomControls.Design
+namespace YazdNegar.CustomControls.Design
 {
     [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
     public class MultiPaneControlDesigner : System.Windows.Forms.Design.ParentControlDesigner
@@ -44,6 +44,7 @@ namespace ShivaNegar.CustomControls.Design
         private MultiPanePageDesigner GetSelectedPageDesigner()
         {
             MultiPanePage aSelPage = mySelectedPage;
+
 
             if (aSelPage == null)
                 return null;

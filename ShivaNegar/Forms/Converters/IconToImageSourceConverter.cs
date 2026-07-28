@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
-using ShivaNegar.Forms.ShivaNegarManager.DocumentManager.Utilities;
+using YazdNegar.Forms.YazdNegarManager.DocumentManager.Utilities;
 
-namespace ShivaNegar.Forms.Converters
+namespace YazdNegar.Forms.Converters
 {
     public class IconToImageSourceConverter : IValueConverter
     {

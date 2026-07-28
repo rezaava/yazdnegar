@@ -9,12 +9,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
-using ShivaNegar.Constants.ComboBoxData;
-using ShivaNegar.Forms.ChangeContents.Models;
-using ShivaNegar.Templates;
+using YazdNegar.Constants;
+using YazdNegar.Constants.ComboBoxData;
+using YazdNegar.Forms.ChangeContents.Models;
+using YazdNegar.Templates;
 
-namespace ShivaNegar.Forms.ChangeContents
+namespace YazdNegar.Forms.ChangeContents
 {
     /// <summary>
     /// Interaction logic for ChangeContentsControl.xaml

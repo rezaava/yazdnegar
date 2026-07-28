@@ -1,4 +1,4 @@
-﻿namespace ShivaNegar.Models
+﻿namespace YazdNegar.Models
 {
     internal class KeyboardRelationModel
     {

@@ -11,9 +11,9 @@ using CsvHelper;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 
-namespace ShivaNegar.TaskPanes.InsertQuran
+namespace YazdNegar.TaskPanes.InsertQuran
 {
     /// <summary>
     /// Interaction logic for CrossReferenceControl.xaml

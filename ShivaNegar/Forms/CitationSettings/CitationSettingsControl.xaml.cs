@@ -3,9 +3,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 
-namespace ShivaNegar.Forms.CitationSettings
+namespace YazdNegar.Forms.CitationSettings
 {
     /// <summary>
     /// Interaction logic for ChangeContentsControl.xaml

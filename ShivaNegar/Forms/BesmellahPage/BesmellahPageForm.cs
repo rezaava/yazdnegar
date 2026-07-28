@@ -4,7 +4,8 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace ShivaNegar.Forms.BesmellahPage
+
+namespace YazdNegar.Forms.BesmellahPage
 {
     public partial class BesmellahPageForm : Form
     {

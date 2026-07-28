@@ -1,9 +1,9 @@
-﻿using ShivaNegar.Constants;
-using ShivaNegar.Models;
+﻿using YazdNegar.Constants;
+using YazdNegar.Models;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar;
-using ShivaNegar.Constants;
-using ShivaNegar.Models;
+using YazdNegar;
+//using YazdNegar.Constants;
+//using YazdNegar.Models;
 using stdole;
 using System;
 using System.Collections.Generic;
@@ -15,11 +15,11 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
-using static ShivaNegar.DedicatedFunctions;
+using static YazdNegar.DedicatedFunctions;
 using ContentControl = Microsoft.Office.Interop.Word.ContentControl;
 
 
-namespace ShivaNegar
+namespace YazdNegar
 {
 
     [ComVisible(true)]
@@ -36,7 +36,8 @@ namespace ShivaNegar
         #region IRibbonExtensibility Members
         public string GetCustomUI(string ribbonID)
         {
-            return GetResourceText("ShivaNegar.Ribbon.xml");
+
+            return GetResourceText("YazdNegar.Ribbon.xml");
         }
         #endregion
 
@@ -79,9 +80,9 @@ namespace ShivaNegar
 
             RibbonControlModel[] galleryDocumentManagerItems = new RibbonControlModel[]
             {
-                new RibbonControlModel("__id60",RibbonControlModel.RibbonControlTypes.GalleryItem,Properties.ResourceRibbonIcons.ShivaNegarDocuments,true,true,"مدیریت اسناد","مدیریت اسناد","مدیریت اسناد","D"),
-                new RibbonControlModel("__id61",RibbonControlModel.RibbonControlTypes.GalleryItem,Properties.ResourceRibbonIcons.ShivaNegarDocuments,true,true,"اسناد بایگانی","اسناد بایگانی","اسناد بایگانی","D"),
-                new RibbonControlModel("__id62",RibbonControlModel.RibbonControlTypes.GalleryItem,Properties.ResourceRibbonIcons.ShivaNegarDocuments,true,true,"ایجاد سند جدید","ایجاد سند جدید","ایجاد سند جدید","D"),
+                new RibbonControlModel("__id60",RibbonControlModel.RibbonControlTypes.GalleryItem,Properties.ResourceRibbonIcons.YazdNegarDocuments,true,true,"مدیریت اسناد","مدیریت اسناد","مدیریت اسناد","D"),
+                new RibbonControlModel("__id61",RibbonControlModel.RibbonControlTypes.GalleryItem,Properties.ResourceRibbonIcons.YazdNegarDocuments,true,true,"اسناد بایگانی","اسناد بایگانی","اسناد بایگانی","D"),
+                new RibbonControlModel("__id62",RibbonControlModel.RibbonControlTypes.GalleryItem,Properties.ResourceRibbonIcons.YazdNegarDocuments,true,true,"ایجاد سند جدید","ایجاد سند جدید","ایجاد سند جدید","D"),
             };
             RibbonControlModel[] galleryFootnoteItems = new RibbonControlModel[]
             {
@@ -155,7 +156,7 @@ namespace ShivaNegar
 
 
                 new RibbonControlModel(RibbonControlNames.grpDocumentManager,RibbonControlModel.RibbonControlTypes.Group,null,true,true,"پارسانگار",null,null,null,null),
-                new RibbonControlModel(RibbonControlNames.galleryDocumentsManager,RibbonControlModel.RibbonControlTypes.Gallery,Properties.ResourceRibbonIcons.ShivaNegarDocuments,true,true,"مدیریت اسناد","مدیریت اسناد",null,null,galleryDocumentManagerItems),
+                new RibbonControlModel(RibbonControlNames.galleryDocumentsManager,RibbonControlModel.RibbonControlTypes.Gallery,Properties.ResourceRibbonIcons.YazdNegarDocuments,true,true,"مدیریت اسناد","مدیریت اسناد",null,null,galleryDocumentManagerItems),
                 new RibbonControlModel(RibbonControlNames.btnChatBoxNetworking,RibbonControlModel.RibbonControlTypes.Button,Properties.ResourceRibbonIcons.Messages,true,true,"تبادل نظر","تبادل نظر","گفگتو و تبادل نظر بین افراد مشترک مرتبط با سند","C"),
                 new RibbonControlModel(RibbonControlNames.btnChangeContents,RibbonControlModel.RibbonControlTypes.Button,Properties.ResourceRibbonIcons.EditFile,true,true,"ویرایش اطلاعات","ویرایش اطلاعات","ویرایش برخی از اطلاعات شناسنامه ای سند جاری",null),
                 new RibbonControlModel(RibbonControlNames.btnAddRemovePages,RibbonControlModel.RibbonControlTypes.Button,Properties.ResourceRibbonIcons.AddFile,true,true,"صفحه‌بندی","صفحه‌بندی و فصل‌بندی","حذف و اضافه صفحات اختیاری و مدیریت فصل های سند جاری",null),
@@ -261,7 +262,7 @@ namespace ShivaNegar
                 return PictureDispConverter.ToIPictureDisp(bitmap);
             else
             {
-                return PictureDispConverter.ToIPictureDisp(Properties.ResourceRibbonIcons.ShivaNegarDocuments);
+                return PictureDispConverter.ToIPictureDisp(Properties.ResourceRibbonIcons.YazdNegarDocuments);
             }
         }
         public bool getEnabled(Microsoft.Office.Core.IRibbonControl control)
@@ -391,6 +392,12 @@ namespace ShivaNegar
 
         #endregion
 
+
+
+
+
+
+        
         #region Ribbon Callbacks
 
         public void Ribbon_Load(Microsoft.Office.Core.IRibbonUI ribbonUI)
@@ -401,7 +408,7 @@ namespace ShivaNegar
         {
             Globals.ThisAddIn.documentsManager();
         }
-        public void btnShivaNegar_Click(Microsoft.Office.Core.IRibbonControl control)
+        public void btnYazdNegar_Click(Microsoft.Office.Core.IRibbonControl control)
         {
             Ribbon.setTabProperties("", true);
         }
@@ -709,7 +716,7 @@ namespace ShivaNegar
             {
                 try
                 {
-                    System.Diagnostics.Process.Start("https://shivanegar.ir/videos/4");
+                    System.Diagnostics.Process.Start("https://YazdNegar.ir/videos/4");
                 }
                 catch (Exception ex)
                 {
@@ -720,7 +727,7 @@ namespace ShivaNegar
             {
                 try
                 {
-                    System.Diagnostics.Process.Start("https://shivanegar.ir/");
+                    System.Diagnostics.Process.Start("https://YazdNegar.ir/");
                 }
                 catch (Exception ex)
                 {
@@ -819,19 +826,19 @@ namespace ShivaNegar
         {
             if (!Globals.ThisAddIn.SetKeyBindingStatus)
             {
-                string templatesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Microsoft", "Templates", "ShivaNegarTemplates");
+                string templatesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Microsoft", "Templates", "YazdNegarTemplates");
 
                 //string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                 //string templatesLocation = System.IO.Path.Combine(appDataPath , @"Microsoft\Templates\");
                 String fullPath = "";
                 try
                 {
-                    fullPath = DedicatedFunctions.copyFileToFolder(DedicatedFunctions.getStream(EmbeddedResourceNames.ShivaNegarShortcut), nameof(EmbeddedResourceNames.ShivaNegarShortcut) + ".dotm", templatesPath);
+                    fullPath = DedicatedFunctions.copyFileToFolder(DedicatedFunctions.getStream(EmbeddedResourceNames.YazdNegarShortcut), nameof(EmbeddedResourceNames.YazdNegarShortcut) + ".dotm", templatesPath);
                 }
                 catch (Exception)
                 {
                     // on using Template File
-                    fullPath = templatesPath + "\\" + nameof(EmbeddedResourceNames.ShivaNegarShortcut) + ".dotm";
+                    fullPath = templatesPath + "\\" + nameof(EmbeddedResourceNames.YazdNegarShortcut) + ".dotm";
                 }
 
                 if (new FileInfo(fullPath).Exists)

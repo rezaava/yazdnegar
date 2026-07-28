@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
-using ShivaNegar.CustomControls;
-using ShivaNegar.Forms.AddBibliography.Models;
-using ShivaNegar.Properties;
+using YazdNegar.Constants;
+using YazdNegar.CustomControls;
+using YazdNegar.Forms.AddBibliography.Models;
+using YazdNegar.Properties;
 
-namespace ShivaNegar.Forms.AddBibliography
+namespace YazdNegar.Forms.AddBibliography
 {
 
     public partial class AddBibliographyForm : Form

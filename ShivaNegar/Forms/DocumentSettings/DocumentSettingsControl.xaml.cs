@@ -4,9 +4,9 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Media;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 
-namespace ShivaNegar.Forms.DocumentSettings
+namespace YazdNegar.Forms.DocumentSettings
 {
     /// <summary>
     /// Interaction logic for ChangeContentsControl.xaml

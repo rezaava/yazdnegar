@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Microsoft.Office.Tools;
 
-namespace ShivaNegar.TaskPanes.DefenseAnnouncements
+namespace YazdNegar.TaskPanes.DefenseAnnouncements
 {
 
     partial class DefenseAnnouncementsTaskPane : UserControl

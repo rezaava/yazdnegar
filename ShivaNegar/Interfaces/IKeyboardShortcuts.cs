@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace ShivaNegar.Interfaces
+namespace YazdNegar.Interfaces
 {
 
     [ComVisible(true)]

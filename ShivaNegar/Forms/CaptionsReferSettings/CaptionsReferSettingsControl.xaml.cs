@@ -3,10 +3,10 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
-using static ShivaNegar.DedicatedFunctions;
+using YazdNegar.Constants;
+using static YazdNegar.DedicatedFunctions;
 
-namespace ShivaNegar.Forms.CaptionSettings
+namespace YazdNegar.Forms.CaptionSettings
 {
     /// <summary>
     /// Interaction logic for ChangeContentsControl.xaml

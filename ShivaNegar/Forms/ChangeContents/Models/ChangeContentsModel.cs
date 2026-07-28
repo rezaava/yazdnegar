@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ShivaNegar.Forms.ChangeContents.Models
+namespace YazdNegar.Forms.ChangeContents.Models
 {
     public class ChangeContentsModel
     {

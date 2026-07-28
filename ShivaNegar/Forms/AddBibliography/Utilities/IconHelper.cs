@@ -6,7 +6,8 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace ShivaNegar.Forms.AddBibliography.Utilities
+namespace YazdNegar
+    .Forms.AddBibliography.Utilities
 {
     /// <summary>
     /// A class for helping with icons and imagesources

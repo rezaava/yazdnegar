@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace ShivaNegar.Forms.ChangeContents
+namespace YazdNegar.Forms.ChangeContents
 {
     public partial class ChangeContentsForm : Form
     {

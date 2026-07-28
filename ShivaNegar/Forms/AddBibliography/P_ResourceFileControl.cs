@@ -2,10 +2,10 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using ShivaNegar.CustomControls;
-using ShivaNegar.Forms.AddBibliography.Utilities;
+using YazdNegar.CustomControls;
+using YazdNegar.Forms.AddBibliography.Utilities;
 
-namespace ShivaNegar.Forms.AddBibliography
+namespace YazdNegar.Forms.AddBibliography
 {
     public partial class P_ResourceFileControl : UserControl
     {

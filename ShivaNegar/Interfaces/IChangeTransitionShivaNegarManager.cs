@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ShivaNegar.Interfaces
+namespace YazdNegar.Interfaces
 {
     interface IChangeTransitionDocumentManager
     {

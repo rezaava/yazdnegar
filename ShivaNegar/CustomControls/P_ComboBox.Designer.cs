@@ -1,5 +1,5 @@
 ﻿
-namespace ShivaNegar.CustomControls
+namespace YazdNegar.CustomControls
 {
     partial class P_ComboBox
     {
@@ -32,7 +32,7 @@ namespace ShivaNegar.CustomControls
         {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.lblText = new System.Windows.Forms.Label();
-            this.txtText = new ShivaNegar.CustomControls.P_TextBox();
+            this.txtText = new YazdNegar.CustomControls.P_TextBox();
             this.btnIcon = new System.Windows.Forms.Button();
             this.cmbList = new System.Windows.Forms.ComboBox();
             this.mainPanel.SuspendLayout();
@@ -79,7 +79,7 @@ namespace ShivaNegar.CustomControls
             this.txtText.Multiline = true;
             this.txtText.Name = "txtText";
             this.txtText.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtText.PaletteDrawBorder = ShivaNegar.CustomControls.P_TextBox.PaletteDrawBorders.All;
+            this.txtText.PaletteDrawBorder = YazdNegar.CustomControls.P_TextBox.PaletteDrawBorders.All;
             this.txtText.PasswordChar = false;
             this.txtText.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtText.PlaceholderText = "";

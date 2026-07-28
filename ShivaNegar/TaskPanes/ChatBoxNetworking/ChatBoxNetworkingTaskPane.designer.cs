@@ -1,8 +1,8 @@
 ﻿using Microsoft.Office.Interop.Word;
-using ShivaNegar.Forms.CaptionSettings;
+using YazdNegar.Forms.CaptionSettings;
 using System.Windows.Controls;
 
-namespace ShivaNegar.TaskPanes.ChatBoxNetworking
+namespace YazdNegar.TaskPanes.ChatBoxNetworking
 {
 	[System.ComponentModel.ToolboxItemAttribute(false)]
 	partial class ChatBoxNetworkingTaskPane
@@ -33,7 +33,7 @@ namespace ShivaNegar.TaskPanes.ChatBoxNetworking
 		private void InitializeComponent()
 		{
 			this.elementHost = new System.Windows.Forms.Integration.ElementHost();
-			this.chatBoxControl = new ShivaNegar.TaskPanes.ChatBoxNetworking.ChatBoxNetworkingControl();
+			this.chatBoxControl = new YazdNegar.TaskPanes.ChatBoxNetworking.ChatBoxNetworkingControl();
 			this.SuspendLayout();
 			// 
 			// elementHost

@@ -1,8 +1,9 @@
 ﻿using Microsoft.Office.Interop.Word;
-using ShivaNegar.Forms.CaptionSettings;
+
+using YazdNegar.Forms.CaptionSettings;
 using System.Windows.Controls;
 
-namespace ShivaNegar.TaskPanes.DesigningCD
+namespace YazdNegar.TaskPanes.DesigningCD
 {
 	[System.ComponentModel.ToolboxItemAttribute(false)]
 	partial class DesigningCDTaskPane
@@ -33,7 +34,7 @@ namespace ShivaNegar.TaskPanes.DesigningCD
 		private void InitializeComponent()
 		{
 			this.elementHost = new System.Windows.Forms.Integration.ElementHost();
-			this.userControl = new ShivaNegar.TaskPanes.DesigningCD.DesigningCDControl();
+			this.userControl = new YazdNegar.TaskPanes.DesigningCD.DesigningCDControl();
 			this.SuspendLayout();
 			// 
 			// elementHost

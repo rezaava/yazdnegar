@@ -1,6 +1,6 @@
 ﻿using Microsoft.Office.Interop.Word;
 
-namespace ShivaNegar.Forms.CaptionSettings
+namespace YazdNegar.Forms.CaptionSettings
 {
     partial class CaptionsReferSettingsForm
     {
@@ -33,7 +33,8 @@ namespace ShivaNegar.Forms.CaptionSettings
             this.components = new System.ComponentModel.Container();
             this.timerOpenAnimation = new System.Windows.Forms.Timer(this.components);
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.captionSettingsControl = new ShivaNegar.Forms.CaptionSettings.CaptionSettingsControl(doc);
+
+            this.captionSettingsControl = new YazdNegar.Forms.CaptionSettings.CaptionSettingsControl(doc);
             this.SuspendLayout();
             // 
             // timerOpenAnimation

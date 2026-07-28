@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace ShivaNegar.Forms.AddRemovePages
+namespace YazdNegar.Forms.AddRemovePages
 {
     public partial class AddRemovePagesForm : Form
     {

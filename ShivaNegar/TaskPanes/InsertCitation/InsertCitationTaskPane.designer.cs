@@ -1,8 +1,8 @@
 ﻿using Microsoft.Office.Interop.Word;
-using ShivaNegar.Forms.CaptionSettings;
+using YazdNegar.Forms.CaptionSettings;
 using System.Windows.Controls;
 
-namespace ShivaNegar.TaskPanes.InsertCitation
+namespace YazdNegar.TaskPanes.InsertCitation
 {
 	[System.ComponentModel.ToolboxItemAttribute(false)]
 	partial class InsertCitationTaskPane
@@ -33,7 +33,7 @@ namespace ShivaNegar.TaskPanes.InsertCitation
 		private void InitializeComponent()
 		{
 			this.elementHost = new System.Windows.Forms.Integration.ElementHost();
-			this.insertCitationControl = new ShivaNegar.TaskPanes.InsertCitation.InsertCitationControl();
+			this.insertCitationControl = new YazdNegar.TaskPanes.InsertCitation.InsertCitationControl();
 			this.SuspendLayout();
 			// 
 			// elementHost

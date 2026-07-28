@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace ShivaNegar.Forms.FootnoteSettings
+namespace YazdNegar.Forms.FootnoteSettings
 {
     public partial class FootnoteSettingsForm : Form
     {

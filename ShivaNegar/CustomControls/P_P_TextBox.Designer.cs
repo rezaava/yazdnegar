@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace ShivaNegar.CustomControls
+namespace YazdNegar.CustomControls
 {
     partial class P_P_TextBox
     {
@@ -31,8 +31,8 @@ namespace ShivaNegar.CustomControls
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox = new ShivaNegar.CustomControls.P_TextBox();
-            this.panelCaption = new ShivaNegar.CustomControls.P_Panel();
+            this.textBox = new YazdNegar.CustomControls.P_TextBox();
+            this.panelCaption = new YazdNegar.CustomControls.P_Panel();
             this.lblCaption = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelCaption.SuspendLayout();
@@ -65,7 +65,7 @@ namespace ShivaNegar.CustomControls
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
             this.textBox.Padding = new System.Windows.Forms.Padding(6);
-            this.textBox.PaletteDrawBorder = ShivaNegar.CustomControls.P_TextBox.PaletteDrawBorders.TopBottomLeft;
+            this.textBox.PaletteDrawBorder = YazdNegar.CustomControls.P_TextBox.PaletteDrawBorders.TopBottomLeft;
             this.textBox.PasswordChar = false;
             this.textBox.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBox.PlaceholderText = "";
@@ -90,7 +90,7 @@ namespace ShivaNegar.CustomControls
             this.panelCaption.Margin = new System.Windows.Forms.Padding(4);
             this.panelCaption.Name = "panelCaption";
             this.panelCaption.Padding = new System.Windows.Forms.Padding(6);
-            this.panelCaption.PaletteDrawBorder = ShivaNegar.CustomControls.PaletteDrawBorders.TopBottomRight;
+            this.panelCaption.PaletteDrawBorder = YazdNegar.CustomControls.PaletteDrawBorders.TopBottomRight;
             this.panelCaption.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panelCaption.Size = new System.Drawing.Size(150, 53);
             this.panelCaption.TabIndex = 78;

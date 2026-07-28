@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace ShivaNegar.Forms.CitationSettings
+namespace YazdNegar.Forms.CitationSettings
 {
     public partial class CitationSettingsForm : Form
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Office.Interop.Word;
 
-namespace ShivaNegar.Forms.VirastarSettings
+namespace YazdNegar.Forms.VirastarSettings
 {
     partial class VirastarSettingsForm
     {
@@ -33,7 +33,7 @@ namespace ShivaNegar.Forms.VirastarSettings
             this.components = new System.ComponentModel.Container();
             this.timerOpenAnimation = new System.Windows.Forms.Timer(this.components);
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.virastarSettingsControl = new ShivaNegar.Forms.VirastarSettings.VirastarSettingsControl(doc);
+            this.virastarSettingsControl = new YazdNegar.Forms.VirastarSettings.VirastarSettingsControl(doc);
             this.SuspendLayout();
             // 
             // timerOpenAnimation

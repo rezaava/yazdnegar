@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace ShivaNegar.Forms
+namespace YazdNegar.Forms
 {
     partial class SplashScreen
     {
@@ -34,7 +34,7 @@ namespace ShivaNegar.Forms
 			this.timerDotAnimation = new System.Windows.Forms.Timer(this.components);
 			this.timerOpenAnimation = new System.Windows.Forms.Timer(this.components);
 			this.timerLifeTime = new System.Windows.Forms.Timer(this.components);
-			this.panelMain = new ShivaNegar.CustomControls.P_Panel();
+			this.panelMain = new YazdNegar.CustomControls.P_Panel();
 			this.lblVersion = new System.Windows.Forms.Label();
 			this.lblStatus = new System.Windows.Forms.Label();
 			this.panelMain.SuspendLayout();
@@ -59,7 +59,7 @@ namespace ShivaNegar.Forms
 			// panelMain
 			// 
 			this.panelMain.BackColor = System.Drawing.Color.White;
-			this.panelMain.BackgroundImage = global::ShivaNegar.Properties.Resources.SplashBackground;
+			this.panelMain.BackgroundImage = global::YazdNegar.Properties.Resources.SplashBackground;
 			this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.panelMain.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
 			this.panelMain.BorderColor = System.Drawing.Color.White;
@@ -71,7 +71,7 @@ namespace ShivaNegar.Forms
 			this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelMain.Location = new System.Drawing.Point(0, 0);
 			this.panelMain.Name = "panelMain";
-			this.panelMain.PaletteDrawBorder = ShivaNegar.CustomControls.PaletteDrawBorders.All;
+			this.panelMain.PaletteDrawBorder = YazdNegar.CustomControls.PaletteDrawBorders.All;
 			this.panelMain.Size = new System.Drawing.Size(450, 250);
 			this.panelMain.TabIndex = 2;
 			// 
@@ -123,7 +123,7 @@ namespace ShivaNegar.Forms
         }
 
         #endregion
-        private ShivaNegar.CustomControls.P_Panel panelMain;
+        private YazdNegar.CustomControls.P_Panel panelMain;
         private Label lblVersion;
         private Timer timerDotAnimation;
         private Timer timerOpenAnimation;

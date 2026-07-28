@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace ShivaNegar.Forms.Controls
+namespace YazdNegar.Forms.Controls
 {
     public class WizardProgressBar : ItemsControl
     {

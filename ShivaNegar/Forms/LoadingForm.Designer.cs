@@ -1,6 +1,6 @@
-﻿using ShivaNegar.CustomControls;
+﻿using YazdNegar.CustomControls;
 
-namespace ShivaNegar.Forms
+namespace YazdNegar.Forms
 {
     partial class LoadingForm
     {
@@ -33,7 +33,7 @@ namespace ShivaNegar.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingForm));
             this.timerOpenAnimation = new System.Windows.Forms.Timer(this.components);
-            this.panelMain = new ShivaNegar.CustomControls.P_Panel();
+            this.panelMain = new YazdNegar.CustomControls.P_Panel();
             this.picBoxStatus = new System.Windows.Forms.PictureBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.timerDotAnimation = new System.Windows.Forms.Timer(this.components);
@@ -62,7 +62,7 @@ namespace ShivaNegar.Forms
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(10);
-            this.panelMain.PaletteDrawBorder = ShivaNegar.CustomControls.PaletteDrawBorders.All;
+            this.panelMain.PaletteDrawBorder = YazdNegar.CustomControls.PaletteDrawBorders.All;
             this.panelMain.Size = new System.Drawing.Size(300, 300);
             this.panelMain.TabIndex = 0;
             // 

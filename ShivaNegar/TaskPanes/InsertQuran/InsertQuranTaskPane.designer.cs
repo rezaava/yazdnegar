@@ -1,8 +1,8 @@
 ﻿using Microsoft.Office.Interop.Word;
-using ShivaNegar.Forms.CaptionSettings;
+using YazdNegar.Forms.CaptionSettings;
 using System.Windows.Controls;
 
-namespace ShivaNegar.TaskPanes.InsertQuran
+namespace YazdNegar.TaskPanes.InsertQuran
 {
 	[System.ComponentModel.ToolboxItemAttribute(false)]
 	partial class InsertQuranTaskPane
@@ -33,7 +33,7 @@ namespace ShivaNegar.TaskPanes.InsertQuran
 		private void InitializeComponent()
 		{
 			this.elementHost = new System.Windows.Forms.Integration.ElementHost();
-			this.insertQuranControl = new ShivaNegar.TaskPanes.InsertQuran.InsertQuranControl();
+			this.insertQuranControl = new YazdNegar.TaskPanes.InsertQuran.InsertQuranControl();
 			this.SuspendLayout();
 			// 
 			// elementHost

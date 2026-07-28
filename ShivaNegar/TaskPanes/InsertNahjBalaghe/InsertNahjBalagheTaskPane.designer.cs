@@ -1,8 +1,8 @@
 ﻿using Microsoft.Office.Interop.Word;
-using ShivaNegar.Forms.CaptionSettings;
+using YazdNegar.Forms.CaptionSettings;
 using System.Windows.Controls;
 
-namespace ShivaNegar.TaskPanes.InsertNahjBalaghe
+namespace YazdNegar.TaskPanes.InsertNahjBalaghe
 {
 	[System.ComponentModel.ToolboxItemAttribute(false)]
 	partial class InsertNahjBalagheTaskPane
@@ -33,7 +33,7 @@ namespace ShivaNegar.TaskPanes.InsertNahjBalaghe
 		private void InitializeComponent()
 		{
 			this.elementHost = new System.Windows.Forms.Integration.ElementHost();
-			this.insertNahjBalagheControl = new ShivaNegar.TaskPanes.InsertNahjBalaghe.InsertNahjBalagheControl();
+			this.insertNahjBalagheControl = new YazdNegar.TaskPanes.InsertNahjBalaghe.InsertNahjBalagheControl();
 			this.SuspendLayout();
 			// 
 			// elementHost

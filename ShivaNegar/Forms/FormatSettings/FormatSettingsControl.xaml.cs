@@ -4,13 +4,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 using Application = Microsoft.Office.Interop.Word.Application;
 using Style = Microsoft.Office.Interop.Word.Style;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace ShivaNegar.Forms.FormatSettings
+namespace YazdNegar.Forms.FormatSettings
 {
     /// <summary>
     /// Interaction logic for ChangeContentsControl.xaml

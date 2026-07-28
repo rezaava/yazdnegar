@@ -6,7 +6,7 @@ using System.Threading;
 using System.Windows.Forms;
 using Rectangle = System.Drawing.Rectangle;
 
-namespace ShivaNegar.Forms
+namespace YazdNegar.Forms
 {
     public partial class LoadingForm : Form
     {

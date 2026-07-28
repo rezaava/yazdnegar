@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Microsoft.Office.Tools;
 
-namespace ShivaNegar.TaskPanes.InsertDedicate
+namespace YazdNegar.TaskPanes.InsertDedicate
 {
 
     partial class InsertDedicateTaskPane : UserControl

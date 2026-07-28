@@ -1,0 +1,1253 @@
+﻿<Project ToolsVersion="17.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--
+    This section defines project-level properties.
+
+    AssemblyName
+      Name of the output assembly.
+    Configuration
+      Specifies a default value for debug.
+    OutputType
+      Must be "Library" for VSTO.
+    Platform
+      Specifies what CPU the output of this project can run on.
+    NoStandardLibraries
+      Set to "false" for VSTO.
+    RootNamespace
+      In C#, this specifies the namespace given to new files. In VB, all objects are
+      wrapped in this namespace at runtime.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>ShivaNegar</RootNamespace>
+    <AssemblyName>YazdNegar</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <DefineConstants>VSTO40</DefineConstants>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+    <PublishUrl>C:\Publish\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>en</TargetCulture>
+    <ApplicationVersion>1.0.0.4</ApplicationVersion>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateInterval>0</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <ProductName>ShivaNegar</ProductName>
+    <PublisherName />
+    <SupportUrl />
+    <FriendlyName>ShivaNegar</FriendlyName>
+    <OfficeApplicationDescription>ShivaNegar:%29</OfficeApplicationDescription>
+    <LoadBehavior>3</LoadBehavior>
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <!--
+      OfficeApplication
+        Add-in host application
+    -->
+    <OfficeApplication>Word</OfficeApplication>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Debug" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <WarningLevel>2</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Release" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <WarningLevel>5</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section specifies references for the project.
+  -->
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="CsvHelper, Version=33.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.33.0.1\lib\net48\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.3.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.3.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.3.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.3.0\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.1.4.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.9.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.0-preview.2.25163.2\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.6.0.0\lib\net462\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.135\lib\net462\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Pipelines, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.10.0.0-preview.2.25163.2\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.10.0.0-preview.2.25163.2\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.10.0.0-preview.2.25163.2\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.3\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Word, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <!--
+    This section defines the user source files that are part of the project.
+     
+    A "Compile" element specifies a source file to compile.
+    An "EmbeddedResource" element specifies an .resx file for embedded resources.
+    A "None" element specifies a file that is not to be passed to the compiler (for instance, 
+    a text file or XML file).
+    The "AppDesigner" element specifies the directory where the application properties files
+    can be found.
+  -->
+  <ItemGroup>
+    <Compile Include="Constants\ComboBoxData\ComboBoxData.cs" />
+    <Compile Include="Constants\ComboBoxData\UniversitiesData.cs" />
+    <Compile Include="Constants\ComboBoxData\DepartmentsData.cs" />
+    <Compile Include="Constants\Constants.cs" />
+    <Compile Include="CustomControls\CustomMessageBox\CMessageBox.cs" />
+    <Compile Include="CustomControls\CustomMessageBox\FormMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CustomMessageBox\FormMessageBox.Designer.cs">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\DialogBoxControl.xaml.cs">
+      <DependentUpon>DialogBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ShowMessageControl.xaml.cs">
+      <DependentUpon>ShowMessageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\MultiPaneControl\DesignerTransaction.cs" />
+    <Compile Include="CustomControls\MultiPaneControl\frmSwitchPages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomControls\MultiPaneControl\MultiPane.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\MultiPaneControl\MultiPane_Design.cs" />
+    <Compile Include="CustomControls\P_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_CircularProgressBar.cs" />
+    <Compile Include="CustomControls\P_ComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_ComboBox.Designer.cs">
+      <DependentUpon>P_ComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\P_DateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_ListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_P_CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_P_CircularProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_P_ComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_P_ComboBox.Designer.cs">
+      <DependentUpon>P_P_ComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\P_P_TextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_P_TextBox.Designer.cs">
+      <DependentUpon>P_P_TextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\P_P_ToggleButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_P_ToggleButton.Designer.cs">
+      <DependentUpon>P_P_ToggleButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\P_RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\AddBibliography\Models\BibliographyResourcesFileModel.cs" />
+    <Compile Include="Forms\AddBibliography\Utilities\IconHelper.cs" />
+    <Compile Include="Forms\AddBibliography\P_ResourceFileControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AddBibliography\P_ResourceFileControl.Designer.cs">
+      <DependentUpon>P_ResourceFileControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\P_TextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\P_TextBox.Designer.cs">
+      <DependentUpon>P_TextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\P_ToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\LoadingControl.xaml.cs">
+      <DependentUpon>LoadingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddRemovePages\AddRemovePagesControl.xaml.cs">
+      <DependentUpon>AddRemovePagesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddRemovePages\AddRemovePagesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddRemovePages\AddRemovePagesForm.Designer.cs">
+      <DependentUpon>AddRemovePagesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddRemovePages\Models\AddRemovePageRelationModel.cs" />
+    <Compile Include="Forms\BesmellahPage\BesmellahPageControl.xaml.cs">
+      <DependentUpon>BesmellahPageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BesmellahPage\BesmellahPageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BesmellahPage\BesmellahPageForm.Designer.cs">
+      <DependentUpon>BesmellahPageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeContents\Models\ChangeContentsModel.cs" />
+    <Compile Include="Forms\CitationSettings\CitationSettingsControl.xaml.cs">
+      <DependentUpon>CitationSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CitationSettings\CitationSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CitationSettings\CitationSettingsForm.Designer.cs">
+      <DependentUpon>CitationSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\WizardProgressBar.cs" />
+    <Compile Include="Forms\Converters\BitmapToImageSourceConverter.cs" />
+    <Compile Include="Forms\Converters\BooleanToHorizontalAlignmentConverter.cs" />
+    <Compile Include="Forms\Converters\BooleanToBackgroundConverter.cs" />
+    <Compile Include="Forms\Converters\StringToVisibilityConverter.cs" />
+    <Compile Include="Forms\Converters\IsLastItemConverter.cs" />
+    <Compile Include="Forms\Converters\IsProgressedConverter.cs" />
+    <Compile Include="Forms\FormatSettings\FormatSettingsControl.xaml.cs">
+      <DependentUpon>FormatSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormatSettings\FormatSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormatSettings\FormatSettingsForm.Designer.cs">
+      <DependentUpon>FormatSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentControl.xaml.cs">
+      <DependentUpon>CreateDocumentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentSlide1.xaml.cs">
+      <DependentUpon>CreateDocumentSlide1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentSlide2.xaml.cs">
+      <DependentUpon>CreateDocumentSlide2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentSlide6.xaml.cs">
+      <DependentUpon>CreateDocumentSlide6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentSlide5.xaml.cs">
+      <DependentUpon>CreateDocumentSlide5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentSlide4.xaml.cs">
+      <DependentUpon>CreateDocumentSlide4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentSlide3.xaml.cs">
+      <DependentUpon>CreateDocumentSlide3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DocumentSettings\DocumentSettingsControl.xaml.cs">
+      <DependentUpon>DocumentSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DocumentSettings\DocumentSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DocumentSettings\DocumentSettingsForm.Designer.cs">
+      <DependentUpon>DocumentSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FootnoteSettings\SubtitleSettingsControl.xaml.cs">
+      <DependentUpon>SubtitleSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FootnoteSettings\SubtitleSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FootnoteSettings\SubtitleSettingsForm.Designer.cs">
+      <DependentUpon>SubtitleSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\CreateDocument\Models\CreateDocumentControlModel.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\ViewModel\MainVM.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\ViewModel\BugReportVM.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\ViewModel\AboutUsVM.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\ViewModel\LoginVM.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\ViewModel\NetworkingVM.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\ViewModel\ProfileVM.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\View\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\View\AboutUs.xaml.cs">
+      <DependentUpon>AboutUs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\View\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\View\BugReport.xaml.cs">
+      <DependentUpon>BugReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\View\Networking.xaml.cs">
+      <DependentUpon>Networking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\View\Profile.xaml.cs">
+      <DependentUpon>Profile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\NetworkingManager\NetworkingManagerControl.xaml.cs">
+      <DependentUpon>NetworkingManagerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IChangeTransitionShivaNegarManager.cs" />
+    <Compile Include="Interfaces\ICloseForm.cs" />
+    <Compile Include="Interfaces\IStatusFormRequest.cs" />
+    <Compile Include="Forms\YazdNegarManager\ShivaNegarControl.xaml.cs">
+      <DependentUpon>ShivaNegarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VirastarSettings\VirastarSettingsControl.xaml.cs">
+      <DependentUpon>VirastarSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VirastarSettings\VirastarSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VirastarSettings\VirastarSettingsForm.Designer.cs">
+      <DependentUpon>VirastarSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ICurrentViewChanged.cs" />
+    <Compile Include="Interfaces\IKeyboardShortcuts.cs" />
+    <Compile Include="Interfaces\ITransitionCommand.cs" />
+    <Compile Include="KeyboardHooking.cs" />
+    <Compile Include="Models\KeyboardRelationModel.cs" />
+    <Compile Include="Models\RibbonControlModel.cs" />
+    <Compile Include="Models\SearchReplaceModel.cs" />
+    <Compile Include="Models\ProposalRelationshipModel.cs" />
+    <Compile Include="Models\TemplateRelationshipModel.cs" />
+    <Compile Include="Models\UpdateResultModel.cs" />
+    <Compile Include="Properties\ResourceRibbonIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceRibbonIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbon.cs">
+      <XmlRibbon>true</XmlRibbon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="TaskPanes\CrossReference\CrossReferenceControl.xaml.cs">
+      <DependentUpon>CrossReferenceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DedicatedFunctions.cs" />
+    <Compile Include="Forms\AddBibliography\AddBibliographyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddBibliography\AddBibliographyForm.Designer.cs">
+      <DependentUpon>AddBibliographyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CaptionsReferSettings\CaptionsReferSettingsControl.xaml.cs">
+      <DependentUpon>CaptionsReferSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CaptionsReferSettings\CaptionsReferSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CaptionsReferSettings\CaptionsReferSettingsForm.Designer.cs">
+      <DependentUpon>CaptionsReferSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeContents\ChangeContentsControl.xaml.cs">
+      <DependentUpon>ChangeContentsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeContents\ChangeContentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeContents\ChangeContentsForm.Designer.cs">
+      <DependentUpon>ChangeContentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\Controls\HighlightableTextBlock.cs" />
+    <Compile Include="Forms\Converters\InvertBooleanToVisibilityConverter.cs" />
+    <Compile Include="Forms\Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Forms\Converters\IconToImageSourceConverter.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\DocumentManagerControl.xaml.cs">
+      <DependentUpon>DocumentManagerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\ShivaNegarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\ShivaNegarForm.Designer.cs">
+      <DependentUpon>ShivaNegarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\Utilities\IconHelper.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\Utilities\RelayCommand.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\Utilities\ViewModelBase.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\ViewModel\SettingsVM.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\ViewModel\NavigationVM.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\ViewModel\DocumentsVM.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\View\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\Models\FileModel.cs" />
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\Models\FileViewModel.xaml.cs">
+      <DependentUpon>FileViewModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\DocumentManager\View\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="CustomControls\CustomMessageBox\FormMessageBox.resx">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\MultiPaneControl\frmSwitchPages.resx">
+      <DependentUpon>frmSwitchPages.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\P_ComboBox.resx">
+      <DependentUpon>P_ComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\P_P_ComboBox.resx">
+      <DependentUpon>P_P_ComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\P_P_TextBox.resx">
+      <DependentUpon>P_P_TextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\P_P_ToggleButton.resx">
+      <DependentUpon>P_P_ToggleButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddBibliography\P_ResourceFileControl.resx">
+      <DependentUpon>P_ResourceFileControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\P_TextBox.resx">
+      <DependentUpon>P_TextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddBibliography\AddBibliographyForm.resx">
+      <DependentUpon>AddBibliographyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddRemovePages\AddRemovePagesForm.resx">
+      <DependentUpon>AddRemovePagesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BesmellahPage\BesmellahPageForm.resx">
+      <DependentUpon>BesmellahPageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CitationSettings\CitationSettingsForm.resx">
+      <DependentUpon>CitationSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DocumentSettings\DocumentSettingsForm.resx">
+      <DependentUpon>DocumentSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FootnoteSettings\SubtitleSettingsForm.resx">
+      <DependentUpon>SubtitleSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormatSettings\FormatSettingsForm.resx">
+      <DependentUpon>FormatSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VirastarSettings\VirastarSettingsForm.resx">
+      <DependentUpon>VirastarSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CaptionsReferSettings\CaptionsReferSettingsForm.resx">
+      <DependentUpon>CaptionsReferSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeContents\ChangeContentsForm.resx">
+      <DependentUpon>ChangeContentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YazdNegarManager\ShivaNegarForm.resx">
+      <DependentUpon>ShivaNegarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\ResourceRibbonIcons.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceRibbonIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskPanes\CrossReference\CrossReferenceTaskPane.resx">
+      <DependentUpon>CrossReferenceTaskPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <EmbeddedResource Include="Constants\NahjBalagheFiles\Hekmat.csv" />
+    <EmbeddedResource Include="Constants\NahjBalagheFiles\Khotbeh.csv" />
+    <EmbeddedResource Include="Constants\NahjBalagheFiles\Nameh.csv" />
+    <EmbeddedResource Include="Constants\QuranFiles\Ayeh.csv" />
+    <EmbeddedResource Include="Constants\QuranFiles\Surah.csv" />
+    <EmbeddedResource Include="Constants\OtherFiles\Dedicate.csv" />
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Resources\Fonts\B Badr Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\B Badr.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\B Lotus Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\B Lotus.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\B Zar Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\B Zar.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Besmellah_1.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Besmellah_2.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Besmellah_3.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Besmellah_4.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\IranNastaliq.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TaskPanes\CrossReference\CrossReferenceTaskPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskPanes\CrossReference\CrossReferenceTaskPane.designer.cs">
+      <DependentUpon>CrossReferenceTaskPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\ChatBoxNetworking\ChatBoxControl.xaml.cs">
+      <DependentUpon>ChatBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\ChatBoxNetworking\ChatBoxNetworkingTaskPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskPanes\ChatBoxNetworking\ChatBoxNetworkingTaskPane.designer.cs">
+      <DependentUpon>ChatBoxNetworkingTaskPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\DefenseAnnouncements\DefenseAnnouncementsControl.xaml.cs">
+      <DependentUpon>DefenseAnnouncementsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\DefenseAnnouncements\DefenseAnnouncementsTaskPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskPanes\DefenseAnnouncements\DefenseAnnouncementsTaskPane.designer.cs">
+      <DependentUpon>DefenseAnnouncementsTaskPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\DesigningCD\DesigningCDControl.xaml.cs">
+      <DependentUpon>DesigningCDControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\DesigningCD\DesigningCDTaskPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskPanes\DesigningCD\DesigningCDTaskPane.designer.cs">
+      <DependentUpon>DesigningCDTaskPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\InsertCitation\InsertCitationControl.xaml.cs">
+      <DependentUpon>InsertCitationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\InsertCitation\InsertCitationTaskPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskPanes\InsertCitation\InsertCitationTaskPane.designer.cs">
+      <DependentUpon>InsertCitationTaskPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\InsertNahjBalaghe\InsertNahjBalagheControl.xaml.cs">
+      <DependentUpon>InsertNahjBalagheControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\InsertNahjBalaghe\InsertNahjBalagheTaskPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskPanes\InsertNahjBalaghe\InsertNahjBalagheTaskPane.designer.cs">
+      <DependentUpon>InsertNahjBalagheTaskPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\InsertDedicate\InsertDedicateControl.xaml.cs">
+      <DependentUpon>InsertDedicateControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\InsertDedicate\InsertDedicateTaskPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskPanes\InsertDedicate\InsertDedicateTaskPane.designer.cs">
+      <DependentUpon>InsertDedicateTaskPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\InsertQuran\InsertQuranTaskPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskPanes\InsertQuran\InsertQuranTaskPane.designer.cs">
+      <DependentUpon>InsertQuranTaskPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanes\InsertQuran\InsertQuranControl.xaml.cs">
+      <DependentUpon>InsertQuranControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DefenseAnnouncementsAccess.cs" />
+    <Compile Include="Templates\TemplateAccess.cs" />
+    <Compile Include="ThisAddIn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Resources\Fonts\B Nazanin Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\B Nazanin.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\B Titr Bold.ttf" />
+    <EmbeddedResource Include="Constants\ShivaNegarShortcut.dotm" />
+    <EmbeddedResource Include="Resources\Fonts\B Yagut Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\B Yagut.ttf" />
+    <None Include="Resources\Fonts\TIMES.ttf" />
+    <None Include="Resources\Fonts\TIMESBD.ttf" />
+    <None Include="Resources\Fonts\TIMESBI.ttf" />
+    <None Include="Resources\Fonts\TIMESI.ttf" />
+    <None Include="Resources\Thumbs.db" />
+    <EmbeddedResource Include="Resources\Fonts\Vazir.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Vazirmatn-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Vazirmatn-Regular.ttf" />
+    <EmbeddedResource Include="TaskPanes\ChatBoxNetworking\ChatBoxNetworkingTaskPane.resx">
+      <DependentUpon>ChatBoxNetworkingTaskPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskPanes\DefenseAnnouncements\DefenseAnnouncementsTaskPane.resx">
+      <DependentUpon>DefenseAnnouncementsTaskPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskPanes\DesigningCD\DesigningCDTaskPane.resx">
+      <DependentUpon>DesigningCDTaskPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskPanes\InsertCitation\InsertCitationTaskPane.resx">
+      <DependentUpon>InsertCitationTaskPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskPanes\InsertNahjBalaghe\InsertNahjBalagheTaskPane.resx">
+      <DependentUpon>InsertNahjBalagheTaskPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskPanes\InsertDedicate\InsertDedicateTaskPane.resx">
+      <DependentUpon>InsertDedicateTaskPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskPanes\InsertQuran\InsertQuranTaskPane.resx">
+      <DependentUpon>InsertQuranTaskPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\YazdUniversity\10_TableOfContents.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\11_TableOfFigures.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\12_TableOfTables.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\13_Abbreviations.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\14_Chapter1.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\14_Chapter10.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\14_Chapter2.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\14_Chapter3.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\14_Chapter4.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\14_Chapter5.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\14_Chapter6.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\14_Chapter7.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\14_Chapter8.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\14_Chapter9.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\15_Appendices.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\17_Glossary.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\18_Sources.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\19_EnglishAbstract.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\1_PersianIdentity.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\20_EnglishIdentity.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\2_InTheNameOfAllah.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\4_LegalRights.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\5_ResearchEthics.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\6_Dedication.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\7_Acknowledgment.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\8_PersianAbstract.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\9_Preface.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\YazdUniversity.dotm" />
+    <EmbeddedResource Include="Templates\YazdUniversity\16_Endnotes.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\3_DefenseMeeting.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\10_TableOfTables.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\11_TableOfFigures.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\12_TableOfMaps.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\13_Abbreviations.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\14_PersianAbstract.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\15_Chapter1.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\15_Chapter10.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\15_Chapter2.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\15_Chapter3.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\15_Chapter4.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\15_Chapter5.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\15_Chapter6.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\15_Chapter7.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\15_Chapter8.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\15_Chapter9.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\16_Sources.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\17_Appendices.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\18_EnglishAbstract.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\19_EnglishIdentity.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\1_InTheNameOfAllah.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\2_PersianIdentity.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\3_DefenseMeeting.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\4_OriginalityCommitment.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\5_ResearchEthics.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\6_EvaluationForm.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\7_Acknowledgment.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\8_Dedication.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\9_TableOfContents.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\IslamicAzadUniversityYazd.dotm" />
+    <None Include="ShivaNegar_3_TemporaryKey.pfx" />
+    <None Include="ShivaNegar_4_TemporaryKey.pfx" />
+    <None Include="ShivaNegar_5_TemporaryKey.pfx" />
+    <None Include="ShivaNegar_6_TemporaryKey.pfx" />
+    <None Include="ShivaNegar_TemporaryKey.pfx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\14_Chapter1.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\14_Chapter10.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\14_Chapter2.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\14_Chapter3.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\14_Chapter4.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\14_Chapter5.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\14_Chapter6.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\14_Chapter7.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\14_Chapter8.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\14_Chapter9.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\3_ResearchEthics.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\5_Acknowledgment.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\7_EvaluationForm.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\9_TableOfContents.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\IslamicAzadUniversityCentral.dotm" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\10_TableOfFigures.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\11_TableOfTables.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\12_TableOfMaps.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\13_PersianAbstract.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\15_Sources.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\16_Appendices.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\17_EnglishAbstract.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\18_EnglishIdentity.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\1_PersianIdentity.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\2_InTheNameOfAllah.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\4_OriginalityCommitment.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\6_Dedication.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\8_FormB.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\Proposal\Proposal_PhD.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\Proposal\Proposal_MSc.docx" />
+    <EmbeddedResource Include="Templates\DefenseAnnouncements\DefenseAnnouncements1.docx" />
+    <EmbeddedResource Include="Templates\Blank.docx" />
+    <None Include="Templates\IslamicAzadUniversityCentral\Proposal\فايل_فرم_پيشنهاد_تحقيق_%28پروپوزال%29_دكتراي_رشته_هاي_علوم_انساني_و_هنر.docx" />
+    <None Include="Templates\IslamicAzadUniversityCentral\Proposal\فايل_فرم_پيشنهاد_تحقيق_%28پروپوزال%29_دكتراي_رشته_هاي_علوم_پايه_و_فني_و_مهندسي.docx" />
+    <None Include="Templates\IslamicAzadUniversityCentral\Proposal\پروپوزال کارشناسی ارشد.doc" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\Proposal\Proposal_MSc.docx" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\Proposal\Proposal_PhD.docx" />
+    <None Include="Templates\Parsa\10_TableOfContents.docx" />
+    <None Include="Templates\Parsa\11_TableOfFigures.docx" />
+    <None Include="Templates\Parsa\12_TableOfTables.docx" />
+    <None Include="Templates\Parsa\13_Abbreviations.docx" />
+    <None Include="Templates\Parsa\14_Chapter1.docx" />
+    <None Include="Templates\Parsa\14_Chapter10.docx" />
+    <None Include="Templates\Parsa\14_Chapter2.docx" />
+    <None Include="Templates\Parsa\14_Chapter3.docx" />
+    <None Include="Templates\Parsa\14_Chapter4.docx" />
+    <None Include="Templates\Parsa\14_Chapter5.docx" />
+    <None Include="Templates\Parsa\14_Chapter6.docx" />
+    <None Include="Templates\Parsa\14_Chapter7.docx" />
+    <None Include="Templates\Parsa\14_Chapter8.docx" />
+    <None Include="Templates\Parsa\14_Chapter9.docx" />
+    <None Include="Templates\Parsa\15_Appendices.docx" />
+    <None Include="Templates\Parsa\16_Endnotes.docx" />
+    <None Include="Templates\Parsa\17_Glossary.docx" />
+    <None Include="Templates\Parsa\18_Sources.docx" />
+    <None Include="Templates\Parsa\19_EnglishAbstract.docx" />
+    <None Include="Templates\Parsa\1_PersianIdentity.docx" />
+    <None Include="Templates\Parsa\20_EnglishIdentity.docx" />
+    <None Include="Templates\Parsa\2_InTheNameOfAllah.docx" />
+    <None Include="Templates\Parsa\3_DefenseMeeting.docx" />
+    <None Include="Templates\Parsa\4_LegalRights.docx" />
+    <None Include="Templates\Parsa\5_ResearchEthics.docx" />
+    <None Include="Templates\Parsa\6_Dedication.docx" />
+    <None Include="Templates\Parsa\7_Acknowledgment.docx" />
+    <None Include="Templates\Parsa\8_PersianAbstract.docx" />
+    <None Include="Templates\Parsa\9_Preface.docx" />
+    <None Include="Templates\Parsa\Parsa.dotm" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\10_TableOfContents.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\11_TableOfFigures.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\12_TableOfTables.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\13_Abbreviations.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\14_Chapter1.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\14_Chapter10.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\14_Chapter2.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\14_Chapter3.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\14_Chapter4.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\14_Chapter5.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\14_Chapter6.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\14_Chapter7.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\14_Chapter8.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\14_Chapter9.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\15_Appendices.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\16_Endnotes.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\17_Glossary.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\18_Sources.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\19_EnglishAbstract.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\1_PersianIdentity.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\20_EnglishIdentity.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\2_InTheNameOfAllah.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\3_DefenseMeeting.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\4_LegalRights.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\5_ResearchEthics.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\6_Dedication.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\7_Acknowledgment.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\8_PersianAbstract.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\9_Preface.docx" />
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\ScienceAndTechnologyUni.dotm" />
+    <None Include="ThisAddIn.Designer.xml">
+      <DependentUpon>ThisAddIn.cs</DependentUpon>
+    </None>
+    <Compile Include="ThisAddIn.Designer.cs">
+      <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\ScienceAndTechnologyUni.png" />
+    <EmbeddedResource Include="Templates\DefenseAnnouncements\Images\DefenseAnnouncements1.png" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\IslamicAzadUniversityCentral.png" />
+    <Resource Include="Resources\Shivanegar_Overlay.png" />
+    <None Include="Resources\tools.png" />
+    <None Include="Resources\quran.png" />
+    <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\IslamicAzadUniversityYazd.png" />
+    <EmbeddedResource Include="Templates\Templates.xml" />
+    <EmbeddedResource Include="Templates\YazdUniversity\YazdUniversity.png" />
+    <EmbeddedResource Include="Ribbon.xml" />
+    <None Include="Resources\AddFile.png" />
+    <None Include="Resources\AddSources.png" />
+    <EmbeddedResource Include="Constants\Universities.xml" />
+    <EmbeddedResource Include="Templates\DefenseAnnouncements.xml" />
+    <Content Include="Resources\calendarDark.png" />
+    <Content Include="Resources\calendarWhite.png" />
+    <Resource Include="Resources\catalog.jpg" />
+    <Resource Include="Resources\catalog2.jpg" />
+    <Content Include="Resources\chat.png" />
+    <Content Include="Resources\check.jpg" />
+    <Content Include="Resources\checkIcon.png" />
+    <None Include="Resources\DocumentText.png" />
+    <None Include="Resources\ConvertNumberEnglish.png" />
+    <None Include="Resources\ConvertNumberPersian.png" />
+    <None Include="Resources\ConvertNumberMenu.png" />
+    <Content Include="Resources\Dedication.png" />
+    <Content Include="Resources\downloadIcon.png" />
+    <None Include="Resources\EditFile.png" />
+    <Content Include="Resources\error.png" />
+    <Content Include="Resources\exclamation.png" />
+    <None Include="Resources\ExportCD.png" />
+    <None Include="Resources\ExportDocx.png" />
+    <None Include="Resources\ExportIdentification.png" />
+    <None Include="Resources\ExportPDF.png" />
+    <None Include="Resources\ExportMenu.png" />
+    <None Include="Resources\ExportGrayscale_2.png" />
+    <EmbeddedResource Include="Resources\ExportLatex.png" />
+    <Content Include="Resources\fileIconbib.png" />
+    <Content Include="Resources\fileIcontxt.png" />
+    <Content Include="Resources\fileIconUnknown.png" />
+    <None Include="Resources\Heading2.png" />
+    <None Include="Resources\Heading3.png" />
+    <None Include="Resources\Heading4.png" />
+    <None Include="Resources\Heading5.png" />
+    <None Include="Resources\HeadingMenu.png" />
+    <None Include="Resources\GoToBibliography.png" />
+    <Resource Include="Resources\importSources.png" />
+    <Content Include="Resources\information.png" />
+    <None Include="Resources\InsertCaptionTable.png" />
+    <None Include="Resources\InsertCaptionFormula.png" />
+    <None Include="Resources\InsertCaptionImage.png" />
+    <None Include="Resources\InsertCitation.png" />
+    <Resource Include="Resources\InsertSources.png" />
+    <None Include="Resources\InsertFootnoteMenu.png" />
+    <None Include="Resources\InsertFootnotePersian.png" />
+    <None Include="Resources\InsertFootnoteEnglish.png" />
+    <Resource Include="Resources\introduction.png" />
+    <Content Include="Resources\LoadingSpinner.gif" />
+    <None Include="Resources\ManageSources.png" />
+    <Content Include="Resources\Messages.png" />
+    <Content Include="Resources\office-push-pin.png" />
+    <Content Include="Resources\office-push-unpin.png" />
+    <None Include="Resources\OneColumnPoemMode.png" />
+    <Content Include="Resources\payanNameYar_IconColor.png" />
+    <None Include="Resources\PoemModeMenu.png" />
+    <Content Include="Resources\question.png" />
+    <Content Include="Resources\recycleBinNormal.png" />
+    <Content Include="Resources\recycleBinOnHover.png" />
+    <None Include="Resources\Refer.png" />
+    <Content Include="Resources\rm222batch2-mind-023.jpg" />
+    <None Include="Resources\ShivaNegarDocuments.png" />
+    <None Include="Resources\SimpleVirastar.png" />
+    <None Include="Resources\UpdateDocument.png" />
+    <None Include="Resources\TwoColumnPoemMode.png" />
+    <Resource Include="Resources\SplashBackground.jpg" />
+    <Resource Include="Resources\Shivanegar.png" />
+    <None Include="Resources\ShivanegarDocuments2.png" />
+    <None Include="Resources\UploadDocument.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CustomControls\DialogBoxControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\ShowMessageControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\LoadingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\AddRemovePages\AddRemovePagesControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\BesmellahPage\BesmellahPageControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\CitationSettings\CitationSettingsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\FormatSettings\FormatSettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentSlide1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentSlide2.xaml">
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentSlide6.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentSlide5.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentSlide4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\CreateDocument\CreateDocumentSlide3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Forms\DocumentSettings\DocumentSettingsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\FootnoteSettings\SubtitleSettingsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\DocumentManager\View\Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\DocumentManager\View\AboutUs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\DocumentManager\View\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\DocumentManager\View\BugReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\DocumentManager\View\Networking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\DocumentManager\View\Profile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\NetworkingManager\NetworkingManagerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\ShivaNegarControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\VirastarSettings\VirastarSettingsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Styles\MainDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskPanes\CrossReference\CrossReferenceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\CaptionsReferSettings\CaptionsReferSettingsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\ChangeContents\ChangeContentsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\DocumentManager\DocumentManagerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\DocumentManager\View\Documents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\DocumentManager\Models\FileViewModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\DocumentManager\View\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TaskPanes\ChatBoxNetworking\ChatBoxControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskPanes\DefenseAnnouncements\DefenseAnnouncementsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskPanes\DesigningCD\DesigningCDControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskPanes\InsertCitation\InsertCitationControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskPanes\InsertNahjBalaghe\InsertNahjBalagheControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskPanes\InsertDedicate\InsertDedicateControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskPanes\InsertQuran\InsertQuranControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- <SignManifests>true</SignManifests> -->
+    <!-- <GenerateManifests>false</GenerateManifests> -->
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9BA7688DCD7B61C67AC33622368BDF7D30E9EA41</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ShivaNegar_6_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <!-- Include the build rules for a C# project. -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- Include additional build rules for an Office application add-in. -->
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- This section defines VSTO properties that describe the host-changeable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="Word" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <Host Name="Word" GeneratedCodeNamespace="ShivaNegar" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="0B5D6AE8BC1E6F32A473A5A7BA6F2BE0E652A97D" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="AfterCompile">
+  </Target>
+  <Import Project="..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets" Condition="Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets'))" />
+  </Target>
+</Project>

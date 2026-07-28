@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace ShivaNegar.Forms.FormatSettings
+namespace YazdNegar.Forms.FormatSettings
 {
     public partial class FormatSettingsForm : Form
     {

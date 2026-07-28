@@ -1,6 +1,7 @@
 ﻿using Microsoft.Office.Interop.Word;
 
-namespace ShivaNegar.Forms.AddRemovePages
+
+namespace YazdNegar.Forms.AddRemovePages
 {
     partial class AddRemovePagesForm
 	{
@@ -33,7 +34,7 @@ namespace ShivaNegar.Forms.AddRemovePages
             this.components = new System.ComponentModel.Container();
             this.timerOpenAnimation = new System.Windows.Forms.Timer(this.components);
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.addRemovePagesControl = new ShivaNegar.Forms.AddRemovePages.AddRemovePagesControl(doc);
+            this.addRemovePagesControl = new YazdNegar.Forms.AddRemovePages.AddRemovePagesControl(doc);
             this.SuspendLayout();
             // 
             // timerOpenAnimation

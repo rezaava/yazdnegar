@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Microsoft.Office.Tools;
 
-namespace ShivaNegar.TaskPanes.InsertQuran
+namespace YazdNegar.TaskPanes.InsertQuran
 {
 
     partial class InsertQuranTaskPane : UserControl

@@ -4,7 +4,7 @@
 	<template id="1" name="قالب پارسا">
 	<template id="2" name="قالب شیوانگار">
 	-->
-	<template id="0" universityId ="0" name="دانشگاه یزد" fileName="YazdUniversity.dotm" universityIcon="YazdUniversity.png" path="ShivaNegar.Templates.YazdUniversity." source="https://yazd.ac.ir/Upload/modules/files/documents/pages/offices/educational/deputy/graduate/thesis/thesis-master-manual1400.pdf">
+	<template id="0" universityId ="0" name="دانشگاه یزد" fileName="YazdUniversity.dotm" universityIcon="YazdUniversity.png" path="YazdNegar.Templates.YazdUniversity." source="https://yazd.ac.ir/Upload/modules/files/documents/pages/offices/educational/deputy/graduate/thesis/thesis-master-manual1400.pdf">
 		<subTemplates>
 			<subTemplate order="1" id="PersianIdentity" fileName="1_PersianIdentity.docx" />
 			<subTemplate order="2" id="InTheNameOfAllah" fileName="2_InTheNameOfAllah.docx" />
@@ -117,7 +117,7 @@
 	</template>
 
 	
-	<template id="1" universityId ="1" name="دانشگاه آزاد اسلامی واحد یزد" fileName="IslamicAzadUniversityYazd.dotm" universityIcon="IslamicAzadUniversityYazd.png" path="ShivaNegar.Templates.IslamicAzadUniversityYazd." source="https://yazd.iau.ir/file/download/regulation/1640159427-rahnameye-negaresh-payannameh-26-08-96-jadid-1.pdf">
+	<template id="1" universityId ="1" name="دانشگاه آزاد اسلامی واحد یزد" fileName="IslamicAzadUniversityYazd.dotm" universityIcon="IslamicAzadUniversityYazd.png" path="YazdNegar.Templates.IslamicAzadUniversityYazd." source="https://yazd.iau.ir/file/download/regulation/1640159427-rahnameye-negaresh-payannameh-26-08-96-jadid-1.pdf">
 
 		<proposals subPath="Proposal.">
 			<proposal academicDegree="1" fileName="Proposal_PhD.docx" />
@@ -231,7 +231,7 @@
 	</template>
 	
 	
-	<template id="2" universityId ="2" name="دانشگاه آزاد اسلامی تهران مرکزی " fileName="IslamicAzadUniversityCentral.dotm" universityIcon="IslamicAzadUniversityCentral.png" path="ShivaNegar.Templates.IslamicAzadUniversityCentral." source="https://ctb.iau.ir/file/download/page/1678610359-.docx">
+	<template id="2" universityId ="2" name="دانشگاه آزاد اسلامی تهران مرکزی " fileName="IslamicAzadUniversityCentral.dotm" universityIcon="IslamicAzadUniversityCentral.png" path="YazdNegar.Templates.IslamicAzadUniversityCentral." source="https://ctb.iau.ir/file/download/page/1678610359-.docx">
 
 		<proposals subPath="Proposal.">
 			<proposal academicDegree="1" fileName="Proposal_PhD.docx" />
@@ -336,7 +336,7 @@
 	</template>
 
 
-	<template id="3" universityId ="3" name="دانشگاه جامع علمی کاربدی (واحد یزد)" fileName="ScienceAndTechnologyUni.dotm" universityIcon="ScienceAndTechnologyUni.png" path="ShivaNegar.Templates.ScienceAndTechnologyUni." source="https://yazd.ac.ir/Upload/modules/files/documents/pages/offices/educational/deputy/graduate/thesis/thesis-master-manual1400.pdf">
+	<template id="3" universityId ="3" name="دانشگاه جامع علمی کاربدی (واحد یزد)" fileName="ScienceAndTechnologyUni.dotm" universityIcon="ScienceAndTechnologyUni.png" path="YazdNegar.Templates.ScienceAndTechnologyUni." source="https://yazd.ac.ir/Upload/modules/files/documents/pages/offices/educational/deputy/graduate/thesis/thesis-master-manual1400.pdf">
 		<subTemplates>
 			<subTemplate order="1" id="PersianIdentity" fileName="1_PersianIdentity.docx" />
 			<subTemplate order="2" id="InTheNameOfAllah" fileName="2_InTheNameOfAllah.docx" />

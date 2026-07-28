@@ -7,9 +7,9 @@ using System.Windows.Media;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 
-namespace ShivaNegar.TaskPanes.ChatBoxNetworking
+namespace YazdNegar.TaskPanes.ChatBoxNetworking
 {
     /// <summary>
     /// Interaction logic for CrossReferenceControl.xaml

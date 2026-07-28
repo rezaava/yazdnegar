@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace ShivaNegar.Forms.Converters
+namespace YazdNegar.Forms.Converters
 {
     public class IsLastItemConverter : IValueConverter
     {

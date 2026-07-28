@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Microsoft.Office.Tools;
 
-namespace ShivaNegar.TaskPanes.ChatBoxNetworking
+namespace YazdNegar.TaskPanes.ChatBoxNetworking
 {
 
     partial class ChatBoxNetworkingTaskPane : UserControl

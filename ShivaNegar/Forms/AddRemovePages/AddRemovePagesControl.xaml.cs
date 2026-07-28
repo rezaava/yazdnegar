@@ -10,14 +10,14 @@ using System.Windows.Media;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
-using ShivaNegar.Forms.AddRemovePages.Models;
-using ShivaNegar.Forms.ShivaNegarManager.CreateDocument;
-using ShivaNegar.Templates;
-using static ShivaNegar.DedicatedFunctions;
-using static ShivaNegar.Models.TemplateRelationshipModel;
+using YazdNegar.Constants;
+using YazdNegar.Forms.AddRemovePages.Models;
+using YazdNegar.Forms.YazdNegarManager.CreateDocument;
+using YazdNegar.Templates;
+using static YazdNegar.DedicatedFunctions;
+using static YazdNegar.Models.TemplateRelationshipModel;
 
-namespace ShivaNegar.Forms.AddRemovePages
+namespace YazdNegar.Forms.AddRemovePages
 {
     /// <summary>
     /// Interaction logic for AddRemovePagesControl.xaml
@@ -792,8 +792,8 @@ namespace ShivaNegar.Forms.AddRemovePages
                     try
                     {
                         #region Update Document via Template
-                        string shivanegarTemplatesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Microsoft", "Templates", "ShivaNegarTemplates");
-                        Directory.CreateDirectory(shivanegarTemplatesPath);
+                        string YazdNegarTemplatesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Microsoft", "Templates", "YazdNegarTemplates");
+                        Directory.CreateDirectory(YazdNegarTemplatesPath);
                         string templateName = TemplateAccess.getTemplateFileName(university, templateType);
 
                         //unload AttachedTemplate for replace Template
@@ -804,7 +804,7 @@ namespace ShivaNegar.Forms.AddRemovePages
                                 continue;
 
                             Microsoft.Office.Interop.Word.Template attachedTemplate = docAttached.get_AttachedTemplate() as Microsoft.Office.Interop.Word.Template;
-                            if (attachedTemplate != null && attachedTemplate.FullName.Equals(shivanegarTemplatesPath.TrimEnd('\\') + "\\" + templateName, StringComparison.OrdinalIgnoreCase))
+                            if (attachedTemplate != null && attachedTemplate.FullName.Equals(YazdNegarTemplatesPath.TrimEnd('\\') + "\\" + templateName, StringComparison.OrdinalIgnoreCase))
                             {
                                 doucmentsAttachedToTemplate.Add(docAttached);
                                 docAttached.set_AttachedTemplate("");
@@ -824,7 +824,7 @@ namespace ShivaNegar.Forms.AddRemovePages
 
                         //copy Template File for UpdateDocument based on Template
                         Stream stream = TemplateAccess.getTemplateFileStream(university, templateType);
-                        string templatePath = DedicatedFunctions.copyFileToFolder(stream, templateName, shivanegarTemplatesPath);
+                        string templatePath = DedicatedFunctions.copyFileToFolder(stream, templateName, YazdNegarTemplatesPath);
                         stream.Dispose();
 
                         //save last edit Template to document

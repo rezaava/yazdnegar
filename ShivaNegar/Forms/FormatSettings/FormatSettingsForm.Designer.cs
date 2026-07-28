@@ -1,6 +1,6 @@
 ﻿using Microsoft.Office.Interop.Word;
 
-namespace ShivaNegar.Forms.FormatSettings
+namespace YazdNegar.Forms.FormatSettings
 {
     partial class FormatSettingsForm
     {
@@ -33,7 +33,7 @@ namespace ShivaNegar.Forms.FormatSettings
             this.components = new System.ComponentModel.Container();
             this.timerOpenAnimation = new System.Windows.Forms.Timer(this.components);
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.formatSettingsControl = new ShivaNegar.Forms.FormatSettings.FormatSettingsControl(doc,accessType);
+            this.formatSettingsControl = new YazdNegar.Forms.FormatSettings.FormatSettingsControl(doc,accessType);
             this.SuspendLayout();
             // 
             // timerOpenAnimation

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Office.Interop.Word;
 
-namespace ShivaNegar.Forms.FootnoteSettings
+namespace YazdNegar.Forms.FootnoteSettings
 {
     partial class FootnoteSettingsForm
 	{
@@ -33,7 +33,7 @@ namespace ShivaNegar.Forms.FootnoteSettings
             this.components = new System.ComponentModel.Container();
             this.timerOpenAnimation = new System.Windows.Forms.Timer(this.components);
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.footnoteSettingsControl = new ShivaNegar.Forms.FootnoteSettings.FootnoteSettingsControl(doc);
+            this.footnoteSettingsControl = new YazdNegar.Forms.FootnoteSettings.FootnoteSettingsControl(doc);
             this.SuspendLayout();
             // 
             // timerOpenAnimation

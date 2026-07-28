@@ -1,8 +1,8 @@
 ﻿using Microsoft.Office.Interop.Word;
-using ShivaNegar.Forms.CaptionSettings;
+using YazdNegar.Forms.CaptionSettings;
 using System.Windows.Controls;
 
-namespace ShivaNegar.TaskPanes.DefenseAnnouncements
+namespace YazdNegar.TaskPanes.DefenseAnnouncements
 {
 	[System.ComponentModel.ToolboxItemAttribute(false)]
 	partial class DefenseAnnouncementsTaskPane
@@ -33,7 +33,7 @@ namespace ShivaNegar.TaskPanes.DefenseAnnouncements
 		private void InitializeComponent()
 		{
 			this.elementHost = new System.Windows.Forms.Integration.ElementHost();
-			this.defenseAnnouncementsControl = new ShivaNegar.TaskPanes.DefenseAnnouncements.DefenseAnnouncementsControl();
+			this.defenseAnnouncementsControl = new YazdNegar.TaskPanes.DefenseAnnouncements.DefenseAnnouncementsControl();
 			this.SuspendLayout();
 			// 
 			// elementHost

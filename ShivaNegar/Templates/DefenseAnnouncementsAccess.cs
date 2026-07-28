@@ -2,9 +2,9 @@
 using System.IO;
 using System.Reflection;
 using System.Xml;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 
-namespace ShivaNegar.Templates
+namespace YazdNegar.Templates
 {
     internal class DefenseAnnouncementsAccess
     {

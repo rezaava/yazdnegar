@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using Microsoft.Office.Interop.Word;
 
-namespace ShivaNegar.Forms.VirastarSettings
+namespace YazdNegar.Forms.VirastarSettings
 {
     /// <summary>
     /// Interaction logic for ChangeContentsControl.xaml

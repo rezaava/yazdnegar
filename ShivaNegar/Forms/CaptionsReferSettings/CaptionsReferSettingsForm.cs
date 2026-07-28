@@ -3,9 +3,10 @@ using System.Drawing;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 
-namespace ShivaNegar.Forms.CaptionSettings
+
+namespace YazdNegar.Forms.CaptionSettings
 {
     public partial class CaptionsReferSettingsForm : Form
     {

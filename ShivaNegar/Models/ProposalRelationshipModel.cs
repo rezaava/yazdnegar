@@ -1,6 +1,6 @@
-﻿using ShivaNegar.Constants;
+﻿using YazdNegar.Constants;
 
-namespace ShivaNegar.Models
+namespace YazdNegar.Models
 {
     public class ProposalRelationshipModel
     {

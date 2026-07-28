@@ -34,7 +34,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace ShivaNegar.CustomControls.Design
+namespace YazdNegar.CustomControls.Design
 {
     public class frmSwitchPages : Form
     {

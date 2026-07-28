@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Microsoft.Office.Tools;
 
-namespace ShivaNegar.TaskPanes.InsertNahjBalaghe
+namespace YazdNegar.TaskPanes.InsertNahjBalaghe
 {
 
     partial class InsertNahjBalagheTaskPane : UserControl

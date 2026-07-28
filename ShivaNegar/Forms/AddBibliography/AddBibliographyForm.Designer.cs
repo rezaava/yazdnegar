@@ -1,4 +1,4 @@
-﻿namespace ShivaNegar.Forms.AddBibliography
+﻿namespace YazdNegar.Forms.AddBibliography
 {
     partial class AddBibliographyForm
     {
@@ -30,20 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timerOpenAnimation = new System.Windows.Forms.Timer(this.components);
-            this.panelMain = new ShivaNegar.CustomControls.P_Panel();
+            this.panelMain = new YazdNegar.CustomControls.P_Panel();
             this.panelFilePadding = new System.Windows.Forms.Panel();
             this.panelFiles = new System.Windows.Forms.Panel();
-            this.btnAlwaysOnTop = new ShivaNegar.CustomControls.P_Button();
+            this.btnAlwaysOnTop = new YazdNegar.CustomControls.P_Button();
             this.panelDragContrainer = new System.Windows.Forms.Panel();
-            this.panelImportDragFiles = new ShivaNegar.CustomControls.P_Panel();
+            this.panelImportDragFiles = new YazdNegar.CustomControls.P_Panel();
             this.panelPictureContainer = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDragStatus = new System.Windows.Forms.Label();
             this.panelTop = new System.Windows.Forms.Panel();
             this.lblWindowName = new System.Windows.Forms.Label();
-            this.panelBottom = new ShivaNegar.CustomControls.P_Panel();
-            this.btnCancel = new ShivaNegar.CustomControls.P_Button();
-            this.btnSubmit = new ShivaNegar.CustomControls.P_Button();
+            this.panelBottom = new YazdNegar.CustomControls.P_Panel();
+            this.btnCancel = new YazdNegar.CustomControls.P_Button();
+            this.btnSubmit = new YazdNegar.CustomControls.P_Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelMain.SuspendLayout();
             this.panelFilePadding.SuspendLayout();
@@ -76,7 +76,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(30, 5, 30, 10);
-            this.panelMain.PaletteDrawBorder = ShivaNegar.CustomControls.PaletteDrawBorders.TopLeftRight;
+            this.panelMain.PaletteDrawBorder = YazdNegar.CustomControls.PaletteDrawBorders.TopLeftRight;
             this.panelMain.Size = new System.Drawing.Size(500, 350);
             this.panelMain.TabIndex = 31;
             // 
@@ -103,7 +103,7 @@
             // 
             this.btnAlwaysOnTop.BackColor = System.Drawing.Color.Transparent;
             this.btnAlwaysOnTop.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnAlwaysOnTop.BackgroundImage = global::ShivaNegar.Properties.Resources.office_push_unpin;
+            this.btnAlwaysOnTop.BackgroundImage = global::YazdNegar.Properties.Resources.office_push_unpin;
             this.btnAlwaysOnTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAlwaysOnTop.BorderColor = System.Drawing.Color.Firebrick;
             this.btnAlwaysOnTop.BorderRadius = 0;
@@ -144,7 +144,7 @@
             this.panelImportDragFiles.Location = new System.Drawing.Point(0, 5);
             this.panelImportDragFiles.Name = "panelImportDragFiles";
             this.panelImportDragFiles.Padding = new System.Windows.Forms.Padding(10);
-            this.panelImportDragFiles.PaletteDrawBorder = ShivaNegar.CustomControls.PaletteDrawBorders.All;
+            this.panelImportDragFiles.PaletteDrawBorder = YazdNegar.CustomControls.PaletteDrawBorders.All;
             this.panelImportDragFiles.Size = new System.Drawing.Size(440, 155);
             this.panelImportDragFiles.TabIndex = 24;
             // 
@@ -162,7 +162,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::ShivaNegar.Properties.Resources.downloadIcon;
+            this.pictureBox1.Image = global::YazdNegar.Properties.Resources.downloadIcon;
             this.pictureBox1.Location = new System.Drawing.Point(30, 20);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(360, 52);
@@ -218,7 +218,7 @@
             this.panelBottom.Location = new System.Drawing.Point(0, 350);
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Padding = new System.Windows.Forms.Padding(8, 5, 8, 5);
-            this.panelBottom.PaletteDrawBorder = ShivaNegar.CustomControls.PaletteDrawBorders.BottomLeftRight;
+            this.panelBottom.PaletteDrawBorder = YazdNegar.CustomControls.PaletteDrawBorders.BottomLeftRight;
             this.panelBottom.Size = new System.Drawing.Size(500, 50);
             this.panelBottom.TabIndex = 32;
             // 

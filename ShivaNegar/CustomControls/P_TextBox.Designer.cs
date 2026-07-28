@@ -1,4 +1,4 @@
-﻿namespace ShivaNegar.CustomControls
+﻿namespace YazdNegar.CustomControls
 {
     partial class P_TextBox
     {

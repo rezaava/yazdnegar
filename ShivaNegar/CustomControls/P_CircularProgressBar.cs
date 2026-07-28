@@ -1,4 +1,4 @@
-﻿/*using System; using ShivaNegar.Constants;
+﻿/*using System; using YazdNegar.Constants;
 using System.ComponentModel;
 
 using System.Drawing;
@@ -7,7 +7,7 @@ using System.Drawing.Text;
 using System.Windows.Forms;
 //using WinFormAnimation; // in NuGet
 
-namespace ShivaNegar.CustomControls.CircularProgressBar
+namespace YazdNegar.CustomControls.CircularProgressBar
 {
     /// <summary>
     ///     The circular progress bar windows form control

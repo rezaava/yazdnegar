@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace ShivaNegar.Models
+namespace YazdNegar.Models
 {
     internal class RibbonControlModel
     {

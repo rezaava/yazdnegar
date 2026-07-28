@@ -1,6 +1,7 @@
 ﻿using Microsoft.Office.Interop.Word;
 
-namespace ShivaNegar.Forms.BesmellahPage
+
+namespace YazdNegar.Forms.BesmellahPage
 {
     partial class BesmellahPageForm
     {
@@ -33,7 +34,7 @@ namespace ShivaNegar.Forms.BesmellahPage
             this.components = new System.ComponentModel.Container();
             this.timerOpenAnimation = new System.Windows.Forms.Timer(this.components);
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.besmellahPageControl = new ShivaNegar.Forms.BesmellahPage.BesmellahPageControl();
+            this.besmellahPageControl = new YazdNegar.Forms.BesmellahPage.BesmellahPageControl();
             this.SuspendLayout();
             // 
             // timerOpenAnimation

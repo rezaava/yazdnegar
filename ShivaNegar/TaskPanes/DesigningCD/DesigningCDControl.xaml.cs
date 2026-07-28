@@ -6,10 +6,10 @@ using System.Windows.Media;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
-using ShivaNegar.Templates;
+using YazdNegar.Constants;
+using YazdNegar.Templates;
 
-namespace ShivaNegar.TaskPanes.DesigningCD
+namespace YazdNegar.TaskPanes.DesigningCD
 {
     /// <summary>
     /// Interaction logic for DesigningCDControl.xaml

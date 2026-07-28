@@ -3,9 +3,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants.ComboBoxData;
+using YazdNegar.Constants.ComboBoxData;
 
-namespace ShivaNegar.Forms.BesmellahPage
+namespace YazdNegar.Forms.BesmellahPage
 {
     /// <summary>
     /// Interaction logic for ChangeContentsControl.xaml

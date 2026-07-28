@@ -10,9 +10,9 @@
 
 #pragma warning disable 414
 using Microsoft.Office.Interop.Word;
-using ShivaNegar.Constants;
+using YazdNegar.Constants;
 
-namespace ShivaNegar
+namespace YazdNegar
 {
 
     /// 
