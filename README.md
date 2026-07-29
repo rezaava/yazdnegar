@@ -1,4 +1,4 @@
-### ShivaNegar (Addin)
+### YazdNegar (Addin)
 ---
 Softwares:
 - Microsoft Visual Studio 2022 (with .Net Framework(4.8) and Office/Sharepoint development Pack) Version 17.12.3
