@@ -462,12 +462,18 @@
     <Compile Include="Forms\YazdNegarManager\NetworkingManager\NetworkingManagerControl.xaml.cs">
       <DependentUpon>NetworkingManagerControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IChangeTransitionShivaNegarManager.cs" />
+    <Compile Include="Forms\YazdNegarManager\YazdNegarControl.xaml.cs">
+      <DependentUpon>YazdNegarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\YazdNegarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YazdNegarManager\YazdNegarForm.Designer.cs">
+      <DependentUpon>YazdNegarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IChangeTransitionYazdNegarManager.cs" />
     <Compile Include="Interfaces\ICloseForm.cs" />
     <Compile Include="Interfaces\IStatusFormRequest.cs" />
-    <Compile Include="Forms\YazdNegarManager\ShivaNegarControl.xaml.cs">
-      <DependentUpon>ShivaNegarControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Forms\VirastarSettings\VirastarSettingsControl.xaml.cs">
       <DependentUpon>VirastarSettingsControl.xaml</DependentUpon>
     </Compile>
@@ -535,12 +541,6 @@
     <Compile Include="Forms\Converters\IconToImageSourceConverter.cs" />
     <Compile Include="Forms\YazdNegarManager\DocumentManager\DocumentManagerControl.xaml.cs">
       <DependentUpon>DocumentManagerControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\YazdNegarManager\ShivaNegarForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\YazdNegarManager\ShivaNegarForm.Designer.cs">
-      <DependentUpon>ShivaNegarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\YazdNegarManager\DocumentManager\Utilities\IconHelper.cs" />
     <Compile Include="Forms\YazdNegarManager\DocumentManager\Utilities\RelayCommand.cs" />
@@ -629,14 +629,14 @@
     <EmbeddedResource Include="Forms\ChangeContents\ChangeContentsForm.resx">
       <DependentUpon>ChangeContentsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\YazdNegarManager\ShivaNegarForm.resx">
-      <DependentUpon>ShivaNegarForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YazdNegarManager\YazdNegarForm.resx">
+      <DependentUpon>YazdNegarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\ResourceRibbonIcons.resx">
       <SubType>Designer</SubType>
@@ -757,7 +757,6 @@
     <EmbeddedResource Include="Resources\Fonts\B Nazanin Bold.ttf" />
     <EmbeddedResource Include="Resources\Fonts\B Nazanin.ttf" />
     <EmbeddedResource Include="Resources\Fonts\B Titr Bold.ttf" />
-    <EmbeddedResource Include="Constants\ShivaNegarShortcut.dotm" />
     <EmbeddedResource Include="Resources\Fonts\B Yagut Bold.ttf" />
     <EmbeddedResource Include="Resources\Fonts\B Yagut.ttf" />
     <None Include="Resources\Fonts\TIMES.ttf" />
@@ -1125,15 +1124,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Forms\YazdNegarManager\ShivaNegarControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Forms\VirastarSettings\VirastarSettingsControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Forms\Styles\MainDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\YazdNegarManager\YazdNegarControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1210,7 +1209,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ShivaNegar_6_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>YazdNegar_6_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
   </PropertyGroup>

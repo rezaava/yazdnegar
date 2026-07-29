@@ -27,10 +27,6 @@ using YazdNegar.Forms.YazdNegarManager.DocumentManager.View;
 using YazdNegar.Models;
 using YazdNegar.TaskPanes.CrossReference;
 using YazdNegar.Templates;
-
-
-// new using 
-
 using Task = System.Threading.Tasks.Task;
 
 namespace YazdNegar
