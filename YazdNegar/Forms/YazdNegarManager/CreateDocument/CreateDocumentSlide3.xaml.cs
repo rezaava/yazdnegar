@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using MaterialDesignThemes.Wpf;
 using YazdNegar.Constants;
 using YazdNegar.Constants.ComboBoxData;
@@ -41,8 +42,16 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
             AcademicDegreeValues.AcademicDegree_AssociateOfScienceFa,
             //AcademicDegreeValues.AcademicDegree_BachelorOfScienceFa,
             AcademicDegreeValues.AcademicDegree_PartTimeBachelorOfScienceFa,
-            //AcademicDegreeValues.AcademicDegree_MasterOfScienceFa,
-            //AcademicDegreeValues.AcademicDegree_DoctoralFa,
+            AcademicDegreeValues.AcademicDegree_MasterOfScienceFa,
+            AcademicDegreeValues.AcademicDegree_DoctoralFa,
+        };
+
+        internal static readonly string[] AcademicDegree_En2 =
+        {
+            AcademicDegreeValues.AcademicDegree_AssociateOfScienceEn,
+            AcademicDegreeValues.AcademicDegree_PartTimeBachelorOfScienceEn,
+            AcademicDegreeValues.AcademicDegree_MasterOfScienceEn,
+            AcademicDegreeValues.AcademicDegree_DoctoralEn,
         };
 
         public CreateDocumentSlide3()
@@ -54,16 +63,25 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
             //comboDepartment.ItemsSource = DepartmentsData.getPersianDepartments();
             comboAcademicDegree.ItemsSource = AcademicDegree_Fa2;
 
-            List<string> universities = UniversitiesData.getPersianUniversities();
-            for (int i = 0; i < universities.Count; i++)
-            {
-                string branchFa = UniversitiesData.getBranchFaOfUniversity((Universities)i);
+            //List<string> universities = UniversitiesData.getPersianUniversities();
+            //for (int i = 0; i < universities.Count; i++)
+            //{
+            //    string branchFa = UniversitiesData.getBranchFaOfUniversity((Universities)i);
 
-                if (!string.IsNullOrEmpty(branchFa))
-                    universities[i] = universities[i] + " " + branchFa;
-            }
-            comboUniversity.ItemsSource = universities;
+            //    if (!string.IsNullOrEmpty(branchFa))
+            //        universities[i] = universities[i] + " " + branchFa;
+            //}
+            //comboUniversity.ItemsSource = universities;
 
+
+            string yazdUniName = UniversitiesData.getPersianUniversities()[(int)Universities.YazdUniversity];
+            string yazdBranchFa = UniversitiesData.getBranchFaOfUniversity(Universities.YazdUniversity);
+            if (!string.IsNullOrEmpty(yazdBranchFa))
+                yazdUniName += " " + yazdBranchFa;
+
+            comboUniversity.ItemsSource = new List<string> { yazdUniName };
+            comboUniversity.SelectedIndex = 0;
+            University = Universities.YazdUniversity;
 
             comboBoxcontrolModels = new List<CreateDocumentControlModel>()
             {
@@ -79,6 +97,9 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
                 comboBox.SelectionChanged += ComboBox_SelectionChanged;
                 comboBox.PreviewMouseWheel += ComboBox_PreviewMouseWheel;
                 comboBox.GotFocus += ComboBox_GotFocus;
+
+                comboDepartment.ItemsSource = DepartmentsData.getPersianDepartments(University, true);
+                comboBoxcontrolModels.Where(a => a.Control == comboUniversity).FirstOrDefault().Validate = true;
                 //control.LostFocus += ComboBox_LostFocus;
             }
 
@@ -461,7 +482,7 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
                 else
                 {
                     AcademicDegreeFa = AcademicDegree_Fa2[comboAcademicDegree.SelectedIndex];
-                    AcademicDegreeEn = ComboBoxDataAcademicDegree.AcademicDegree_En[comboAcademicDegree.SelectedIndex];
+                    AcademicDegreeEn = AcademicDegree_En2[comboAcademicDegree.SelectedIndex];
                 }
                 FieldOfStudyFa = txtBoxFieldOfStudy.Text;
                 FieldOfStudyEn = txtBoxFieldOfStudyEn.Text;
@@ -614,10 +635,16 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
             {
                 btnForward.IsEnabled = false;
 
-                comboUniversity.SelectedIndex = -1;
+                //comboUniversity.SelectedIndex = -1;
+
                 comboDepartment.ItemsSource = null;
                 comboGroup.ItemsSource = null;
                 comboAcademicDegree.ItemsSource = AcademicDegree_Fa2;
+
+
+                comboUniversity.SelectedIndex = 0;
+                comboBoxcontrolModels.Where(a => a.Control == comboUniversity).FirstOrDefault().Validate = true;
+                comboDepartment.ItemsSource = DepartmentsData.getPersianDepartments(Universities.YazdUniversity, true);
 
                 foreach (CreateDocumentControlModel controlModel in comboBoxcontrolModels)
                 {
