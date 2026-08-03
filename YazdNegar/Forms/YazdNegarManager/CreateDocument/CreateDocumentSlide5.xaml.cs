@@ -258,20 +258,21 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
             {
                 listDocumentData2.Add(new DataGridModel("درس", nameOfCourseFa, null));
             }
+            
+            string supervisorLabel = (documentType == DocumentTypes.SchoolResearch) ? "استاد درس" : "استاد راهنما";
+            string defenseDateLabel = (documentType == DocumentTypes.SchoolResearch) ? "تاریخ ارائه" : "تاریخ دفاع";
+
             listDocumentData2.AddRange(new List<DataGridModel>()
             {
                 new DataGridModel("عنوان",titleFa,titleEn),
-
                 new DataGridModel("نگارنده",authorFa,authorEn),
-
-                new DataGridModel("استاد راهنما",supervisorFa,supervisorEn),
+                new DataGridModel(supervisorLabel,supervisorFa,supervisorEn),
             });
+
             if (!string.IsNullOrEmpty(advisorFa))
                 listDocumentData2.Add(new DataGridModel("استاد مشاور", advisorFa, advisorEn));
-
-            if (!string.IsNullOrEmpty(defenseDateFa))
-                listDocumentData2.Add(new DataGridModel("تاریخ دفاع", defenseDateFa, defenseDateEn));
-
+            if(!string.IsNullOrEmpty(defenseDateLabel))
+                listDocumentData2.Add(new DataGridModel(defenseDateLabel, defenseDateFa, defenseDateEn));
             dataGridDocumentData.ItemsSource = listDocumentData2;
         }
         #endregion

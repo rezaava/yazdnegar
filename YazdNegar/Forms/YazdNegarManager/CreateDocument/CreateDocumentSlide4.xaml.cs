@@ -376,10 +376,10 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
 
         public void initializeVariables(DocumentTypes documentType)
         {
-            if (documentType == DocumentTypes.SchoolResearch)
-                txtBoxNameOfCourseFa.Visibility = Visibility.Visible;
-            else
-                txtBoxNameOfCourseFa.Visibility = Visibility.Collapsed;
+            //if (documentType == DocumentTypes.SchoolResearch)
+            //    txtBoxNameOfCourseFa.Visibility = Visibility.Visible;
+            //else
+            //    txtBoxNameOfCourseFa.Visibility = Visibility.Collapsed;
 
             //string initialTitle = "مشخصات ";
             //if(documentType == DocumentTypes.Project)
@@ -390,6 +390,33 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
             //	lblTitle.Text = initialTitle + DocumentTypeValues.DocumentType_DissertationFa;
             //else if(documentType == DocumentTypes.SchoolResearch)
             //	lblTitle.Text = initialTitle + "تحقیق درسی";
+            if (documentType == DocumentTypes.SchoolResearch)
+            {
+                txtBoxNameOfCourseFa.Visibility = Visibility.Visible;
+
+                HintAssist.SetHint(txtBoxSupervisorFa, "استاد درس");
+                HintAssist.SetHint(txtBoxSupervisorEn, "(استاد درس (انگلیسی");
+
+                gridAdvisor.Visibility = Visibility.Collapsed;
+                txtBoxAdvisorFa.Visibility = Visibility.Collapsed;
+                txtBoxAdvisorEn.Visibility = Visibility.Collapsed;
+
+                HintAssist.SetHint(txtBoxDefenseDateFa, "تاریخ ارائه (اختیاری)");
+                HintAssist.SetHint(txtBoxDefenseDateEn, "تاریخ ارائه (انگلیسی) (اختیاری)");
+            }else
+            {
+                txtBoxNameOfCourseFa.Visibility = Visibility.Collapsed;
+
+                HintAssist.SetHint(txtBoxSupervisorFa, "استاد(ان) راهنما");
+                HintAssist.SetHint(txtBoxSupervisorEn, "استاد(ان) راهنما (انگلیسی)");
+
+                gridAdvisor.Visibility = Visibility.Visible;
+                txtBoxAdvisorFa.Visibility = Visibility.Visible;
+                txtBoxAdvisorEn.Visibility = Visibility.Visible;
+
+                HintAssist.SetHint(txtBoxDefenseDateFa, "تاریخ دفاع (اختیاری)");
+                HintAssist.SetHint(txtBoxDefenseDateEn, "تاریخ دفاع (انگلیسی) (اختیاری)");
+            }
         }
         #endregion
 
