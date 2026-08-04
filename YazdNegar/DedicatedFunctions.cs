@@ -1993,9 +1993,17 @@ namespace YazdNegar
                 lockContents = false;
             }
         }
-        internal static string getContentControlTitle(string tag)
+        internal static string getContentControlTitle(string tag, DocumentTypes documentType = DocumentTypes.Nothing)
         {
-            if (ContentControlNames._field_Type_Fa.ToString() == tag)
+            if (ContentControlNames._field_Supervisor_Fa.ToString() == tag)
+            {
+                return documentType == DocumentTypes.SchoolResearch ? "استاد درس" : "استاد راهنما";
+            }
+            else if (ContentControlNames._field_Supervisor_En.ToString() == tag)
+            {
+
+            }
+            else if (ContentControlNames._field_Type_Fa.ToString() == tag)
             {
                 return "نوع سند";
             }
@@ -2080,6 +2088,7 @@ namespace YazdNegar
             { return "فصل پنجم"; }
             else if (ContentControlNames._field_Chapter6_Title.ToString() == tag)
             { return "فصل ششم"; }
+
             else if (ContentControlNames._field_Chapter7_Title.ToString() == tag)
             { return "فصل هفتم"; }
             else if (ContentControlNames._field_Chapter8_Title.ToString() == tag)

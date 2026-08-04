@@ -753,8 +753,7 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
                     }
                     continue;
                 }
-                string title = DedicatedFunctions.getContentControlTitle(contentControlName);
-
+                string title = DedicatedFunctions.getContentControlTitle(contentControlName, (DocumentTypes)documentType);
 
                 // ContentControlNames._field_Author_Title_En
                 // ContentControlNames._field_Author_Title_Fa
@@ -765,7 +764,7 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
 
                 if (contentControlName == ContentControlNames._field_Advisor_Title_Fa.ToString() || contentControlName == ContentControlNames._field_Advisor_Fa.ToString())
                 {
-                    if (string.IsNullOrEmpty(advisorFa.Trim()))
+                    if (string.IsNullOrEmpty(advisorFa.Trim())) 
                     {
                         content = "";
                         mustBeEmpty = true;
