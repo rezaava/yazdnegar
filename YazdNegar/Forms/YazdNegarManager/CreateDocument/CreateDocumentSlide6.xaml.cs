@@ -433,6 +433,12 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
             defenseDateEn = slide4.DefenseDateEn;
 
             //Slide5
+
+            if (documentType == DocumentTypes.SchoolResearch)
+            {
+                advisorFa = "";
+                advisorEn = "";
+            }
         }
         #endregion
 
@@ -549,14 +555,14 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
                     { ContentControlNames._field_AreaOfStudy_Title_Fa.ToString(),TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_AreaOfStudy_Title_Fa)},
                     { ContentControlNames._field_AreaOfStudy_Title_En.ToString(),TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_AreaOfStudy_Title_En)},
 
-					//{ ContentControlNames._field_Author_Title_En.ToString(),TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_Author_Title_En)},
-					//{ ContentControlNames._field_Author_Title_Fa.ToString(),TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_Author_Title_Fa)},
-					//{ ContentControlNames._field_Supervisor_Title_Fa.ToString(),TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_Supervisor_Title_Fa)},
-					//{ ContentControlNames._field_Supervisor_Title_En.ToString(),TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_Supervisor_Title_En)},
-					//{ ContentControlNames._field_Title_Title_En.ToString(),TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_Title_Title_En)},
-					//{ ContentControlNames._field_Title_Title_Fa.ToString(),TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_Title_Title_Fa)},
+                    //{ ContentControlNames._field_Author_Title_En.ToString(), TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_Author_Title_En)},
+                    //{ ContentControlNames._field_Author_Title_Fa.ToString(), TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_Author_Title_Fa)},
+                    //{ ContentControlNames._field_Supervisor_Title_Fa.ToString(), documentType == DocumentTypes.SchoolResearch ? "استاد درس:" : TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_Supervisor_Title_Fa)},
+                    //{ ContentControlNames._field_Supervisor_Title_En.ToString(), documentType == DocumentTypes.SchoolResearch ? "Instructor:" : TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_Supervisor_Title_En)},
+                    //{ ContentControlNames._field_Title_Title_En.ToString(), TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_Title_Title_En)},
+                    //{ ContentControlNames._field_Title_Title_Fa.ToString(), TemplateAccess.getCustomTitle(university,templateType,ContentControlNames._field_Title_Title_Fa)},
 
-					{ ContentControlNames._field_Supervisor_En.ToString(),supervisorEn},
+                    { ContentControlNames._field_Supervisor_En.ToString(),supervisorEn},
                     { ContentControlNames._field_Supervisor_Fa.ToString(),supervisorFa},
                     { ContentControlNames._field_Title_En.ToString(),titleEn},
                     { ContentControlNames._field_Title_Fa.ToString(),titleFa},
@@ -964,7 +970,7 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
                 }
             }
 
-            string urlParameters = "save?type=" + (int)documentType + "&name=" + DocumentName + "&config=" + jsonVariables.ToString();
+            string urlParameters = "save/parsanegar/1?type=" + (int)documentType + "&name=" + DocumentName + "&config=" + jsonVariables.ToString();
             var formData = new MultipartFormDataContent();
             var fileStream = new FileStream(doc.FullName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             var fileContent = new StreamContent(fileStream);

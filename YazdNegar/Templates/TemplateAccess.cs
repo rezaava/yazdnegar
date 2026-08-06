@@ -336,6 +336,28 @@ namespace YazdNegar.Templates
                     foreach (XmlNode subTemplateNode in subTemplateNodeList)
                     {
                         string id = subTemplateNode.Attributes["id"].Value;
+
+                        XmlAttribute docTypeAttr = subTemplateNode.Attributes["documentType"];
+                        if (docTypeAttr != null)
+                        {
+                            if (int.Parse(docTypeAttr.Value) != (int)documentType)
+                                continue;
+                            id = id.Replace("_SchoolResearch", "");
+                        }
+                        else
+                        {
+                            bool hasSpecificVersion = false;
+                            foreach (XmlNode otherNode in subTemplateNodeList)
+                            {
+                                XmlAttribute otherDocType = otherNode.Attributes["documentType"];
+                                if (otherDocType != null && int.Parse(otherDocType.Value) == (int)documentType && otherNode.Attributes["id"].Value.StartsWith(id))
+                                {
+                                    hasSpecificVersion = true;
+                                    break;
+                                }
+                            }
+                            if (hasSpecificVersion) continue;
+                        }
                         bool isDisable = subTemplateNode.Attributes["isDisable"] == null ? false : true;
                         if (getAll || (!notIncludeList.Contains(id) && !isDisable))
                         {
@@ -438,6 +460,27 @@ namespace YazdNegar.Templates
                     foreach (XmlNode subTemplateNode in subTemplateNodeList)
                     {
                         string id = subTemplateNode.Attributes["id"].Value;
+                        XmlAttribute docTypeAttr = subTemplateNode.Attributes["documentType"];
+                        if (docTypeAttr != null)
+                        {
+                            if (int.Parse(docTypeAttr.Value) != (int)documentType)
+                                continue;
+                            id = id.Replace("_SchoolResearch", "");
+                        }
+                        else
+                        {
+                            bool hasSpecificVersion = false;
+                            foreach (XmlNode otherNode in subTemplateNodeList)
+                            {
+                                XmlAttribute otherDocType = otherNode.Attributes["documentType"];
+                                if (otherDocType != null && int.Parse(otherDocType.Value) == (int)documentType && otherNode.Attributes["id"].Value.StartsWith(id))
+                                {
+                                    hasSpecificVersion = true;
+                                    break;
+                                }
+                            }
+                            if (hasSpecificVersion) continue;
+                        }
                         bool isDisable = subTemplateNode.Attributes["isDisable"] == null ? false : true;
                         if (!notIncludeList.Contains(id) && !isDisable)
                         {

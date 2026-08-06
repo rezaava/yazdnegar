@@ -2814,7 +2814,7 @@ namespace YazdNegar
             string version = BugReport.AssemblyVersion.Replace(".", "");
 
             string URL = StringConstant.PrimaryServerApiBaseAddress;
-            string urlParameters = "update?ver=" + version;
+            string urlParameters = "update/parsanegar/1?ver=" + version;
 
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(URL);

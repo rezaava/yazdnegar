@@ -217,10 +217,18 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
                 SupervisorFa = txtBoxSupervisorFa.Text;
                 SupervisorEn = txtBoxSupervisorEn.Text;
 
-                AdvisorFa = txtBoxAdvisorFa.Text;
-                AdvisorEn = txtBoxAdvisorEn.Text;
+                if (gridAdvisor.Visibility == Visibility.Visible)
+                {
+                    AdvisorFa = txtBoxAdvisorFa.Text;
+                    AdvisorEn = txtBoxAdvisorEn.Text;
+                }
+                else
+                {
+                    AdvisorFa = "";
+                    AdvisorEn = "";
+                }
 
-                DefenseDateFa = txtBoxDefenseDateFa.Text;
+                    DefenseDateFa = txtBoxDefenseDateFa.Text;
                 DefenseDateEn = txtBoxDefenseDateEn.Text;
 
                 btnForward.IsEnabled = true;
