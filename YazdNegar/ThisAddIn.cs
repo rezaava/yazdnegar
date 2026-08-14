@@ -1517,6 +1517,8 @@ namespace YazdNegar
             DedicatedFunctions.AccessType accessType = DedicatedFunctions.hasAccess(doc);
             if (accessType == AccessType.AccessGranted || accessType == AccessType.AccessGranted_Administrator)
             {
+                // ====== پاک کردن تغییرات قبلی ======
+                ClearPreviousTrackChanges(doc);
                 // ====== شروع Track Changes ======
                 bool trackWasEnabled = doc.TrackRevisions;
                 if (!trackWasEnabled)
@@ -1603,6 +1605,8 @@ namespace YazdNegar
             DedicatedFunctions.AccessType accessType = DedicatedFunctions.hasAccess(doc);
             if (accessType == AccessType.AccessGranted || accessType == AccessType.AccessGranted_Administrator)
             {
+                // ====== پاک کردن تغییرات قبلی ======
+                ClearPreviousTrackChanges(doc);
                 // ====== شروع Track Changes ======
                 bool trackWasEnabled = doc.TrackRevisions;
                 if (!trackWasEnabled)
@@ -1688,6 +1692,8 @@ namespace YazdNegar
             DedicatedFunctions.AccessType accessType = DedicatedFunctions.hasAccess(doc);
             if (accessType == AccessType.AccessGranted || accessType == AccessType.AccessGranted_Administrator)
             {
+                // ====== پاک کردن تغییرات قبلی ======
+                ClearPreviousTrackChanges(doc);
                 // ====== شروع Track Changes ======
                 bool trackWasEnabled = doc.TrackRevisions;
                 if (!trackWasEnabled)
