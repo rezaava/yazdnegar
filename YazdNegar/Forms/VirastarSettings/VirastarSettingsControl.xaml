@@ -166,6 +166,27 @@
                                 </StackPanel>
                             </StackPanel>
 
+                            <StackPanel
+                                Margin="0,0,0,15"
+                                HorizontalAlignment="Left"
+                                Orientation="Horizontal">
+
+                                <ToggleButton
+                                    x:Name="tbtnShowMarkedEdits"
+                                    Margin="0,0,0,15"
+                                    VerticalAlignment="Top"
+                                    UseLayoutRounding="False"
+                                    FlowDirection="LeftToRight" />
+                                <TextBlock
+                                    Margin="0,0,2,0"
+                                    Text="ویرایش‌ها نشانه‌گذاری شده و به کاربر نمایش داده شوند." />
+                                <materialDesign:PackIcon
+                                    VerticalAlignment="Center"
+                                    Foreground="{StaticResource PrimaryBackgroundColor}"
+                                    Kind="QuestionMarkBox"
+                                    UseLayoutRounding="False" />
+                            </StackPanel>
+
                             <!-- تبدیل عدد Section -->
                             <StackPanel Margin="0,15">
                                 <!-- Header with legend effect -->

@@ -42,6 +42,11 @@ namespace YazdNegar.Forms.VirastarSettings
             tbIncludeChangeDigitCharacters.IsChecked = Properties.Settings.Default.VirastarSettings_IncludeChangeDigitCharacters;
             tbIncludeChangeDigitCharacters.Click += TbIncludeChangeDigitCharacters_Click; ;
 
+            tbtnShowMarkedEdits.IsChecked =
+                Properties.Settings.Default.VirastarSettings_ShowMarkedEdits;
+
+            tbtnShowMarkedEdits.Click += TbtnShowMarkedEdits_Click;
+
             comboCreatePoemType.SelectionChanged += ComboCreatePoemType_SelectionChanged;
 
             //store in variable
@@ -77,6 +82,14 @@ namespace YazdNegar.Forms.VirastarSettings
         #endregion
 
         #region ToggleButtons
+
+        private void TbtnShowMarkedEdits_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.VirastarSettings_ShowMarkedEdits =
+                (bool)((System.Windows.Controls.Primitives.ToggleButton)sender).IsChecked;
+
+            Properties.Settings.Default.Save();
+        }
         private void TbtnIncludeHalfSpaceCorrectionFootnote_Click(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.VirastarSettings_IncludeHalfSpaceCorrectionFootnote = (bool)((System.Windows.Controls.Primitives.ToggleButton)sender).IsChecked;

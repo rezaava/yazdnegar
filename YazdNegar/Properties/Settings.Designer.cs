@@ -181,5 +181,17 @@ namespace YazdNegar.Properties {
                 return ((int)(this["VersionTemplate"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool VirastarSettings_ShowMarkedEdits {
+            get {
+                return ((bool)(this["VirastarSettings_ShowMarkedEdits"]));
+            }
+            set {
+                this["VirastarSettings_ShowMarkedEdits"] = value;
+            }
+        }
     }
 }
