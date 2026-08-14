@@ -1521,9 +1521,14 @@ namespace YazdNegar
                 ClearPreviousTrackChanges(doc);
                 // ====== شروع Track Changes ======
                 bool trackWasEnabled = doc.TrackRevisions;
-                if (!trackWasEnabled)
+
+                if (Properties.Settings.Default.VirastarSettings_ShowMarkedEdits)
                 {
-                    doc.TrackRevisions = true;
+                    if (!trackWasEnabled)
+                    {
+                        doc.TrackRevisions = true;
+                    }
+
                     doc.ShowRevisions = true;
                 }
 
@@ -1574,7 +1579,7 @@ namespace YazdNegar
                     ShowReviewFormAfterEditing();
 
                     // ====== پایان Track Changes ======
-                    if (!trackWasEnabled)
+                    if (Properties.Settings.Default.VirastarSettings_ShowMarkedEdits && !trackWasEnabled)
                     {
                         doc.TrackRevisions = false;
                     }
@@ -1609,9 +1614,14 @@ namespace YazdNegar
                 ClearPreviousTrackChanges(doc);
                 // ====== شروع Track Changes ======
                 bool trackWasEnabled = doc.TrackRevisions;
-                if (!trackWasEnabled)
+
+                if (Properties.Settings.Default.VirastarSettings_ShowMarkedEdits)
                 {
-                    doc.TrackRevisions = true;
+                    if (!trackWasEnabled)
+                    {
+                        doc.TrackRevisions = true;
+                    }
+
                     doc.ShowRevisions = true;
                 }
 
@@ -1662,7 +1672,7 @@ namespace YazdNegar
                     ShowReviewFormAfterEditing();
 
                     // ====== پایان Track Changes ======
-                    if (!trackWasEnabled)
+                    if (Properties.Settings.Default.VirastarSettings_ShowMarkedEdits && !trackWasEnabled)
                     {
                         doc.TrackRevisions = false;
                     }
@@ -1696,9 +1706,14 @@ namespace YazdNegar
                 ClearPreviousTrackChanges(doc);
                 // ====== شروع Track Changes ======
                 bool trackWasEnabled = doc.TrackRevisions;
-                if (!trackWasEnabled)
+
+                if (Properties.Settings.Default.VirastarSettings_ShowMarkedEdits)
                 {
-                    doc.TrackRevisions = true;
+                    if (!trackWasEnabled)
+                    {
+                        doc.TrackRevisions = true;
+                    }
+
                     doc.ShowRevisions = true;
                 }
 
@@ -1767,7 +1782,7 @@ namespace YazdNegar
                     ShowReviewFormAfterEditing();
 
                     // ====== پایان Track Changes ======
-                    if (!trackWasEnabled)
+                    if (Properties.Settings.Default.VirastarSettings_ShowMarkedEdits && !trackWasEnabled)
                     {
                         doc.TrackRevisions = false;
                     }
@@ -1822,9 +1837,14 @@ namespace YazdNegar
 
                 // ====== شروع Track Changes ======
                 bool trackWasEnabled = doc.TrackRevisions;
-                if (!trackWasEnabled)
+
+                if (Properties.Settings.Default.VirastarSettings_ShowMarkedEdits)
                 {
-                    doc.TrackRevisions = true;
+                    if (!trackWasEnabled)
+                    {
+                        doc.TrackRevisions = true;
+                    }
+
                     doc.ShowRevisions = true;
                 }
 
@@ -1876,7 +1896,7 @@ namespace YazdNegar
                     ShowReviewFormAfterEditing();
 
                     // ====== پایان Track Changes ======
-                    if (!trackWasEnabled)
+                    if (Properties.Settings.Default.VirastarSettings_ShowMarkedEdits && !trackWasEnabled)
                     {
                         doc.TrackRevisions = false;
                     }
@@ -3104,7 +3124,7 @@ namespace YazdNegar
                 Document doc = Globals.ThisAddIn.Application.ActiveDocument;
                 if (doc == null || doc.Revisions.Count == 0) return;
 
-                int countOfChanges = ThisAddIn.LastCountOfChanges;
+                int countOfChanges = (doc.Revisions.Count)/2;
 
                 // ====== نمایش کلمه ویرایش شده ======
                 ShowCurrentRevision(doc);
