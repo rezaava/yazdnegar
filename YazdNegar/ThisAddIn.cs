@@ -1,5 +1,11 @@
-﻿using System;
+﻿using CsvHelper;
+using DocumentFormat.OpenXml.ExtendedProperties;
+using MaterialDesignThemes.Wpf;
+using Microsoft.Office.Interop.Word;
+using Microsoft.Office.Tools;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -8,11 +14,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using CsvHelper;
-using DocumentFormat.OpenXml.ExtendedProperties;
-using MaterialDesignThemes.Wpf;
-using Microsoft.Office.Interop.Word;
-using Microsoft.Office.Tools;
 using YazdNegar.Constants;
 using YazdNegar.Forms;
 using YazdNegar.Forms.AddBibliography;
@@ -24,8 +25,8 @@ using YazdNegar.Forms.CitationSettings;
 using YazdNegar.Forms.DocumentSettings;
 using YazdNegar.Forms.FootnoteSettings;
 using YazdNegar.Forms.FormatSettings;
-using YazdNegar.Forms.YazdNegarManager;
 using YazdNegar.Forms.VirastarSettings;
+using YazdNegar.Forms.YazdNegarManager;
 using YazdNegar.Models;
 using YazdNegar.TaskPanes.ChatBoxNetworking;
 using YazdNegar.TaskPanes.CrossReference;
@@ -37,6 +38,8 @@ using YazdNegar.TaskPanes.InsertNahjBalaghe;
 using YazdNegar.TaskPanes.InsertQuran;
 using YazdNegar.Templates;
 using static YazdNegar.DedicatedFunctions;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace YazdNegar
 {
@@ -177,6 +180,7 @@ namespace YazdNegar
         public bool DocumentManagerFormVisible { get; set; } = false;
         public bool ChangeContentFormVisible { get; set; } = false;
 
+        public static int LastCountOfChanges { get; set; } = 0;
 
         //Server
         public bool ManualyDisableServer { get; set; } = false;
@@ -1511,50 +1515,77 @@ namespace YazdNegar
             }
 
             DedicatedFunctions.AccessType accessType = DedicatedFunctions.hasAccess(doc);
-
-            string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
-
             if (accessType == AccessType.AccessGranted || accessType == AccessType.AccessGranted_Administrator)
             {
-                List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
-
-                if (Directory.Exists(virastarFolder))
+                // ====== شروع Track Changes ======
+                bool trackWasEnabled = doc.TrackRevisions;
+                if (!trackWasEnabled)
                 {
-                    string[] files = Directory.GetFiles(
-                        virastarFolder,
-                        $"*{StringConstant.ButtonCodeSigns}.csv");
+                    doc.TrackRevisions = true;
+                    doc.ShowRevisions = true;
+                }
 
-                    foreach (string file in files)
+                try
+                {
+                    string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
+
+                    List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
+
+                    if (Directory.Exists(virastarFolder))
                     {
-                        using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
-                        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                        string[] files = Directory.GetFiles(
+                            virastarFolder,
+                            $"*{StringConstant.ButtonCodeHalfSpace}.csv");
+
+                        foreach (string file in files)
                         {
-                            standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
+                            using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
+                            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                            {
+                                standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
+                            }
                         }
                     }
-                }
 
-
-                LoadingForm loadingForm = new LoadingForm();
-                if (doc.ActiveWindow.Selection.Words.Count >= 2)
-                {
-                    Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح نیم‌فاصله‌");
-
-                    System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc.ActiveWindow.Selection.Range, standardModels));
-                }
-                else
-                {
-                    if (DedicatedFunctions.ShowMessage("متنی برای رعایت نیم‌فاصله انتخاب نشده؛ در کل سند اعمال شود؟", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    LoadingForm loadingForm = new LoadingForm();
+                    if (doc.ActiveWindow.Selection.Words.Count >= 2)
                     {
-                        Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح تمامی نیم‌فاصله‌ها");
-
-                        System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
+                        Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح نیم‌فاصله‌");
+                        System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc.ActiveWindow.Selection.Range, standardModels));
                     }
                     else
-                        return;
+                    {
+                        if (DedicatedFunctions.ShowMessage("متنی برای رعایت نیم‌فاصله انتخاب نشده؛ در کل سند اعمال شود؟", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        {
+                            Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح تمامی نیم‌فاصله‌ها");
+                            System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
+                        }
+                        else
+                            return;
+                    }
+                    loadingForm.ShowDialog();
+                    Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+
+                    int countOfChanges = ThisAddIn.LastCountOfChanges;
+
+
+                    ShowReviewFormAfterEditing();
+
+                    // ====== پایان Track Changes ======
+                    if (!trackWasEnabled)
+                    {
+                        doc.TrackRevisions = false;
+                    }
+                    DedicatedFunctions.saveDocument(doc);
                 }
-                loadingForm.ShowDialog();
-                Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+                catch (Exception ex)
+                {
+                    if (!trackWasEnabled)
+                    {
+                        doc.TrackRevisions = false;
+                    }
+                    DedicatedFunctions.ShowErrorMessage($"خطا در تصحیح نیم‌فاصله:\n{ex.Message}");
+                }
             }
         }
         public void spellingCorrection()
@@ -1572,47 +1603,75 @@ namespace YazdNegar
             DedicatedFunctions.AccessType accessType = DedicatedFunctions.hasAccess(doc);
             if (accessType == AccessType.AccessGranted || accessType == AccessType.AccessGranted_Administrator)
             {
-                string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
-
-                List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
-                if (Directory.Exists(virastarFolder))
+                // ====== شروع Track Changes ======
+                bool trackWasEnabled = doc.TrackRevisions;
+                if (!trackWasEnabled)
                 {
-                    string[] files = Directory.GetFiles(
-                        virastarFolder,
-                        $"*{StringConstant.ButtonCodeSpelling}.csv");
+                    doc.TrackRevisions = true;
+                    doc.ShowRevisions = true;
+                }
 
-                    foreach (string file in files)
+                try
+                {
+                    string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
+
+                    List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
+
+                    if (Directory.Exists(virastarFolder))
                     {
-                        using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
-                        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                        string[] files = Directory.GetFiles(
+                            virastarFolder,
+                            $"*{StringConstant.ButtonCodeSpelling}.csv");
+
+                        foreach (string file in files)
                         {
-                            standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
+                            using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
+                            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                            {
+                                standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
+                            }
                         }
                     }
-                }
 
-
-
-                LoadingForm loadingForm = new LoadingForm();
-                if (doc.ActiveWindow.Selection.Words.Count >= 2)
-                {
-                    Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح غلط املایی‌");
-
-                    System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc.ActiveWindow.Selection.Range, standardModels));
-                }
-                else
-                {
-                    if (DedicatedFunctions.ShowMessage("متنی برای تصحیح غلط املایی انتخاب نشده؛ در کل سند اعمال شود؟", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    LoadingForm loadingForm = new LoadingForm();
+                    if (doc.ActiveWindow.Selection.Words.Count >= 2)
                     {
-                        Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح تمامی غلط املایی ها");
-
-                        System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
+                        Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح غلط املایی‌");
+                        System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc.ActiveWindow.Selection.Range, standardModels));
                     }
                     else
-                        return;
+                    {
+                        if (DedicatedFunctions.ShowMessage("متنی برای تصحیح غلط املایی انتخاب نشده؛ در کل سند اعمال شود؟", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        {
+                            Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح تمامی غلط املایی ها");
+                            System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
+                        }
+                        else
+                            return;
+                    }
+                    loadingForm.ShowDialog();
+                    Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+
+                    int countOfChanges = ThisAddIn.LastCountOfChanges;
+
+
+                    ShowReviewFormAfterEditing();
+
+                    // ====== پایان Track Changes ======
+                    if (!trackWasEnabled)
+                    {
+                        doc.TrackRevisions = false;
+                    }
+                    DedicatedFunctions.saveDocument(doc);
                 }
-                loadingForm.ShowDialog();
-                Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+                catch (Exception ex)
+                {
+                    if (!trackWasEnabled)
+                    {
+                        doc.TrackRevisions = false;
+                    }
+                    DedicatedFunctions.ShowErrorMessage($"خطا در تصحیح غلط املایی:\n{ex.Message}");
+                }
             }
         }
         public void neshanehGozariCorrection()
@@ -1629,67 +1688,113 @@ namespace YazdNegar
             DedicatedFunctions.AccessType accessType = DedicatedFunctions.hasAccess(doc);
             if (accessType == AccessType.AccessGranted || accessType == AccessType.AccessGranted_Administrator)
             {
-
-                string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
-
-                List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
-
-                if (Directory.Exists(virastarFolder))
+                // ====== شروع Track Changes ======
+                bool trackWasEnabled = doc.TrackRevisions;
+                if (!trackWasEnabled)
                 {
-                    string[] files = Directory.GetFiles(
-                        virastarFolder,
-                        $"*{StringConstant.ButtonCodeSigns}.csv");
+                    doc.TrackRevisions = true;
+                    doc.ShowRevisions = true;
+                }
 
-                    foreach (string file in files)
+                try
+                {
+                    string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
+
+                    List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
+
+                    if (Directory.Exists(virastarFolder))
                     {
-                        using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
-                        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                        string[] files = Directory.GetFiles(
+                            virastarFolder,
+                            $"*{StringConstant.ButtonCodeSigns}.csv");
+
+                        foreach (string file in files)
                         {
-                            standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
+                            using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
+                            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                            {
+                                standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
+                            }
                         }
                     }
-                }
 
-                // correct Spaces
-                SearchReplaceModel whiteSpaceCorrection = new SearchReplaceModel()
-                {
-                    Search = "^w",
-                    Replace = " ",
-                    Wildcard = "0",
-                    MatchCase = "1",
-                    MatchWholeWord = "1",
-                    MatchKashida = "0",
-                    MatchDiacritics = "0",
-                    MatchAlefHamza = "0",
-                    CounterUp = "0"
-                };
-                standardModels.Add(whiteSpaceCorrection);
-
-
-                LoadingForm loadingForm = new LoadingForm();
-
-                if (doc.ActiveWindow.Selection.Words.Count >= 2)
-                {
-                    Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح نشانه گذاری (سجاوندی)");
-
-                    System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc.ActiveWindow.Selection.Range, standardModels));
-                }
-                else
-                {
-                    DialogResult dr = DedicatedFunctions.ShowMessage("متنی برای رعایت نشانه گذاری (سجاوندی) انتخاب نشده؛ در کل سند اعمال شود؟", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-                    if (dr == DialogResult.Yes)
+                    // correct Spaces
+                    SearchReplaceModel whiteSpaceCorrection = new SearchReplaceModel()
                     {
-                        Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح تمامی نشانه گذاری (سجاوندی) ها");
+                        Search = "^w",
+                        Replace = " ",
+                        Wildcard = "0",
+                        MatchCase = "1",
+                        MatchWholeWord = "1",
+                        MatchKashida = "0",
+                        MatchDiacritics = "0",
+                        MatchAlefHamza = "0",
+                        CounterUp = "0"
+                    };
+                    standardModels.Add(whiteSpaceCorrection);
 
-                        System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
+                    LoadingForm loadingForm = new LoadingForm();
+
+                    if (doc.ActiveWindow.Selection.Words.Count >= 2)
+                    {
+                        Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح نشانه گذاری (سجاوندی)");
+                        System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc.ActiveWindow.Selection.Range, standardModels));
                     }
                     else
-                        return;
-                }
+                    {
+                        DialogResult dr = DedicatedFunctions.ShowMessage("متنی برای رعایت نشانه گذاری (سجاوندی) انتخاب نشده؛ در کل سند اعمال شود؟", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
-                loadingForm.ShowDialog();
-                Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+                        if (dr == DialogResult.Yes)
+                        {
+                            Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح تمامی نشانه گذاری (سجاوندی) ها");
+                            System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
+                        }
+                        else
+                            return;
+                    }
+
+                    loadingForm.ShowDialog();
+                    Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+
+                    int countOfChanges = ThisAddIn.LastCountOfChanges;
+
+                    ShowReviewFormAfterEditing();
+
+                    // ====== پایان Track Changes ======
+                    if (!trackWasEnabled)
+                    {
+                        doc.TrackRevisions = false;
+                    }
+                    DedicatedFunctions.saveDocument(doc);
+                }
+                catch (Exception ex)
+                {
+                    if (!trackWasEnabled)
+                    {
+                        doc.TrackRevisions = false;
+                    }
+                    DedicatedFunctions.ShowErrorMessage($"خطا در تصحیح نشانه گذاری:\n{ex.Message}");
+                }
+            }
+        }
+
+        private void ClearPreviousTrackChanges(Document doc)
+        {
+            try
+            {
+                // اگر تغییرات Track Changes وجود داره 
+                if (doc.Revisions.Count > 0)
+                {
+                    // همه تغییرات رو بپذیر (Accept All) 
+                    doc.Revisions.AcceptAll();
+
+                    // یا اگر میخواید همه رو رد کنید: 
+                    // doc.Revisions.RejectAll(); 
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error clearing track changes: {ex.Message}");
             }
         }
         public void standardCorrection()
@@ -1706,48 +1811,79 @@ namespace YazdNegar
             DedicatedFunctions.AccessType accessType = DedicatedFunctions.hasAccess(doc);
             if (accessType == AccessType.AccessGranted || accessType == AccessType.AccessGranted_Administrator)
             {
-                string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
+                // ====== پاک کردن تغییرات قبلی ======
+                ClearPreviousTrackChanges(doc);
 
-                List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
-
-                if (Directory.Exists(virastarFolder))
+                // ====== شروع Track Changes ======
+                bool trackWasEnabled = doc.TrackRevisions;
+                if (!trackWasEnabled)
                 {
-                    string[] files = Directory.GetFiles(
-                        virastarFolder,
-                        $"*{StringConstant.ButtonCodeStandard}.csv"
-                        );
+                    doc.TrackRevisions = true;
+                    doc.ShowRevisions = true;
+                }
 
-                    foreach (string file in files)
+                try
+                {
+                    string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
+
+                    List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
+
+                    if (Directory.Exists(virastarFolder))
                     {
-                        using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
-                        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                        string[] files = Directory.GetFiles(
+                            virastarFolder,
+                            $"*{StringConstant.ButtonCodeStandard}.csv");
+
+                        foreach (string file in files)
                         {
-                            standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
+                            using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
+                            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                            {
+                                standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
+                            }
                         }
                     }
-                }
 
-                LoadingForm loadingForm = new LoadingForm();
+                    LoadingForm loadingForm = new LoadingForm();
 
-                if (doc.ActiveWindow.Selection.Words.Count >= 2)
-                {
-                    Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("زبان معیار");
-
-                    System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc.ActiveWindow.Selection.Range, standardModels));
-                }
-                else
-                {
-                    if (DedicatedFunctions.ShowMessage("متنی برای زبان معیار انتخاب نشده؛ در کل سند اعمال شود؟", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    if (doc.ActiveWindow.Selection.Words.Count >= 2)
                     {
-                        Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تبدیل تمام سند به زبان معیار");
-
-                        System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
+                        Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("زبان معیار");
+                        System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc.ActiveWindow.Selection.Range, standardModels));
                     }
                     else
-                        return;
+                    {
+                        if (DedicatedFunctions.ShowMessage("متنی برای زبان معیار انتخاب نشده؛ در کل سند اعمال شود؟", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        {
+                            Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تبدیل تمام سند به زبان معیار");
+                            System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
+                        }
+                        else
+                            return;
+                    }
+                    loadingForm.ShowDialog();
+                    Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+
+                    int countOfChanges = ThisAddIn.LastCountOfChanges;
+
+
+                    ShowReviewFormAfterEditing();
+
+                    // ====== پایان Track Changes ======
+                    if (!trackWasEnabled)
+                    {
+                        doc.TrackRevisions = false;
+                    }
+                    DedicatedFunctions.saveDocument(doc);
                 }
-                loadingForm.ShowDialog();
-                Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+                catch (Exception ex)
+                {
+                    if (!trackWasEnabled)
+                    {
+                        doc.TrackRevisions = false;
+                    }
+                    DedicatedFunctions.ShowErrorMessage($"خطا در اعمال زبان معیار:\n{ex.Message}");
+                }
             }
         }
 
@@ -2943,6 +3079,291 @@ namespace YazdNegar
             }
         }
         #endregion
+
+        #endregion
+
+        #region Review Changes - Track Changes Management
+
+        private bool isFirstRevision = false;
+        private System.Windows.Forms.Timer flashTimer;
+        private int flashCount = 0;
+
+        /// <summary>
+        /// نمایش فرم شناور تایید ویرایش‌ها بعد از ویرایش خودکار
+        /// </summary>
+        private void ShowReviewFormAfterEditing()
+        {
+            try
+            {
+                Document doc = Globals.ThisAddIn.Application.ActiveDocument;
+                if (doc == null || doc.Revisions.Count == 0) return;
+
+                int countOfChanges = ThisAddIn.LastCountOfChanges;
+
+                // ====== نمایش کلمه ویرایش شده ======
+                ShowCurrentRevision(doc);
+
+                // ایجاد فرم شناور (Non-Modal)
+                Form reviewForm = new Form();
+                reviewForm.Text = "تایید ویرایش‌ها";
+                reviewForm.StartPosition = FormStartPosition.CenterScreen;
+                reviewForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+                reviewForm.MaximizeBox = false;
+                reviewForm.MinimizeBox = false;
+                reviewForm.Size = new Size(450, 130);
+                reviewForm.TopMost = true;
+                reviewForm.RightToLeft = RightToLeft.Yes;
+                reviewForm.BackColor = Color.White;
+                reviewForm.Font = new System.Drawing.Font("Tahoma", 9);
+                reviewForm.ShowInTaskbar = false;
+
+                // پنل اصلی
+                TableLayoutPanel panel = new TableLayoutPanel();
+                panel.Dock = DockStyle.Fill;
+                panel.ColumnCount = 4;
+                panel.RowCount = 2;
+                panel.Padding = new Padding(10);
+                panel.BackColor = Color.White;
+
+                // عنوان با شمارش تعداد ویرایش‌ها
+                Label lblTitle = new Label();
+                lblTitle.Text = $"تایید ویرایش‌ها ({countOfChanges} مورد)";
+                lblTitle.Font = new System.Drawing.Font("Tahoma", 11, FontStyle.Bold);
+                lblTitle.ForeColor = Color.FromArgb(0, 122, 193);
+                lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+                lblTitle.Dock = DockStyle.Fill;
+                panel.SetColumnSpan(lblTitle, 4);
+                panel.Controls.Add(lblTitle, 0, 0);
+
+                // ====== دکمه 1: تایید همه ======
+                Button btnAcceptAll = new Button();
+                btnAcceptAll.Text = "✔✔\nتایید همه";
+                btnAcceptAll.Font = new System.Drawing.Font("Tahoma", 8);
+                btnAcceptAll.ForeColor = Color.Green;
+                btnAcceptAll.BackColor = Color.White;
+                btnAcceptAll.FlatStyle = FlatStyle.Flat;
+                btnAcceptAll.FlatAppearance.BorderColor = Color.Green;
+                btnAcceptAll.FlatAppearance.BorderSize = 1;
+                btnAcceptAll.Dock = DockStyle.Fill;
+                btnAcceptAll.Margin = new Padding(5);
+                btnAcceptAll.Cursor = Cursors.Hand;
+                btnAcceptAll.Click += (s, e) =>
+                {
+                    try
+                    {
+                        if (doc.Revisions.Count > 0)
+                        {
+                            doc.Revisions.AcceptAll();
+                            reviewForm.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"خطا: {ex.Message}");
+                        reviewForm.Close();
+                    }
+                };
+
+                // ====== دکمه 2: تایید کلمه ======
+                Button btnAcceptOne = new Button();
+                btnAcceptOne.Text = "✔\nتایید کلمه";
+                btnAcceptOne.Font = new System.Drawing.Font("Tahoma", 8);
+                btnAcceptOne.ForeColor = Color.Green;
+                btnAcceptOne.BackColor = Color.White;
+                btnAcceptOne.FlatStyle = FlatStyle.Flat;
+                btnAcceptOne.FlatAppearance.BorderColor = Color.Green;
+                btnAcceptOne.FlatAppearance.BorderSize = 1;
+                btnAcceptOne.Dock = DockStyle.Fill;
+                btnAcceptOne.Margin = new Padding(5);
+                btnAcceptOne.Cursor = Cursors.Hand;
+                btnAcceptOne.Click += (s, e) =>
+                {
+                    try
+                    {
+                        if (doc.Revisions.Count == 0)
+                        {
+                            reviewForm.Close();
+                            return;
+                        }
+
+                        // بار اول: رفتن به ابتدای سند
+                        if (!isFirstRevision)
+                        {
+                            doc.ActiveWindow.Selection.HomeKey(Unit: WdUnits.wdStory);
+                            isFirstRevision = true;
+                        }
+
+                        // تایید اولین ویرایش
+                        if (doc.Revisions.Count > 0)
+                        {
+                            // قبل از تایید، کلمه رو نمایش بده
+                            ShowCurrentRevision(doc);
+
+                            doc.Revisions[1].Accept();
+
+                            // بروزرسانی عنوان
+                            lblTitle.Text = $"تایید ویرایش‌ها ({countOfChanges} مورد)";
+                        }
+
+                        // نمایش ویرایش بعدی (اگه وجود داشته باشه)
+                        if (doc.Revisions.Count > 0)
+                        {
+                            ShowCurrentRevision(doc);
+                        }
+
+                        if (doc.Revisions.Count == 0)
+                        {
+                            isFirstRevision = false;
+                            reviewForm.Close();
+                            MessageBox.Show("همه ویرایش‌ها انجام شدند.", "مقاله نگار",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"خطا: {ex.Message}");
+                        isFirstRevision = false;
+                        reviewForm.Close();
+                    }
+                };
+
+                // ====== دکمه 3: رد کلمه ======
+                Button btnRejectOne = new Button();
+                btnRejectOne.Text = "✘\nرد کلمه";
+                btnRejectOne.Font = new System.Drawing.Font("Tahoma", 8);
+                btnRejectOne.ForeColor = Color.Red;
+                btnRejectOne.BackColor = Color.White;
+                btnRejectOne.FlatStyle = FlatStyle.Flat;
+                btnRejectOne.FlatAppearance.BorderColor = Color.Red;
+                btnRejectOne.FlatAppearance.BorderSize = 1;
+                btnRejectOne.Dock = DockStyle.Fill;
+                btnRejectOne.Margin = new Padding(5);
+                btnRejectOne.Cursor = Cursors.Hand;
+                btnRejectOne.Click += (s, e) =>
+                {
+                    try
+                    {
+                        if (doc.Revisions.Count == 0)
+                        {
+                            reviewForm.Close();
+                            return;
+                        }
+
+                        if (!isFirstRevision)
+                        {
+                            doc.ActiveWindow.Selection.HomeKey(Unit: WdUnits.wdStory);
+                            isFirstRevision = true;
+                        }
+
+                        if (doc.Revisions.Count > 0)
+                        {
+                            ShowCurrentRevision(doc);
+                            doc.Revisions[1].Reject();
+                            lblTitle.Text = $"تایید ویرایش‌ها ({countOfChanges} مورد)";
+                        }
+
+                        if (doc.Revisions.Count > 0)
+                        {
+                            ShowCurrentRevision(doc);
+                        }
+
+                        if (doc.Revisions.Count == 0)
+                        {
+                            isFirstRevision = false;
+                            reviewForm.Close();
+                            MessageBox.Show("همه ویرایش‌ها انجام شدند.", "مقاله نگار",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"خطا: {ex.Message}");
+                        isFirstRevision = false;
+                        reviewForm.Close();
+                    }
+                };
+
+                // ====== دکمه 4: رد همه ======
+                Button btnRejectAll = new Button();
+                btnRejectAll.Text = "✘✘\nرد همه";
+                btnRejectAll.Font = new System.Drawing.Font("Tahoma", 8);
+                btnRejectAll.ForeColor = Color.Red;
+                btnRejectAll.BackColor = Color.White;
+                btnRejectAll.FlatStyle = FlatStyle.Flat;
+                btnRejectAll.FlatAppearance.BorderColor = Color.Red;
+                btnRejectAll.FlatAppearance.BorderSize = 1;
+                btnRejectAll.Dock = DockStyle.Fill;
+                btnRejectAll.Margin = new Padding(5);
+                btnRejectAll.Cursor = Cursors.Hand;
+                btnRejectAll.Click += (s, e) =>
+                {
+                    try
+                    {
+                        if (doc.Revisions.Count > 0)
+                        {
+                            doc.Revisions.RejectAll();
+                            reviewForm.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"خطا: {ex.Message}");
+                        reviewForm.Close();
+                    }
+                };
+
+                // اضافه کردن دکمه‌ها به پنل (از راست به چپ)
+                panel.Controls.Add(btnAcceptAll, 0, 1);
+                panel.Controls.Add(btnAcceptOne, 1, 1);
+                panel.Controls.Add(btnRejectOne, 2, 1);
+                panel.Controls.Add(btnRejectAll, 3, 1);
+
+                reviewForm.Controls.Add(panel);
+
+                // ====== نمایش فرم به صورت Non-Modal ======
+                reviewForm.Show();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in ShowReviewFormAfterEditing: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// نمایش کلمه ویرایش شده با هایلایت موقت و اسکرول به محل آن
+        /// </summary>
+        private void ShowCurrentRevision(Document doc)
+        {
+            try
+            {
+                if (doc == null || doc.Revisions.Count == 0) return;
+
+                // انتخاب اولین ویرایش
+                Range revisionRange = doc.Revisions[1].Range;
+                revisionRange.Select();
+
+                // اسکرول به محل کلمه
+                doc.ActiveWindow.ScrollIntoView(revisionRange);
+
+                // تایمر برای حذف هایلایت بعد از 1.5 ثانیه
+                System.Threading.Timer timer = new System.Threading.Timer((state) =>
+                {
+                    try
+                    {
+                        // حذف هایلایت
+                        revisionRange.HighlightColorIndex = WdColorIndex.wdNoHighlight;
+                    }
+                    catch { }
+                }, null, 1500, System.Threading.Timeout.Infinite);
+
+                // کمی صبر کن تا کاربر کلمه رو ببینه
+                System.Threading.Thread.Sleep(200);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in ShowCurrentRevision: {ex.Message}");
+            }
+        }
 
         #endregion
     }

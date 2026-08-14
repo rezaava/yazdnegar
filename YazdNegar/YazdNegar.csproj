@@ -808,6 +808,7 @@
     <EmbeddedResource Include="Templates\YazdUniversity\18_Sources.docx" />
     <EmbeddedResource Include="Templates\YazdUniversity\19_EnglishAbstract.docx" />
     <EmbeddedResource Include="Templates\YazdUniversity\1_PersianIdentity.docx" />
+    <EmbeddedResource Include="Templates\YazdUniversity\1_PersianIdentity_SchoolResearch.docx" />
     <EmbeddedResource Include="Templates\YazdUniversity\20_EnglishIdentity.docx" />
     <EmbeddedResource Include="Templates\YazdUniversity\2_InTheNameOfAllah.docx" />
     <EmbeddedResource Include="Templates\YazdUniversity\4_LegalRights.docx" />

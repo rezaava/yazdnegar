@@ -27,14 +27,13 @@ namespace YazdNegar.Forms
         [DllImport("user32.dll")]
         static extern bool AnimateWindow(IntPtr hWnd, int time, AnimateWindowFlags flags);
 
-
         SynchronizationContext uiContext = SynchronizationContext.Current;
 
         #region for Windows form and Controls
-        private int formBorderRadius = 10;
-        private int formBorderSize = 5;
-        private Color formBorderColor = Color.FromArgb(6, 174, 244);
-        //private Color formBorderColor = Color.FromArgb(59, 84, 164);
+        // ====== تغییرات ظاهری ======
+        private int formBorderRadius = 20;           // ← گردی بیشتر
+        private int formBorderSize = 3;              // ← حاشیه نازک‌تر
+        private Color formBorderColor = Color.FromArgb(0, 122, 193);  // ← آبی مقاله‌نگار
         #endregion
 
         public LoadingForm()
@@ -57,14 +56,12 @@ namespace YazdNegar.Forms
                 Globals.ThisAddIn.DocumentManagerFormVisible = false;
             };
 
-
             #region Panel initial settings
             panelMain.BorderRadius = formBorderRadius;
             panelMain.BorderSize = 1;
             panelMain.PaletteDrawBorder = CustomControls.PaletteDrawBorders.All;
             panelMain.BorderColor = formBorderColor;
             #endregion
-
 
             #region other initialize
             timerOpenAnimation.Enabled = true;
@@ -91,6 +88,7 @@ namespace YazdNegar.Forms
             graphicsPath.CloseFigure();
             return graphicsPath;
         }
+
         private void formRegionAndBorder(Form form, float radius, Graphics graph, Color borderColor, float borderSize)
         {
             if (this.WindowState != FormWindowState.Minimized)
@@ -116,11 +114,13 @@ namespace YazdNegar.Forms
                 }
             }
         }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             formRegionAndBorder(this, formBorderRadius, e.Graphics, formBorderColor, formBorderSize);
         }
+
         private void ControlRegionAndBorder(Control control, float radius, Graphics graph, Color borderColor)
         {
             using (GraphicsPath roundPath = getRoundedPath(control.ClientRectangle, radius))
@@ -141,6 +141,7 @@ namespace YazdNegar.Forms
                 graph.DrawPath(penBorder, roundPath);
             }
         }
+
         protected override void OnPaintBackground(PaintEventArgs e)
         {
             base.OnPaintBackground(e);
@@ -166,8 +167,8 @@ namespace YazdNegar.Forms
             //Bottom Right
             Rectangle rectBottomRight = new System.Drawing.Rectangle(mWidth, rectForm.Y + mHeight, mWidth, mHeight);
             drawPath(rectBottomRight, e.Graphics, fbColors.BottomRightColor);
-
         }
+
         private struct FormBoundsColors
         {
             public Color TopLeftColor;
@@ -175,6 +176,7 @@ namespace YazdNegar.Forms
             public Color BottomLeftColor;
             public Color BottomRightColor;
         }
+
         private FormBoundsColors GetFormBoundsColors()
         {
             var fbColor = new FormBoundsColors();
@@ -212,10 +214,12 @@ namespace YazdNegar.Forms
 
         private void timerOpenAnimation_Tick(object sender, EventArgs e)
         {
-            Opacity += 0.2;
+            // ====== محو شدن آرام‌تر ======
+            Opacity += 0.1;
 
-            if (Opacity == 1)
+            if (Opacity >= 1)
             {
+                Opacity = 1;
                 timerOpenAnimation.Enabled = false;
             }
         }
@@ -243,36 +247,62 @@ namespace YazdNegar.Forms
         public void closeForm(int countOfChanges = -1, bool successfull = true)
         {
             timerDotAnimation.Enabled = false;
-            picBoxStatus.Image = Properties.Resources.check;
 
             if (successfull)
             {
-                picBoxStatus.Invoke((MethodInvoker)(() => picBoxStatus.Image = Properties.Resources.check));
-                lblStatus.Invoke((MethodInvoker)(() => lblStatus.Text = "عملیات به اتمام رسید"));
+                picBoxStatus.Invoke((MethodInvoker)(() =>
+                {
+                    try
+                    {
+                        picBoxStatus.Image = Properties.Resources.check;
+                    }
+                    catch { }
+                }));
+
+                lblStatus.Invoke((MethodInvoker)(() =>
+                {
+                    lblStatus.ForeColor = Color.FromArgb(0, 150, 0);  // ← سبز
+                    lblStatus.Text = "✅ عملیات با موفقیت انجام شد!";
+                }));
 
                 if (countOfChanges != -1)
                 {
                     if (countOfChanges == 0)
                     {
-                        lblCountOfChanges.Invoke((MethodInvoker)(() => lblCountOfChanges.Text = "موردی برای تغییر یافت نشد"));
+                        lblCountOfChanges.Invoke((MethodInvoker)(() =>
+                            lblCountOfChanges.Text = "موردی برای تغییر یافت نشد"));
                     }
                     else
                     {
-                        lblCountOfChanges.Invoke((MethodInvoker)(() => lblCountOfChanges.Text = "تعداد تغییرات اعمال شده " + countOfChanges + " مورد"));
+                        lblCountOfChanges.Invoke((MethodInvoker)(() =>
+                            lblCountOfChanges.Text = $"تعداد تغییرات اعمال شده {countOfChanges} مورد"));
                     }
                 }
             }
             else
             {
-                picBoxStatus.Invoke((MethodInvoker)(() => picBoxStatus.Image = Properties.Resources.error));
-                lblStatus.Invoke((MethodInvoker)(() => lblStatus.Text = "عملیات با شکست مواجه شد"));
+                picBoxStatus.Invoke((MethodInvoker)(() =>
+                {
+                    try
+                    {
+                        picBoxStatus.Image = Properties.Resources.error;
+                    }
+                    catch { }
+                }));
+
+                lblStatus.Invoke((MethodInvoker)(() =>
+                {
+                    lblStatus.ForeColor = Color.FromArgb(200, 0, 0);  // ← قرمز
+                    lblStatus.Text = "❌ عملیات با خطا مواجه شد!";
+                }));
             }
 
-            System.Threading.Thread.Sleep(2000);
+            // ====== زمان کمتر برای بستن ======
+            System.Threading.Thread.Sleep(1500);
+
             this.Invoke((MethodInvoker)(() =>
             {
                 GC.Collect();
-                //this.Dispose();
                 this.Close();
             }));
         }

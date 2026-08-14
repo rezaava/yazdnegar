@@ -2032,7 +2032,9 @@ namespace YazdNegar
             else if (ContentControlNames._field_Author_Fa.ToString() == tag)
             { return "نگارنده"; }
             else if (ContentControlNames._field_DefenseDate_Fa.ToString() == tag)
-            { return "تاریخ دفاع"; }
+            { 
+                return documentType == DocumentTypes.SchoolResearch ? "تاریخ ارایه" : "تاریخ دفاع"; 
+            }
             else if (ContentControlNames._field_AcademicDegree_Fa.ToString() == tag)
             { return "مقطع تحصیلی"; }
             else if (ContentControlNames._field_NameOfCourse_Fa.ToString() == tag)

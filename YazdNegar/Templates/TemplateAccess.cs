@@ -336,6 +336,7 @@ namespace YazdNegar.Templates
                     foreach (XmlNode subTemplateNode in subTemplateNodeList)
                     {
                         string id = subTemplateNode.Attributes["id"].Value;
+                        string originalId = id;
 
                         XmlAttribute docTypeAttr = subTemplateNode.Attributes["documentType"];
                         if (docTypeAttr != null)
@@ -364,7 +365,7 @@ namespace YazdNegar.Templates
                             string resourcePath = template.Attributes["path"].Value;
                             int order = int.Parse(subTemplateNode.Attributes["order"].Value);
                             string fileName = subTemplateNode.Attributes["fileName"].Value;
-                            bool isRequired = requiredList.Contains(id);
+                            bool isRequired = requiredList.Contains(id) || requiredList.Contains(originalId);
 
                             TemplateRelationshipModel model = new TemplateRelationshipModel(order, id, fileName, resourcePath, isRequired);
                             subTemplateList.Add(model);
@@ -460,6 +461,7 @@ namespace YazdNegar.Templates
                     foreach (XmlNode subTemplateNode in subTemplateNodeList)
                     {
                         string id = subTemplateNode.Attributes["id"].Value;
+                        string originalId = id;
                         XmlAttribute docTypeAttr = subTemplateNode.Attributes["documentType"];
                         if (docTypeAttr != null)
                         {
@@ -487,7 +489,8 @@ namespace YazdNegar.Templates
                             string resourcePath = template.Attributes["path"].Value;
                             int order = int.Parse(subTemplateNode.Attributes["order"].Value);
                             string fileName = subTemplateNode.Attributes["fileName"].Value;
-                            bool isRequired = requiredList.Contains(id);
+
+                            bool isRequired = requiredList.Contains(id) || requiredList.Contains(originalId);
 
                             subTemplateList.Add(new AddRemovePageRelationModel(doc, order, id, fileName, resourcePath, isRequired));
                         }
