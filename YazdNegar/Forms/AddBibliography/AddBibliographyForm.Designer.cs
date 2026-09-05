@@ -45,6 +45,7 @@
             this.btnCancel = new YazdNegar.CustomControls.P_Button();
             this.btnSubmit = new YazdNegar.CustomControls.P_Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblHelp = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelFilePadding.SuspendLayout();
             this.panelDragContrainer.SuspendLayout();
@@ -69,6 +70,7 @@
             this.panelMain.BorderRadius = 10;
             this.panelMain.BorderSize = 1;
             this.panelMain.Controls.Add(this.panelFilePadding);
+            this.panelMain.Controls.Add(this.lblHelp);          // ← ADD THIS LINE
             this.panelMain.Controls.Add(this.btnAlwaysOnTop);
             this.panelMain.Controls.Add(this.panelDragContrainer);
             this.panelMain.Controls.Add(this.panelTop);
@@ -77,7 +79,7 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(30, 5, 30, 10);
             this.panelMain.PaletteDrawBorder = YazdNegar.CustomControls.PaletteDrawBorders.TopLeftRight;
-            this.panelMain.Size = new System.Drawing.Size(500, 350);
+            this.panelMain.Size = new System.Drawing.Size(500, 385);
             this.panelMain.TabIndex = 31;
             // 
             // panelFilePadding
@@ -128,6 +130,19 @@
             this.panelDragContrainer.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.panelDragContrainer.Size = new System.Drawing.Size(440, 165);
             this.panelDragContrainer.TabIndex = 30;
+            //
+            // lblhelp
+            // 
+            this.lblHelp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblHelp.Font = new System.Drawing.Font("Vazirmatn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelp.ForeColor = System.Drawing.Color.Gray;
+            this.lblHelp.Location = new System.Drawing.Point(30, 204);
+            this.lblHelp.Name = "lblHelp";
+            this.lblHelp.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.lblHelp.Size = new System.Drawing.Size(440, 35);
+            this.lblHelp.TabIndex = 33;
+            this.lblHelp.Text = "می‌توانید فایل‌های قابل‌قبول را با فرمت‌های BibTeX، EndNote و RefMan از بخش ارجاع (Cite) در گوگل‌اسکالر دانلود کنید.";
+            this.lblHelp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panelImportDragFiles
             // 
@@ -270,7 +285,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(500, 400);
+            this.ClientSize = new System.Drawing.Size(500, 435);
             this.ControlBox = false;
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelBottom);
@@ -297,6 +312,9 @@
         }
 
         #endregion
+        // this is my change 
+        private System.Windows.Forms.Label lblHelp;
+
         private System.Windows.Forms.Timer timerOpenAnimation;
         private System.Windows.Forms.Panel panelFilePadding;
         private System.Windows.Forms.Panel panelFiles;

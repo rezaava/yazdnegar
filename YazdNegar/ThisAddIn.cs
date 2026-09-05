@@ -2109,9 +2109,11 @@ namespace YazdNegar
                 //close Ribbon Gallery
                 SendKeys.Send("{ESC}");
 
-                doc.ActiveWindow.WindowState = Microsoft.Office.Interop.Word.WdWindowState.wdWindowStateNormal;
+                var previousWindowState = doc.ActiveWindow.WindowState;
+                doc.ActiveWindow.WindowState = WdWindowState.wdWindowStateNormal;
                 AddBibliographyForm addBibliography = new AddBibliographyForm();
                 addBibliography.ShowDialog();
+                doc.ActiveWindow.WindowState = previousWindowState;
                 doc.Activate();
             }
         }

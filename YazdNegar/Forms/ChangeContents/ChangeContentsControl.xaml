@@ -65,7 +65,7 @@
                         VerticalAlignment="Center"
                         FontSize="20"
                         Foreground="{StaticResource LightButtonTextColor}"
-                        Text="تغییر اطلاعات سند (آزمایشی)"
+                        Text="تغییر اطلاعات سند"
                         TextAlignment="Center" />
                 </Viewbox>
 

@@ -119,8 +119,8 @@ namespace YazdNegar
             RibbonControlModel[] galleryExportItems = new RibbonControlModel[]
             {
                 new RibbonControlModel("__id34",RibbonControlModel.RibbonControlTypes.GalleryItem,Properties.ResourceRibbonIcons.ExportGrayscale_2,true,true,"خروجی سیاه و سفید","خروجی سیاه و سفید","در این خروجی کلیه شکل های سند به صورت سیاه و سفید خواهند بود. این خروجی برای چاپ کاغذی سند به صورت سیاه و سفید مناسب است.",null),
-                new RibbonControlModel("__id36",RibbonControlModel.RibbonControlTypes.GalleryItem,Properties.ResourceRibbonIcons.ExportPDF,true,true,"PDF خروجی","PDF خروجی","سند را به قالبی تبدیل می کند که معمولا برای داوران محترم ارسال می شود. پس از اتمام نگارش و نهایی شدن سند از این خروجی استفاده کنید.",null),
                 new RibbonControlModel("__id33",RibbonControlModel.RibbonControlTypes.GalleryItem,Properties.ResourceRibbonIcons.ExportDocx,false,false,"Word خروجی","Word خروجی","نسخه ای از سند را در قالب ورد تهیه می کند که بدون نیاز به افزونه پارسانگار قابل استفاده است. در این نسخه دیگر امکان استفاده از قابلت های پارسانگار میسر نیست و برای ارائه به استاد راهنما، استاد مشاور، دفتر آموزش دانشگاه و سامانه ایرانداک مناسب است.",null),
+                new RibbonControlModel("__id36",RibbonControlModel.RibbonControlTypes.GalleryItem,Properties.ResourceRibbonIcons.ExportPDF,true,true,"PDF خروجی","PDF خروجی","سند را به قالبی تبدیل می کند که معمولا برای داوران محترم ارسال می شود. پس از اتمام نگارش و نهایی شدن سند از این خروجی استفاده کنید.",null),
             };
 
             RibbonControlModel[] galleryToolsItems = new RibbonControlModel[]
