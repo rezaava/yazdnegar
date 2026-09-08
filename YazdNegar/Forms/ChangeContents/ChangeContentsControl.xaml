@@ -624,6 +624,7 @@
                                                 materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
                                                 materialDesign:HintAssist.FloatingScale="1"
                                                 materialDesign:HintAssist.Hint="چکیده (انگلیسی)"
+                                                materialDesign:HintAssist.HelperText="In the abstract, avoid citing references and mentioning tables and figures. Only focus on presenting the research method and the final core results."
                                                 AcceptsReturn="True"
                                                 AcceptsTab="False"
                                                 FlowDirection="RightToLeft"
@@ -663,6 +664,7 @@
                                                 materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
                                                 materialDesign:HintAssist.FloatingScale="1"
                                                 materialDesign:HintAssist.Hint="کلمات کلیدی (انگلیسی)"
+                                                materialDesign:HintAssist.HelperText="The number of keywords or key phrases should be at least three and at most five words or phrases."
                                                 AcceptsReturn="False"
                                                 AcceptsTab="False"
                                                 FlowDirection="RightToLeft"
@@ -694,7 +696,7 @@
                 <customControl:LoadingControl
                     x:Name="loadingControl"
                     IsEnabled="False"
-                    Tag="در حال برقراری ارتباط با سرور" />
+                    Tag="در حال برقراری ارتباط با سرور" Loaded="loadingControl_Loaded" />
             </Grid>
 
         </Grid>

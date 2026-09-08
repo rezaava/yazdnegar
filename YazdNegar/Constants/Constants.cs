@@ -90,30 +90,30 @@ namespace YazdNegar.Constants
 
         internal const string Universities = "YazdNegar.Constants.Universities.xml";
 
-        internal const string B_Yagut = "YazdNegar.Resources.B Yagut.ttf";
-        internal const string B_Yagut_Bold = "YazdNegar.Resources.B Yagut Bold.ttf";
+        internal const string B_Yagut = "YazdNegar.Resources.Fonts.B Yagut.ttf";
+        internal const string B_Yagut_Bold = "YazdNegar.Resources.Fonts.B Yagut Bold.ttf";
 
-        internal const string B_Badr_Bold = "YazdNegar.Resources.B Badr Bold.ttf";
-        internal const string B_Badr = "YazdNegar.Resources.B Badr.ttf";
-        internal const string B_Lotus_Bold = "YazdNegar.Resources.B Lotus Bold.ttf";
-        internal const string B_Lotus = "YazdNegar.Resources.B Lotus.ttf";
-        internal const string B_Nazanin_Bold = "YazdNegar.Resources.B Nazanin Bold.ttf";
-        internal const string B_Nazanin = "YazdNegar.Resources.B Nazanin.ttf";
-        internal const string B_Titr_Bold = "YazdNegar.Resources.B Titr Bold.ttf";
-        internal const string B_Zar_Bold = "YazdNegar.Resources.B Zar Bold.ttf";
-        internal const string B_Zar = "YazdNegar.Resources.B Zar.ttf";
-        internal const string Besmellah_1 = "YazdNegar.Resources.Besmellah_1.ttf";
-        internal const string Besmellah_2 = "YazdNegar.Resources.Besmellah_2.ttf";
-        internal const string Besmellah_3 = "YazdNegar.Resources.Besmellah_3.ttf";
-        internal const string Besmellah_4 = "YazdNegar.Resources.Besmellah_4.ttf";
-        internal const string IranNastaliq = "YazdNegar.Resources.IranNastaliq.ttf";
-        internal const string times = "YazdNegar.Resources.TIMES.ttf";
-        internal const string times_BD = "YazdNegar.Resources.TIMESBD.ttf";
-        internal const string times_BI = "YazdNegar.Resources.TIMESBI.ttf";
-        internal const string times_I = "YazdNegar.Resources.TIMESI.ttf";
-        internal const string Vazir = "YazdNegar.Resources.Vazir.ttf";
-        internal const string Vazirmatn_Bold = "YazdNegar.Resources.Vazirmatn-Bold.ttf";
-        internal const string Vazirmatn_Regular = "YazdNegar.Resources.Vazirmatn-Regular.ttf";
+        internal const string B_Badr_Bold = "YazdNegar.Resources.Fonts.B Badr Bold.ttf";
+        internal const string B_Badr = "YazdNegar.Resources.Fonts.B Badr.ttf";
+        internal const string B_Lotus_Bold = "YazdNegar.Resources.Fonts.B Lotus Bold.ttf";
+        internal const string B_Lotus = "YazdNegar.Resources.Fonts.B Lotus.ttf";
+        internal const string B_Nazanin_Bold = "YazdNegar.Resources.Fonts.B Nazanin Bold.ttf";
+        internal const string B_Nazanin = "YazdNegar.Resources.Fonts.B Nazanin.ttf";
+        internal const string B_Titr_Bold = "YazdNegar.Resources.Fonts.B Titr Bold.ttf";
+        internal const string B_Zar_Bold = "YazdNegar.Resources.Fonts.B Zar Bold.ttf";
+        internal const string B_Zar = "YazdNegar.Resources.Fonts.B Zar.ttf";
+        internal const string Besmellah_1 = "YazdNegar.Resources.Fonts.Besmellah_1.ttf";
+        internal const string Besmellah_2 = "YazdNegar.Resources.Fonts.Besmellah_2.ttf";
+        internal const string Besmellah_3 = "YazdNegar.Resources.Fonts.Besmellah_3.ttf";
+        internal const string Besmellah_4 = "YazdNegar.Resources.Fonts.Besmellah_4.ttf";
+        internal const string IranNastaliq = "YazdNegar.Resources.Fonts.IranNastaliq.ttf";
+        internal const string times = "YazdNegar.Resources.Fonts.TIMES.ttf";
+        internal const string times_BD = "YazdNegar.Resources.Fonts.TIMESBD.ttf";
+        internal const string times_BI = "YazdNegar.Resources.Fonts.TIMESBI.ttf";
+        internal const string times_I = "YazdNegar.Resources.Fonts.TIMESI.ttf";
+        internal const string Vazir = "YazdNegar.Resources.Fonts.Vazir.ttf";
+        internal const string Vazirmatn_Bold = "YazdNegar.Resources.Fonts.Vazirmatn-Bold.ttf";
+        internal const string Vazirmatn_Regular = "YazdNegar.Resources.Fonts.Vazirmatn-Regular.ttf";
     }
 
     struct ParagraphAndTextWrapMarks

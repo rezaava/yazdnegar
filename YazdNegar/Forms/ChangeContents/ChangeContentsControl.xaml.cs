@@ -444,7 +444,7 @@ namespace YazdNegar.Forms.ChangeContents
 
                     //add Abstract to Json 
                     Microsoft.Office.Interop.Word.ContentControl[] abstractContentControl = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_Fa.ToString());
-                    if (abstractContentControl != null && abstractContentControl[0].Range != null && abstractContentControl.Length != 0)
+                    if (abstractContentControl != null && abstractContentControl.Length != 0 && abstractContentControl[0].Range != null)
                     {
                         string abstractText = abstractContentControl[0].Range.Text;
                         if (jsonVariables.ContainsKey(VariableFieldIDs._variable_field_Abstract_Fa.ToString()))
@@ -1135,9 +1135,15 @@ namespace YazdNegar.Forms.ChangeContents
                 new ChangeContentsModel(txtBoxAbstractEn, ContentControlNames._field_Abstract_En.ToString(), null
                 ));
 
-                Range abstractRange = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_En.ToString())[0].Range;
-                if (abstractRange != null)
-                    txtBoxAbstractEn.Text = abstractRange.Text;
+                var abstractEnControls = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_En.ToString());
+                if (abstractEnControls != null && abstractEnControls.Length != 0)
+                {
+                    Range abstractRange = abstractEnControls[0].Range;
+                    if (abstractRange != null && !string.IsNullOrWhiteSpace(abstractRange.Text))
+                        txtBoxAbstractEn.Text = abstractRange.Text;
+                    else
+                        txtBoxAbstractEn.Text = txtBoxAbstractFa.Text; // پیش‌فرض: متن فارسی
+                }
             }
             else
             {
@@ -1152,9 +1158,13 @@ namespace YazdNegar.Forms.ChangeContents
                 new ChangeContentsModel(txtBoxKeywordFa, ContentControlNames._field_Keywords_Fa.ToString(), null
                 ));
 
-                Range keywordRange = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Keywords_Fa.ToString())[0].Range;
-                if (keywordRange != null)
-                    txtBoxKeywordFa.Text = keywordRange.Text;
+                var keywordsFaControls = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Keywords_Fa.ToString());
+                if (keywordsFaControls != null && keywordsFaControls.Length != 0)
+                {
+                    Range keywordRange = keywordsFaControls[0].Range;
+                    if (keywordRange != null)
+                        txtBoxKeywordFa.Text = keywordRange.Text;
+                }
             }
             else
             {
@@ -1168,10 +1178,17 @@ namespace YazdNegar.Forms.ChangeContents
                 new ChangeContentsModel(txtBoxKeywordEn, ContentControlNames._field_Keywords_En.ToString(), null
                 ));
 
-                Range keywordRange = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Keywords_En.ToString())[0].Range;
+                // بعد از اصلاح ✅
+                var keywordControls = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Keywords_En.ToString());
+                if (keywordControls != null && keywordControls.Length > 0)
+                {
+                    Range keywordRange = keywordControls[0].Range;
+                    if (keywordRange != null && !string.IsNullOrWhiteSpace(keywordRange.Text))
+                        txtBoxKeywordEn.Text = keywordRange.Text;
+                    else
+                        txtBoxKeywordEn.Text = txtBoxKeywordFa.Text; // پیش‌فرض: متن فارسی
+                }
 
-                if (keywordRange != null)
-                    txtBoxKeywordEn.Text = keywordRange.Text;
             }
             else
             {
@@ -1432,5 +1449,9 @@ namespace YazdNegar.Forms.ChangeContents
 
         #endregion
 
+        private void loadingControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

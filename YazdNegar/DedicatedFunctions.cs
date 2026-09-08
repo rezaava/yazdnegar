@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Management;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -1050,7 +1051,20 @@ namespace YazdNegar
                     rng.StoryType == WdStoryType.wdFirstPageFooterStory ||
                     rng.StoryType == WdStoryType.wdEvenPagesFooterStory)
                 {
-                    //set as Grayscale Contents
+                    // ✅ Check character by character (more reliable)
+                    List<Range> whiteRanges = new List<Range>();
+                    for (int i = 1; i <= rng.Characters.Count; i++)
+                    {
+                        Range charRange = rng.Characters[i];
+                        if (charRange.Font.Color == WdColor.wdColorWhite ||
+                            charRange.Font.ColorIndex == WdColorIndex.wdWhite ||
+                            charRange.Font.TextColor.RGB == 16777215) // RGB white
+                        {
+                            whiteRanges.Add(charRange);
+                        }
+                    }
+
+                    // existing code - unchanged
                     rng.Font.Color = WdColor.wdColorBlack;
                     rng.Font.TextColor.RGB = 0;
                     rng.Font.ColorIndex = WdColorIndex.wdBlack;
@@ -1059,14 +1073,13 @@ namespace YazdNegar
                     rng.Font.DiacriticColor = WdColor.wdColorBlack;
                     ChangeColorIndex(doc, rng, WdColorIndex.wdGray25);
 
-                    //doc.Content.Font.Borders;
-                    //doc.Content.Font.Fill;
-                    //doc.Content.Font.Line;
-                    //doc.Content.Font.TextShadow;
-
-                    //doc.Content.Shading
-                    //doc.Tables[1]
-                    //doc.Content.
+                    // ✅ Restore white characters
+                    foreach (Range whiteRange in whiteRanges)
+                    {
+                        whiteRange.Font.Color = WdColor.wdColorWhite;
+                        whiteRange.Font.ColorIndex = WdColorIndex.wdWhite;
+                        whiteRange.Font.ColorIndexBi = WdColorIndex.wdWhite;
+                    }
                 }
             }
         }
@@ -4357,9 +4370,9 @@ namespace YazdNegar
             Assembly assembly = Assembly.GetExecutingAssembly();
             Stream streamResource = assembly.GetManifestResourceStream(resourcePath);
 
-            if (streamResource == null)
+            if(streamResource == null)
             {
-                throw new Exception("خطای غیر منتظره در گرفتن Stream از فایل!");
+                throw new Exception("خطای غیر منتظره در گرفتن Stream از فایل!\nنام فایل: " + resourcePath);
             }
             return streamResource;
         }
@@ -6432,20 +6445,57 @@ namespace YazdNegar
             }
             return fontPaths;
         }
+
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        private static extern int AddFontResource(string lpFilename);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
+
+        private const uint WM_FONTCHANGE = 0x001D;
+        private static readonly IntPtr HWND_BROADCAST = new IntPtr(0xffff);
+
         internal static void installFonts(List<string> fonts)
         {
-            foreach (string font in fonts)
+            string fontFolder = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "YazdNegar", "Fonts");
+
+            Directory.CreateDirectory(fontFolder);
+
+            bool anyInstalled = false;
+
+            foreach (string fontTempPath in fonts)
             {
                 try
                 {
-                    Process process = Process.Start(font);
-                    process.WaitForExit();
-                }
-                catch (Exception)
+                    string fontFileName = Path.GetFileName(fontTempPath);
+                    string destPath = Path.Combine(fontFolder, fontFileName);
+
+                    if (!File.Exists(destPath))
+                        File.Copy(fontTempPath, destPath, true);
+
+                    int result = AddFontResource(destPath);
+                    if (result > 0)
+                    {
+                        anyInstalled = true;
+                    }
+                }catch
+                (Exception)
                 {
+
                 }
 
-                DedicatedFunctions.removeFileFromSystem(font);
+                finally
+                {
+                    DedicatedFunctions.removeFileFromSystem(fontTempPath);
+                }
+            }
+
+            if (anyInstalled)
+            {
+                // Notify all windows that fonts changed
+                SendMessage(HWND_BROADCAST, WM_FONTCHANGE, 0, 0);
             }
         }
         #endregion
