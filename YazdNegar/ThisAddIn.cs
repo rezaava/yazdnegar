@@ -2308,7 +2308,7 @@ namespace YazdNegar
 
                                 DedicatedFunctions.saveDocument(doc);
                                 Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("گرفتن خروجی");
-
+                                doc.Password = "";
                                 DedicatedFunctions.saveAsDocument(doc, fileDialog.FileName);
 
                                 if (accessType == DedicatedFunctions.AccessType.AccessGranted)
@@ -2331,7 +2331,7 @@ namespace YazdNegar
                                 DedicatedFunctions.unProtectingImportants(doc, true);
                                 //Globals.ThisDocument.RemoveDocumentInformation(WdRemoveDocInfoType.wdRDIDocumentProperties);
                                 DedicatedFunctions.removeAllDocumentVariables(doc);
-                                doc.Password = "";
+
                                 doc.UndoClear();
                                 doc.GoTo(WdGoToItem.wdGoToPage, WdGoToDirection.wdGoToAbsolute, Name: 1).Select();
                                 Globals.ThisAddIn.Application.ScreenUpdating = true;
@@ -2408,14 +2408,8 @@ namespace YazdNegar
                                 //doc.Save();
 
                                 //save to another file
+                                doc.Password = "";
                                 DedicatedFunctions.saveAsDocument(doc, fileName);
-
-                                //Unprotect Content Controls for deleting Sections
-                                DedicatedFunctions.unProtectingImportants(doc, false);
-
-                                #region main Part
-                                DedicatedFunctions.exportIdentification(doc);
-                                #endregion
 
                                 //delete All ContentControls and Variables
                                 DedicatedFunctions.removeAllDocumentVariables(doc);
@@ -2513,6 +2507,7 @@ namespace YazdNegar
                                 }
 
                                 //save to another file
+                                doc.Password = "";
                                 DedicatedFunctions.saveAsDocument(doc, fileName);
 
                                 //remove specialized Addin
