@@ -293,7 +293,7 @@ namespace YazdNegar.Forms.ChangeContents
                                     Range previousRange = doc.ActiveWindow.Selection.Range;
                                     Microsoft.Office.Interop.Word.ContentControl[] ccsAdvisorEn = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Advisor_Title_En.ToString());
 
-                                    if (ccsAdvisorEn != null && !string.IsNullOrEmpty(ccsAdvisorEn[ccsAdvisorEn.Length - 1].Range.Text.Trim()))
+                                    if (ccsAdvisorEn != null && ccsAdvisorEn.Length > 0 && !string.IsNullOrEmpty(ccsAdvisorEn[ccsAdvisorEn.Length - 1].Range.Text.Trim()))
                                     {
                                         ccsAdvisorEn[ccsAdvisorEn.Length - 1].Range.Select();
 
@@ -446,7 +446,7 @@ namespace YazdNegar.Forms.ChangeContents
                     Microsoft.Office.Interop.Word.ContentControl[] abstractContentControl = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_Fa.ToString());
                     if (abstractContentControl != null && abstractContentControl.Length != 0 && abstractContentControl[0].Range != null)
                     {
-                        string abstractText = abstractContentControl[0].Range.Text;
+                        string abstractText = abstractContentControl[0].Range.Text?.TrimEnd('\r', '\n', '\0') ?? string.Empty;
                         if (jsonVariables.ContainsKey(VariableFieldIDs._variable_field_Abstract_Fa.ToString()))
                             jsonVariables[VariableFieldIDs._variable_field_Abstract_Fa.ToString()] = abstractText;
                         else
@@ -1142,7 +1142,7 @@ namespace YazdNegar.Forms.ChangeContents
                     if (abstractRange != null && !string.IsNullOrWhiteSpace(abstractRange.Text))
                         txtBoxAbstractEn.Text = abstractRange.Text;
                     else
-                        txtBoxAbstractEn.Text = txtBoxAbstractFa.Text; // پیش‌فرض: متن فارسی
+                        txtBoxAbstractEn.Text = txtBoxAbstractFa?.Text ?? string.Empty;
                 }
             }
             else
@@ -1237,7 +1237,7 @@ namespace YazdNegar.Forms.ChangeContents
             //string nameOfAllah = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_NameOfAllah.ToString())[0].Range.Text;
             Microsoft.Office.Interop.Word.ContentControl[] nameOfAllahContentControls = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_InTheNameOfAllah.ToString());
 
-            if (nameOfAllahContentControls != null)
+            if (nameOfAllahContentControls != null && nameOfAllahContentControls.Length > 0)
             {
                 string nameOfAllah = nameOfAllahContentControls[0].Range.Text;
 
