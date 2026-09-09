@@ -1132,17 +1132,16 @@ namespace YazdNegar.Forms.ChangeContents
             if (DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_En.ToString()) != null)
             {
                 contents.Add(
-                new ChangeContentsModel(txtBoxAbstractEn, ContentControlNames._field_Abstract_En.ToString(), null
-                ));
+                new ChangeContentsModel(txtBoxAbstractEn, ContentControlNames._field_Abstract_En.ToString(), null,isOptional: true));
 
                 var abstractEnControls = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_En.ToString());
                 if (abstractEnControls != null && abstractEnControls.Length != 0)
                 {
                     Range abstractRange = abstractEnControls[0].Range;
-                    if (abstractRange != null && !string.IsNullOrWhiteSpace(abstractRange.Text))
+                    if (abstractRange != null && !string.IsNullOrWhiteSpace(abstractRange.Text.Trim()))
                         txtBoxAbstractEn.Text = abstractRange.Text;
                     else
-                        txtBoxAbstractEn.Text = txtBoxAbstractFa?.Text ?? string.Empty;
+                        txtBoxAbstractEn.Text = "In the text of the abstract, references to sources and references to tables and charts should be avoided. If there is a need to introduce the research area and its theoretical foundations, it should be presented in the first paragraph of the abstract at most. It is enough to present only the research method and the final and central results and avoid the presentation of topics and general results. The words or phrases that are explained in this section must be completely central and related to the topic of the research.";
                 }
             }
             else
@@ -1175,18 +1174,17 @@ namespace YazdNegar.Forms.ChangeContents
             if (DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Keywords_En.ToString()) != null)
             {
                 contents.Add(
-                new ChangeContentsModel(txtBoxKeywordEn, ContentControlNames._field_Keywords_En.ToString(), null
-                ));
+                new ChangeContentsModel(txtBoxKeywordEn, ContentControlNames._field_Keywords_En.ToString(), null,isOptional: true));
 
                 // بعد از اصلاح ✅
                 var keywordControls = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Keywords_En.ToString());
                 if (keywordControls != null && keywordControls.Length > 0)
                 {
                     Range keywordRange = keywordControls[0].Range;
-                    if (keywordRange != null && !string.IsNullOrWhiteSpace(keywordRange.Text))
+                    if (keywordRange != null && !string.IsNullOrWhiteSpace(keywordRange.Text.Trim()))
                         txtBoxKeywordEn.Text = keywordRange.Text;
                     else
-                        txtBoxKeywordEn.Text = txtBoxKeywordFa.Text; // پیش‌فرض: متن فارسی
+                        txtBoxKeywordEn.Text = "The number of key words or phrases should be at least three words and at most five words or phrases.";
                 }
 
             }
