@@ -5161,6 +5161,9 @@ namespace YazdNegar
             {
                 table.Update();
 
+                table.Range.Font.Size = 12;
+                table.Range.Font.SizeBi = 12;
+
                 if (table.Range.Text.ToLower().Trim() == SpecialTablesMessage.OldTableOfFiguresNoItemMessage.ToLower().Trim())
                 {
                     string previousText = SpecialTablesMessage.OldTableOfFiguresNoItemMessage.ToLower().Trim();
