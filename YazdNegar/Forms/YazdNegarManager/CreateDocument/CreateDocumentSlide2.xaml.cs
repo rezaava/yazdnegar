@@ -85,8 +85,6 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
             txtDocumentName.TextChanged += TextBox_TextChanged;
             txtDocumentName.GotFocus += TextBox_GotFocus;
             txtDocumentName.LostFocus += TextBox_LostFocus;
-
-            btnForward.Click += BtnForward_Click;
         }
 
         private void BtnGoToWebsite_Click(object sender, RoutedEventArgs e)

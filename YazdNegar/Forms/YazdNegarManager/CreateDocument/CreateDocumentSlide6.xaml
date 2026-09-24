@@ -177,42 +177,7 @@
 
                             </materialDesign:Transitioner>
 
-                            <Grid x:Name="gridTansitionButtons">
-                                <Button
-                                    x:Name="btnBackward"
-                                    Height="100"
-                                    Padding="5"
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Center"
-                                    materialDesign:ButtonAssist.CornerRadius="0,5,5,0"
-                                    IsEnabled="True">
-                                    <Button.Content>
-                                        <materialDesign:PackIcon
-                                            Width="30"
-                                            Height="30"
-                                            Foreground="{StaticResource LightBackgroundColor}"
-                                            Kind="ArrowRightBold" />
-                                    </Button.Content>
-                                </Button>
-
-                                <Button
-                                    x:Name="btnForward"
-                                    Height="100"
-                                    Padding="5"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Center"
-                                    materialDesign:ButtonAssist.CornerRadius="5,0,0,5"
-                                    IsEnabled="True">
-                                    <Button.Content>
-                                        <materialDesign:PackIcon
-                                            Width="30"
-                                            Height="30"
-                                            Foreground="{StaticResource LightBackgroundColor}"
-                                            Kind="ArrowLeftBold" />
-                                    </Button.Content>
-                                </Button>
-                            </Grid>
-
+                            
                         </Grid>
 
                         <Grid Grid.Row="1">

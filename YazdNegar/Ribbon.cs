@@ -902,75 +902,66 @@ namespace YazdNegar
             }
             unsetKeyBinding(getKeyboardRelations());
         }
+
+
+        private const string SP = "TemplateProject.ThisDocument.";
         internal static List<KeyboardRelationModel> getKeyboardRelations()
         {
             return new List<KeyboardRelationModel>
-                {
-                    //new KeyboardRelationModel("documentsManager",KeyboardShortcuts.documentsManager,RibbonControlNames.btnDocumentsManager,"\n(Alt+F1)"),
-                    new KeyboardRelationModel("changeContent",KeyboardShortcuts.changeContent,RibbonControlNames.btnChangeContents,"\n(Alt+F2)"),
-                    new KeyboardRelationModel("addRemovePages",KeyboardShortcuts.addRemovePages,RibbonControlNames.btnAddRemovePages,"\n(Alt+F3)"),
+        {
+            new KeyboardRelationModel(SP+"changeContent",KeyboardShortcuts.changeContent,RibbonControlNames.btnChangeContents,"\n(Alt+F2)"),
+            new KeyboardRelationModel(SP+"addRemovePages",KeyboardShortcuts.addRemovePages,RibbonControlNames.btnAddRemovePages,"\n(Alt+F3)"),
 
-                    new KeyboardRelationModel("setNormalStyle",KeyboardShortcuts.setNormalStyle,RibbonControlNames.btnTextFormating,"\n(Alt+N)"),
-                    new KeyboardRelationModel("setHeading2Style",KeyboardShortcuts.setHeading2Style,RibbonControlNames.btnHeading2,"\n(Alt+2)"),
-                    new KeyboardRelationModel("setHeading3Style",KeyboardShortcuts.setHeading3Style,RibbonControlNames.btnHeading3,"\n(Alt+3)"),
-                    new KeyboardRelationModel("setHeading4Style",KeyboardShortcuts.setHeading4Style,RibbonControlNames.btnHeading4,"\n(Alt+4)"),
-                    new KeyboardRelationModel("setHeading5Style",KeyboardShortcuts.setHeading5Style,RibbonControlNames.btnHeading5,"\n(Alt+5)"),
+            new KeyboardRelationModel(SP+"setNormalStyle",KeyboardShortcuts.setNormalStyle,RibbonControlNames.btnTextFormating,"\n(Alt+N)"),
+            new KeyboardRelationModel(SP+"setHeading2Style",KeyboardShortcuts.setHeading2Style,RibbonControlNames.btnHeading2,"\n(Alt+2)"),
+            new KeyboardRelationModel(SP+"setHeading3Style",KeyboardShortcuts.setHeading3Style,RibbonControlNames.btnHeading3,"\n(Alt+3)"),
+            new KeyboardRelationModel(SP+"setHeading4Style",KeyboardShortcuts.setHeading4Style,RibbonControlNames.btnHeading4,"\n(Alt+4)"),
+            new KeyboardRelationModel(SP+"setHeading5Style",KeyboardShortcuts.setHeading5Style,RibbonControlNames.btnHeading5,"\n(Alt+5)"),
 
-                    new KeyboardRelationModel("insertShapeCaption",KeyboardShortcuts.insertShapeCaption,RibbonControlNames.btnInsertWriteCaptionForShape,"\n(Alt+P)"),
-                    new KeyboardRelationModel("insertTableCaption",KeyboardShortcuts.insertTableCaption,RibbonControlNames.btnInsertWriteCaptionForTable,"\n(Alt+T)"),
-                    new KeyboardRelationModel("insertFormulaCaption",KeyboardShortcuts.insertFormulaCaption,RibbonControlNames.btnInsertCaptionForFormula,"\n(Alt+F)"),
+            new KeyboardRelationModel(SP+"insertShapeCaption",KeyboardShortcuts.insertShapeCaption,RibbonControlNames.btnInsertWriteCaptionForShape,"\n(Alt+P)"),
+            new KeyboardRelationModel(SP+"insertTableCaption",KeyboardShortcuts.insertTableCaption,RibbonControlNames.btnInsertWriteCaptionForTable,"\n(Alt+T)"),
+            new KeyboardRelationModel(SP+"insertFormulaCaption",KeyboardShortcuts.insertFormulaCaption,RibbonControlNames.btnInsertCaptionForFormula,"\n(Alt+F)"),
 
-                    new KeyboardRelationModel("crossReferenceMenu",KeyboardShortcuts.crossReferenceMenu,RibbonControlNames.btnRefer,"\n(Alt+Shift+R)"),
+            new KeyboardRelationModel(SP+"crossReferenceMenu",KeyboardShortcuts.crossReferenceMenu,RibbonControlNames.btnRefer,"\n(Alt+Shift+R)"),
 
-                    new KeyboardRelationModel("insertPersianFootnote",KeyboardShortcuts.insertPersianFootnote,RibbonControlNames.galleryInsertFootnote,"\n(Alt+=)",0),
-                    new KeyboardRelationModel("insertEnglishFootnote",KeyboardShortcuts.insertEnglishFootnote,RibbonControlNames.galleryInsertFootnote,"\n(Alt+-)",1),
+            new KeyboardRelationModel(SP+"insertPersianFootnote",KeyboardShortcuts.insertPersianFootnote,RibbonControlNames.galleryInsertFootnote,"\n(Alt+=)",0),
+            new KeyboardRelationModel(SP+"insertEnglishFootnote",KeyboardShortcuts.insertEnglishFootnote,RibbonControlNames.galleryInsertFootnote,"\n(Alt+-)",1),
 
+            new KeyboardRelationModel(SP+"updateDocument",KeyboardShortcuts.updateDocument,RibbonControlNames.btnUpdateDocument,"\n(Alt+R)"),
+            new KeyboardRelationModel(SP+"uploadDocument",KeyboardShortcuts.uploadDocument,RibbonControlNames.btnUploadDocument,"\n(Alt+U)"),
 
-                    new KeyboardRelationModel("updateDocument",KeyboardShortcuts.updateDocument,RibbonControlNames.btnUpdateDocument,"\n(Alt+R)"),
-                    new KeyboardRelationModel("uploadDocument",KeyboardShortcuts.uploadDocument,RibbonControlNames.btnUploadDocument,"\n(Alt+U)"),
+            new KeyboardRelationModel(SP+"insertHalfSpace",KeyboardShortcuts.insertHalfSpace,RibbonControlNames.gallerySimpleVirastar,"\n(Alt+H)",0),
+            new KeyboardRelationModel(SP+"halfSpaceCorrection",KeyboardShortcuts.halfSpaceCorrection,RibbonControlNames.gallerySimpleVirastar,"\n(Alt+V)",1),
+            new KeyboardRelationModel(SP+"neshanehGozariCorrection",KeyboardShortcuts.neshanehGozariCorrection,RibbonControlNames.gallerySimpleVirastar,"\n(Alt+B)",2),
+            new KeyboardRelationModel(SP+"spellingCorrection",KeyboardShortcuts.spellingCorrection,RibbonControlNames.gallerySimpleVirastar,"\n(Alt+E)",3),
 
-                    new KeyboardRelationModel("insertHalfSpace",KeyboardShortcuts.insertHalfSpace,RibbonControlNames.gallerySimpleVirastar,"\n(Alt+H)",0),
-                    new KeyboardRelationModel("halfSpaceCorrection",KeyboardShortcuts.halfSpaceCorrection,RibbonControlNames.gallerySimpleVirastar,"\n(Alt+V)",1),
-                    new KeyboardRelationModel("neshanehGozariCorrection",KeyboardShortcuts.neshanehGozariCorrection,RibbonControlNames.gallerySimpleVirastar,"\n(Alt+B)",2),
-                    new KeyboardRelationModel("spellingCorrection",KeyboardShortcuts.spellingCorrection,RibbonControlNames.gallerySimpleVirastar,"\n(Alt+E)",3),
+            new KeyboardRelationModel(SP+"standardCorrection",KeyboardShortcuts.standardCorrection,RibbonControlNames.btnStandardCorrection,"\n(Alt+;)"),
 
-                    new KeyboardRelationModel("standardCorrection",KeyboardShortcuts.standardCorrection,RibbonControlNames.btnStandardCorrection,"\n(Alt+;)"),
+            new KeyboardRelationModel(SP+"convertNumberToPersian",KeyboardShortcuts.convertNumberToPersian,RibbonControlNames.galleryConvertNumber,"\n(Alt+/)",0),
+            new KeyboardRelationModel(SP+"convertNumberToEnglish",KeyboardShortcuts.convertNumberToEnglish,RibbonControlNames.galleryConvertNumber,"\n(Alt+.)",1),
+            new KeyboardRelationModel(SP+"poemModeOneColumn",KeyboardShortcuts.poemModeOneColumn,RibbonControlNames.galleryPoemMode,"\n(Alt+q)",0),
+            new KeyboardRelationModel(SP+"poemModeTwoColumn",KeyboardShortcuts.poemModeTwoColumn,RibbonControlNames.galleryPoemMode,"\n(Alt+z)",1),
 
-                    new KeyboardRelationModel("convertNumberToPersian",KeyboardShortcuts.convertNumberToPersian,RibbonControlNames.galleryConvertNumber,"\n(Alt+/)",0),
-                    new KeyboardRelationModel("convertNumberToEnglish",KeyboardShortcuts.convertNumberToEnglish,RibbonControlNames.galleryConvertNumber,"\n(Alt+.)",1),
-                    new KeyboardRelationModel("poemModeOneColumn",KeyboardShortcuts.poemModeOneColumn,RibbonControlNames.galleryPoemMode,"\n(Alt+q)",0),
-                    new KeyboardRelationModel("poemModeTwoColumn",KeyboardShortcuts.poemModeTwoColumn,RibbonControlNames.galleryPoemMode,"\n(Alt+z)",1),
+            new KeyboardRelationModel(SP+"insertCitationMenu",KeyboardShortcuts.insertCitationMenu,RibbonControlNames.btnInsertCitation,"\n(Alt+I)"),
+            new KeyboardRelationModel(SP+"sourceManagementDialog",KeyboardShortcuts.sourceManagementDialog,RibbonControlNames.btnManageResources,"\n(Alt+S)"),
+            new KeyboardRelationModel(SP+"insertSources",KeyboardShortcuts.insertSources,RibbonControlNames.galleryInsertImportSources,"\n(Alt+M)",0),
+            new KeyboardRelationModel(SP+"importSourcesDialog",KeyboardShortcuts.importSourcesDialog,RibbonControlNames.galleryInsertImportSources,"\n(Alt+L)",1),
+            new KeyboardRelationModel(SP+"goToBibliography",KeyboardShortcuts.goToBibliography,RibbonControlNames.btnGoToBibliography,"\n(Alt+G)"),
 
-                    new KeyboardRelationModel("insertCitationMenu",KeyboardShortcuts.insertCitationMenu,RibbonControlNames.btnInsertCitation,"\n(Alt+I)"),
-                    new KeyboardRelationModel("sourceManagementDialog",KeyboardShortcuts.sourceManagementDialog,RibbonControlNames.btnManageResources,"\n(Alt+S)"),
-                    new KeyboardRelationModel("insertSources",KeyboardShortcuts.insertSources,RibbonControlNames.galleryInsertImportSources,"\n(Alt+M)",0),//insert
-					new KeyboardRelationModel("importSourcesDialog",KeyboardShortcuts.importSourcesDialog,RibbonControlNames.galleryInsertImportSources,"\n(Alt+L)",1),//import
-					new KeyboardRelationModel("goToBibliography",KeyboardShortcuts.goToBibliography,RibbonControlNames.btnGoToBibliography,"\n(Alt+G)"),
+            new KeyboardRelationModel(SP+"exportAsGrayscale",KeyboardShortcuts.exportAsGrayscale,RibbonControlNames.galleryExport,"\n(Alt+Shift+G)",0),
+            new KeyboardRelationModel(SP+"exportToIdentification",KeyboardShortcuts.exportToIdentification,RibbonControlNames.galleryExport,"\n(Alt+Shift+I)",1),
+            new KeyboardRelationModel(SP+"exportToPDF",KeyboardShortcuts.exportToPDF,RibbonControlNames.galleryExport,"\n(Alt+Shift+P)",2),
 
-					//new KeyboardRelations("exportToWord",KeyboardShortcuts.exportToWord,RibbonControlNames.galleryExport,"\n(Alt+Shift+W)",-1),
-					new KeyboardRelationModel("exportAsGrayscale",KeyboardShortcuts.exportAsGrayscale,RibbonControlNames.galleryExport,"\n(Alt+Shift+G)",0),
-                    new KeyboardRelationModel("exportToIdentification",KeyboardShortcuts.exportToIdentification,RibbonControlNames.galleryExport,"\n(Alt+Shift+I)",1),
-                    new KeyboardRelationModel("exportToPDF",KeyboardShortcuts.exportToPDF,RibbonControlNames.galleryExport,"\n(Alt+Shift+P)",2),
+            new KeyboardRelationModel(SP+"chatBoxNetworking",KeyboardShortcuts.chatBoxNetworking,RibbonControlNames.btnChatBoxNetworking,"\n(Alt+Shift+.)"),
 
+            new KeyboardRelationModel(SP+"besmellahPageForm",KeyboardShortcuts.besmellahPageForm,RibbonControlNames.galleryTools,"\n(Alt+Shift+Z)",0),
+            new KeyboardRelationModel(SP+"insertDedicate",KeyboardShortcuts.insertDedicate,RibbonControlNames.galleryTools,"\n(Alt+Shift+D)",1),
+            new KeyboardRelationModel(SP+"exportCDMenu",KeyboardShortcuts.exportCDMenu,RibbonControlNames.galleryTools,"\n(Alt+Shift+C)",2),
+            new KeyboardRelationModel(SP+"defenseAnnouncements",KeyboardShortcuts.exportCDMenu,RibbonControlNames.galleryTools,"\n(Alt+Shift+B)",3),
 
-                    new KeyboardRelationModel("chatBoxNetworking",KeyboardShortcuts.chatBoxNetworking,RibbonControlNames.btnChatBoxNetworking,"\n(Alt+Shift+.)"),
-
-                    new KeyboardRelationModel("besmellahPageForm",KeyboardShortcuts.besmellahPageForm,RibbonControlNames.galleryTools,"\n(Alt+Shift+Z)",0),
-                    new KeyboardRelationModel("insertDedicate",KeyboardShortcuts.insertDedicate,RibbonControlNames.galleryTools,"\n(Alt+Shift+D)",1),
-                    new KeyboardRelationModel("exportCDMenu",KeyboardShortcuts.exportCDMenu,RibbonControlNames.galleryTools,"\n(Alt+Shift+C)",2),
-                    new KeyboardRelationModel("defenseAnnouncements",KeyboardShortcuts.exportCDMenu,RibbonControlNames.galleryTools,"\n(Alt+Shift+B)",3),
-                    //new KeyboardRelationModel("createProposal",KeyboardShortcuts.createProposal,RibbonControlNames.galleryTools,"\n(Alt+Shift+L)",4),
-
-                    new KeyboardRelationModel("insertQuran",KeyboardShortcuts.insertQuran,RibbonControlNames.galleryBooks,"\n(Alt+Shift+Q)",0),
-                    new KeyboardRelationModel("insertNahjBalaghe",KeyboardShortcuts.insertNahjBalaghe,RibbonControlNames.galleryBooks,"\n(Alt+Shift+A)",1),
-
-					//new KeyboardRelations("documentManagerSettingsMenu",null,null,"\n()"),
-					//new KeyboardRelations("captionSettings",null,null,"\n()"),
-					//new KeyboardRelations("virastarSettings",null,null,"\n()"),
-					//new KeyboardRelations("footnoteSettings",null,null,"\n()"),
-					//new KeyboardRelations("listsManagerSettings",null,null,"\n()"),
-					//new KeyboardRelations("citationSettings",null,null,"\n()"),
-				};
+            new KeyboardRelationModel(SP+"insertQuran",KeyboardShortcuts.insertQuran,RibbonControlNames.galleryBooks,"\n(Alt+Shift+Q)",0),
+            new KeyboardRelationModel(SP+"insertNahjBalaghe",KeyboardShortcuts.insertNahjBalaghe,RibbonControlNames.galleryBooks,"\n(Alt+Shift+A)",1),
+        };
         }
         internal static void setKeyBinding(List<KeyboardRelationModel> keyboardRelations)
         {

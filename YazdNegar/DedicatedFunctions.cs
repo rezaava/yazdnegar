@@ -3009,39 +3009,47 @@ namespace YazdNegar
             }
             return jsonObject;
         }
-        internal static async void httpAsyncPostRequest(string URL, string urlParameters, string bearerToken, Action<string> onResult, Action<HttpResponseMessage> onFailed, HttpContent httpContent = null)
+        internal static async void httpAsyncPostRequest(string URL, string urlParameters, string bearerToken,
+    Action<string> onResult, Action<HttpResponseMessage> onFailed, HttpContent httpContent = null)
         {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(URL);
-
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            if (bearerToken != null)
-                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + bearerToken);
-
-            if (httpContent == null)
-            {
-                httpContent = new StringContent("", System.Text.Encoding.UTF8, "application/json");
-            }
-
-            HttpResponseMessage response;
+            string body;
             try
             {
-                response = await client.PostAsync(urlParameters, httpContent);  // Blocking call! Program will wait here until a response is received or a timeout occurs.
-                response.EnsureSuccessStatusCode();
-                if (response.IsSuccessStatusCode)
+                using (var client = new HttpClient { BaseAddress = new Uri(URL), Timeout = TimeSpan.FromSeconds(30) })
                 {
-                    string dataObjects = await response.Content.ReadAsStringAsync();  //Make sure to add a reference to System.Net.Http.Formatting.dll
-                    onResult(dataObjects);
-                }
-                else
-                {
-                    onFailed(response);
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    if (bearerToken != null)
+                        client.DefaultRequestHeaders.Add("Authorization", "Bearer " + bearerToken);
+
+                    if (httpContent == null)
+                        httpContent = new StringContent("", Encoding.UTF8, "application/json");
+
+                    Debug.WriteLine("POST start, url length=" + urlParameters.Length);
+                    HttpResponseMessage response = await client.PostAsync(urlParameters, httpContent);
+                    Debug.WriteLine("POST status=" + (int)response.StatusCode);
+
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        onFailed(response);
+                        return;
+                    }
+                    body = await response.Content.ReadAsStringAsync();
                 }
             }
             catch (Exception e)
             {
-                onFailed(new HttpResponseMessage(System.Net.HttpStatusCode.ServiceUnavailable));
+                Debug.WriteLine("POST failed: " + e);
+                var failed = new HttpResponseMessage(System.Net.HttpStatusCode.ServiceUnavailable)
+                {
+                    ReasonPhrase = (e.GetType().Name + ": " + e.Message).Replace("\r", " ").Replace("\n", " ")
+                };
+                onFailed(failed);
+                return;
             }
+
+            // خارج از try: خطای پردازش نتیجه دیگر به‌عنوان خطای سرور گزارش نمی‌شود
+            try { onResult(body); }
+            catch (Exception e) { Debug.WriteLine("onResult failed: " + e); }
         }
         internal static async void httpAsyncGetRequest(string URL, string urlParameters, string bearerToken, Action<string> onResult, Action<HttpResponseMessage> onFailed)
         {

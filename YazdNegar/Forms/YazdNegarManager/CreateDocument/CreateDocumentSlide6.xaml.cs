@@ -171,8 +171,6 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
             timerProgressStart.Elapsed += TimerProgressStart_Elapsed;
             #endregion
 
-            btnForward.Click += BtnForward_Click;
-            btnBackward.Click += BtnBackward_Click;
             lastSlideIndex = transitionSildes.Items.Count - 1;
 
         }
@@ -223,46 +221,6 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
         }
         #endregion
 
-        #region Buttons
-        private void BtnBackward_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            if (allowClick)
-            {
-                allowClick = false;
-                timerTransitionClick.Start();
-                if (transitionSildes.SelectedIndex == 0)
-                {
-                    transitionSildes.SelectedIndex = lastSlideIndex;
-                }
-                else
-                    transitionSildes.SelectedIndex--;
-
-                timerChangeSlide.Stop();
-                timerChangeSlide.Start();
-            }
-        }
-
-        private void BtnForward_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            if (allowClick)
-            {
-                allowClick = false;
-                timerTransitionClick.Start();
-
-                if (transitionSildes.SelectedIndex == lastSlideIndex)
-                {
-                    transitionSildes.SelectedIndex = 0;
-                }
-                else
-                    transitionSildes.SelectedIndex++;
-
-                timerChangeSlide.Stop();
-                timerChangeSlide.Start();
-            }
-        }
-
-
-        #endregion
         #endregion
         #region Functions
         public void close()
@@ -313,6 +271,7 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
 
         public void resetControls()
         {
+            Log("resetControls called | DocumentName was '" + DocumentName + "'");
             #region Variables
             isCompleted = false;
             specifiedDocument = null;
@@ -391,6 +350,7 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
             threadCreateDocument = new Thread(() => create());
 
             DocumentName = slide2.DocumentName;
+            Log("initializeVariables: DocumentName='" + DocumentName + "' | slide2='" + slide2.DocumentName + "'");
 
             //Slide1
             nameOfAllah = slide1.NameOfAllah;
@@ -582,6 +542,17 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
 				};
         }
 
+        private static void Log(string msg)
+        {
+            try
+            {
+                File.AppendAllText(
+                    Path.Combine(Path.GetTempPath(), "yazdnegar_create.log"),
+                    DateTime.Now.ToString("HH:mm:ss.fff") + " " + msg + Environment.NewLine);
+            }
+            catch { }
+        }
+        
         private void create()
         {
             List<TemplateRelationshipModel> subTemplateModels = new List<TemplateRelationshipModel>();
@@ -843,12 +814,15 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
                 ButtonProgressAssist.SetIsIndeterminate(btnProgress, true);
                 btnProgress.Content = "لطفا منتظر بمانید...";
             });
+            Log("A: shown 'please wait', before Sleep");
             Thread.Sleep(1500);
             #endregion
 
             #region Save As
 
             #region add Variable
+            Log("B: before add Variable block");
+
             string version = BugReport.AssemblyVersion.Replace(".", "");
 
             DedicatedFunctions.addVariable(specifiedDocument, VariableServerIDs._variable_server_VersionNumber.ToString(), version);
@@ -864,6 +838,8 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
             DedicatedFunctions.addVariable(specifiedDocument, VariableIdentifierIDs._variable_id_Document.ToString(), specifiedDocument.DocID.ToString());
             DedicatedFunctions.addVariable(specifiedDocument, VariableIdentifierIDs._variable_id_Hardware.ToString(), DedicatedFunctions.getUUID());
             DedicatedFunctions.addVariable(specifiedDocument, VariableOptionIDs._variable_option_BibliographyStyle.ToString(), "APA");
+            Log("C: after add Variable block");
+
             #endregion
 
             //#region Scroll
@@ -875,6 +851,8 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
             //DedicatedFunctions.scrollToPage(specifiedWindow, specifiedDocument.ActiveWindow.Selection, pageChapter1);
             //#endregion
             #region Scroll - Go to First Page
+            Log("D: before scroll");
+
             try
             {
                 // رفتن به صفحه اول سند
@@ -889,6 +867,8 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
             {
                 Debug.WriteLine("Error scrolling to first page: " + ex.Message);
             }
+            Log("E: after scroll");
+
             #endregion
 
 
@@ -900,19 +880,29 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
                 specifiedDocument.Password = StringConstant.DocumentPassword;
             //if(currentAddinVersion == 2)
             //	specifiedDocument.Password = StringConstant.DocumentPassword2;
+            Log("F: before UndoClear");
 
             specifiedDocument.UndoClear();
             #region Update Tables
+            Log("G: before updateTables");
+
             try
             {
                 DedicatedFunctions.updateTables(specifiedDocument, specifiedDocument.ActiveWindow.Selection, AccessType.AccessGranted);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Log("updateTables EXCEPTION: " + ex);
             }
+            Log("H: after updateTables, before saveAs");
+
             #endregion
 
+            Log("path=" + path + " | exists=" + File.Exists(path) + " | alerts=" + Globals.ThisAddIn.Application.DisplayAlerts);
+
             DedicatedFunctions.saveAsDocument(specifiedDocument, path);
+            Log("I: after saveAs");
+
             #endregion
 
             #region Progress
