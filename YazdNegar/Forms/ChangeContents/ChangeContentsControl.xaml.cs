@@ -1129,35 +1129,21 @@ namespace YazdNegar.Forms.ChangeContents
                 txtBoxAbstractFa.IsEnabled = false;
             }
 
+
             if (DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_En.ToString()) != null)
             {
                 contents.Add(
-                new ChangeContentsModel(txtBoxAbstractEn, ContentControlNames._field_Abstract_En.ToString(), null,isOptional: true));
+                    new ChangeContentsModel(txtBoxAbstractEn, ContentControlNames._field_Abstract_En.ToString(), null
+                    ));
 
-                var abstractEnControls = DedicatedFunctions.getContentControls(
-                    doc,
-                    ContentControlNames._field_Abstract_En.ToString());
+                Microsoft.Office.Interop.Word.ContentControl[] abstractContentControl =
+                    DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_En.ToString());
 
-                if (abstractEnControls != null && abstractEnControls.Length != 0)
+                if (abstractContentControl != null && abstractContentControl.Length != 0)
                 {
-                    Range abstractRange = abstractEnControls[0].Range;
-
-                    if (abstractRange != null)
-                    {
-                        string abstractText = abstractRange.Text?
-                            .TrimEnd('\r', '\n', '\0', '\a')
-                            ?? string.Empty;
-
-                        if (!string.IsNullOrWhiteSpace(abstractText))
-                        {
-                            txtBoxAbstractEn.Text = abstractText;
-                        }
-                        else
-                        {
-                            txtBoxAbstractEn.Text =
-                                "In the text of the abstract, references to sources and references to tables and charts should be avoided. If there is a need to introduce the research area and its theoretical foundations, it should be presented in the first paragraph of the abstract at most. It is enough to present only the research method and the final and central results and avoid the presentation of topics and general results. The words or phrases that are explained in this section must be completely central and related to the topic of the research.";
-                        }
-                    }
+                    Range rangeAbstract = abstractContentControl[0].Range;
+                    if (rangeAbstract != null)
+                        txtBoxAbstractEn.Text = abstractContentControl[0].Range.Text;
                 }
             }
             else
@@ -1190,42 +1176,25 @@ namespace YazdNegar.Forms.ChangeContents
             if (DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Keywords_En.ToString()) != null)
             {
                 contents.Add(
-                new ChangeContentsModel(txtBoxKeywordEn, ContentControlNames._field_Keywords_En.ToString(), null,isOptional: true));
+                    new ChangeContentsModel(txtBoxKeywordEn, ContentControlNames._field_Keywords_En.ToString(), null
+                    ));
 
-                // بعد از اصلاح ✅
-                var keywordControls = DedicatedFunctions.getContentControls(
+                var keywordsEnControls = DedicatedFunctions.getContentControls(
                     doc,
                     ContentControlNames._field_Keywords_En.ToString());
 
-                if (keywordControls != null && keywordControls.Length > 0)
+                if (keywordsEnControls != null && keywordsEnControls.Length != 0)
                 {
-                    Range keywordRange = keywordControls[0].Range;
-
+                    Range keywordRange = keywordsEnControls[0].Range;
                     if (keywordRange != null)
-                    {
-                        string keywordText = keywordRange.Text?
-                            .TrimEnd('\r', '\n', '\0', '\a')
-                            ?? string.Empty;
-
-                        if (!string.IsNullOrWhiteSpace(keywordText))
-                        {
-                            txtBoxKeywordEn.Text = keywordText;
-                        }
-                        else
-                        {
-                            txtBoxKeywordEn.Text =
-                                "The number of key words or phrases should be at least three words and at most five words or phrases.";
-                        }
-                    }
+                        txtBoxKeywordEn.Text = keywordRange.Text;
                 }
-
             }
             else
             {
                 txtBoxKeywordEn.Visibility = Visibility.Collapsed;
                 txtBoxKeywordEn.IsEnabled = false;
             }
-
         }
         private void initializeControls()
         {
