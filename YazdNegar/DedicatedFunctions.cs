@@ -2706,6 +2706,8 @@ namespace YazdNegar
             {
                 DedicatedFunctions.saveDocument(doc);
 
+
+
                 JsonObject jsonVariables = DedicatedFunctions.variablesToJsonServer(doc);
 
                 Microsoft.Office.Interop.Word.ContentControl[] abstractContentControl = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_Fa.ToString());
