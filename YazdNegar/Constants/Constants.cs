@@ -623,6 +623,9 @@ namespace YazdNegar.Constants
 
         _variable_field_AcademicDegree_Fa,
         _variable_field_AcademicDegree_En,
+
+        _variable_field_Abstract_En,
+        _variable_field_Keywords_En,
     }
     internal enum VariableTypeIDs
     {
