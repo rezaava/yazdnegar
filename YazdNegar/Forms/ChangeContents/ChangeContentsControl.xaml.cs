@@ -443,8 +443,6 @@ namespace YazdNegar.Forms.ChangeContents
                     JsonObject jsonVariables = DedicatedFunctions.variablesToJsonServer(doc);
 
                     //add Abstract to Json 
-
-
                     Microsoft.Office.Interop.Word.ContentControl[] abstractContentControl = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_Fa.ToString());
                     if (abstractContentControl != null && abstractContentControl.Length != 0 && abstractContentControl[0].Range != null)
                     {
@@ -453,37 +451,6 @@ namespace YazdNegar.Forms.ChangeContents
                             jsonVariables[VariableFieldIDs._variable_field_Abstract_Fa.ToString()] = abstractText;
                         else
                             jsonVariables.Add(VariableFieldIDs._variable_field_Abstract_Fa.ToString(), abstractText);
-                    }
-
-                    var abstractEnControls = DedicatedFunctions.getContentControls(
-                        doc,
-                        ContentControlNames._field_Abstract_En.ToString());
-
-                    if (abstractEnControls != null && abstractEnControls.Length != 0)
-                    {
-                        string abstractEnText = abstractEnControls[0].Range.Text
-                            .TrimEnd('\r', '\n', '\0');
-
-                        if (jsonVariables.ContainsKey(VariableFieldIDs._variable_field_Abstract_En.ToString()))
-                            jsonVariables[VariableFieldIDs._variable_field_Abstract_En.ToString()] = abstractEnText;
-                        else
-                            jsonVariables.Add(VariableFieldIDs._variable_field_Abstract_En.ToString(), abstractEnText);
-                    }
-
-
-                    var keywordsEnControls = DedicatedFunctions.getContentControls(
-                        doc,
-                        ContentControlNames._field_Keywords_En.ToString());
-
-                    if (keywordsEnControls != null && keywordsEnControls.Length != 0)
-                    {
-                        string keywordsEnText = keywordsEnControls[0].Range.Text
-                            .TrimEnd('\r', '\n', '\0');
-
-                        if (jsonVariables.ContainsKey(VariableFieldIDs._variable_field_Keywords_En.ToString()))
-                            jsonVariables[VariableFieldIDs._variable_field_Keywords_En.ToString()] = keywordsEnText;
-                        else
-                            jsonVariables.Add(VariableFieldIDs._variable_field_Keywords_En.ToString(), keywordsEnText);
                     }
 
 
