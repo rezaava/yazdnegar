@@ -453,7 +453,25 @@ namespace YazdNegar.Forms.ChangeContents
                             jsonVariables.Add(VariableFieldIDs._variable_field_Abstract_Fa.ToString(), abstractText);
                     }
 
+                    Microsoft.Office.Interop.Word.ContentControl[] abstractEnControls = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_En.ToString());
+                    if (abstractEnControls != null && abstractEnControls.Length != 0 && abstractEnControls[0].Range != null)
+                    {
+                        string abstractEnText = abstractEnControls[0].Range.Text?.TrimEnd('\r', '\n', '\0') ?? string.Empty;
+                        if (jsonVariables.ContainsKey(VariableFieldIDs._variable_field_Abstract_En.ToString()))
+                            jsonVariables[VariableFieldIDs._variable_field_Abstract_En.ToString()] = abstractEnText;
+                        else
+                            jsonVariables.Add(VariableFieldIDs._variable_field_Abstract_En.ToString(), abstractEnText);
+                    }
 
+                    Microsoft.Office.Interop.Word.ContentControl[] keywordsEnControls = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Keywords_En.ToString());
+                    if (keywordsEnControls != null && keywordsEnControls.Length != 0 && keywordsEnControls[0].Range != null)
+                    {
+                        string keywordsEnText = keywordsEnControls[0].Range.Text?.TrimEnd('\r', '\n', '\0') ?? string.Empty;
+                        if (jsonVariables.ContainsKey(VariableFieldIDs._variable_field_Keywords_En.ToString()))
+                            jsonVariables[VariableFieldIDs._variable_field_Keywords_En.ToString()] = keywordsEnText;
+                        else
+                            jsonVariables.Add(VariableFieldIDs._variable_field_Keywords_En.ToString(), keywordsEnText);
+                    }
 
 
                     MessageBox.Show(jsonVariables.ToString());
