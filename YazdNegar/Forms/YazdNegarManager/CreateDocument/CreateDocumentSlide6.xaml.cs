@@ -960,6 +960,32 @@ namespace YazdNegar.Forms.YazdNegarManager.CreateDocument
                 }
             }
 
+            Microsoft.Office.Interop.Word.ContentControl[] abstractEnControls = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_En.ToString());
+            if (abstractEnControls != null && abstractEnControls.Length != 0)
+            {
+                Range rangeAbstractEn = abstractEnControls[0].Range;
+                if (rangeAbstractEn != null)
+                {
+                    if (jsonVariables.ContainsKey(VariableFieldIDs._variable_field_Abstract_En.ToString()))
+                        jsonVariables[VariableFieldIDs._variable_field_Abstract_En.ToString()] = rangeAbstractEn.Text;
+                    else
+                        jsonVariables.Add(VariableFieldIDs._variable_field_Abstract_En.ToString(), rangeAbstractEn.Text);
+                }
+            }
+
+            Microsoft.Office.Interop.Word.ContentControl[] keywordsEnControls = DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Keywords_En.ToString());
+            if (keywordsEnControls != null && keywordsEnControls.Length != 0)
+            {
+                Range rangeKeywordsEn = keywordsEnControls[0].Range;
+                if (rangeKeywordsEn != null)
+                {
+                    if (jsonVariables.ContainsKey(VariableFieldIDs._variable_field_Keywords_En.ToString()))
+                        jsonVariables[VariableFieldIDs._variable_field_Keywords_En.ToString()] = rangeKeywordsEn.Text;
+                    else
+                        jsonVariables.Add(VariableFieldIDs._variable_field_Keywords_En.ToString(), rangeKeywordsEn.Text);
+                }
+            }
+
             string urlParameters = "save/parsanegar/1?type=" + (int)documentType + "&name=" + DocumentName + "&config=" + jsonVariables.ToString();
             var formData = new MultipartFormDataContent();
             var fileStream = new FileStream(doc.FullName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
