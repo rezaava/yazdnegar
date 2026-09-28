@@ -590,87 +590,87 @@
                                 </StackPanel>
                             </Expander>
                             <Expander
-                                x:Name="expanderAbstractAndKeywords"
-                                materialDesign:ExpanderAssist.HeaderBackground="WhiteSmoke"
-                                Background="{StaticResource LightBackgroundColor}"
-                                Header="چکیده و کلیدواژه">
+    x:Name="expanderAbstractAndKeywords"
+    materialDesign:ExpanderAssist.HeaderBackground="WhiteSmoke"
+    Background="{StaticResource LightBackgroundColor}"
+    Header="چکیده و کلیدواژه">
                                 <Expander.Content>
-                                    <StackPanel x:Name="stackAbstractAndKeywords" Margin="10,10,10,0">
-                                        <Grid x:Name="gridAbstract" Margin="0,0,0,20">
+                                    <StackPanel Margin="10,10,10,0">
+
+                                        <!--  فیلدهای قابل مشاهده  -->
+                                        <Grid Margin="0,0,0,20">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
 
                                             <TextBox
-                                                Name="txtBoxAbstractFa"
-                                                Grid.Column="0"
-                                                Margin="5"
-                                                materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
-                                                materialDesign:HintAssist.FloatingScale="1"
-                                                materialDesign:HintAssist.Hint="چکیده"
-                                                AcceptsReturn="True"
-                                                AcceptsTab="False"
-                                                FlowDirection="RightToLeft"
-                                                MaxLines="20"
-                                                Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                                                Tag="Persian"
-                                                TextWrapping="Wrap" />
+                    Name="txtBoxAbstractFa"
+                    Grid.Column="0"
+                    Margin="5"
+                    materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
+                    materialDesign:HintAssist.FloatingScale="1"
+                    materialDesign:HintAssist.Hint="چکیده"
+                    AcceptsReturn="True"
+                    AcceptsTab="False"
+                    FlowDirection="RightToLeft"
+                    MaxLines="20"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    Tag="Persian"
+                    TextWrapping="Wrap" />
 
                                             <TextBox
-                                                Name="txtBoxAbstractEn"
-                                                Grid.Column="1"
-                                                Margin="5"
-                                                materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
-                                                materialDesign:HintAssist.FloatingScale="1"
-                                                materialDesign:HintAssist.Hint="چکیده (انگلیسی)"
-                                                AcceptsReturn="True"
-                                                AcceptsTab="False"
-                                                FlowDirection="RightToLeft"
-                                                MaxLines="20"
-                                                Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                                                Tag="English"
-                                                TextWrapping="Wrap"
-                                                Visibility="Visible" />
-
+                    Name="txtBoxKeywordFa"
+                    Grid.Column="1"
+                    Margin="5"
+                    materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
+                    materialDesign:HintAssist.FloatingScale="1"
+                    materialDesign:HintAssist.Hint="کلمات کلیدی"
+                    AcceptsReturn="False"
+                    AcceptsTab="False"
+                    FlowDirection="RightToLeft"
+                    MaxLines="1"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    Tag="Persian"
+                    TextWrapping="Wrap" />
                                         </Grid>
 
-                                        <Grid x:Name="gridKeyword" Margin="0,0,0,20">
+                                        <!--  این Grid مخفیه، فقط برای اینکه کد cs کار کنه  -->
+                                        <Grid Visibility="Collapsed">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
 
                                             <TextBox
-                                                Name="txtBoxKeywordFa"
-                                                Grid.Column="0"
-                                                Margin="5"
-                                                materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
-                                                materialDesign:HintAssist.FloatingScale="1"
-                                                materialDesign:HintAssist.Hint="کلمات کلیدی"
-                                                AcceptsReturn="False"
-                                                AcceptsTab="False"
-                                                FlowDirection="RightToLeft"
-                                                MaxLines="1"
-                                                Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                                                Tag="Persian"
-                                                TextWrapping="Wrap" />
+                    Name="txtBoxAbstractEn"
+                    Grid.Column="0"
+                    Margin="5"
+                    materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
+                    materialDesign:HintAssist.FloatingScale="1"
+                    materialDesign:HintAssist.Hint="چکیده (انگلیسی)"
+                    AcceptsReturn="True"
+                    AcceptsTab="False"
+                    FlowDirection="RightToLeft"
+                    MaxLines="20"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    Tag="English"
+                    TextWrapping="Wrap" />
 
                                             <TextBox
-                                                Name="txtBoxKeywordEn"
-                                                Grid.Column="1"
-                                                Margin="5"
-                                                materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
-                                                materialDesign:HintAssist.FloatingScale="1"
-                                                materialDesign:HintAssist.Hint="کلمات کلیدی (انگلیسی)"
-                                                AcceptsReturn="False"
-                                                AcceptsTab="False"
-                                                FlowDirection="RightToLeft"
-                                                MaxLines="1"
-                                                Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                                                Tag="English"
-                                                TextWrapping="Wrap"
-                                                Visibility="Visible" />
+                    Name="txtBoxKeywordEn"
+                    Grid.Column="1"
+                    Margin="5"
+                    materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
+                    materialDesign:HintAssist.FloatingScale="1"
+                    materialDesign:HintAssist.Hint="کلمات کلیدی (انگلیسی)"
+                    AcceptsReturn="False"
+                    AcceptsTab="False"
+                    FlowDirection="RightToLeft"
+                    MaxLines="1"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    Tag="English"
+                    TextWrapping="Wrap" />
                                         </Grid>
 
                                     </StackPanel>
@@ -694,7 +694,7 @@
                 <customControl:LoadingControl
                     x:Name="loadingControl"
                     IsEnabled="False"
-                    Tag="در حال برقراری ارتباط با سرور" Loaded="loadingControl_Loaded" />
+                    Tag="در حال برقراری ارتباط با سرور" Loaded="loadingControl_Loaded" Margin="0,55,0,0" Grid.RowSpan="2" />
             </Grid>
 
         </Grid>
