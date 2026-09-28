@@ -831,7 +831,7 @@ namespace YazdNegar.Constants
         internal const int poemModeOneColumn = (int)WdKey.wdKeyAlt + (int)WdKey.wdKeyQ;
         internal const int poemModeTwoColumn = (int)WdKey.wdKeyAlt + (int)WdKey.wdKeyZ;
 
-        internal const int changeBesmellahDialog = (int)WdKey.wdKeyAlt + (int)WdKey.wdKeyF2;
+        //internal const int changeBesmellahDialog = (int)WdKey.wdKeyAlt + (int)WdKey.wdKeyF2;
 
         internal const int insertCitationMenu = (int)WdKey.wdKeyAlt + (int)WdKey.wdKeyI;
         internal const int sourceManagementDialog = (int)WdKey.wdKeyAlt + (int)WdKey.wdKeyS;

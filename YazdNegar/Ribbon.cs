@@ -963,17 +963,64 @@ namespace YazdNegar
             new KeyboardRelationModel(SP+"insertNahjBalaghe",KeyboardShortcuts.insertNahjBalaghe,RibbonControlNames.galleryBooks,"\n(Alt+Shift+A)",1),
         };
         }
+        //internal static void setKeyBinding(List<KeyboardRelationModel> keyboardRelations)
+        //{
+        //    try
+        //    {
+        //        foreach (KeyboardRelationModel kr in keyboardRelations)
+        //        {
+        //            Globals.ThisAddIn.Application.KeyBindings.Add(WdKeyCategory.wdKeyCategoryMacro, kr.CallFunctionName, kr.KeyboardShortcut);
+
+        //            if (kr.RibbonControlID != null)
+        //            {
+        //                var ribbonProperties = Globals.Ribbon.ribbonComponents.Where(p => p.Id == kr.RibbonControlID).First();
+
+        //                if (ribbonProperties == null)
+        //                    continue;
+
+        //                if (kr.RibbonItemIndex == -1)
+        //                {
+        //                    ribbonProperties.ScreenTip = kr.RibbonScreenTipContent + " " + ribbonProperties.InitialScreenTip;
+        //                    ribbonProperties.ShortcutText = " " + kr.RibbonScreenTipContent;
+        //                }
+        //                else
+        //                {
+        //                    var content = (RibbonControlModel[])ribbonProperties.Content;
+        //                    content[kr.RibbonItemIndex].ScreenTip = kr.RibbonScreenTipContent + " " + content[kr.RibbonItemIndex].InitialScreenTip;
+        //                    content[kr.RibbonItemIndex].ShortcutText = " " + kr.RibbonScreenTipContent;
+        //                }
+        //            }
+        //        }
+        //        Globals.Ribbon.ribbon?.Invalidate();
+        //        Globals.ThisAddIn.SetKeyBindingStatus = true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        DedicatedFunctions.ShowErrorMessage("خطایی در تنظیم کلید های میانبر به وجود آمد" + "\n" + "پیغام خطا" + "\n" + e.Message,
+        //            (int)ErrorCodes.SetKeyboardShortcut, StringConstant.SupportEmail);
+        //    }
+        //    //Globals.ThisAddIn.Application.KeyBindings.Key
+        //    //Globals.ThisAddIn.Application.KeyBindings.Context
+        //    //Globals.ThisAddIn.Application.KeyBindings.ClearAll
+        //    //Globals.ThisAddIn.Application.KeyBindings[].
+        //}
+
         internal static void setKeyBinding(List<KeyboardRelationModel> keyboardRelations)
         {
-            try
+            bool hasError = false;
+            foreach (KeyboardRelationModel kr in keyboardRelations)
             {
-                foreach (KeyboardRelationModel kr in keyboardRelations)
+                try
                 {
-                    Globals.ThisAddIn.Application.KeyBindings.Add(WdKeyCategory.wdKeyCategoryMacro, kr.CallFunctionName, kr.KeyboardShortcut);
+                    Globals.ThisAddIn.Application.KeyBindings.Add(
+                        WdKeyCategory.wdKeyCategoryMacro,
+                        kr.CallFunctionName,
+                        kr.KeyboardShortcut);
 
                     if (kr.RibbonControlID != null)
                     {
-                        var ribbonProperties = Globals.Ribbon.ribbonComponents.Where(p => p.Id == kr.RibbonControlID).First();
+                        var ribbonProperties = Globals.Ribbon.ribbonComponents
+                            .Where(p => p.Id == kr.RibbonControlID).First();
 
                         if (ribbonProperties == null)
                             continue;
@@ -991,18 +1038,20 @@ namespace YazdNegar
                         }
                     }
                 }
-                Globals.Ribbon.ribbon?.Invalidate();
-                Globals.ThisAddIn.SetKeyBindingStatus = true;
+                catch (Exception)
+                {
+                    hasError = true; // یه کلید مشکل داشت، ادامه بده
+                }
             }
-            catch (Exception e)
+
+            Globals.Ribbon.ribbon?.Invalidate();
+            Globals.ThisAddIn.SetKeyBindingStatus = true;
+
+            if (hasError)
             {
-                DedicatedFunctions.ShowErrorMessage("خطایی در تنظیم کلید های میانبر به وجود آمد" + "\n" + "پیغام خطا" + "\n" + e.Message,
+                DedicatedFunctions.ShowErrorMessage("خطایی در تنظیم کلید های میانبر به وجود آمد",
                     (int)ErrorCodes.SetKeyboardShortcut, StringConstant.SupportEmail);
             }
-            //Globals.ThisAddIn.Application.KeyBindings.Key
-            //Globals.ThisAddIn.Application.KeyBindings.Context
-            //Globals.ThisAddIn.Application.KeyBindings.ClearAll
-            //Globals.ThisAddIn.Application.KeyBindings[].
         }
         internal static void unsetKeyBinding(List<KeyboardRelationModel> keyboardRelations)
         {
