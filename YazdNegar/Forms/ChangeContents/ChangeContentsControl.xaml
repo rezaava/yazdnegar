@@ -636,7 +636,8 @@
                                         </Grid>
 
                                         <!--  این Grid مخفیه، فقط برای اینکه کد cs کار کنه  -->
-                                        <Grid Visibility="Collapsed">
+                                        <!--<Grid Visibility="Collapsed">-->
+                                        <Grid x:Name="gridEnglishFields">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="*" />
@@ -651,7 +652,7 @@
                     materialDesign:HintAssist.Hint="چکیده (انگلیسی)"
                     AcceptsReturn="True"
                     AcceptsTab="False"
-                    FlowDirection="RightToLeft"
+                    FlowDirection="LeftToRight"
                     MaxLines="20"
                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
                     Tag="English"
@@ -666,7 +667,7 @@
                     materialDesign:HintAssist.Hint="کلمات کلیدی (انگلیسی)"
                     AcceptsReturn="False"
                     AcceptsTab="False"
-                    FlowDirection="RightToLeft"
+                    FlowDirection="LeftToRight"
                     MaxLines="1"
                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
                     Tag="English"

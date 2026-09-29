@@ -474,7 +474,7 @@ namespace YazdNegar.Forms.ChangeContents
                     }
 
 
-                    MessageBox.Show(jsonVariables.ToString());
+                    //MessageBox.Show(jsonVariables.ToString());
                     string token = DedicatedFunctions.getStaticVariableValue(doc, VariableServerIDs._variable_server_UserToken.ToString());
                     string documentID = DedicatedFunctions.getStaticVariableValue(doc, VariableServerIDs._variable_server_DocumentID.ToString());
                     string urlParameters = "save/parsanegar/1?id=" + documentID + "&config=" + jsonVariables.ToString();
@@ -1152,7 +1152,7 @@ namespace YazdNegar.Forms.ChangeContents
             }
 
 
-            if (DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_En.ToString()) != null)
+            if (DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Abstract_En.ToString()).Length > 0)
             {
                 contents.Add(
                     new ChangeContentsModel(txtBoxAbstractEn, ContentControlNames._field_Abstract_En.ToString(), null
@@ -1195,7 +1195,7 @@ namespace YazdNegar.Forms.ChangeContents
                 txtBoxKeywordFa.IsEnabled = false;
             }
 
-            if (DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Keywords_En.ToString()) != null)
+            if (DedicatedFunctions.getContentControls(doc, ContentControlNames._field_Keywords_En.ToString()).Length > 0)
             {
                 contents.Add(
                     new ChangeContentsModel(txtBoxKeywordEn, ContentControlNames._field_Keywords_En.ToString(), null
@@ -1216,6 +1216,19 @@ namespace YazdNegar.Forms.ChangeContents
             {
                 txtBoxKeywordEn.Visibility = Visibility.Collapsed;
                 txtBoxKeywordEn.IsEnabled = false;
+            }
+            if(txtBoxAbstractEn.Visibility == Visibility.Collapsed && txtBoxKeywordEn.Visibility == Visibility.Collapsed)
+            {
+                gridEnglishFields.Visibility = Visibility.Collapsed;
+                 if(DedicatedFunctions.getDocumentType(doc) == DocumentTypes.SchoolResearch)
+                {
+                    contents.RemoveAll(c => c.Control == txtBoxAbstractFa ||
+                    c.Control == txtBoxKeywordFa ||
+                    c.Control == txtBoxAbstractEn ||
+                    c.Control == txtBoxKeywordEn);
+
+                    expanderAbstractAndKeywords.Visibility = Visibility.Collapsed;
+                }
             }
         }
         private void initializeControls()
